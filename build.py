@@ -82,7 +82,7 @@ def codes_html(depth, s):
     return re.sub(r"Y\d L\d", lambda m: code_link(depth, m.group(0)), e(s))
 
 
-NAV = [("", "Home"), ("how-it-works/", "How it works"), ("curriculum-map/", "Curriculum map"),
+NAV = [("", "Home"), ("how-it-works/", "How it works"), ("year-groups/", "Year groups"), ("curriculum-map/", "Curriculum map"),
        ("safety/", "Safety"), ("using-the-lessons/", "Using the lessons")]
 
 
@@ -118,7 +118,7 @@ def page(path, title, desc, body, depth, year=None):
 <a class="skip" href="#main">Skip to content</a>
 <header class="top">
 <div class="wrap top-in">
-<a class="brand" href="{rel(depth)}"><span class="brand-mark" aria-hidden="true">{''.join(f'<span class="b b-{x}">{x}</span>' for x in 'IDEAL')}</span><span class="brand-name">IDEAL Thinkers</span></a>
+<a class="brand" href="{rel(depth)}"><span class="brand-name"><span class="bn-1">IDEAL</span> <span class="bn-2">Thinkers</span></span><span class="brand-tag">An AI literacy and fluency curriculum</span></a>
 <nav class="nav" aria-label="Main">{nav}</nav>
 </div>
 <nav class="years-bar" aria-label="Year groups"><div class="wrap years-in">{years_nav}</div></nav>
@@ -150,6 +150,20 @@ LICENCE_PANEL = """<aside class="licence-panel" aria-label="Licence">
 <p class="lp-title">Free to use. Protected by copyright.</p>
 <p>IDEAL Thinkers is free for schools and teachers, but it is protected by copyright and a Creative Commons licence (CC BY-NC-SA 4.0). That means it cannot be taken, distributed or shared for commercial purposes. You're welcome to copy and adapt it for your own teaching, as long as you credit "IDEAL Thinkers by Mark Anderson, ictevangelist.com" and share any adapted versions under the same licence.</p>
 <p><a class="btn btn-ghost" href="{href}">Read the licence</a></p>
+</aside>"""
+
+
+POSTERS = {"ai-loop": ("The AI Loop", "ideal-thinkers-ai-loop-poster-a4.pdf"),
+           "ideal-habits": ("The habits grow with the children", "ideal-thinkers-ideal-habits-poster-a4.pdf"),
+           "every-lesson": ("Every lesson", "ideal-thinkers-every-lesson-poster-a4.pdf")}
+
+
+def poster_block(depth, key):
+    t, f = POSTERS[key]
+    return f"""<aside class="poster card">
+<img src="{rel(depth, 'images/posters/' + key + '.png')}" width="397" height="562" loading="lazy" alt="A4 poster: {e(t)}">
+<div><h2>Poster: {e(t)}</h2><p>An A4 poster for your classroom wall or display board.</p>
+<p><a class="btn" href="{rel(depth, 'downloads/' + f)}" download>Download the A4 poster (PDF)</a></p></div>
 </aside>"""
 
 
@@ -189,7 +203,7 @@ def build_home():
     years = "".join(year_card(d, y) for y in DATA["years"])
     body = f"""<section class="hero">
 <div class="wrap">
-<p class="eyebrow">AI literacy for primary schools, Year 1 to Year 6</p>
+<p class="eyebrow">An AI literacy and fluency curriculum for primary schools, Year 1 to Year 6</p>
 <h1>IDEAL Thinkers</h1>
 <p class="lede">Children are growing up alongside AI. It chooses the next video they watch, finishes their sentences, listens from the kitchen worktop and answers questions in a voice that sounds friendly and sure of itself. Most of them meet it long before anyone teaches them what it is.</p>
 <p class="lede">IDEAL Thinkers gives primary pupils the knowledge to understand how AI works, the habits to question what it tells them, the values to use it well, and the judgement to know when it helps their learning and when it gets in the way.</p>
@@ -327,6 +341,7 @@ def build_how():
 <div class="card"><h3>Slides built for low cognitive load</h3><p>Every slide builds on click in the order the teacher teaches it, as if writing on a whiteboard, so pupils meet one element at a time. Visuals carry meaning rather than decoration: each AI Loop step, each IDEAL habit and each recurring idea has its own icon, used identically in every lesson.</p></div>
 </div>
 <p>Teacher-facing labels and sources sit in the speaker notes, not on the screen. New ideas and vocabulary are taught where pupils first need them; earlier learning is retrieved, not re-taught.</p>
+{poster_block(2, "every-lesson")}
 </section>"""
     page("how-it-works/every-lesson/", "Every lesson: the seven phase lesson shape | IDEAL Thinkers",
          "Every IDEAL Thinkers lesson follows the same seven phases: Remember When, Link It, Learn It, Try It, Own It, IDEAL Check and Exit Ticket.", body, 2)
@@ -346,6 +361,7 @@ def build_how():
 {loop_strip()}
 <div class="table-wrap"><table><thead><tr><th scope="col">Step</th><th scope="col">What the AI does</th><th scope="col">How the idea grows</th></tr></thead><tbody>{tr}</tbody></table></div>
 <p>Pupils meet the AI Loop in <a href="../../year-1/the-mystery-rule/">Year 1, The Mystery Rule</a>.</p>
+{poster_block(2, "ai-loop")}
 </section>"""
     page("how-it-works/ai-loop/", "The AI Loop: Learn, Spot, Guess, Check | IDEAL Thinkers",
          "The AI Loop explains what AI does in four steps, and grows from Year 1 to Year 6.", body, 2)
@@ -361,6 +377,7 @@ def build_how():
 {ideal_table()}
 <h2>IDEAL moments</h2>
 <p>IDEAL is not a logo in the corner of every slide. In each lesson, the day's IDEAL habit appears as a cue only on the click where pupils actually practise it, for example "A: Check it before you trust it" just as pupils go looking for evidence. When the cue appears, the teacher points to it, the class says the habit together, and the teacher asks the action question given in the speaker notes. Every lesson plan lists its IDEAL moments, with slide numbers and what to say. The routine is taught to pupils in <a href="../../year-1/does-it-guess/">Year 1 Lesson 1</a> and used in every lesson after that, so pupils learn to link each habit to the moment they use it.</p>
+{poster_block(2, "ideal-habits")}
 </section>"""
     page("how-it-works/ideal/", "IDEAL: Informed, Deliberate, Ethical, Accurate, Learning | IDEAL Thinkers",
          "IDEAL is Mark Anderson's framework for informed learning with AI, with wording that grows from Year 1 to Year 6.", body, 2)
@@ -462,6 +479,28 @@ def build_years():
 </section>"""
         page(y["path"], f"Year {y['n']}: {y['title']} | IDEAL Thinkers",
              f"Year {y['n']} AI literacy unit, {y['title']}: {y['big_question']} Six lessons with plans and slides.", body, d, y["n"])
+
+
+def build_year_groups():
+    d = 1
+    blocks = ""
+    for y in DATA["years"]:
+        chal = ' <span class="tag tag-challenge">IDEAL Challenge</span>'
+        items = "".join(f'<li><a href="{rel(d, l["path"])}">{l["n"]}. {e(l["title"])}</a>{chal if l["challenge"] else ""}</li>' for l in y["lessons"])
+        blocks += f"""<article class="card yg y{y['n']}">
+<h2><a href="{rel(d, y['path'])}"><span class="yg-n">Year {y['n']}</span> {e(y['title'])}</a></h2>
+<p class="bq">{e(y['big_question'])}</p>
+<ol class="yg-list">{items}</ol>
+<p><a class="btn btn-ghost" href="{rel(d, y['path'])}">Year {y['n']} overview</a></p>
+</article>"""
+    body = f"""<section class="page-head"><div class="wrap">
+<p class="eyebrow">Year groups</p>
+<h1>Six units, one for each year</h1>
+<p class="lede">Six lessons per year, planned as a half-term unit. The sixth lesson in each year is an IDEAL Challenge, where pupils pull the unit together to make or decide something.</p>
+</div></section>
+<section class="wrap"><div class="grid grid-3">{blocks}</div></section>"""
+    page("year-groups/", "Year groups: Year 1 to Year 6 | IDEAL Thinkers",
+         "The six IDEAL Thinkers units, one for each year from Year 1 to Year 6, with every lesson listed.", body, d)
 
 
 def file_block(kind, fid, label):
@@ -634,7 +673,10 @@ def build_using():
 <div class="card"><h2>Inside the files</h2><p>Teacher notes and answers sit in the speaker notes of every slide, and printable resources are at the end of each deck.</p></div>
 </div>
 <h2>Display and posters</h2>
-<p><a class="btn btn-ghost" href="https://drive.google.com/file/d/{ROADMAP_PDF}/view">The IDEAL Thinkers Road Map (A3 PDF)</a></p>
+<div class="grid grid-2">
+<div class="card"><h3>The road map (A3)</h3><p>All 36 lessons on one poster.</p><p><a class="btn" href="https://drive.google.com/uc?export=download&amp;id={ROADMAP_PDF}">Download the A3 road map (PDF)</a></p></div>
+""" + "".join(f'''<div class="card"><h3>{e(t)} (A4)</h3><p><a class="btn" href="{rel(d, 'downloads/' + f)}" download>Download the A4 poster (PDF)</a></p></div>''' for t, f in POSTERS.values()) + f"""
+</div>
 </section>"""
     page("using-the-lessons/", "Using the lessons | IDEAL Thinkers",
          "How to copy, download and teach the IDEAL Thinkers lesson plans and slides.", body, d)
@@ -684,6 +726,7 @@ if __name__ == "__main__":
     build_how()
     build_map()
     build_years()
+    build_year_groups()
     build_lessons()
     build_progression()
     build_safety()

@@ -1,0 +1,48 @@
+@page{size:A4;margin:0}
+:root{--ink:#2C3E50;--muted:#5D6D7E;--soft:#ECF0F1;--line:#D5DBDF;--gold:#F1C40F;
+--i:#1F618D;--d:#6C3483;--e:#117A65;--a:#A04000;--l:#922B21}
+*{box-sizing:border-box}
+html,body{margin:0;background:#fff;color:var(--ink);font-family:Poppins,Arial,sans-serif}
+.sheet{width:210mm;height:297mm;padding:14mm 13mm 11mm;display:flex;flex-direction:column;gap:7mm;overflow:hidden}
+.kicker{font-family:"Exo 2",Arial,sans-serif;font-weight:800;font-size:10pt;letter-spacing:.12em;text-transform:uppercase;color:#A04000;margin:0}
+h1{font-family:"Exo 2",Arial,sans-serif;font-weight:800;font-size:40pt;line-height:1.02;margin:1mm 0 0}
+h1 .t{color:#1F618D}
+.sub{font-size:13pt;margin:2mm 0 0;color:var(--ink)}
+.foot{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;gap:8mm;font-size:7.5pt;color:var(--muted);border-top:1px solid var(--line);padding-top:3mm}
+.foot b{color:var(--ink)}
+.brand{font-family:"Exo 2",Arial,sans-serif;font-weight:800;font-size:12pt;color:var(--ink);white-space:nowrap}
+.brand span{color:#1F618D}
+/* AI loop */
+.steps{display:grid;grid-template-columns:1fr 1fr;gap:5mm}
+.step{border-radius:6mm;padding:7mm 7mm 6mm;color:#fff;min-height:58mm;display:flex;flex-direction:column;gap:3mm}
+.step .n{font-family:"Exo 2",Arial,sans-serif;font-weight:800;font-size:13pt;opacity:.9}
+.step h2{font-family:"Exo 2",Arial,sans-serif;font-weight:800;font-size:30pt;margin:0;line-height:1}
+.step p{font-size:12.5pt;line-height:1.45;margin:0}
+.s1{background:var(--i)} .s2{background:var(--d)} .s3{background:var(--a)} .s4{background:var(--e)}
+.grow{background:var(--soft);border-radius:6mm;padding:6mm 7mm}
+.grow h3{font-family:"Exo 2",Arial,sans-serif;font-size:14pt;margin:0 0 3mm}
+.grow ul{margin:0;padding:0;list-style:none;display:grid;gap:2.5mm;font-size:10pt;line-height:1.45}
+.grow li b{font-family:"Exo 2",Arial,sans-serif}
+.callout{border:1.2mm solid var(--gold);border-radius:6mm;padding:5mm 7mm;font-family:"Exo 2",Arial,sans-serif;font-weight:800;font-size:16pt;text-align:center;background:#FEF9E7}
+/* IDEAL table */
+.ideal{width:100%;border-collapse:separate;border-spacing:0 2.5mm}
+.ideal th,.ideal td{text-align:left;vertical-align:middle;padding:6mm 4.5mm;font-size:12.5pt;line-height:1.35}
+.ideal thead th{font-family:"Exo 2",Arial,sans-serif;font-size:10.5pt;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:0;padding-bottom:0;white-space:nowrap}
+.ideal tbody td{background:var(--soft)}
+.ideal tbody td:last-child{border-radius:0 4mm 4mm 0}
+.ltr{width:34mm;color:#fff;border-radius:4mm 0 0 4mm}
+.ltr .L{display:block;font-family:"Exo 2",Arial,sans-serif;font-weight:800;font-size:34pt;line-height:1}
+.ltr .w{display:block;font-weight:600;font-size:9.5pt}
+.lw td{background:#FEF9E7!important;font-family:"Exo 2",Arial,sans-serif;font-weight:800;font-size:14pt}
+.lw td.ltr{background:var(--ink)!important;font-size:11pt}
+/* every lesson */
+.phases{list-style:none;margin:0;padding:0;display:grid;gap:3mm}
+.phases li{display:grid;grid-template-columns:12mm 52mm 1fr;gap:4mm;align-items:center;background:var(--soft);border-radius:5mm;padding:4mm 5mm}
+.pn{width:11mm;height:11mm;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-family:"Exo 2",Arial,sans-serif;font-weight:800;font-size:13pt}
+.ph b{display:block;font-family:"Exo 2",Arial,sans-serif;font-size:15pt;line-height:1.1}
+.ph span{font-size:9.5pt;color:var(--muted);font-weight:600}
+.pd{font-size:10pt;line-height:1.4}
+.phases li.check{background:#FEF9E7}
+.pills{display:flex;flex-wrap:wrap;gap:2.5mm;justify-content:center}
+.pills span{background:var(--ink);color:#fff;border-radius:99px;padding:2.2mm 5mm;font-weight:600;font-size:10pt}
+.note{text-align:center;font-size:11pt;margin:0}
