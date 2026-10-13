@@ -147,10 +147,56 @@ def page(path, title, desc, body, depth, year=None):
 PAGES = []
 
 LICENCE_PANEL = """<aside class="licence-panel" aria-label="Licence">
-<p class="lp-title">Free to use. Protected by copyright.</p>
+<p class="lp-title"><span class="ic ic-gold" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M10.5 9.8a2.8 2.8 0 1 0 0 4.4"/><path d="M16.5 9.8a2.8 2.8 0 1 0 0 4.4"/></svg></span>Free to use. Protected by copyright.</p>
 <p>IDEAL Thinkers is free for schools and teachers, but it is protected by copyright and a Creative Commons licence (CC BY-NC-SA 4.0). That means it cannot be taken, distributed or shared for commercial purposes. You're welcome to copy and adapt it for your own teaching, as long as you credit "IDEAL Thinkers by Mark Anderson, ictevangelist.com" and share any adapted versions under the same licence.</p>
 <p><a class="btn btn-ghost" href="{href}">Read the licence</a></p>
 </aside>"""
+
+
+ICONS = {
+    "book": '<path d="M2 5h7a3 3 0 0 1 3 3v12a2 2 0 0 0-2-2H2z"/><path d="M22 5h-7a3 3 0 0 0-3 3v12a2 2 0 0 1 2-2h8z"/>',
+    "eye": '<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
+    "bulb": '<path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V16h8v-1.3A7 7 0 0 0 12 2z"/>',
+    "usercheck": '<circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0"/><path d="M16 11l2 2 4-4"/>',
+    "loop": '<path d="M20 11a8 8 0 0 0-14.9-3"/><path d="M4 4v4h4"/><path d="M4 13a8 8 0 0 0 14.9 3"/><path d="M20 20v-4h-4"/>',
+    "star": '<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/>',
+    "seedling": '<path d="M12 21v-9"/><path d="M12 12c0-4 3-7 8-7 0 4-3 7-8 7z"/><path d="M12 14c0-3-2.5-5.5-7-5.5 0 3 2.5 5.5 7 5.5z"/>',
+    "clock": '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+    "grid": '<rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/>',
+    "landmark": '<path d="M3 21h18"/><path d="M5 21V10"/><path d="M19 21V10"/><path d="M9 21V10"/><path d="M15 21V10"/><path d="M2 10l10-6 10 6z"/>',
+    "layers": '<path d="M12 2l9 4.5-9 4.5-9-4.5z"/><path d="M3 11.5l9 4.5 9-4.5"/><path d="M3 16.5l9 4.5 9-4.5"/>',
+    "calendar": '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 3v4"/><path d="M16 3v4"/>',
+    "people": '<circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2 20a6 6 0 0 1 12 0"/><path d="M10 20a6 6 0 0 1 12 0"/>',
+    "brain": '<path d="M9 3a3 3 0 0 0-3 3 3 3 0 0 0-2 5 3 3 0 0 0 2 5 3 3 0 0 0 3 3 2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/><path d="M15 3a3 3 0 0 1 3 3 3 3 0 0 1 2 5 3 3 0 0 1-2 5 3 3 0 0 1-3 3 2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/>',
+    "stairs": '<path d="M3 20h5v-5h5v-5h5V5h3"/>',
+    "slides": '<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M12 16v4"/><path d="M8 20h8"/>',
+    "plan": '<path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 13h8"/><path d="M8 17h5"/>',
+    "unplug": '<path d="M9 2v5"/><path d="M15 2v5"/><path d="M6 7h12v4a6 6 0 0 1-12 0z"/><path d="M12 17v5"/><path d="M3 3l18 18"/>',
+    "nouser": '<circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0"/><path d="M17 8l4 4"/><path d="M21 8l-4 4"/>',
+    "clipboard": '<rect x="5" y="4" width="14" height="18" rx="2"/><path d="M9 4V2h6v2"/><path d="M9 11h6"/><path d="M9 15h4"/>',
+    "heartshield": '<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M12 16s-3.5-2-3.5-4.3a1.8 1.8 0 0 1 3.5-.9 1.8 1.8 0 0 1 3.5.9C15.5 14 12 16 12 16z"/>',
+    "chart": '<path d="M4 20V10"/><path d="M10 20V4"/><path d="M16 20v-7"/><path d="M22 20H2"/>',
+    "licence": '<circle cx="12" cy="12" r="9"/><path d="M10.5 9.8a2.8 2.8 0 1 0 0 4.4"/><path d="M16.5 9.8a2.8 2.8 0 1 0 0 4.4"/>',
+}
+
+
+def icon(name, colour="i", size=26, cls="ic"):
+    return (f'<span class="{cls} ic-{colour}" aria-hidden="true"><svg viewBox="0 0 24 24" width="{size}" height="{size}" fill="none" '
+            f'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">{ICONS[name]}</svg></span>')
+
+
+def chatty(cls="chatty", label=""):
+    """Chatty, the class chatbot from the Year 4 decks, redrawn from the slide's own shapes."""
+    a11y = f'role="img" aria-label="{e(label)}"' if label else 'aria-hidden="true"'
+    return (f'<svg class="{cls}" viewBox="0 0 209 329" {a11y}>'
+            '<line x1="104.4" y1="20" x2="104.4" y2="58" stroke="#2C3E50" stroke-width="5"/>'
+            '<circle cx="104.4" cy="12.6" r="12.6" fill="#E8562A"/>'
+            '<rect x="0" y="57.4" width="208.8" height="167" rx="24" fill="#8E44AD"/>'
+            '<rect x="26.1" y="83.5" width="156.6" height="114.8" rx="16" fill="#FFFFFF"/>'
+            '<circle class="ch-eye" cx="72" cy="124.2" r="14.6" fill="#2C3E50"/>'
+            '<circle class="ch-eye" cx="136.7" cy="124.2" r="14.6" fill="#2C3E50"/>'
+            '<path d="M78 166 Q104.4 186 130.8 166" fill="none" stroke="#2C3E50" stroke-width="4.5" stroke-linecap="round"/>'
+            '<rect x="31.3" y="234.9" width="146.2" height="94" rx="16" fill="#8E44AD"/></svg>')
 
 
 POSTERS = {"ai-loop": ("The AI Loop", "ideal-thinkers-ai-loop-poster-a4.pdf"),
@@ -172,8 +218,10 @@ def loop_strip():
              ("Spot", "It finds patterns in those examples."),
              ("Guess", "It uses the patterns to make a prediction: a label, a next word, a video, a picture."),
              ("Check", "It cannot check itself against the real world. People must.")]
+    ic = ["book", "eye", "bulb", "usercheck"]
     return '<ol class="loop">' + "".join(
-        f'<li class="loop-{i}"><span class="loop-n">{s}</span><span class="loop-t">{e(t)}</span></li>'
+        f'<li class="loop-{i}"><span class="loop-top"><span class="loop-num">{i}</span>{icon(ic[i-1], "w", 30, "loop-ic")}</span>'
+        f'<span class="loop-n">{s}</span><span class="loop-t">{e(t)}</span></li>'
         for i, (s, t) in enumerate(steps, 1)) + "</ol>"
 
 
@@ -224,7 +272,8 @@ def build_home():
     d = 0
     years = "".join(year_card(d, y) for y in DATA["years"])
     body = f"""<section class="hero">
-<div class="wrap">
+<div class="wrap hero-grid">
+<div class="hero-text">
 <p class="eyebrow">An AI literacy and fluency curriculum for primary schools, Year 1 to Year 6</p>
 <h1>IDEAL Thinkers</h1>
 <p class="lede">Children are growing up alongside AI. It chooses the next video they watch, finishes their sentences, listens from the kitchen worktop and answers questions in a voice that sounds friendly and sure of itself. Most of them meet it long before anyone teaches them what it is.</p>
@@ -234,6 +283,8 @@ def build_home():
 <a class="btn btn-ghost" href="how-it-works/">How it works</a>
 <a class="btn btn-ghost" href="safety/">Is it safe?</a>
 </div>
+</div>
+<div class="hero-art">{chatty("chatty chatty-hero", "Chatty, the class chatbot from the Year 4 lessons")}</div>
 </div>
 </section>
 <section class="wrap">
@@ -245,6 +296,12 @@ def build_home():
 <p>Six lessons per year, planned as a half-term unit. The sixth lesson in each year is an IDEAL Challenge, where pupils pull the unit together to make or decide something.</p>
 <div class="grid grid-3">{years}</div>
 </div>
+</section>
+<section class="wrap home-map">
+<h2>The road map</h2>
+<p>All 36 lessons on one page, from Year 1 to secondary school.</p>
+<a class="home-map-img" href="curriculum-map/"><img src="images/ideal-thinkers-road-map.webp" width="2482" height="1754" loading="lazy" alt="The IDEAL Thinkers curriculum road map, showing all 36 lessons from Year 1 to Year 6"></a>
+<p><a class="btn" href="curriculum-map/">Explore the curriculum map</a></p>
 </section>
 <section class="wrap">
 <h2>Pedagogy first, technology second</h2>
@@ -260,36 +317,36 @@ def build_home():
 <p>IDEAL Thinkers doesn't sit on its own. Here's what it connects to, and how.</p>
 <div class="grid grid-2 frameworks">
 <article class="card fw">
-<h3>The Primary Digital Cognition Curriculum</h3>
+{icon("grid", "i")}<h3>The Primary Digital Cognition Curriculum</h3>
 <p>The Primary Digital Cognition Curriculum, published in The EdTech Playbook, has four strands: Digital Citizenship, Digital Literacy, Computer Science and AI Literacy. IDEAL Thinkers is the full, teachable AI Literacy strand. AI does not stay in its own box, though, so every lesson also shows its links to the other three strands. Schools can see AI literacy as part of a whole approach to digital cognition rather than a bolt-on.</p>
 </article>
 <article class="card fw">
-<h3>The National Curriculum for computing (England)</h3>
+{icon("landmark", "d")}<h3>The National Curriculum for computing (England)</h3>
 <p>The lessons address the KS1 and KS2 statements on using technology safely, respectfully and responsibly; keeping personal information private; recognising common uses of information technology beyond school (KS1); understanding how search results are selected and ranked, and being discerning in evaluating digital content (KS2).</p>
 </article>
 <article class="card fw">
-<h3>SEAME</h3>
+{icon("layers", "e")}<h3>SEAME</h3>
 <p>SEAME is a framework from the Raspberry Pi Computing Education Research Centre that sorts what we teach about AI into four levels: social and ethical, applications, models and engines (how AI actually works). Lessons cover all four levels of the model: social and ethical, applications, models and, through unplugged activities, engines.</p>
 </article>
 <article class="card fw">
-<h3>The new computing curriculum</h3>
+{icon("calendar", "a")}<h3>The new computing curriculum</h3>
 <p>BCS is drafting a revised National Curriculum for Computing for first teaching from September 2028, with foundational AI concepts included. This curriculum will be mapped against the draft once it is published.</p>
 </article>
 <article class="card fw">
-<h3>Universal Design for Learning</h3>
+{icon("people", "l")}<h3>Universal Design for Learning</h3>
 <p>Every plan offers multiple ways to engage, to access content and to show understanding, with adaptations for support and stretch in each lesson.</p>
 </article>
 <article class="card fw">
-<h3>Cognitive science</h3>
+{icon("brain", "i")}<h3>Cognitive science</h3>
 <p>Spaced retrieval, concrete before abstract, worked examples and modelling, explicit vocabulary teaching, dual coding through consistent visual models, and frequent low stakes checks for understanding.</p>
 </article>
 <article class="card fw">
-<h3>IDEAL</h3>
+{icon("star", "d")}<h3>IDEAL</h3>
 <p>My framework for informed learning with AI: Informed, Deliberate, Ethical, Accurate, Learning. Every lesson is tagged with the IDEAL letters it develops, and the wording grows with the children.</p>
 <p><a href="how-it-works/ideal/">More on IDEAL</a></p>
 </article>
 <article class="card fw">
-<h3>STAIR</h3>
+{icon("stairs", "e")}<h3>STAIR</h3>
 <p>In Upper KS2, pupils plan how AI could support a specific learning goal using STAIR (Specific, Tell, Actionable, Iterate, Role), as part of the Learning Well habit: plan, use, prove.</p>
 <p><a href="how-it-works/learning-well/">More on Learning Well</a></p>
 </article>
@@ -328,10 +385,11 @@ def build_how():
 <p class="lede">IDEAL Thinkers is the full, teachable AI Literacy strand of the Primary Digital Cognition Curriculum. Three threads run through every lesson, and every lesson has the same shape.</p>
 </div></section>
 <section class="wrap">
-<div class="grid grid-3">
-<a class="card thread" href="ai-loop/"><span class="thread-n">1</span><h2>The AI Loop</h2><p>Learn, Spot, Guess, Check: how pupils understand what AI actually does.</p></a>
-<a class="card thread" href="ideal/"><span class="thread-n">2</span><h2>IDEAL</h2><p>How we use AI well: Informed, Deliberate, Ethical, Accurate, Learning.</p></a>
-<a class="card thread" href="learning-well/"><span class="thread-n">3</span><h2>Learning Well with AI</h2><p>Try it first, hint not answer, plan use prove.</p></a>
+<div class="grid grid-4">
+<a class="card thread" href="ai-loop/">{icon("loop", "i", 30)}<h2>The AI Loop</h2><p>Learn, Spot, Guess, Check: how pupils understand what AI actually does.</p></a>
+<a class="card thread" href="ideal/">{icon("star", "d", 30)}<h2>IDEAL</h2><p>How we use AI well: Informed, Deliberate, Ethical, Accurate, Learning.</p></a>
+<a class="card thread" href="learning-well/">{icon("seedling", "e", 30)}<h2>Learning Well with AI</h2><p>Try it first, hint not answer, plan use prove.</p></a>
+<a class="card thread" href="every-lesson/">{icon("clock", "a", 30)}<h2>Every lesson</h2><p>The same seven phases in every lesson, in 60 minutes.</p></a>
 </div>
 </section>
 <section class="band"><div class="wrap">
@@ -358,9 +416,9 @@ def build_how():
 <p>In each lesson, the day's IDEAL habit appears as a cue only on the click where pupils actually practise it. When the cue appears, the teacher points to it, the class says the habit together, and the teacher asks the action question given in the speaker notes. <a href="../ideal/">More on IDEAL</a></p>
 <h2>How it's built</h2>
 <div class="grid grid-3">
-<div class="card"><h3>Grounded in cognitive science</h3><p>Spaced retrieval, concrete before abstract, worked examples and modelling, explicit vocabulary teaching, dual coding through consistent visual models, and frequent low stakes checks for understanding.</p></div>
-<div class="card"><h3>Designed with UDL</h3><p>Every plan offers multiple ways to engage, to access content and to show understanding.</p></div>
-<div class="card"><h3>Slides built for low cognitive load</h3><p>Every slide builds on click in the order the teacher teaches it, as if writing on a whiteboard, so pupils meet one element at a time. Visuals carry meaning rather than decoration: each AI Loop step, each IDEAL habit and each recurring idea has its own icon, used identically in every lesson.</p></div>
+<div class="card">{icon("brain", "i")}<h3>Grounded in cognitive science</h3><p>Spaced retrieval, concrete before abstract, worked examples and modelling, explicit vocabulary teaching, dual coding through consistent visual models, and frequent low stakes checks for understanding.</p></div>
+<div class="card">{icon("people", "l")}<h3>Designed with UDL</h3><p>Every plan offers multiple ways to engage, to access content and to show understanding.</p></div>
+<div class="card">{icon("slides", "d")}<h3>Slides built for low cognitive load</h3><p>Every slide builds on click in the order the teacher teaches it, as if writing on a whiteboard, so pupils meet one element at a time. Visuals carry meaning rather than decoration: each AI Loop step, each IDEAL habit and each recurring idea has its own icon, used identically in every lesson.</p></div>
 </div>
 <p>Teacher-facing labels and sources sit in the speaker notes, not on the screen. New ideas and vocabulary are taught where pupils first need them; earlier learning is retrieved, not re-taught.</p>
 {poster_block(2, "every-lesson")}
@@ -489,13 +547,14 @@ def build_years():
         if next_y:
             where.append(f'Next, in Year {next_y["n"]}, they move on to <a href="{rel(d, next_y["path"])}">{e(next_y["title"])}</a>.')
         cards = "".join(lesson_card(d, l) for l in y["lessons"])
-        body = f"""<section class="page-head year-head"><div class="wrap">
+        bot = chatty("chatty chatty-head", "Chatty, the class chatbot pupils meet in Year 4") if y["n"] == 4 else ""
+        body = f"""<section class="page-head year-head"><div class="wrap{' head-grid' if bot else ''}"><div>
 <p class="eyebrow"><a href="../curriculum-map/">Curriculum map</a> / Year {y['n']}</p>
 <div class="yh">{year_icon(y["n"], 44)}<h1>Year {y['n']}: {e(y['title'])}</h1></div>
 <p class="bq big">Big question: {e(y['big_question'])}</p>
 <p>{' '.join(where)}</p>
 <p><a class="btn btn-ghost" href="https://drive.google.com/drive/folders/{y['folder']}">Open the Year {y['n']} folder in Google Drive</a></p>
-</div></section>
+</div>{bot}</div></section>
 <section class="wrap"><div class="grid grid-3">{cards}</div>
 <p class="note">Lesson 6 is the IDEAL Challenge, where pupils pull the unit together to make or decide something. It doubles as the end of unit assessment task.</p>
 </section>"""
@@ -534,7 +593,7 @@ def file_block(kind, fid, label):
         base = f"https://docs.google.com/document/d/{fid}"
         dl, dl_label = f"{base}/export?format=docx", "Download Word"
     return f"""<div class="file">
-<h3>{label}</h3>
+<h3 class="file-h">{icon("slides" if kind == "slides" else "plan", "d" if kind == "slides" else "i", 22)}{label}</h3>
 <p class="file-btns"><a class="btn" href="{base}/copy">Make a copy</a><a class="btn btn-ghost" href="{dl}">{dl_label}</a><a class="btn btn-ghost" href="{base}/preview">Preview</a></p>
 </div>"""
 
@@ -562,7 +621,7 @@ def build_lessons():
             body = f"""<section class="page-head lesson-head"><div class="wrap">
 <p class="eyebrow"><a href="{rel(d, 'curriculum-map/')}">Curriculum map</a> / <a href="{rel(d, y['path'])}">Year {y['n']}: {e(y['title'])}</a></p>
 <p class="kicker">Year {y['n']}, Lesson {l['n']} {ch}{sess}</p>
-<h1>{e(l['title'])}</h1>
+<div class="yh">{year_icon(y['n'], 44)}<h1>{e(l['title'])}</h1></div>
 <p class="lede">{e(l['big_idea'])}</p>
 <p class="card-meta">{badges(l['ideal'])}<span class="links">Links: {links_text(l['links'])}</span></p>
 </div></section>
@@ -649,10 +708,10 @@ def build_safety():
 </div></section>
 <section class="wrap">
 <div class="grid grid-2">
-<div class="card"><h2>Unplugged first</h2><p>Every lesson can be taught without pupil devices. Concepts outlast tools.</p></div>
-<div class="card"><h2>No pupil accounts</h2><p>Most generative AI tools have a minimum age of 13. Where a demonstration helps, the teacher runs it on a school approved tool, previews it first and stays in control. Every deck also includes prepared examples, so no lesson depends on a live demonstration working on the day.</p></div>
-<div class="card"><h2>Check your school's position</h2><p>Follow your school's AI policy and data protection guidance before using any tool, and never enter pupils' personal information.</p></div>
-<div class="card"><h2>Safeguarding</h2><p>Four lessons deal with privacy, chatbot relationships and images of real people. Each plan flags this, and any disclosure should be handled through your school's safeguarding procedures.</p></div>
+<div class="card">{icon("unplug", "e")}<h2>Unplugged first</h2><p>Every lesson can be taught without pupil devices. Concepts outlast tools.</p></div>
+<div class="card">{icon("nouser", "i")}<h2>No pupil accounts</h2><p>Most generative AI tools have a minimum age of 13. Where a demonstration helps, the teacher runs it on a school approved tool, previews it first and stays in control. Every deck also includes prepared examples, so no lesson depends on a live demonstration working on the day.</p></div>
+<div class="card">{icon("clipboard", "a")}<h2>Check your school's position</h2><p>Follow your school's AI policy and data protection guidance before using any tool, and never enter pupils' personal information.</p></div>
+<div class="card">{icon("heartshield", "l")}<h2>Safeguarding</h2><p>Four lessons deal with privacy, chatbot relationships and images of real people. Each plan flags this, and any disclosure should be handled through your school's safeguarding procedures.</p></div>
 </div>
 <div class="grid grid-2">
 <div><h2>The safeguarding lessons</h2><ul class="list">{li(sg)}</ul></div>
@@ -673,7 +732,7 @@ def build_assessment():
 </div></section>
 <section class="wrap">
 <div class="file card">
-<h2>The IDEAL Thinkers Assessment Tracker</h2>
+{icon("chart", "e", 30)}<h2>The IDEAL Thinkers Assessment Tracker</h2>
 <p>The tracker records secure, developing or not yet against each thread.</p>
 <p class="file-btns"><a class="btn" href="{t}/copy">Make a copy</a><a class="btn btn-ghost" href="{t}/export?format=xlsx">Download Excel</a><a class="btn btn-ghost" href="{t}/preview">Preview</a></p>
 </div>
@@ -721,8 +780,8 @@ def build_licence():
 
 
 def build_404():
-    body = """<section class="page-head"><div class="wrap"><h1>Page not found</h1>
-<p class="lede">That page isn't here. Try the <a href="/curriculum-map/">curriculum map</a> or the <a href="/">home page</a>.</p></div></section>"""
+    body = f"""<section class="page-head"><div class="wrap head-grid"><div><h1>Page not found</h1>
+<p class="lede">Chatty can't find that page. Try the <a href="/curriculum-map/">curriculum map</a> or the <a href="/">home page</a>.</p></div>{chatty("chatty chatty-head")}</div></section>"""
     if PREVIEW:
         return
     doc = open(os.path.join(ROOT, "index.html"), encoding="utf-8").read()

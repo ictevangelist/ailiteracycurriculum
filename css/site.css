@@ -105,7 +105,7 @@ a.card:hover{transform:translateY(-3px)}
 .loop li{border-radius:var(--r);padding:18px;background:#fff;border:2px solid var(--line);position:relative}
 .loop-n{display:block;font-family:"Exo 2",sans-serif;font-weight:800;font-size:1.3rem;margin-bottom:4px}
 .loop li{color:#fff;border:0}
-.loop-1{background:var(--i)} .loop-2{background:var(--d)} .loop-3{background:var(--a)} .loop-4{background:var(--e)}
+.loop .loop-1{background:var(--i)} .loop .loop-2{background:var(--d)} .loop .loop-3{background:var(--a)} .loop .loop-4{background:var(--e)}
 
 /* phases */
 .phases{list-style:none;padding:0;margin:18px 0;display:grid;gap:10px}
@@ -225,3 +225,29 @@ tr.grp th{background:var(--soft);font-family:"Exo 2",sans-serif}
 .yh .yi{width:72px;height:72px;border-radius:20px}
 .yh h1{margin:0}
 @media (max-width:560px){.yh{flex-direction:column;align-items:flex-start;gap:10px}}
+
+/* icon variants and placements */
+.ic-w{background:rgba(255,255,255,.2);color:#fff}
+.ic-gold{background:var(--gold);color:var(--ink)}
+.lp-title{display:flex;align-items:center;gap:12px}
+.lp-title .ic{width:44px;height:44px;flex:none}
+.loop-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.loop-num{font-family:"Exo 2",sans-serif;font-weight:800;font-size:2rem;line-height:1;opacity:.85}
+.loop-ic{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:12px}
+.card>.ic{margin-bottom:12px}
+.file-h{display:flex;align-items:center;gap:10px}
+.file-h .ic{width:38px;height:38px;border-radius:10px;flex:none}
+
+/* Chatty */
+.chatty{display:block;height:auto}
+.hero-grid{display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center}
+.chatty-hero{width:170px}
+.head-grid{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.chatty-head{width:110px}
+@media (prefers-reduced-motion:no-preference){.chatty-hero{animation:float 5s ease-in-out infinite}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@media (max-width:700px){.hero-grid,.head-grid{grid-template-columns:1fr}.hero-art{display:none}.chatty-head{width:80px}}
+
+/* road map on home */
+.home-map-img{display:block;margin:16px 0}
+.home-map-img img{display:block;width:100%;height:auto;border-radius:var(--r);box-shadow:0 6px 24px rgba(44,62,80,.15)}
