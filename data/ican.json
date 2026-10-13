@@ -1,0 +1,434 @@
+[
+  {
+    "code": "Y1L1",
+    "doc_id": "1_Yx3LkIDP31_brCeai5mCMNq9aRs1NLB-dn2VU6M9OI",
+    "title": "Does it guess?",
+    "big_idea": "Some machines do the same thing every time. Some machines make guesses, and those machines use AI.",
+    "i_can": [
+      "I can say what a guess is.",
+      "I can sort machines into \"same every time\" and \"makes a guess\".",
+      "I can join in when the IDEAL sign pops up."
+    ],
+    "notes": ""
+  },
+  {
+    "code": "Y1L2",
+    "doc_id": "1_VNiB3lced6rR6aHJ8kGbxBazSrqQ4hUqZg46UYaHLc",
+    "title": "Teaching Bleep",
+    "big_idea": "AI learns from lots of examples. Two examples lead to silly guesses; lots of different examples make the guesses better.",
+    "i_can": [
+      "I can say what an example is.",
+      "I can explain why Bleep needs lots of examples.",
+      "I can pick different examples to teach Bleep."
+    ],
+    "notes": ""
+  },
+  {
+    "code": "Y1L3",
+    "doc_id": "1_tDCrmZyEU5HZzxX8M4sFQg79H5Hz0SvfcozWYl2oK4",
+    "title": "The Mystery Rule",
+    "big_idea": "AI spots patterns in examples, then uses them to guess. A person checks the guess. This is the AI Loop: Learn, Spot, Guess, Check.",
+    "i_can": [
+      "I can spot a pattern and a rule.",
+      "I can say the four steps of the AI Loop.",
+      "I can make a secret rule for my partner."
+    ],
+    "notes": ""
+  },
+  {
+    "code": "Y1L4",
+    "doc_id": "15B_svexi93eZgukVh62j-nQj6v9q8OalHYhJRGsgGOc",
+    "title": "Why did it show me that?",
+    "big_idea": "Some AI chooses what we see next. It uses what we picked before to guess what we want, so we can end up seeing only one kind of thing. We can choose on purpose.",
+    "i_can": [
+      "I can say what \"up next\" means.",
+      "I can explain how Bleep chooses what to show me.",
+      "I can choose on purpose what I watch."
+    ],
+    "notes": "Doc file title omits the question mark (\"Y1 L4 Why did it show me that (Lesson Plan)\"); heading at top has it."
+  },
+  {
+    "code": "Y1L5",
+    "doc_id": "1UJNTQTcr60PpuJ2IsHz8n0a4z9LncQMIsnSLWe113AA",
+    "title": "Picture this",
+    "big_idea": "AI can make pictures from our words, but people choose the words. We say who made each picture.",
+    "i_can": [
+      "I can describe a picture using words.",
+      "I can say who made a picture.",
+      "I can choose my words on purpose."
+    ],
+    "notes": ""
+  },
+  {
+    "code": "Y1L6",
+    "doc_id": "1wqOZWZdieTHXucPcFCnOOEPMO13R-73ZESP0Eiit46I",
+    "title": "Boss of the Bot",
+    "big_idea": "People make AI, and people are in charge. A robot helper can do some jobs while a person checks; some jobs are only for people; and some things we never tell a machine.",
+    "i_can": [
+      "I can say who is in charge of AI.",
+      "I can choose good jobs for a robot helper.",
+      "I can help write our Robot Rules."
+    ],
+    "notes": ""
+  },
+  {
+    "code": "Y2L1",
+    "doc_id": "1gGJ1xRWrUduIT66ABsoRPH7j09n4N-LTWqV8FtkXwmg",
+    "title": "Check it!",
+    "big_idea": "AI guesses can be wrong, so people check, fix the mistake and say how they know.",
+    "i_can": [
+      "I can say that AI guesses can be wrong.",
+      "I can check a guess and spot a mistake.",
+      "I can fix a mistake and say how I know."
+    ],
+    "notes": "Doc file title omits the exclamation mark (\"Y2 L1 Check it (Lesson Plan)\"); heading at top has it."
+  },
+  {
+    "code": "Y2L2",
+    "doc_id": "1BN2CGHKFd7-K_iE64t7-aX7nfZjun5BYdhqUQP4cN18",
+    "title": "Missing examples",
+    "big_idea": "When examples are missing, AI gets things wrong for some people and things, and that is not fair. People fix it by adding the missing examples.",
+    "i_can": [
+      "I can say what happens when examples are missing.",
+      "I can find the missing examples in a pack.",
+      "I can explain why AI should work for everyone."
+    ],
+    "notes": ""
+  },
+  {
+    "code": "Y2L3",
+    "doc_id": "1UYW6gKi63SBFI3IhQr3CZgG5ZuoxapyvdCoQ5KsZJjU",
+    "title": "Try it first",
+    "big_idea": "My brain grows when I do the hard thinking. I try it first, and use a helper on purpose: for a clue when I am stuck, or to check my answer after I have tried.",
+    "i_can": [
+      "I can say why my brain grows when I do the hard thinking.",
+      "I can try it first before I get help.",
+      "I can tell a helper from a doer."
+    ],
+    "notes": ""
+  },
+  {
+    "code": "Y2L4",
+    "doc_id": "1chegwYVj5eldII0xip8VR2dlWCJnkwBE1fXG7DLdWsM",
+    "title": "Keep it to yourself",
+    "big_idea": "Some things we never tell a machine. Personal information is private: if a machine asks for it, we stop, keep it to ourselves and tell a grown-up we trust.",
+    "i_can": [
+      "I can say what personal information is.",
+      "I can sort questions into Safe to Say and Keep to Myself.",
+      "I can say what to do if a machine asks for something private."
+    ],
+    "notes": ""
+  },
+  {
+    "code": "Y2L5",
+    "doc_id": "1nmAjqnWo3Td5WeQuj7l1GgYb6a9XWKCvnIUrnTNanLc",
+    "title": "AI Helpers Hall of Fame",
+    "big_idea": "AI helps people in homes, hospitals, farms and streets. Every AI helper makes guesses to help with a job, and people check them.",
+    "i_can": [
+      "I can name AI helpers in homes, hospitals, farms and streets.",
+      "I can say what an AI helper guesses.",
+      "I can say who checks it."
+    ],
+    "notes": ""
+  },
+  {
+    "code": "Y2L6",
+    "doc_id": "1ypRMdtXgU2nLXWF6jbmmFvy6ZHsxyqonxCXGz4SG1ys",
+    "title": "Bleep's Big Day Out",
+    "big_idea": "Using everything we know: people are in charge of AI. We know what it is, use it on purpose, keep information private, check its guesses and do our own thinking first.",
+    "i_can": [
+      "I can use all five IDEAL habits to stay in charge of Bleep.",
+      "I can make a choice and say why.",
+      "I can show what I know about AI."
+    ],
+    "notes": ""
+  },
+  {
+    "code": "Y3L1",
+    "doc_id": "174jxYkzJ9FOPbfl8Mw4LlzDWbrdBKI1z09Vi9qkf-Xk",
+    "title": "What's in your feed?",
+    "big_idea": "Apps learn from what we do, then choose what we see.",
+    "i_can": [
+      "I can explain what a feed is and how an app learns what to show me.",
+      "I can spot the data an app collects when I watch, like or skip.",
+      "I can choose with a reason, instead of letting the feed choose for me."
+    ],
+    "notes": "Doc file title omits the question mark (\"Y3 L1 What's in your feed (Lesson Plan)\"); heading at top has it."
+  },
+  {
+    "code": "Y3L2",
+    "doc_id": "1NmJ66l_wTqRnvHh4AUZP04K3G2Q4Mc7e3x9KsAdyOn8",
+    "title": "Is it always listening?",
+    "big_idea": "Voice assistants collect information about us.",
+    "i_can": [
+      "I can explain how a voice assistant listens for its wake word.",
+      "I can describe what happens to what it hears after it wakes up.",
+      "I can decide what should stay private, for me and for other people."
+    ],
+    "notes": "Doc file title omits the question mark (\"Y3 L2 Is it always listening (Lesson Plan)\"); heading at top has it."
+  },
+  {
+    "code": "Y3L3",
+    "doc_id": "1xrsZtxy1EThl02U7qWxKbkXRIgSSd412SdB3te_iG_Q",
+    "title": "AI that helps everyone",
+    "big_idea": "AI can open doors for people who see, hear or speak differently.",
+    "i_can": [
+      "I can explain what accessible means and why it matters.",
+      "I can describe how captions, read aloud, translation and describing apps help people.",
+      "I can test a translation and spot where the AI got it wrong."
+    ],
+    "notes": ""
+  },
+  {
+    "code": "Y3L4",
+    "doc_id": "103Gs4p9RX5dns_z6jz2yqQCqyFnJWLY_QUn38jXpp5k",
+    "title": "Hint, not answer",
+    "big_idea": "The best help makes you think.",
+    "i_can": [
+      "I can explain the difference between a hint and an answer.",
+      "I can sort help from \"thinks for me\" to \"makes me think\".",
+      "I can write hints that help a partner think."
+    ],
+    "notes": ""
+  },
+  {
+    "code": "Y3L5",
+    "doc_id": "1Ump8x7idfv3Z4k3_yibNfSwYWhK34tJxGuKYdgiUPC4",
+    "title": "Who made it?",
+    "big_idea": "Being honest about when AI has helped.",
+    "i_can": [
+      "I can explain why it is honest to say when AI has helped.",
+      "I can decide how much AI helped with a piece of work.",
+      "I can design a \"Made with AI\" label that tells the truth."
+    ],
+    "notes": "Doc file title omits the question mark (\"Y3 L5 Who made it (Lesson Plan)\"); heading at top has it."
+  },
+  {
+    "code": "Y3L6",
+    "doc_id": "1WmLyqcL1rLxRqu7PK8GZHJ11zFS6tI9iDnd19ovIgZk",
+    "title": "The Helpful Feed",
+    "big_idea": "Designing technology that is good for children.",
+    "i_can": [
+      "I can use what I know about AI to design a feed that is good for children.",
+      "I can explain how each part of my design helps children's wellbeing.",
+      "I can pitch my design and give fair, kind feedback to others."
+    ],
+    "notes": ""
+  },
+  {
+    "code": "Y4L1",
+    "doc_id": "17CDuj3vKNW3qCyWH3RhuPePMorIuY8tZoyCaLcvazuw",
+    "title": "What comes next?",
+    "big_idea": "Chatbots build their answers by predicting the next word, one word at a time. They learn which words go together; they do not understand them the way people do.",
+    "i_can": [
+      "I can explain what a chatbot is.",
+      "I can predict the next word using a pattern.",
+      "I can explain why a word chain can sound right but make no sense."
+    ],
+    "notes": "Doc file title omits the question mark (\"Y4 L1 What comes next (Lesson Plan)\"); heading at top has it."
+  },
+  {
+    "code": "Y4L2",
+    "doc_id": "1IzVQqXMQVrsnZuIXY4N7VwCUJVSnDUw7wR2ZsjqXClU",
+    "title": "Is a chatbot a friend?",
+    "big_idea": "Chatbots can sound friendly, but they do not know you or care about you. Friends and trusted adults do.",
+    "i_can": [
+      "I can explain why a chatbot is not the same as a friend.",
+      "I can compare a chatbot's reply with a friend's reply.",
+      "I can name trusted adults I can talk to."
+    ],
+    "notes": "Doc file title omits the question mark (\"Y4 L2 Is a chatbot a friend (Lesson Plan)\"); heading at top has it."
+  },
+  {
+    "code": "Y4L3",
+    "doc_id": "1Ti15pRJZyAMeWJtfxtUnj2n08t48pnn6UBX3utbP7xw",
+    "title": "Sure isn't right",
+    "big_idea": "Chatbots can sound completely certain and still be wrong, so people must check.",
+    "i_can": [
+      "I can explain why a chatbot can sound sure and still be wrong.",
+      "I can decide whether to Trust it, Test it or Bin it.",
+      "I can use a test, a trusted source or a trusted adult to check an answer."
+    ],
+    "notes": ""
+  },
+  {
+    "code": "Y4L4",
+    "doc_id": "1mGNuLrZsnbpuBN5cRcQBhba4rIwZsIMMbLL0U4H-jpw",
+    "title": "Ask it better",
+    "big_idea": "What you ask a chatbot shapes what you get back. A specific prompt gets a more useful answer, and asking for a reason, not a shortcut, keeps you learning.",
+    "i_can": [
+      "I can explain what a prompt is.",
+      "I can turn a vague prompt into a specific one.",
+      "I can ask for help for a reason, not as a shortcut."
+    ],
+    "notes": ""
+  },
+  {
+    "code": "Y4L5",
+    "doc_id": "1qdL2tZgaCXbOtG92NweVpTs05i5MDJcY4dqLX3RL7Po",
+    "title": "How sure is it?",
+    "big_idea": "AI does not know things; it works out what is most likely from the patterns in its data. Very likely is not the same as certain, so even a 90% sure answer can be wrong.",
+    "i_can": [
+      "I can explain that AI works out what is most likely, not what is certain.",
+      "I can use a confidence score to say how sure I am.",
+      "I can explain why 90% sure can still be wrong."
+    ],
+    "notes": "Doc file title omits the question mark (\"Y4 L5 How sure is it (Lesson Plan)\"); heading at top has it."
+  },
+  {
+    "code": "Y4L6",
+    "doc_id": "1rmb7SCIGDjdX8qRSAn9rt4k2YAmDVJlZLpHyAhGSdbY",
+    "title": "Chatty's Rulebook",
+    "big_idea": "People decide how chatbots behave. Using everything from the unit, pupils write the rules a children's chatbot must follow, explain why each one matters and test them with tricky messages.",
+    "i_can": [
+      "I can use what I know about chatbots to write rules for a children's chatbot.",
+      "I can explain why each rule matters.",
+      "I can test a rulebook with tricky messages."
+    ],
+    "notes": "Big idea is written partly in third person about pupils (\"pupils write the rules...\") rather than as a statement of the idea."
+  },
+  {
+    "code": "Y5L1",
+    "doc_id": "1GKMFIqgQjec_JYaNU9fCV7qURGUVPEKVC5ONEHMoiOs",
+    "title": "Rules or examples?",
+    "big_idea": "Some programs follow rules that people write; AI learns its own patterns from lots of examples. Each way is good at different jobs, and each falls short in different places.",
+    "i_can": [
+      "I can explain the difference between a rule based program and machine learning.",
+      "I can write a rule based sorting program and test it with tricky cases.",
+      "I can say what each way is good at, and where each one falls short."
+    ],
+    "notes": "Doc file title omits the question mark (\"Y5 L1 Rules or examples (Lesson Plan)\"); heading at top has it."
+  },
+  {
+    "code": "Y5L2",
+    "doc_id": "1o76Lj-ktY2D8FBnowH4tI84KzcPKc6zTAE4-P64qado",
+    "title": "Train the sorter",
+    "big_idea": "AI is trained on one set of data and tested on another that it has never seen. Accuracy tells us how often it gets the test right, and the test shows what it really learned.",
+    "i_can": [
+      "I can explain the difference between training data and test data.",
+      "I can write a sorting rule from examples and test it fairly.",
+      "I can work out accuracy and use it to decide how far to trust a model."
+    ],
+    "notes": ""
+  },
+  {
+    "code": "Y5L3",
+    "doc_id": "1cW6uCiXF0zHMkHRzhSAjppjYgHiwyNX7ujl20vMeIHs",
+    "title": "Whose is it anyway?",
+    "big_idea": "Training data comes from people's work and lives, so permission matters.",
+    "i_can": [
+      "I can explain where AI training data comes from.",
+      "I can explain why permission and consent matter.",
+      "I can help write a Permission Charter for using people's work."
+    ],
+    "notes": "Doc file title omits the question mark (\"Y5 L3 Whose is it anyway (Lesson Plan)\"); heading at top has it."
+  },
+  {
+    "code": "Y5L4",
+    "doc_id": "1gMhspdFTiGApJm63k9yWSZTeSNpt2UTtrcETqqnHZeE",
+    "title": "The Welcome Bot",
+    "big_idea": "Unbalanced training data leads to unfair results. An AI can work well for most people and still fail the same people every time.",
+    "i_can": [
+      "I can explain how unbalanced training data can make AI unfair.",
+      "I can choose training data and test who the AI fails.",
+      "I can explain what balanced data is and why it matters."
+    ],
+    "notes": ""
+  },
+  {
+    "code": "Y5L5",
+    "doc_id": "1VBoGGUHyiVVBfmxr05HOIXOvF9BGCQ5MrWJpPZp6JNI",
+    "title": "Climb the STAIR",
+    "big_idea": "AI can help you learn when you plan how to use it, ask it for questions and feedback rather than answers, and then prove the learning is yours without it.",
+    "i_can": [
+      "I can plan how AI could help me with a learning goal.",
+      "I can write a STAIR prompt that asks for questions or feedback, not answers.",
+      "I can prove my learning by explaining it without the tool."
+    ],
+    "notes": ""
+  },
+  {
+    "code": "Y5L6",
+    "doc_id": "1keTw5hPIGR4BXhjtxO-qjfbAYKWoIBnu9usr7WugiHI",
+    "title": "Train a class model",
+    "big_idea": "Building, testing and improving a real AI model: a model is only as good as its data, so we plan it fairly, test it on things it has never seen, find where it falls short and improve the data.",
+    "i_can": [
+      "I can plan a fair, balanced dataset.",
+      "I can train and test a model fairly, and work out its accuracy.",
+      "I can find where our model falls short, improve the data and explain what we did."
+    ],
+    "notes": ""
+  },
+  {
+    "code": "Y6L1",
+    "doc_id": "1rzO69N2LnsHTlZsNlhAtv_y1p-S0etYqpJhPv4ll3OE",
+    "title": "Real or generated?",
+    "big_idea": "AI can generate pictures, voices and videos that look and sound real, so we need a checking routine and firm rules about real people.",
+    "i_can": [
+      "I can explain what generated pictures, voices and videos are, and why they fool us.",
+      "I can use Pause, Look, Ask, Check before I believe or share something.",
+      "I can explain why we never make or share AI pictures of real people without consent."
+    ],
+    "notes": "Doc file title omits the question mark (\"Y6 L1 Real or generated (Lesson Plan)\"); heading at top has it."
+  },
+  {
+    "code": "Y6L2",
+    "doc_id": "1uA39P9OdwW6ZGbCTSWuta7HUfnblnA9sWJ4cs1DaeJw",
+    "title": "Who's missing from the picture?",
+    "big_idea": "AI can repeat and magnify the patterns, and the unfairness, in its data.",
+    "i_can": [
+      "I can use data to compare pictures of people.",
+      "I can explain how AI can repeat and magnify unfair patterns.",
+      "I can suggest fair ways to fix the recipe."
+    ],
+    "notes": "Doc file title omits the question mark (\"Y6 L2 Who's missing from the picture (Lesson Plan)\"); heading at top has it."
+  },
+  {
+    "code": "Y6L3",
+    "doc_id": "1bSN3lhWraiXGsCZyNcvhkYeBlvIFVoR5pJFHy1EQydQ",
+    "title": "AI at work",
+    "big_idea": "AI is changing jobs, and some things stay human.",
+    "i_can": [
+      "I can explain what automation is.",
+      "I can sort the tasks in real jobs into AI could help, AI could do and needs a person.",
+      "I can explain which human skills stay important, including in my own learning."
+    ],
+    "notes": ""
+  },
+  {
+    "code": "Y6L4",
+    "doc_id": "1oInlCPcUX9e8eCx3u37KFZOwR9q19S0bBsJjvTOCzfg",
+    "title": "Is it worth it?",
+    "big_idea": "AI uses energy, water and materials, and can also help the planet, so a deliberate user decides when it is worth the cost.",
+    "i_can": [
+      "I can explain what a data centre is and what AI costs the planet.",
+      "I can decide when using AI is worth its cost.",
+      "I can describe real ways AI is helping the planet."
+    ],
+    "notes": "Doc file title omits the question mark (\"Y6 L4 Is it worth it (Lesson Plan)\"); heading at top has it."
+  },
+  {
+    "code": "Y6L5",
+    "doc_id": "1kykpouqtaFCA85WbIaPENqBLjzr_pNER2_hYhkkLXYE",
+    "title": "Who's responsible?",
+    "big_idea": "When AI or an automatic system makes a decision, people must be able to explain it and answer for it.",
+    "i_can": [
+      "I can explain what accountable and transparent mean.",
+      "I can investigate a real case where an automatic system failed.",
+      "I can decide who is responsible and write recommendations."
+    ],
+    "notes": "Doc file title omits the question mark (\"Y6 L5 Who's responsible (Lesson Plan)\"); heading at top has it."
+  },
+  {
+    "code": "Y6L6",
+    "doc_id": "1_nZubx1Ybfn2Oa3JLT3X9sCLUMishvS7ojqLxGQ8fuQ",
+    "title": "AI for Good Design Studio",
+    "big_idea": "Good AI starts with a real problem and real people. Teams design an AI helper using the AI Loop, test it with an IDEAL audit, pitch it, and each pupil writes an AI learning promise for secondary school.",
+    "i_can": [
+      "I can choose a real problem and decide whether AI is the right tool.",
+      "I can design an AI helper on the AI Loop and test it with an IDEAL audit.",
+      "I can pitch our design, and write my own AI learning promise."
+    ],
+    "notes": "Two-session lesson (Session 1 slides 2 to 10, Session 2 slides 11 to 18) in a single plan; one set of three I can statements covers both. Big idea is partly a description of the activity (\"Teams design...\")."
+  }
+]
