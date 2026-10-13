@@ -673,9 +673,9 @@ def build_using():
 <div class="card"><h2>Inside the files</h2><p>Teacher notes and answers sit in the speaker notes of every slide, and printable resources are at the end of each deck.</p></div>
 </div>
 <h2>Display and posters</h2>
-<div class="grid grid-2">
-<div class="card"><h3>The road map (A3)</h3><p>All 36 lessons on one poster.</p><p><a class="btn" href="https://drive.google.com/uc?export=download&amp;id={ROADMAP_PDF}">Download the A3 road map (PDF)</a></p></div>
-""" + "".join(f'''<div class="card"><h3>{e(t)} (A4)</h3><p><a class="btn" href="{rel(d, 'downloads/' + f)}" download>Download the A4 poster (PDF)</a></p></div>''' for t, f in POSTERS.values()) + f"""
+<div class="grid grid-4 posters-grid">
+<div class="card poster-card"><a class="pc-img pc-wide" href="https://drive.google.com/uc?export=download&amp;id={ROADMAP_PDF}"><img src="{rel(d, 'images/ideal-thinkers-road-map.webp')}" width="2482" height="1754" loading="lazy" alt="Thumbnail of the A3 IDEAL Thinkers road map"></a><h3>The road map (A3)</h3><p>All 36 lessons on one poster.</p><p><a class="btn" href="https://drive.google.com/uc?export=download&amp;id={ROADMAP_PDF}">Download (PDF)</a></p></div>
+""" + "".join(f'''<div class="card poster-card"><a class="pc-img" href="{rel(d, 'downloads/' + f)}" download><img src="{rel(d, 'images/posters/' + k + '.png')}" width="397" height="562" loading="lazy" alt="Thumbnail of the A4 poster: {e(t)}"></a><h3>{e(t)} (A4)</h3><p><a class="btn" href="{rel(d, 'downloads/' + f)}" download>Download (PDF)</a></p></div>''' for k, (t, f) in POSTERS.items()) + f"""
 </div>
 </section>"""
     page("using-the-lessons/", "Using the lessons | IDEAL Thinkers",

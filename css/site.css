@@ -205,3 +205,9 @@ tr.grp th{background:var(--soft);font-family:"Exo 2",sans-serif}
 .yg-n{display:block;font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
 .yg-list{padding-left:0;list-style:none;display:grid;gap:4px}
 .brand-tag{font-size:.82rem;font-weight:500;color:var(--muted)}
+.grid-4{grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
+.poster-card{display:flex;flex-direction:column}
+.poster-card h3{margin-top:14px}
+.poster-card p:last-child{margin-top:auto;margin-bottom:0}
+.pc-img{display:flex;align-items:center;justify-content:center;background:var(--soft);border-radius:12px;padding:12px;aspect-ratio:3/4}
+.pc-img img{max-width:100%;max-height:100%;width:auto;height:auto;border-radius:4px;box-shadow:0 2px 8px rgba(44,62,80,.18)}
