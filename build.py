@@ -12,6 +12,7 @@ PREVIEW = bool(os.environ.get("PREVIEW"))  # preview build: links point at index
 SITE = "https://ailiteracycurriculum.ictevangelist.com"
 DATA = json.load(open(os.path.join(ROOT, "data/curriculum.json"), encoding="utf-8"))
 ICAN = {r["code"]: r["i_can"] for r in json.load(open(os.path.join(ROOT, "data/ican.json"), encoding="utf-8"))}
+SPOTS = json.load(open(os.path.join(ROOT, "data/roadmap-spots.json"), encoding="utf-8"))
 TRACKER = "18lutsh179zuY39y_L8VkzipVrCeSc1RHHuu3eA9D3ZE"
 ROADMAP_PDF = "1xqUuxwFz0IVMQis2mX5iACgGPqD9xT6y"
 LAUNCHED = False  # flip to True at launch: allows indexing and writes the sitemap
@@ -377,14 +378,30 @@ def build_map():
 <p class="bq">Big question: {e(y['big_question'])}</p>
 <div class="grid grid-3">{cards}</div>
 </section>"""
+    spots = "".join(
+        f'<a class="spot" href="{rel(d, LESSONS[c]["path"])}" style="left:{x}%;top:{y}%;width:{w}%;height:{h}%">'
+        f'<span class="vh">Year {LESSONS[c]["year"]["n"]}, Lesson {LESSONS[c]["n"]}: {e(LESSONS[c]["title"])}</span></a>'
+        for c, (x, y, w, h) in SPOTS.items())
+    roadmap = f"""<section class="wrap roadmap-sec">
+<h2>The road map</h2>
+<p>Click any lesson on the road map to open it, or download the A3 poster for your classroom wall.</p>
+<figure class="roadmap">
+<div class="roadmap-frame">
+<img src="../images/ideal-thinkers-road-map.webp" width="2482" height="1754" alt="The IDEAL Thinkers curriculum road map: a road winding through all 36 lessons from Year 1 to Year 6, ending at secondary school, with the IDEAL habits, the AI Loop and the lesson shape along the bottom.">
+{spots}
+</div>
+<figcaption><a class="btn" href="https://drive.google.com/uc?export=download&amp;id={ROADMAP_PDF}">Download the A3 road map (PDF)</a></figcaption>
+</figure>
+</section>"""
     body = f"""<section class="page-head"><div class="wrap">
 <p class="eyebrow">Curriculum map</p>
 <h1>All 36 lessons at a glance</h1>
 <p class="lede">Six lessons per year, planned as a half-term unit. Cross-strand links: <abbr title="Digital Citizenship">DC</abbr> Digital Citizenship, <abbr title="Digital Literacy">DL</abbr> Digital Literacy, <abbr title="Computer Science">CS</abbr> Computer Science.</p>
-{filters}
-<p class="f-count" aria-live="polite"></p>
 </div></section>
-<div class="wrap map">{secs}</div>
+{roadmap}
+<div class="wrap map"><h2 class="map-h">Every lesson</h2>{filters}
+<p class="f-count" aria-live="polite"></p>
+{secs}</div>
 <script src="../js/map.js" defer></script>"""
     page("curriculum-map/", "Curriculum map: all 36 lessons | IDEAL Thinkers",
          "Every IDEAL Thinkers lesson from Year 1 to Year 6, with its big idea, IDEAL letters and links to the other strands.", body, d)
