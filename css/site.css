@@ -211,3 +211,9 @@ tr.grp th{background:var(--soft);font-family:"Exo 2",sans-serif}
 .poster-card p:last-child{margin-top:auto;margin-bottom:0}
 .pc-img{display:flex;align-items:center;justify-content:center;background:var(--soft);border-radius:12px;padding:12px;aspect-ratio:3/4}
 .pc-img img{max-width:100%;max-height:100%;width:auto;height:auto;border-radius:4px;box-shadow:0 2px 8px rgba(44,62,80,.18)}
+.card h2:first-child,.card h3:first-child{margin-top:0}
+.how-cards{grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr))}
+.how-card h2{font-size:1.35rem;margin:14px 0 .4em}
+.how-card p:last-child{margin-bottom:0}
+.ic{display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:14px;color:#fff}
+.ic-i{background:var(--i)} .ic-a{background:var(--a)} .ic-e{background:var(--e)} .ic-d{background:var(--d)} .ic-l{background:var(--l)}

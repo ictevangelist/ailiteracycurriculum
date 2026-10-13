@@ -667,10 +667,10 @@ def build_using():
 <p class="lede">Each lesson has one lesson plan and one slide deck. Everything a teacher needs is inside those two files.</p>
 </div></section>
 <section class="wrap">
-<div class="grid grid-3">
-<div class="card"><h2>Make a copy</h2><p>On any lesson page, choose Make a copy and the file is copied into your own Google Drive. Your copy is yours to edit.</p></div>
-<div class="card"><h2>Download</h2><p>On Microsoft 365? Download the slides as PowerPoint and the plan as Word instead.</p></div>
-<div class="card"><h2>Inside the files</h2><p>Teacher notes and answers sit in the speaker notes of every slide, and printable resources are at the end of each deck.</p></div>
+<div class="grid grid-3 how-cards">
+<div class="card how-card"><span class="ic ic-i" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></span><h2>Make a copy</h2><p>On any lesson page, choose Make a copy and the file is copied into your own Google Drive. Your copy is yours to edit.</p></div>
+<div class="card how-card"><span class="ic ic-a" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg></span><h2>Download</h2><p>On Microsoft 365? Download the slides as PowerPoint and the plan as Word instead.</p></div>
+<div class="card how-card"><span class="ic ic-e" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 13h8"/><path d="M8 17h5"/></svg></span><h2>Inside the files</h2><p>Teacher notes and answers sit in the speaker notes of every slide, and printable resources are at the end of each deck.</p></div>
 </div>
 <h2>Display and posters</h2>
 <div class="grid grid-4 posters-grid">
