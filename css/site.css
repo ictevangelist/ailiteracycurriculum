@@ -217,3 +217,11 @@ tr.grp th{background:var(--soft);font-family:"Exo 2",sans-serif}
 .how-card p:last-child{margin-bottom:0}
 .ic{display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:14px;color:#fff}
 .ic-i{background:var(--i)} .ic-a{background:var(--a)} .ic-e{background:var(--e)} .ic-d{background:var(--d)} .ic-l{background:var(--l)}
+.yi{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:16px;color:#fff;flex:none}
+.yi1{background:var(--y1)} .yi2{background:var(--y2)} .yi3{background:var(--y3)} .yi4{background:var(--y4)} .yi5{background:var(--y5)} .yi6{background:var(--y6)}
+.year-card .yi{margin-bottom:8px}
+.yg .yi{margin-bottom:12px}
+.yh{display:flex;align-items:center;gap:16px;margin-bottom:.4em}
+.yh .yi{width:72px;height:72px;border-radius:20px}
+.yh h1{margin:0}
+@media (max-width:560px){.yh{flex-direction:column;align-items:flex-start;gap:10px}}

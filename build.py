@@ -189,8 +189,30 @@ def lesson_card(depth, l, show_year=False):
 </article>"""
 
 
+YEAR_ICONS = {
+    # Y1 Machines That Guess: a robot with a question mark
+    1: '<rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 8V4"/><circle cx="12" cy="3" r="1"/><path d="M9.5 12.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .8-1 1.4"/><path d="M12 18.5h.01"/>',
+    # Y2 Using AI Wisely: a shield with a tick
+    2: '<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/>',
+    # Y3 AI in Everyday Life: a house with a signal
+    3: '<path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9.5 16a3.5 3.5 0 0 1 5 0"/><path d="M12 18.5h.01"/>',
+    # Y4 Machines That Talk: speech bubbles
+    4: '<path d="M4 5h11a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H9l-4 3v-3H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/><path d="M19 9h1a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-1v3l-3-3h-4"/>',
+    # Y5 Data, Training and Fairness: balance scales
+    5: '<path d="M12 3v18"/><path d="M7 21h10"/><path d="M5 7h14"/><path d="M5 7l-3 7a3.5 3.5 0 0 0 6 0z"/><path d="M19 7l-3 7a3.5 3.5 0 0 0 6 0z"/>',
+    # Y6 AI, Society and the Future: a globe
+    6: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18"/><path d="M12 3a14 14 0 0 0 0 18"/>',
+}
+
+
+def year_icon(n, size=34):
+    return (f'<span class="yi yi{n}" aria-hidden="true"><svg viewBox="0 0 24 24" width="{size}" height="{size}" fill="none" '
+            f'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">{YEAR_ICONS[n]}</svg></span>')
+
+
 def year_card(depth, y):
     return f"""<a class="card year-card y{y['n']}" href="{rel(depth, y['path'])}">
+{year_icon(y['n'])}
 <span class="yc-n">Year {y['n']}</span>
 <span class="yc-t">{e(y['title'])}</span>
 <span class="yc-q">{e(y['big_question'])}</span>
@@ -469,7 +491,7 @@ def build_years():
         cards = "".join(lesson_card(d, l) for l in y["lessons"])
         body = f"""<section class="page-head year-head"><div class="wrap">
 <p class="eyebrow"><a href="../curriculum-map/">Curriculum map</a> / Year {y['n']}</p>
-<h1>Year {y['n']}: {e(y['title'])}</h1>
+<div class="yh">{year_icon(y["n"], 44)}<h1>Year {y['n']}: {e(y['title'])}</h1></div>
 <p class="bq big">Big question: {e(y['big_question'])}</p>
 <p>{' '.join(where)}</p>
 <p><a class="btn btn-ghost" href="https://drive.google.com/drive/folders/{y['folder']}">Open the Year {y['n']} folder in Google Drive</a></p>
@@ -488,6 +510,7 @@ def build_year_groups():
         chal = ' <span class="tag tag-challenge">IDEAL Challenge</span>'
         items = "".join(f'<li><a href="{rel(d, l["path"])}">{l["n"]}. {e(l["title"])}</a>{chal if l["challenge"] else ""}</li>' for l in y["lessons"])
         blocks += f"""<article class="card yg y{y['n']}">
+{year_icon(y['n'])}
 <h2><a href="{rel(d, y['path'])}"><span class="yg-n">Year {y['n']}</span> {e(y['title'])}</a></h2>
 <p class="bq">{e(y['big_question'])}</p>
 <ol class="yg-list">{items}</ol>
