@@ -13,6 +13,7 @@ SITE = "https://ailiteracycurriculum.ictevangelist.com"
 DATA = json.load(open(os.path.join(ROOT, "data/curriculum.json"), encoding="utf-8"))
 ICAN = {r["code"]: r["i_can"] for r in json.load(open(os.path.join(ROOT, "data/ican.json"), encoding="utf-8"))}
 SPOTS = json.load(open(os.path.join(ROOT, "data/roadmap-spots.json"), encoding="utf-8"))
+EXTRA_SPOTS = json.load(open(os.path.join(ROOT, "data/roadmap-extra-spots.json"), encoding="utf-8"))
 TRACKER = "18lutsh179zuY39y_L8VkzipVrCeSc1RHHuu3eA9D3ZE"
 ROADMAP_PDF = "1xqUuxwFz0IVMQis2mX5iACgGPqD9xT6y"
 LAUNCHED = False  # flip to True at launch: allows indexing and writes the sitemap
@@ -92,6 +93,9 @@ def page(path, title, desc, body, depth, year=None):
     nav = "".join(
         f'<a href="{rel(depth, p)}"{cur if p == path else ""}>{n}</a>' for p, n in NAV)
     ycls = f' class="y{year}"' if year else ""
+    years_nav = "".join(
+        f'<a class="yb y{y["n"]}{" yb-on" if path.startswith(y["path"]) else ""}" href="{rel(depth, y["path"])}"{cur if path == y["path"] else ""}>'
+        f'<span class="yb-n">Year {y["n"]}</span><span class="yb-t">{e(y["title"])}</span></a>' for y in DATA["years"])
     doc = f"""<!doctype html>
 <html lang="en-GB">
 <head>
@@ -117,6 +121,7 @@ def page(path, title, desc, body, depth, year=None):
 <a class="brand" href="{rel(depth)}"><span class="brand-mark" aria-hidden="true">{''.join(f'<span class="b b-{x}">{x}</span>' for x in 'IDEAL')}</span><span class="brand-name">IDEAL Thinkers</span></a>
 <nav class="nav" aria-label="Main">{nav}</nav>
 </div>
+<nav class="years-bar" aria-label="Year groups"><div class="wrap years-in">{years_nav}</div></nav>
 </header>
 <main id="main">
 {body}
@@ -295,10 +300,26 @@ def build_how():
 </section>
 <section class="band"><div class="wrap">
 <h2>Every lesson has the same shape</h2>
-<p>A consistent structure lowers cognitive load for pupils and teachers alike. Lessons are designed for 60 minutes and flex to 45 by trimming the Try It phase. Individual lessons adjust these phase timings to suit their activities, and some add a short real-life story, but every plan still totals 60 minutes.</p>
-<ol class="phases">{ph}</ol>
+<p>A consistent structure lowers cognitive load for pupils and teachers alike: Remember When, Link It, Learn It, Try It, Own It, IDEAL Check and Exit Ticket, in 60 minutes.</p>
+<p><a class="btn" href="every-lesson/">See every lesson's shape</a></p>
+</div></section>
+"""
+    page("how-it-works/", "How IDEAL Thinkers works: the AI Loop, IDEAL and Learning Well",
+         "The three threads that run through every IDEAL Thinkers lesson, and the seven phase lesson shape.", body, d)
+
+    # Every lesson
+    body = f"""<section class="page-head"><div class="wrap">
+<p class="eyebrow"><a href="../">How it works</a> / Every lesson</p>
+<h1>Every lesson has the same shape</h1>
+<p class="lede">A consistent structure lowers cognitive load for pupils and teachers alike. Lessons are designed for 60 minutes and flex to 45 by trimming the Try It phase.</p>
 </div></section>
 <section class="wrap">
+<ol class="phases">{ph}</ol>
+<p>Individual lessons adjust these phase timings to suit their activities, and some add a short real-life story, but every plan still totals 60 minutes.</p>
+<p class="pill-line"><span class="tag">Retrieve, never re-teach</span><span class="tag">Slides build on click</span><span class="tag">Unplugged first</span><span class="tag">No pupil accounts</span></p>
+<p>Lesson 6 each year is the IDEAL Challenge and the end of unit assessment.</p>
+<h2>IDEAL moments</h2>
+<p>In each lesson, the day's IDEAL habit appears as a cue only on the click where pupils actually practise it. When the cue appears, the teacher points to it, the class says the habit together, and the teacher asks the action question given in the speaker notes. <a href="../ideal/">More on IDEAL</a></p>
 <h2>How it's built</h2>
 <div class="grid grid-3">
 <div class="card"><h3>Grounded in cognitive science</h3><p>Spaced retrieval, concrete before abstract, worked examples and modelling, explicit vocabulary teaching, dual coding through consistent visual models, and frequent low stakes checks for understanding.</p></div>
@@ -307,8 +328,8 @@ def build_how():
 </div>
 <p>Teacher-facing labels and sources sit in the speaker notes, not on the screen. New ideas and vocabulary are taught where pupils first need them; earlier learning is retrieved, not re-taught.</p>
 </section>"""
-    page("how-it-works/", "How IDEAL Thinkers works: the AI Loop, IDEAL and Learning Well",
-         "The three threads that run through every IDEAL Thinkers lesson, and the seven phase lesson shape.", body, d)
+    page("how-it-works/every-lesson/", "Every lesson: the seven phase lesson shape | IDEAL Thinkers",
+         "Every IDEAL Thinkers lesson follows the same seven phases: Remember When, Link It, Learn It, Try It, Own It, IDEAL Check and Exit Ticket.", body, 2)
 
     # AI Loop
     rows = [("Learn", "It is given lots of examples (data), chosen by people.", "Year 1: it learns from lots of examples. Year 5: training data, test data, permission and fairness."),
@@ -336,6 +357,7 @@ def build_how():
 <p class="lede">My framework for informed learning with AI. Every lesson is tagged with the IDEAL letters it develops, and the wording grows with the children.</p>
 </div></section>
 <section class="wrap">
+<h2>The habits grow with the children</h2>
 {ideal_table()}
 <h2>IDEAL moments</h2>
 <p>IDEAL is not a logo in the corner of every slide. In each lesson, the day's IDEAL habit appears as a cue only on the click where pupils actually practise it, for example "A: Check it before you trust it" just as pupils go looking for evidence. When the cue appears, the teacher points to it, the class says the habit together, and the teacher asks the action question given in the speaker notes. Every lesson plan lists its IDEAL moments, with slide numbers and what to say. The routine is taught to pupils in <a href="../../year-1/does-it-guess/">Year 1 Lesson 1</a> and used in every lesson after that, so pupils learn to link each habit to the moment they use it.</p>
@@ -382,6 +404,15 @@ def build_map():
         f'<a class="spot" href="{rel(d, LESSONS[c]["path"])}" style="left:{x}%;top:{y}%;width:{w}%;height:{h}%">'
         f'<span class="vh">Year {LESSONS[c]["year"]["n"]}, Lesson {LESSONS[c]["n"]}: {e(LESSONS[c]["title"])}</span></a>'
         for c, (x, y, w, h) in SPOTS.items())
+    targets = {f"year-{y['n']}": (y["path"], f"Year {y['n']}: {y['title']}") for y in DATA["years"]}
+    targets.update({"The AI Loop": ("how-it-works/ai-loop/", "The AI Loop"),
+                    "The habits grow with the children": ("how-it-works/ideal/", "The IDEAL habits grow with the children"),
+                    "Every lesson": ("how-it-works/every-lesson/", "Every lesson"),
+                    "IDEAL": ("how-it-works/ideal/", "IDEAL: how we use AI well")})
+    spots += "".join(
+        f'<a class="spot" href="{rel(d, targets[k][0])}" style="left:{x}%;top:{y}%;width:{w}%;height:{h}%">'
+        f'<span class="vh">{e(targets[k][1])}</span></a>'
+        for k, (x, y, w, h) in EXTRA_SPOTS.items())
     roadmap = f"""<section class="wrap roadmap-sec">
 <h2>The road map</h2>
 <p>Click any lesson on the road map to open it, or download the A3 poster for your classroom wall.</p>
