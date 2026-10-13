@@ -535,7 +535,7 @@ def build_lessons():
             nav += f'<a class="pn-prev" href="{rel(d, prev_l["path"])}"><span>Previous</span>Lesson {prev_l["n"]}: {e(prev_l["title"])}</a>' if prev_l else '<span></span>'
             nav += f'<a class="pn-next" href="{rel(d, next_l["path"])}"><span>Next</span>Lesson {next_l["n"]}: {e(next_l["title"])}</a>' if next_l else f'<a class="pn-next" href="{rel(d, y["path"])}"><span>Back to</span>Year {y["n"]}: {e(y["title"])}</a>'
             nav += "</nav>"
-            time = "Two sessions" if l["sessions"] else "60 minutes, or 45 by trimming Try It"
+            time = "Two sessions" if l["sessions"] else "60 minutes, with a 45 minute version in the plan"
             body = f"""<section class="page-head lesson-head"><div class="wrap">
 <p class="eyebrow"><a href="{rel(d, 'curriculum-map/')}">Curriculum map</a> / <a href="{rel(d, y['path'])}">Year {y['n']}: {e(y['title'])}</a></p>
 <p class="kicker">Year {y['n']}, Lesson {l['n']} {ch}{sess}</p>
