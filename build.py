@@ -287,9 +287,6 @@ def build_home():
 <div class="hero-art">{chatty("chatty chatty-hero", "Chatty, the class chatbot from the Year 4 lessons")}</div>
 </div>
 </section>
-<section class="wrap">
-{LICENCE_PANEL.format(href='licence/')}
-</section>
 <section class="band">
 <div class="wrap">
 <h2>Six units, one for each year</h2>
@@ -353,6 +350,9 @@ def build_home():
 </div>
 <p>Wider curriculum: RSHE, science, maths, English, geography and careers links are flagged in each lesson plan.</p>
 </div>
+</section>
+<section class="wrap home-licence">
+{LICENCE_PANEL.format(href='licence/')}
 </section>"""
     page("", "IDEAL Thinkers: AI Literacy Curriculum for Primary Schools",
          "IDEAL Thinkers is a free AI literacy curriculum for Year 1 to Year 6 by Mark Anderson: 36 ready to teach lessons, unplugged first, with lesson plans and slides.",
