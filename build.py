@@ -17,6 +17,13 @@ EXTRA_SPOTS = json.load(open(os.path.join(ROOT, "data/roadmap-extra-spots.json")
 TRACKER = "18lutsh179zuY39y_L8VkzipVrCeSc1RHHuu3eA9D3ZE"
 ROADMAP_PDF = "1xqUuxwFz0IVMQis2mX5iACgGPqD9xT6y"
 LAUNCHED = False  # flip to True at launch: allows indexing and writes the sitemap
+BUILT = "2026-10-14"  # sitemap lastmod
+LICENCE_URL = "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+AGES = {1: "5-6", 2: "6-7", 3: "7-8", 4: "8-9", 5: "9-10", 6: "10-11"}
+AUTHOR = {"@type": "Person", "@id": SITE + "/#mark", "name": "Mark Anderson", "honorificSuffix": "FCCT",
+          "url": "https://ictevangelist.com/",
+          "sameAs": ["https://www.linkedin.com/in/themarkanderson/", "https://bsky.app/profile/ictevangelist.bsky.social", "https://twitter.com/ictevangelist"]}
+COURSE_ID = SITE + "/#curriculum"
 
 e = html.escape
 IDEAL = [
@@ -86,8 +93,16 @@ NAV = [("", "Home"), ("how-it-works/", "How it works"), ("year-groups/", "Year g
        ("safety/", "Safety"), ("using-the-lessons/", "Using the lessons")]
 
 
-def page(path, title, desc, body, depth, year=None):
+def page(path, title, desc, body, depth, year=None, ld=None, crumbs=None):
     canon = SITE + "/" + path
+    graph = list(ld or [])
+    if crumbs:
+        trail = [("Home", "")] + crumbs
+        graph.append({"@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": i + 1, "name": n, "item": SITE + "/" + p} for i, (n, p) in enumerate(trail)]})
+    ldj = ""
+    if graph:
+        ldj = '<script type="application/ld+json">' + json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False).replace("</", "<\\/") + "</script>\n"
     robots = "" if LAUNCHED else '<meta name="robots" content="noindex">\n'
     cur = ' aria-current="page"'
     nav = "".join(
@@ -108,7 +123,15 @@ def page(path, title, desc, body, depth, year=None):
 <meta property="og:description" content="{e(desc)}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{canon}">
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<meta property="og:site_name" content="IDEAL Thinkers">
+<meta property="og:locale" content="en_GB">
+<meta property="og:image" content="{SITE}/images/social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="IDEAL Thinkers: a free AI literacy and fluency curriculum for primary schools, Year 1 to Year 6">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="author" content="Mark Anderson">
+{ldj}<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{rel(depth, 'css/site.css')}">
@@ -268,6 +291,9 @@ def year_card(depth, y):
 
 
 # ---------- Home ----------
+FAQ = [('What is IDEAL Thinkers?', "A free AI literacy and fluency curriculum for primary schools, from Year 1 to Year 6. There are 36 lessons, six for each year group, and every lesson has a lesson plan and a slide deck. It's the AI Literacy strand of the Primary Digital Cognition Curriculum from The EdTech Playbook."), ('Is it free?', "Yes, for schools and teachers. It's licensed under CC BY-NC-SA 4.0, so you can copy and adapt it for your own teaching as long as you credit it and share any adapted versions under the same licence. It cannot be used for commercial purposes."), ('Do pupils need devices or their own AI accounts?', "No. Every lesson can be taught without pupil devices, and pupils never need an AI account; most generative AI tools have a minimum age of 13. Where a demonstration helps, the teacher runs it on a school approved tool, and every deck includes prepared examples in case a live demonstration isn't possible on the day."), ('How long is each lesson?', "60 minutes, and every lesson plan includes a 45 minute version. Each year's six lessons are planned as a half-term unit, and the sixth lesson is an IDEAL Challenge that doubles as the end of unit assessment."), ('Does it cover the National Curriculum for computing?', 'It addresses the KS1 and KS2 statements on using technology safely, respectfully and responsibly, keeping personal information private, recognising uses of information technology beyond school, understanding how search results are selected and ranked, and being discerning in evaluating digital content. It will be mapped against the revised computing curriculum once the draft is published.'), ('Can I use it with Microsoft 365?', 'Yes. Every slide deck downloads as PowerPoint and every lesson plan as Word, and on Google Workspace you can make your own copy in Google Drive.')]
+
+
 def build_home():
     d = 0
     years = "".join(year_card(d, y) for y in DATA["years"])
@@ -351,12 +377,28 @@ def build_home():
 <p>Wider curriculum: RSHE, science, maths, English, geography and careers links are flagged in each lesson plan.</p>
 </div>
 </section>
+<section class="wrap home-faq">
+<h2>Common questions</h2>
+{"".join(f'<div class="faq"><h3>{e(q)}</h3><p>{e(a)}</p></div>' for q, a in FAQ)}
+</section>
 <section class="wrap home-licence">
 {LICENCE_PANEL.format(href='licence/')}
 </section>"""
-    page("", "IDEAL Thinkers: AI Literacy Curriculum for Primary Schools",
+    page("", "IDEAL Thinkers: Free AI Literacy Curriculum for Primary Schools",
          "IDEAL Thinkers is a free AI literacy curriculum for Year 1 to Year 6 by Mark Anderson: 36 ready to teach lessons, unplugged first, with lesson plans and slides.",
-         body, d)
+         body, d, ld=[
+             {"@type": "WebSite", "@id": SITE + "/#site", "url": SITE + "/", "name": "IDEAL Thinkers", "inLanguage": "en-GB", "publisher": {"@id": AUTHOR["@id"]}},
+             AUTHOR,
+             {"@type": "Course", "@id": COURSE_ID, "name": "IDEAL Thinkers", "url": SITE + "/",
+              "description": "A free AI literacy and fluency curriculum for primary schools, Year 1 to Year 6: 36 lessons, each with a lesson plan and slides, unplugged first.",
+              "provider": {"@id": AUTHOR["@id"]}, "author": {"@id": AUTHOR["@id"]}, "inLanguage": "en-GB",
+              "educationalLevel": "Primary school, Key Stage 1 and Key Stage 2 (Year 1 to Year 6)", "typicalAgeRange": "5-11",
+              "isAccessibleForFree": True, "license": LICENCE_URL, "copyrightHolder": {"@id": AUTHOR["@id"]}, "copyrightYear": 2026,
+              "audience": {"@type": "EducationalAudience", "educationalRole": "teacher"},
+              "teaches": ["How AI works: learn, spot, guess, check", "Questioning and checking what AI tells you", "Using AI ethically, safely and on purpose", "Keeping your own thinking in charge when learning with AI"],
+              "hasPart": [{"@type": "Course", "name": f"Year {y['n']}: {y['title']}", "url": SITE + "/" + y["path"]} for y in DATA["years"]]},
+             {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in FAQ]},
+         ])
 
 
 # ---------- How it works ----------
@@ -558,8 +600,14 @@ def build_years():
 <section class="wrap"><div class="grid grid-3">{cards}</div>
 <p class="note">Lesson 6 is the IDEAL Challenge, where pupils pull the unit together to make or decide something. It doubles as the end of unit assessment task.</p>
 </section>"""
-        page(y["path"], f"Year {y['n']}: {y['title']} | IDEAL Thinkers",
-             f"Year {y['n']} AI literacy unit, {y['title']}: {y['big_question']} Six lessons with plans and slides.", body, d, y["n"])
+        page(y["path"], f"Year {y['n']} AI literacy: {y['title']} | IDEAL Thinkers",
+             f"Year {y['n']} AI literacy unit, {y['title']}: {y['big_question']} Six free lessons with plans and slides.", body, d, y["n"],
+             ld=[{"@type": "Course", "@id": SITE + "/" + y["path"] + "#unit", "name": f"Year {y['n']}: {y['title']}", "url": SITE + "/" + y["path"],
+                  "description": f"Year {y['n']} AI literacy unit. Big question: {y['big_question']}", "isPartOf": {"@id": COURSE_ID},
+                  "provider": {"@id": AUTHOR["@id"]}, "inLanguage": "en-GB", "educationalLevel": f"Year {y['n']}", "typicalAgeRange": AGES[y["n"]],
+                  "isAccessibleForFree": True, "license": LICENCE_URL,
+                  "hasPart": [{"@type": "LearningResource", "name": l["title"], "url": SITE + "/" + l["path"]} for l in y["lessons"]]}],
+             crumbs=[(f"Year {y['n']}: {y['title']}", y["path"])])
 
 
 def build_year_groups():
@@ -646,8 +694,15 @@ def build_lessons():
 </aside>
 </section>
 <div class="wrap">{nav}</div>"""
-            page(l["path"], f"{l['title']} (Year {y['n']}, Lesson {l['n']}) | IDEAL Thinkers",
-                 f"Year {y['n']} AI literacy lesson: {l['big_idea']} Free lesson plan and slides.", body, d, y["n"])
+            page(l["path"], f"{l['title']} | Year {y['n']} AI literacy lesson | IDEAL Thinkers",
+                 f"Year {y['n']} AI literacy lesson: {l['big_idea']} Free lesson plan and slides.", body, d, y["n"],
+                 ld=[{"@type": "LearningResource", "name": l["title"], "url": SITE + "/" + l["path"],
+                      "description": f"{l['big_idea']} {l['activity']}", "learningResourceType": ["Lesson plan", "Presentation"],
+                      "educationalLevel": f"Year {y['n']}", "typicalAgeRange": AGES[y["n"]], **({} if l["sessions"] else {"timeRequired": "PT60M"}),
+                      "teaches": l["i_can"], "inLanguage": "en-GB", "isAccessibleForFree": True, "license": LICENCE_URL,
+                      "author": {"@id": AUTHOR["@id"]}, "isPartOf": {"@id": SITE + "/" + y["path"] + "#unit"},
+                      "audience": {"@type": "EducationalAudience", "educationalRole": "teacher"}}],
+                 crumbs=[(f"Year {y['n']}: {y['title']}", y["path"]), (l["title"], l["path"])])
 
 
 # ---------- Other pages ----------
@@ -796,11 +851,33 @@ def build_meta():
         return
     if LAUNCHED:
         open(os.path.join(ROOT, "robots.txt"), "w").write(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n")
-        urls = "".join(f"<url><loc>{SITE}/{p}</loc></url>" for p in PAGES)
+        urls = "".join(f"<url><loc>{SITE}/{p}</loc><lastmod>{BUILT}</lastmod></url>" for p in PAGES)
         open(os.path.join(ROOT, "sitemap.xml"), "w").write(
             f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>\n')
     else:
         open(os.path.join(ROOT, "robots.txt"), "w").write("User-agent: *\nDisallow: /\n")
+    build_llms()
+
+
+def build_llms():
+    """llms.txt: a plain summary and page list for AI assistants and answer engines."""
+    t = ["# IDEAL Thinkers", "",
+         "> A free AI literacy and fluency curriculum for primary schools in England, Year 1 to Year 6, by Mark Anderson FCCT (ictevangelist.com). "
+         "36 lessons, six per year group, each with a lesson plan and slides. Unplugged first: every lesson can be taught without pupil devices, and pupils never need AI accounts. "
+         "Licensed CC BY-NC-SA 4.0: free for schools and teachers, not for commercial use. Credit: \"IDEAL Thinkers by Mark Anderson, ictevangelist.com\".", "",
+         "IDEAL Thinkers is the AI Literacy strand of the Primary Digital Cognition Curriculum from The EdTech Playbook. "
+         "Three threads run through every lesson: the AI Loop (Learn, Spot, Guess, Check), the IDEAL habits (Informed, Deliberate, Ethical, Accurate, Learning) and Learning Well (Try it first; Hint, not answer; Plan, use, prove).", "",
+         "## How it works",
+         f"- [How it works]({SITE}/how-it-works/)", f"- [The AI Loop]({SITE}/how-it-works/ai-loop/)", f"- [IDEAL]({SITE}/how-it-works/ideal/)",
+         f"- [Learning Well]({SITE}/how-it-works/learning-well/)", f"- [Every lesson]({SITE}/how-it-works/every-lesson/)",
+         f"- [Curriculum map]({SITE}/curriculum-map/)", f"- [Safety and safeguarding]({SITE}/safety/)", f"- [Progression]({SITE}/progression/)",
+         f"- [Assessment]({SITE}/assessment/)", f"- [Using the lessons]({SITE}/using-the-lessons/)", f"- [Licence]({SITE}/licence/)", ""]
+    for y in DATA["years"]:
+        t.append(f"## Year {y['n']}: {y['title']} (ages {AGES[y['n']]})")
+        t.append(f"Big question: {y['big_question']} [Unit overview]({SITE}/{y['path']})")
+        t += [f"- [Lesson {l['n']}: {l['title']}]({SITE}/{l['path']}): {l['big_idea']}" for l in y["lessons"]]
+        t.append("")
+    open(os.path.join(ROOT, "llms.txt"), "w", encoding="utf-8").write("\n".join(t))
 
 
 if __name__ == "__main__":
