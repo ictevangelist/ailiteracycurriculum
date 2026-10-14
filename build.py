@@ -16,7 +16,7 @@ SPOTS = json.load(open(os.path.join(ROOT, "data/roadmap-spots.json"), encoding="
 EXTRA_SPOTS = json.load(open(os.path.join(ROOT, "data/roadmap-extra-spots.json"), encoding="utf-8"))
 TRACKER = "18lutsh179zuY39y_L8VkzipVrCeSc1RHHuu3eA9D3ZE"
 ROADMAP_PDF = "1xqUuxwFz0IVMQis2mX5iACgGPqD9xT6y"
-LAUNCHED = False  # flip to True at launch: allows indexing and writes the sitemap
+LAUNCHED = True  # flip to True at launch: allows indexing and writes the sitemap
 BUILT = "2026-10-14"  # sitemap lastmod
 LICENCE_URL = "https://creativecommons.org/licenses/by-nc-sa/4.0/"
 AGES = {1: "5-6", 2: "6-7", 3: "7-8", 4: "8-9", 5: "9-10", 6: "10-11"}

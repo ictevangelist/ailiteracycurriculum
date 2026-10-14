@@ -1,2 +1,4 @@
 User-agent: *
-Disallow: /
+Allow: /
+
+Sitemap: https://ailiteracycurriculum.ictevangelist.com/sitemap.xml
