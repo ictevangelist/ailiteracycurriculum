@@ -349,7 +349,7 @@ def build_home():
 </article>
 <article class="card fw">
 {icon("layers", "e")}<h3>SEAME</h3>
-<p>SEAME is a framework from the Raspberry Pi Computing Education Research Centre that sorts what we teach about AI into four levels: social and ethical, applications, models and engines (how AI actually works). Lessons cover all four levels of the model: social and ethical, applications, models and, through unplugged activities, engines.</p>
+<p>SEAME is a framework from the Raspberry Pi Computing Education Research Centre that sorts what we teach about AI into four levels: social and ethical, applications, models and engines (how AI works). Lessons cover all four levels of the model: social and ethical, applications, models and, through unplugged activities, engines.</p>
 </article>
 <article class="card fw">
 {icon("calendar", "a")}<h3>The new computing curriculum</h3>
