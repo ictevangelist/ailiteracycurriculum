@@ -335,20 +335,6 @@ def build_home():
 <dt>Is it safe?</dt><dd><a href="safety/">How safeguarding works</a></dd>
 </dl>
 </section>
-<section class="band">
-<div class="wrap">
-<h2>Six units, one for each year</h2>
-<p>Six lessons per year, planned as a half-term unit. The sixth lesson in each year is an IDEAL Challenge, where pupils pull the unit together to make or decide something.</p>
-<div class="grid grid-3">{years}</div>
-</div>
-</section>
-<section class="wrap home-map">
-<h2>The road map</h2>
-<p>All 36 lessons on one page, from Year 1 to secondary school.</p>
-<a class="home-map-img" href="curriculum-map/"><img src="images/ideal-thinkers-road-map.webp" width="2482" height="1754" loading="lazy" alt="The IDEAL Thinkers curriculum road map, showing all 36 lessons from Year 1 to Year 6"></a>
-<p><a class="btn" href="curriculum-map/">Explore the curriculum map</a></p>
-<p class="more"><a href="progression/">See how the learning builds from Year 1 to Year 6</a></p>
-</section>
 <section class="wrap">
 <h2>How the parts fit together</h2>
 <p>It is built on the principle behind all of my work: pedagogy first, technology second. Nearly every activity works without a single pupil device. Where technology appears, the teacher leads it, with a clear purpose and safeguarding built in.</p>
@@ -362,6 +348,20 @@ def build_home():
 </ol>
 <h3>The AI Loop: Learn, Spot, Guess, Check</h3>
 {loop_strip()}
+</section>
+<section class="band">
+<div class="wrap">
+<h2>Six units, one for each year</h2>
+<p>Six lessons per year, planned as a half-term unit. The sixth lesson in each year is an IDEAL Challenge, where pupils pull the unit together to make or decide something.</p>
+<div class="grid grid-3">{years}</div>
+</div>
+</section>
+<section class="wrap home-map">
+<h2>The road map</h2>
+<p>All 36 lessons on one page, from Year 1 to secondary school.</p>
+<a class="home-map-img" href="curriculum-map/"><img src="images/ideal-thinkers-road-map.webp" width="2482" height="1754" loading="lazy" alt="The IDEAL Thinkers curriculum road map, showing all 36 lessons from Year 1 to Year 6"></a>
+<p><a class="btn" href="curriculum-map/">Explore the curriculum map</a></p>
+<p class="more"><a href="progression/">See how the learning builds from Year 1 to Year 6</a></p>
 </section>
 <section class="band">
 <div class="wrap">
