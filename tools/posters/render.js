@@ -9,7 +9,7 @@ const fs = require('fs'), path = require('path');
   const root = path.join(__dirname, '..', '..');
   fs.mkdirSync(path.join(root, 'downloads'), { recursive: true });
   fs.mkdirSync(path.join(root, 'images', 'posters'), { recursive: true });
-  for (const n of ['ai-loop', 'ideal-habits', 'every-lesson']) {
+  for (const n of ['ai-loop', 'ideal-habits']) {
     await pg.goto('file://' + path.join(__dirname, n + '.html'), { waitUntil: 'networkidle' });
     await pg.evaluate(() => document.fonts.ready);
     await pg.pdf({ path: path.join(root, 'downloads', `ideal-thinkers-${n}-poster-a4.pdf`), format: 'A4', printBackground: true });
