@@ -60,7 +60,7 @@ Big question: Where does AI learn from, is it fair, and how do we learn well wit
 - [Lesson 3: Whose is it anyway?](https://ailiteracycurriculum.ictevangelist.com/year-5/whose-is-it-anyway/): Training data comes from people's work and lives, so permission matters.
 - [Lesson 4: The Welcome Bot](https://ailiteracycurriculum.ictevangelist.com/year-5/the-welcome-bot/): Unbalanced data can lead to unfair results.
 - [Lesson 5: Climb the STAIR](https://ailiteracycurriculum.ictevangelist.com/year-5/climb-the-stair/): Using AI to help you learn, not to learn for you.
-- [Lesson 6: Train a class model](https://ailiteracycurriculum.ictevangelist.com/year-5/train-a-class-model/): A model is only as good as its data: test it on new things, then improve the data.
+- [Lesson 6: Train a class model](https://ailiteracycurriculum.ictevangelist.com/year-5/train-a-class-model/): A model is only as good as its data, so we test it and improve it.
 
 ## Year 6: AI, Society and the Future (ages 10-11)
 Big question: Who decides how AI is used? [Unit overview](https://ailiteracycurriculum.ictevangelist.com/year-6/)

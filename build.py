@@ -572,8 +572,9 @@ def build_map():
         f'<span class="vh">Year {LESSONS[c]["year"]["n"]}, Lesson {LESSONS[c]["n"]}: {e(LESSONS[c]["title"])}</span></a>'
         for c, (x, y, w, h) in SPOTS.items())
     targets = {f"year-{y['n']}": (y["path"], f"Year {y['n']}: {y['title']}") for y in DATA["years"]}
-    targets.update({"The AI Loop": ("how-it-works/ai-loop/", "The AI Loop"),
-                    "The habits grow with the children": ("how-it-works/ideal/", "The IDEAL habits grow with the children"),
+    targets.update({"What pupils learn": ("progression/", "What pupils learn: the five progression strands"),
+                    "The habits grow with the children": ("how-it-works/ideal/", "The habits they build: IDEAL, with Learning Well"),
+                    "Tools for teaching it": ("how-it-works/ai-loop/", "Tools for teaching it: the AI Loop and STAIR"),
                     "Every lesson": ("how-it-works/every-lesson/", "Every lesson"),
                     "IDEAL": ("how-it-works/ideal/", "IDEAL: how we use AI well")})
     spots += "".join(
@@ -585,7 +586,7 @@ def build_map():
 <p>Click any lesson on the road map to open it, or download the A3 poster for your classroom wall. <a href="../progression/">See how the learning builds</a></p>
 <figure class="roadmap">
 <div class="roadmap-frame">
-<img src="../images/ideal-thinkers-road-map.webp" width="2482" height="1754" alt="The IDEAL Thinkers curriculum road map: a road winding through all 36 lessons from Year 1 to Year 6, ending at secondary school, with the IDEAL habits, the AI Loop and the lesson shape along the bottom.">
+<img src="../images/ideal-thinkers-road-map.webp" width="2482" height="1754" alt="The IDEAL Thinkers curriculum road map: a road winding through all 36 lessons from Year 1 to Year 6, ending at secondary school. Along the bottom: what pupils learn (the five progression strands), the habits they build (IDEAL with Learning Well), and the tools for teaching it (the AI Loop and STAIR).">
 {spots}
 </div>
 <figcaption><a class="btn" href="https://drive.google.com/uc?export=download&amp;id={ROADMAP_PDF}">Download the A3 road map (PDF, print at A3)</a> <a class="btn btn-ghost" href="../images/ideal-thinkers-road-map.webp">Open full size</a></figcaption>

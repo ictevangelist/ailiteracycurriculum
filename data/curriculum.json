@@ -448,7 +448,7 @@
      "n": 6,
      "code": "Y5L6",
      "title": "Train a class model",
-     "big_idea": "A model is only as good as its data: test it on new things, then improve the data.",
+     "big_idea": "A model is only as good as its data, so we test it and improve it.",
      "activity": "Teacher-led, with no pupil accounts: the class trains an image model to sort recycling, tests it fairly, finds where it fails and improves the data.",
      "ideal": "All",
      "links": "CS, science",
