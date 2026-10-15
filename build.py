@@ -16,6 +16,7 @@ SPOTS = json.load(open(os.path.join(ROOT, "data/roadmap-spots.json"), encoding="
 EXTRA_SPOTS = json.load(open(os.path.join(ROOT, "data/roadmap-extra-spots.json"), encoding="utf-8"))
 TRACKER = "18lutsh179zuY39y_L8VkzipVrCeSc1RHHuu3eA9D3ZE"
 ROADMAP_PDF = "1xqUuxwFz0IVMQis2mX5iACgGPqD9xT6y"
+GUIDE_URL = "https://docs.google.com/document/d/1ZSazUK-00P8Ne2G3T94l6GCVGfHIuzoJKU2catPhCTw/preview"
 LAUNCHED = True  # flip to True at launch: allows indexing and writes the sitemap
 BUILT = "2026-10-14"  # sitemap lastmod
 LICENCE_URL = "https://creativecommons.org/licenses/by-nc-sa/4.0/"
@@ -29,7 +30,7 @@ e = html.escape
 IDEAL = [
     ("I", "Informed", "Know what it is", "Know what it is and how it works", "Know how it works and where it falls short"),
     ("D", "Deliberate", "Use it on purpose", "Use it for a reason, not as a shortcut", "Use it for a goal, deliberately and sparingly"),
-    ("E", "Ethical", "Be fair and kind", "Be fair, honest and kind, and ask who might be left out", "Use it fairly and question whether it is fair"),
+    ("E", "Ethical", "Be fair and kind", "Be fair, honest and kind", "Use it fairly and question whether it is fair"),
     ("A", "Accurate", "Check it", "Check it before you trust it", "Fact check, look for bias, find the evidence"),
     ("L", "Learning", "Keep learning", "Make sure it helps you learn", "Keep your own thinking in charge"),
 ]
@@ -61,12 +62,12 @@ def letters(ideal):
 
 def badges(ideal):
     if ideal.strip() == "All":
-        return '<span class="badges" aria-label="IDEAL: all five habits">' + "".join(
+        return '<span class="badges"><span class="vh">IDEAL: all five habits</span>' + "".join(
             f'<span class="b b-{x}" aria-hidden="true">{x}</span>' for x in "IDEAL") + "</span>"
     ls = letters(ideal)
     names = {x[0]: x[1] for x in IDEAL}
     lab = ", ".join(names[x] for x in ls)
-    return f'<span class="badges" aria-label="IDEAL: {lab}">' + "".join(
+    return f'<span class="badges"><span class="vh">IDEAL: {lab}</span>' + "".join(
         f'<span class="b b-{x}" aria-hidden="true">{x}</span>' for x in ls) + "</span>"
 
 
@@ -90,7 +91,7 @@ def codes_html(depth, s):
 
 
 NAV = [("", "Home"), ("how-it-works/", "How it works"), ("year-groups/", "Year groups"), ("curriculum-map/", "Curriculum map"),
-       ("safety/", "Safety"), ("using-the-lessons/", "Using the lessons")]
+       ("progression/", "Progression"), ("assessment/", "Assessment"), ("safety/", "Safety"), ("using-the-lessons/", "Using the lessons")]
 
 
 def page(path, title, desc, body, depth, year=None, ld=None, crumbs=None):
@@ -223,8 +224,7 @@ def chatty(cls="chatty", label=""):
 
 
 POSTERS = {"ai-loop": ("The AI Loop", "ideal-thinkers-ai-loop-poster-a4.pdf"),
-           "ideal-habits": ("The habits grow with the children", "ideal-thinkers-ideal-habits-poster-a4.pdf"),
-           "every-lesson": ("Every lesson", "ideal-thinkers-every-lesson-poster-a4.pdf")}
+           "ideal-habits": ("The habits grow with the children", "ideal-thinkers-ideal-habits-poster-a4.pdf")}
 
 
 def poster_block(depth, key):
@@ -237,10 +237,10 @@ def poster_block(depth, key):
 
 
 def loop_strip():
-    steps = [("Learn", "It is given lots of examples (data), chosen by people."),
+    steps = [("Learn", "It learns from lots of examples (data) that people choose or create."),
              ("Spot", "It finds patterns in those examples."),
              ("Guess", "It uses the patterns to make a prediction: a label, a next word, a video, a picture."),
-             ("Check", "It cannot check itself against the real world. People must.")]
+             ("Check", "It can be wrong without knowing. People check its guesses before they trust them.")]
     ic = ["book", "eye", "bulb", "usercheck"]
     return '<ol class="loop">' + "".join(
         f'<li class="loop-{i}"><span class="loop-top"><span class="loop-num">{i}</span>{icon(ic[i-1], "w", 30, "loop-ic")}</span>'
@@ -291,7 +291,13 @@ def year_card(depth, y):
 
 
 # ---------- Home ----------
-FAQ = [('What is IDEAL Thinkers?', "A free AI literacy and fluency curriculum for primary schools, from Year 1 to Year 6. There are 36 lessons, six for each year group, and every lesson has a lesson plan and a slide deck. It's the AI Literacy strand of the Primary Digital Cognition Curriculum from The EdTech Playbook."), ('Is it free?', "Yes, for schools and teachers. It's licensed under CC BY-NC-SA 4.0, so you can copy and adapt it for your own teaching as long as you credit it and share any adapted versions under the same licence. It cannot be used for commercial purposes."), ('Do pupils need devices or their own AI accounts?', "No. Every lesson can be taught without pupil devices, and pupils never need an AI account; most generative AI tools have a minimum age of 13. Where a demonstration helps, the teacher runs it on a school approved tool, and every deck includes prepared examples in case a live demonstration isn't possible on the day."), ('How long is each lesson?', "60 minutes, and every lesson plan includes a 45 minute version. Each year's six lessons are planned as a half-term unit, and the sixth lesson is an IDEAL Challenge that doubles as the end of unit assessment."), ('Does it cover the National Curriculum for computing?', 'It addresses the KS1 and KS2 statements on using technology safely, respectfully and responsibly, keeping personal information private, recognising uses of information technology beyond school, understanding how search results are selected and ranked, and being discerning in evaluating digital content. It will be mapped against the revised computing curriculum once the draft is published.'), ('Can I use it with Microsoft 365?', 'Yes. Every slide deck downloads as PowerPoint and every lesson plan as Word, and on Google Workspace you can make your own copy in Google Drive.')]
+FAQ = [('What is IDEAL Thinkers?', "A free AI literacy curriculum for primary schools, from Year 1 to Year 6. There are 36 lessons, six for each year group, and every lesson has a lesson plan and a slide deck. It's the AI Literacy strand of the Primary Digital Cognition Curriculum from The EdTech Playbook."),
+       ('What do you mean by AI literacy and AI fluency?', "AI literacy is knowing how the AI children meet works, at a level that fits their age; what it can and cannot do; and how it affects people, fairly or unfairly. Pupils show it by explaining these ideas in their own words and applying them to a new example. AI fluency is making good decisions about AI: whether to use it at all, what to ask, how to check what comes back, and how to keep the learning their own. In primary school, pupils practise these decisions through unplugged activities and teacher-led demonstrations, not by using AI tools themselves."),
+       ('Is it free?', "Yes, for schools and teachers. I've always shared my resources freely, from my days as the local authority lead teacher for computing to the early years of my blog. I became a teacher because education is a force for good: to help young people, to make a difference and to make my dent in the universe. If what I share helps just one person, that's good enough for me. With IDEAL Thinkers, I hope it helps far more than that. It's licensed under CC BY-NC-SA 4.0, so you can copy and adapt it for your own teaching as long as you credit it and share any adapted versions under the same licence. It cannot be used for commercial purposes."),
+       ('Do pupils need devices or their own AI accounts?', "No. Every lesson can be taught without pupil devices, and pupils never need an AI account. Age limits differ between tools and change often: some are for 13 and over with a parent's permission, some are for adults only. Where a demonstration helps, the teacher runs it on a school approved tool, and every demonstration lesson can also be taught without one, using prepared results or an unplugged version."),
+       ('How long is each lesson?', "60 minutes, and every lesson plan includes a 45 minute version. Each year's six lessons are planned as a half-term unit, and the sixth lesson is an IDEAL Challenge that doubles as the end of unit assessment."),
+       ('Does it cover the National Curriculum for computing?', "It teaches the KS1 and KS2 statements on using technology safely, respectfully and responsibly, keeping personal information private, knowing where to go for help and reporting concerns, recognising common uses of information technology beyond school, and being discerning in evaluating digital content, plus selection in programs in Year 5. How feeds choose what we see connects to the KS2 statement on search results, but it does not replace teaching search. The current curriculum does not require AI to be taught; IDEAL Thinkers will be mapped against the revised computing curriculum when the draft is published."),
+       ('Can I use it with Microsoft 365?', 'Yes. Every slide deck downloads as PowerPoint and every lesson plan as Word, and on Google Workspace you can make your own copy in Google Drive.')]
 
 
 def build_home():
@@ -303,7 +309,7 @@ def build_home():
 <p class="eyebrow">An AI literacy and fluency curriculum for primary schools, Year 1 to Year 6</p>
 <h1>IDEAL Thinkers</h1>
 <p class="lede">Children are growing up alongside AI. It chooses the next video they watch, finishes their sentences, listens from the kitchen worktop and answers questions in a voice that sounds friendly and sure of itself. Most of them meet it long before anyone teaches them what it is.</p>
-<p class="lede">IDEAL Thinkers gives primary pupils the knowledge to understand how AI works, the habits to question what it tells them, the values to use it well, and the judgement to know when it helps their learning and when it gets in the way.</p>
+<p class="lede">IDEAL Thinkers is designed to give primary pupils the knowledge to understand how AI works, the habits to question what it tells them, the values to use it well, and the judgement to know when it helps their learning and when it gets in the way.</p>
 <div class="hero-ctas">
 <a class="btn" href="curriculum-map/">Find a lesson</a>
 <a class="btn btn-ghost" href="how-it-works/">How it works</a>
@@ -312,6 +318,22 @@ def build_home():
 </div>
 <div class="hero-art">{chatty("chatty chatty-hero", "Chatty, the class chatbot from the Year 4 lessons")}</div>
 </div>
+</section>
+<section class="wrap glance-sec">
+<h2>At a glance</h2>
+<dl class="glance">
+<dt>What</dt><dd>A free AI literacy curriculum for primary schools: pupils learn how AI works, when to trust it, and when not to use it.</dd>
+<dt>Who</dt><dd>Years 1 to 6, ages 5 to 11.</dd>
+<dt>What it covers</dt><dd>Five progression strands: how AI works; staying in charge; safe, fair and honest; learning well; design and create. Mapped to the National Curriculum, SEAME and the Primary Digital Cognition Curriculum. <a href="progression/#coverage">See the coverage</a></dd>
+<dt>What you get</dt><dd>36 lessons, six a year, each with a lesson plan and slides.</dd>
+<dt>Time</dt><dd>60 minutes a lesson, with a 45 minute version in every plan.</dd>
+<dt>What you need</dt><dd>A screen for the slides. No pupil devices or AI accounts.</dd>
+<dt>Who made it</dt><dd>Mark Anderson FCCT: more than 20 years as a teacher and senior leader, former local authority lead teacher for computing, Founding Fellow of the Chartered College of Teaching, member of the BCS Schools and Colleges Committee, and award-winning author of The EdTech Playbook.</dd>
+<dt>Why it is free</dt><dd>"I've always shared my resources freely. If it helps just one person, that's good enough for me; with IDEAL Thinkers, I hope it helps far more."</dd>
+<dt>Feedback so far</dt><dd>Shaped by feedback from ten practising digital and computing leaders in schools across the UK, and already being taught in their classrooms.</dd>
+<dt>How it builds</dt><dd><a href="progression/">See the progression from Year 1 to Year 6</a></dd>
+<dt>Is it safe?</dt><dd><a href="safety/">How safeguarding works</a></dd>
+</dl>
 </section>
 <section class="band">
 <div class="wrap">
@@ -325,19 +347,25 @@ def build_home():
 <p>All 36 lessons on one page, from Year 1 to secondary school.</p>
 <a class="home-map-img" href="curriculum-map/"><img src="images/ideal-thinkers-road-map.webp" width="2482" height="1754" loading="lazy" alt="The IDEAL Thinkers curriculum road map, showing all 36 lessons from Year 1 to Year 6"></a>
 <p><a class="btn" href="curriculum-map/">Explore the curriculum map</a></p>
+<p class="more"><a href="progression/">See how the learning builds from Year 1 to Year 6</a></p>
 </section>
 <section class="wrap">
-<h2>Pedagogy first, technology second</h2>
+<h2>How the parts fit together</h2>
 <p>It is built on the principle behind all of my work: pedagogy first, technology second. Nearly every activity works without a single pupil device. Where technology appears, the teacher leads it, with a clear purpose and safeguarding built in.</p>
-<p>Every lesson can be picked up and taught with minimal preparation, and every deck and plan can be copied, adapted and made your own.</p>
+<p>Every plan lists exactly what to prepare, the card sets can be kept and reused each year, and every deck and plan can be copied, adapted and made your own.</p>
+<ol class="ladder">
+<li><h3>What pupils learn</h3><p>Five progression strands, built from Year 1 to Year 6: how AI works; staying in charge; safe, fair and honest; learning well; design and create. <a href="progression/">Progression</a></p></li>
+<li><h3>The habits they build</h3><p>IDEAL: Informed, Deliberate, Ethical, Accurate, Learning. Learning Well is how the L is taught: Try it first, Hint not answer, then Plan, use, prove. <a href="how-it-works/ideal/">IDEAL</a> <a href="how-it-works/learning-well/">Learning Well</a></p></li>
+<li><h3>The tools for teaching it</h3><p>The AI Loop, a simple model of how AI that learns from examples works, and STAIR, a prompting scaffold for Years 5 and 6. <a href="how-it-works/ai-loop/">The AI Loop</a></p></li>
+<li><h3>How a lesson runs</h3><p>Seven phases in every lesson, for teachers to plan with. <a href="how-it-works/every-lesson/">Every lesson</a></p></li>
+<li><h3>What it lines up with</h3><p>The Primary Digital Cognition Curriculum, the National Curriculum, SEAME, UDL and cognitive science, below.</p></li>
+</ol>
 <h3>The AI Loop: Learn, Spot, Guess, Check</h3>
 {loop_strip()}
-<p class="more"><a href="how-it-works/">See the three threads that run through every lesson</a></p>
 </section>
 <section class="band">
 <div class="wrap">
-<h2>The frameworks it links to</h2>
-<p>IDEAL Thinkers doesn't sit on its own. Here's what it connects to, and how.</p>
+<h2>What it aligns with and draws on</h2>
 <div class="grid grid-2 frameworks">
 <article class="card fw">
 {icon("grid", "i")}<h3>The Primary Digital Cognition Curriculum</h3>
@@ -345,37 +373,37 @@ def build_home():
 </article>
 <article class="card fw">
 {icon("landmark", "d")}<h3>The National Curriculum for computing (England)</h3>
-<p>The lessons address the KS1 and KS2 statements on using technology safely, respectfully and responsibly; keeping personal information private; recognising common uses of information technology beyond school (KS1); understanding how search results are selected and ranked, and being discerning in evaluating digital content (KS2).</p>
+<p>Taught directly: using technology safely, respectfully and responsibly; keeping personal information private and knowing where to go for help; recognising common uses of information technology beyond school (KS1); reporting concerns, being discerning in evaluating digital content, and using selection in programs (KS2). How feeds choose what we see connects to the KS2 statement on search results, but it does not replace teaching search. The current curriculum does not require AI to be taught.</p>
 </article>
 <article class="card fw">
 {icon("layers", "e")}<h3>SEAME</h3>
-<p>SEAME is a framework from the Raspberry Pi Computing Education Research Centre that sorts what we teach about AI into four levels: social and ethical, applications, models and engines (how AI works). Lessons cover all four levels of the model: social and ethical, applications, models and, through unplugged activities, engines.</p>
+<p>SEAME, from the Raspberry Pi Computing Education Research Centre, sorts what we teach about AI into four levels: social and ethical, applications, models and engines (how AI works). It is used here as a lens to check coverage. The lessons cover all four, with engines taught through unplugged activities.</p>
 </article>
 <article class="card fw">
 {icon("calendar", "a")}<h3>The new computing curriculum</h3>
-<p>BCS is drafting a revised National Curriculum for Computing for first teaching from September 2028, with foundational AI concepts included. This curriculum will be mapped against the draft once it is published.</p>
+<p>BCS is drafting a revised computing curriculum for first teaching from September 2028, and the Curriculum and Assessment Review recommended that it include AI. It is not yet statutory. IDEAL Thinkers will be mapped against the draft when it is published.</p>
 </article>
 <article class="card fw">
 {icon("people", "l")}<h3>Universal Design for Learning</h3>
-<p>Every plan offers multiple ways to engage, to access content and to show understanding, with adaptations for support and stretch in each lesson.</p>
+<p>Every plan offers more than one way to take part, to access the content and to show understanding, and names the main barrier in that lesson with a planned response.</p>
 </article>
 <article class="card fw">
 {icon("brain", "i")}<h3>Cognitive science</h3>
-<p>Spaced retrieval, concrete before abstract, worked examples and modelling, explicit vocabulary teaching, dual coding through consistent visual models, and frequent low stakes checks for understanding.</p>
-</article>
-<article class="card fw">
-{icon("star", "d")}<h3>IDEAL</h3>
-<p>My framework for informed learning with AI: Informed, Deliberate, Ethical, Accurate, Learning. Every lesson is tagged with the IDEAL letters it develops, and the wording grows with the children.</p>
-<p><a href="how-it-works/ideal/">More on IDEAL</a></p>
-</article>
-<article class="card fw">
-{icon("stairs", "e")}<h3>STAIR</h3>
-<p>In Upper KS2, pupils plan how AI could support a specific learning goal using STAIR (Specific, Tell, Actionable, Iterate, Role), as part of the Learning Well habit: plan, use, prove.</p>
-<p><a href="how-it-works/learning-well/">More on Learning Well</a></p>
+<p>Spaced retrieval, concrete before abstract, worked examples and modelling, explicit vocabulary teaching, words always paired with the same pictures, and frequent low stakes checks for understanding.</p>
 </article>
 </div>
 <p>Wider curriculum: RSHE, science, maths, English, geography and careers links are flagged in each lesson plan.</p>
 </div>
+</section>
+<section class="wrap">
+<h2>Evidence and limits</h2>
+<p>The design draws on <a href="https://www.aft.org/sites/default/files/Rosenshine.pdf">Rosenshine's Principles of Instruction</a> (2012), the EEF's review <a href="https://educationendowmentfoundation.org.uk/education-evidence/evidence-reviews/cognitive-science-approaches-in-the-classroom">Cognitive science approaches in the classroom</a> (2021), which finds retrieval and spacing promising but with less evidence for young pupils, <a href="https://udlguidelines.cast.org/">CAST's UDL Guidelines</a>, and a 2025 study in which pupils given answers by AI learned less than pupils given hints (<a href="https://doi.org/10.1073/pnas.2422633122">Bastani and others, PNAS</a>).</p>
+<ul class="list">
+<li>It has not yet been formally evaluated in classrooms.</li>
+<li>Pupils practise decisions about AI through unplugged activities and teacher demonstrations. They do not use AI tools themselves, so it builds judgement about AI more than skill with particular tools.</li>
+<li>It does not replace your school's computing scheme, online safety teaching or safeguarding procedures.</li>
+<li>Age limits and tool features change often. Check the terms of any tool, and your school's policy, before using it.</li>
+</ul>
 </section>
 <section class="wrap home-faq">
 <h2>Common questions</h2>
@@ -413,9 +441,9 @@ def ideal_table():
 
 def build_how():
     d = 1
-    phases = [("Remember When", "5 to 7 min", "Four quick retrieval questions from last lesson, earlier this year and a previous year. Spaced retrieval strengthens long term memory."),
+    phases = [("Remember When", "5 to 7 min", "Four quick retrieval questions from last lesson, earlier this year and a previous year. Spaced retrieval strengthens long term memory. If the answers show a gap, reteach it briefly before moving on."),
               ("Link It", "5 min", "A hook that connects to what children already know from their own lives."),
-              ("Learn It", "10 to 12 min", "Explicit teaching of one big idea and its vocabulary, with a worked example and a teacher think aloud. The AI Loop and IDEAL visuals are identical in every lesson (dual coding)."),
+              ("Learn It", "10 to 12 min", "Explicit teaching of one big idea and its vocabulary, with a worked example and a teacher think aloud. The AI Loop and IDEAL words are always paired with the same pictures (dual coding)."),
               ("Try It", "15 to 20 min", "The signature activity: collaborative, practical and memorable, usually unplugged."),
               ("Own It", "10 min", "Pupils apply the idea independently or in pairs, usually by creating something."),
               ("IDEAL Check", "3 min", "Which IDEAL letter did we practise, and what does it look like in real life?"),
@@ -423,61 +451,61 @@ def build_how():
     ph = "".join(f'<li><span class="ph-n">{e(n)}</span><span class="ph-t">{e(t)}</span><span class="ph-d">{e(x)}</span></li>' for n, t, x in phases)
     body = f"""<section class="page-head"><div class="wrap">
 <p class="eyebrow">How it works</p>
-<h1>Three threads, one lesson shape</h1>
-<p class="lede">IDEAL Thinkers is the full, teachable AI Literacy strand of the Primary Digital Cognition Curriculum. Three threads run through every lesson, and every lesson has the same shape.</p>
+<h1>How the parts fit together</h1>
+<p class="lede">IDEAL Thinkers is the full, teachable AI Literacy strand of the Primary Digital Cognition Curriculum. Each part has one job: what pupils learn, the habits they build, the tools for teaching it, and how a lesson runs.</p>
 </div></section>
 <section class="wrap">
-<div class="grid grid-4">
-<a class="card thread" href="ai-loop/">{icon("loop", "i", 30)}<h2>The AI Loop</h2><p>Learn, Spot, Guess, Check: how pupils understand what AI actually does.</p></a>
-<a class="card thread" href="ideal/">{icon("star", "d", 30)}<h2>IDEAL</h2><p>How we use AI well: Informed, Deliberate, Ethical, Accurate, Learning.</p></a>
-<a class="card thread" href="learning-well/">{icon("seedling", "e", 30)}<h2>Learning Well with AI</h2><p>Try it first, hint not answer, plan use prove.</p></a>
-<a class="card thread" href="every-lesson/">{icon("clock", "a", 30)}<h2>Every lesson</h2><p>The same seven phases in every lesson, in 60 minutes.</p></a>
-</div>
+<ol class="ladder">
+<li><h2>What pupils learn: five progression strands</h2><p>How AI works; staying in charge; safe, fair and honest; learning well; design and create. Each lesson plan names its strands, and the tracker records them. <a href="../progression/">Progression and coverage</a></p></li>
+<li><h2>The habits they build: IDEAL</h2><p>Informed, Deliberate, Ethical, Accurate, Learning, with wording that grows with the children. Learning Well is how the L is taught: Try it first, Hint not answer, then Plan, use, prove. <a href="ideal/">IDEAL</a> <a href="learning-well/">Learning Well</a></p></li>
+<li><h2>The tools for teaching it: the AI Loop and STAIR</h2><p>The AI Loop (Learn, Spot, Guess, Check) is a simple model of how AI that learns from examples works. STAIR is a prompting scaffold pupils use in Years 5 and 6. <a href="ai-loop/">The AI Loop</a></p></li>
+<li><h2>How a lesson runs: seven phases, for teachers</h2><p>Remember When, Link It, Learn It, Try It, Own It, IDEAL Check and Exit Ticket, in 60 minutes. Pupils do not need to learn the phases. <a href="every-lesson/">Every lesson</a></p></li>
+<li><h2>What it lines up with</h2><p>The Primary Digital Cognition Curriculum, the National Curriculum for computing, SEAME, UDL and cognitive science. <a href="../progression/#alignment">Alignment</a></p></li>
+</ol>
+<h2>AI literacy and AI fluency</h2>
+<p><strong>AI literacy</strong> is knowing how the AI children meet works, at a level that fits their age; what it can and cannot do; and how it affects people, fairly or unfairly. Pupils show it by explaining these ideas in their own words and applying them to a new example.</p>
+<p><strong>AI fluency</strong> is making good decisions about AI: whether to use it at all, what to ask, how to check what comes back, and how to keep the learning their own. In primary school, pupils practise these decisions through unplugged activities and teacher-led demonstrations, not by using AI tools themselves.</p>
 </section>
-<section class="band"><div class="wrap">
-<h2>Every lesson has the same shape</h2>
-<p>A consistent structure lowers cognitive load for pupils and teachers alike: Remember When, Link It, Learn It, Try It, Own It, IDEAL Check and Exit Ticket, in 60 minutes.</p>
-<p><a class="btn" href="every-lesson/">See every lesson's shape</a></p>
-</div></section>
 """
     page("how-it-works/", "How IDEAL Thinkers works: the AI Loop, IDEAL and Learning Well",
-         "The three threads that run through every IDEAL Thinkers lesson, and the seven phase lesson shape.", body, d)
+         "How IDEAL Thinkers fits together: five progression strands, the IDEAL habits with Learning Well, the AI Loop and STAIR, and the seven phase lesson shape.", body, d)
 
     # Every lesson
     body = f"""<section class="page-head"><div class="wrap">
 <p class="eyebrow"><a href="../">How it works</a> / Every lesson</p>
 <h1>Every lesson has the same shape</h1>
-<p class="lede">A consistent structure lowers cognitive load for pupils and teachers alike. Lessons are designed for 60 minutes and flex to 45 by trimming the Try It phase.</p>
+<p class="lede">A consistent structure is designed to lower cognitive load for pupils and teachers alike. The phases are for teachers to plan with; pupils do not need to learn them.</p>
 </div></section>
 <section class="wrap">
 <ol class="phases">{ph}</ol>
-<p>Individual lessons adjust these phase timings to suit their activities, and some add a short real-life story, but every plan still totals 60 minutes.</p>
-<p class="pill-line"><span class="tag">Retrieve, never re-teach</span><span class="tag">Slides build on click</span><span class="tag">Unplugged first</span><span class="tag">No pupil accounts</span></p>
+<p>Individual lessons adjust these phase timings to suit their activities, and some add a short real-life story. Every plan fits within 60 minutes, most with a few minutes to spare.</p>
+<h2>45 minute lessons</h2>
+<p>Shorten the edges and keep the middle: two Remember When questions, a 2 minute Link It, any real life story in one sentence, a 2 minute IDEAL Check and the full exit ticket in 3 minutes. Keep the worked example, the key moment of Try It and Own It; if it still does not fit, use fewer examples, rounds or cards. Each plan says what to cut.</p>
+<p class="pill-line"><span class="tag">Retrieve first, reteach if needed</span><span class="tag">Slides build on click</span><span class="tag">Unplugged first</span><span class="tag">No pupil accounts</span></p>
 <p>Lesson 6 each year is the IDEAL Challenge and the end of unit assessment.</p>
 <h2>IDEAL moments</h2>
-<p>In each lesson, the day's IDEAL habit appears as a cue only on the click where pupils actually practise it. When the cue appears, the teacher points to it, the class says the habit together, and the teacher asks the action question given in the speaker notes. <a href="../ideal/">More on IDEAL</a></p>
+<p>In each lesson, the day's IDEAL habit appears as a cue only at the moment pupils practise it. In Years 1 and 2, the teacher points to the cue and the class says the habit together. From Year 3, pupils name the habit the moment needs before the cue appears. Then the teacher asks the action question given in the lesson plan. <a href="../ideal/">More on IDEAL</a></p>
 <h2>How it's built</h2>
 <div class="grid grid-3">
 <div class="card">{icon("brain", "i")}<h3>Grounded in cognitive science</h3><p>Spaced retrieval, concrete before abstract, worked examples and modelling, explicit vocabulary teaching, dual coding through consistent visual models, and frequent low stakes checks for understanding.</p></div>
 <div class="card">{icon("people", "l")}<h3>Designed with UDL</h3><p>Every plan offers multiple ways to engage, to access content and to show understanding.</p></div>
 <div class="card">{icon("slides", "d")}<h3>Slides built for low cognitive load</h3><p>Every slide builds on click in the order the teacher teaches it, as if writing on a whiteboard, so pupils meet one element at a time. Visuals carry meaning rather than decoration: each AI Loop step, each IDEAL habit and each recurring idea has its own icon, used identically in every lesson.</p></div>
 </div>
-<p>Teacher-facing labels and sources sit in the speaker notes, not on the screen. New ideas and vocabulary are taught where pupils first need them; earlier learning is retrieved, not re-taught.</p>
-{poster_block(2, "every-lesson")}
+<p>Teacher notes, answers and sources are in the lesson plan, not on the screen. New ideas and vocabulary are taught where pupils first need them. Earlier learning is retrieved first, and retaught briefly when Remember When or an exit ticket shows pupils have not got it yet.</p>
 </section>"""
     page("how-it-works/every-lesson/", "Every lesson: the seven phase lesson shape | IDEAL Thinkers",
          "Every IDEAL Thinkers lesson follows the same seven phases: Remember When, Link It, Learn It, Try It, Own It, IDEAL Check and Exit Ticket.", body, 2)
 
     # AI Loop
-    rows = [("Learn", "It is given lots of examples (data), chosen by people.", "Year 1: it learns from lots of examples. Year 5: training data, test data, permission and fairness."),
+    rows = [("Learn", "It learns from lots of examples (data) that people choose or create.", "Year 1: it learns from lots of examples. Year 5: training data, test data, permission and fairness."),
             ("Spot", "It finds patterns in those examples.", "Year 1: spotting a secret sorting rule. Year 4: patterns in words. Year 5: rules versus learning."),
             ("Guess", "It uses the patterns to make a prediction: a label, a next word, a video, a picture.", "Year 1: it makes a guess. Year 4: next word prediction and how sure it is. Year 6: generated images, text and voices."),
-            ("Check", "It cannot check itself against the real world. People must.", "Every year: Check is always the human's job, and that is where IDEAL comes in.")]
+            ("Check", "It can be wrong without knowing. People check its guesses before they trust them.", "Every year: people check its guesses, from 'is it right?' in Year 1 to 'who is missing?' in Year 6. That is where IDEAL comes in.")]
     tr = "".join(f'<tr><th scope="row">{s}</th><td>{e(a)}</td><td>{e(b)}</td></tr>' for s, a, b in rows)
     body = f"""<section class="page-head"><div class="wrap">
-<p class="eyebrow"><a href="../">How it works</a> / Thread 1</p>
+<p class="eyebrow"><a href="../">How it works</a> / Teaching tools</p>
 <h1>The AI Loop: Learn, Spot, Guess, Check</h1>
-<p class="lede">How pupils understand what AI actually does. Every year group returns to it, so knowledge builds into a secure schema rather than a collection of separate facts.</p>
+<p class="lede">How pupils understand AI that learns from examples (machine learning), the kind they meet most. It is a simple model: real systems are more complicated, and not every machine that makes a guess works this way. Every year group returns to it, so knowledge can build into a connected whole.</p>
 </div></section>
 <section class="wrap">
 {loop_strip()}
@@ -486,11 +514,11 @@ def build_how():
 {poster_block(2, "ai-loop")}
 </section>"""
     page("how-it-works/ai-loop/", "The AI Loop: Learn, Spot, Guess, Check | IDEAL Thinkers",
-         "The AI Loop explains what AI does in four steps, and grows from Year 1 to Year 6.", body, 2)
+         "The AI Loop is a simple model of how AI that learns from examples works, in four steps, growing from Year 1 to Year 6.", body, 2)
 
     # IDEAL
     body = f"""<section class="page-head"><div class="wrap">
-<p class="eyebrow"><a href="../">How it works</a> / Thread 2</p>
+<p class="eyebrow"><a href="../">How it works</a> / Habits</p>
 <h1>IDEAL: how we use AI well</h1>
 <p class="lede">My framework for informed learning with AI. Every lesson is tagged with the IDEAL letters it develops, and the wording grows with the children.</p>
 </div></section>
@@ -498,7 +526,7 @@ def build_how():
 <h2>The habits grow with the children</h2>
 {ideal_table()}
 <h2>IDEAL moments</h2>
-<p>IDEAL is not a logo in the corner of every slide. In each lesson, the day's IDEAL habit appears as a cue only on the click where pupils actually practise it, for example "A: Check it before you trust it" just as pupils go looking for evidence. When the cue appears, the teacher points to it, the class says the habit together, and the teacher asks the action question given in the speaker notes. Every lesson plan lists its IDEAL moments, with slide numbers and what to say. The routine is taught to pupils in <a href="../../year-1/does-it-guess/">Year 1 Lesson 1</a> and used in every lesson after that, so pupils learn to link each habit to the moment they use it.</p>
+<p>IDEAL is not a logo in the corner of every slide. In each lesson, the day's IDEAL habit appears as a cue only on the click where pupils actually practise it, for example "A: Check it before you trust it" just as pupils go looking for evidence. In Years 1 and 2, the teacher points to the cue and the class says the habit together. From Year 3, pupils name the habit the moment needs before the cue appears, which shows they know which habit fits. Then the teacher asks the action question. Every lesson plan lists its IDEAL moments, with slide numbers, the question and the answers. The routine is taught in <a href="../../year-1/does-it-guess/">Year 1 Lesson 1</a> and used in every lesson after that. Learning Well is how the L habit is taught: <a href="../learning-well/">more on Learning Well</a>.</p>
 {poster_block(2, "ideal-habits")}
 </section>"""
     page("how-it-works/ideal/", "IDEAL: Informed, Deliberate, Ethical, Accurate, Learning | IDEAL Thinkers",
@@ -510,9 +538,9 @@ def build_how():
           ("Upper KS2", "Year 5 Lesson 5", "year-5/climb-the-stair/", "Plan, use, prove", "Plan how AI could support a specific learning goal using STAIR (Specific, Tell, Actionable, Iterate, Role); use it to quiz themselves and to get feedback on a draft, deciding what to act on; then prove the learning is theirs by explaining it without the tool.")]
     tr = "".join(f'<tr><th scope="row">{p}<br><a href="../../{u}">{w}</a></th><td><strong>{h}</strong></td><td>{e(x)}</td></tr>' for p, w, u, h, x in lw)
     body = f"""<section class="page-head"><div class="wrap">
-<p class="eyebrow"><a href="../">How it works</a> / Thread 3</p>
+<p class="eyebrow"><a href="../">How it works</a> / Habits</p>
 <h1>Learning Well with AI</h1>
-<p class="lede">"Knowing how to use technology to support learning" is the most important outcome in any digital curriculum, and usually the vaguest. Here it has its own progression, grounded in cognitive science: if the machine does the thinking, the child does not learn.</p>
+<p class="lede">"Knowing how to use technology to support learning" is the most important outcome in any digital curriculum, and usually the vaguest. Here it has its own progression, as the taught form of the IDEAL L habit, drawing on cognitive science: when the machine does the thinking, the child learns less.</p>
 </div></section>
 <section class="wrap">
 <p>It is taught explicitly once in each phase, and a short Learning Well prompt appears in other lessons so it becomes a habit rather than a topic.</p>
@@ -554,19 +582,19 @@ def build_map():
         for k, (x, y, w, h) in EXTRA_SPOTS.items())
     roadmap = f"""<section class="wrap roadmap-sec">
 <h2>The road map</h2>
-<p>Click any lesson on the road map to open it, or download the A3 poster for your classroom wall.</p>
+<p>Click any lesson on the road map to open it, or download the A3 poster for your classroom wall. <a href="../progression/">See how the learning builds</a></p>
 <figure class="roadmap">
 <div class="roadmap-frame">
 <img src="../images/ideal-thinkers-road-map.webp" width="2482" height="1754" alt="The IDEAL Thinkers curriculum road map: a road winding through all 36 lessons from Year 1 to Year 6, ending at secondary school, with the IDEAL habits, the AI Loop and the lesson shape along the bottom.">
 {spots}
 </div>
-<figcaption><a class="btn" href="https://drive.google.com/uc?export=download&amp;id={ROADMAP_PDF}">Download the A3 road map (PDF)</a></figcaption>
+<figcaption><a class="btn" href="https://drive.google.com/uc?export=download&amp;id={ROADMAP_PDF}">Download the A3 road map (PDF, print at A3)</a> <a class="btn btn-ghost" href="../images/ideal-thinkers-road-map.webp">Open full size</a></figcaption>
 </figure>
 </section>"""
     body = f"""<section class="page-head"><div class="wrap">
 <p class="eyebrow">Curriculum map</p>
 <h1>All 36 lessons at a glance</h1>
-<p class="lede">Six lessons per year, planned as a half-term unit. Cross-strand links: <abbr title="Digital Citizenship">DC</abbr> Digital Citizenship, <abbr title="Digital Literacy">DL</abbr> Digital Literacy, <abbr title="Computer Science">CS</abbr> Computer Science.</p>
+<p class="lede">Six lessons per year, planned as a half-term unit. Digital Cognition links: <abbr title="Digital Citizenship">DC</abbr> Digital Citizenship, <abbr title="Digital Literacy">DL</abbr> Digital Literacy, <abbr title="Computer Science">CS</abbr> Computer Science.</p>
 </div></section>
 {roadmap}
 <div class="wrap map"><h2 class="map-h">Every lesson</h2>{filters}
@@ -574,7 +602,17 @@ def build_map():
 {secs}</div>
 <script src="../js/map.js" defer></script>"""
     page("curriculum-map/", "Curriculum map: all 36 lessons | IDEAL Thinkers",
-         "Every IDEAL Thinkers lesson from Year 1 to Year 6, with its big idea, IDEAL letters and links to the other strands.", body, d)
+         "Every IDEAL Thinkers lesson from Year 1 to Year 6, with its big idea, IDEAL letters and Digital Cognition links.", body, d)
+
+
+BY_END = {
+    1: "pupils can tell a machine that follows steps from one that makes guesses, explain that AI learns from examples, and say who checks its guesses.",
+    2: "pupils can check and fix an AI's guess, explain why missing examples cause mistakes, try first before asking for help, and stop and ask a grown-up before telling a machine anything personal.",
+    3: "pupils can explain how a feed and a voice assistant use their data, say how AI can help people who see, hear or speak differently, ask for a hint rather than an answer, and say when AI has helped with their work.",
+    4: "pupils can explain that a chatbot builds answers by predicting likely words, why sounding sure is not the same as being right, why a chatbot is not a friend, and how a better question changes the answer.",
+    5: "pupils can tell rules written by people from patterns learned from examples, explain training and test data, ask whose data was used and who might be left out, and plan how AI could help them learn without doing the learning for them.",
+    6: "pupils can check whether media is real or generated, explain how AI can magnify unfairness, weigh the costs of AI against its benefits, say who must answer for an AI decision, and design AI for a real problem.",
+}
 
 
 def build_years():
@@ -587,18 +625,19 @@ def build_years():
         if prev_y:
             where.append(f'Before this, in Year {prev_y["n"]}, pupils studied <a href="{rel(d, prev_y["path"])}">{e(prev_y["title"])}</a>.')
         if next_y:
-            where.append(f'Next, in Year {next_y["n"]}, they move on to <a href="{rel(d, next_y["path"])}">{e(next_y["title"])}</a>.')
+            where.append(f'Next, in Year {next_y["n"]}, pupils move on to <a href="{rel(d, next_y["path"])}">{e(next_y["title"])}</a>.')
         cards = "".join(lesson_card(d, l) for l in y["lessons"])
         bot = chatty("chatty chatty-head", "Chatty, the class chatbot pupils meet in Year 4") if y["n"] == 4 else ""
         body = f"""<section class="page-head year-head"><div class="wrap{' head-grid' if bot else ''}"><div>
 <p class="eyebrow"><a href="../curriculum-map/">Curriculum map</a> / Year {y['n']}</p>
 <div class="yh">{year_icon(y["n"], 44)}<h1>Year {y['n']}: {e(y['title'])}</h1></div>
 <p class="bq big">Big question: {e(y['big_question'])}</p>
+<p><strong>By the end of this unit,</strong> {e(BY_END[y['n']])}</p>
 <p>{' '.join(where)}</p>
 <p><a class="btn btn-ghost" href="https://drive.google.com/drive/folders/{y['folder']}">Open the Year {y['n']} folder in Google Drive</a></p>
 </div>{bot}</div></section>
-<section class="wrap"><div class="grid grid-3">{cards}</div>
-<p class="note">Lesson 6 is the IDEAL Challenge, where pupils pull the unit together to make or decide something. It doubles as the end of unit assessment task.</p>
+<section class="wrap"><h2 class="vh">Lessons</h2><div class="grid grid-3">{cards}</div>
+<p class="note">Lesson 6 is the IDEAL Challenge, where pupils pull the unit together to make or decide something. It doubles as the end of unit assessment task: <a href="../assessment/">how assessment works</a>.</p>
 </section>"""
         page(y["path"], f"Year {y['n']} AI literacy: {y['title']} | IDEAL Thinkers",
              f"Year {y['n']} AI literacy unit, {y['title']}: {y['big_question']} Six free lessons with plans and slides.", body, d, y["n"],
@@ -642,8 +681,12 @@ def file_block(kind, fid, label):
         dl, dl_label = f"{base}/export?format=docx", "Download Word"
     return f"""<div class="file">
 <h3 class="file-h">{icon("slides" if kind == "slides" else "plan", "d" if kind == "slides" else "i", 22)}{label}</h3>
-<p class="file-btns"><a class="btn" href="{base}/copy">Make a copy</a><a class="btn btn-ghost" href="{dl}">{dl_label}</a><a class="btn btn-ghost" href="{base}/preview">Preview</a></p>
+<p class="file-btns"><a class="btn" href="{base}/copy" aria-label="Make a copy of the {label.lower()}">Make a copy</a><a class="btn btn-ghost" href="{dl}" aria-label="{dl_label}: {label.lower()}">{dl_label}</a><a class="btn btn-ghost" href="{base}/preview" aria-label="Preview the {label.lower()}">Preview</a></p>
 </div>"""
+
+
+SAFE_TOPIC = {"Y2L4": "personal information", "Y3L2": "privacy and what voice assistants record",
+              "Y4L2": "chatbots that seem like friends", "Y6L1": "fake images and images of real people"}
 
 
 def build_lessons():
@@ -655,9 +698,9 @@ def build_lessons():
             next_l = ls[i + 1] if i < len(ls) - 1 else None
             flags = ""
             if l["flag"] == "safeguarding":
-                flags += f'<p class="flag flag-safe"><strong>Safeguarding.</strong> This lesson deals with privacy, chatbot relationships or images of real people. The plan flags this, and any disclosure should be handled through your school\'s safeguarding procedures. <a href="{rel(d, "safety/")}">More on safety</a></p>'
+                flags += f'<p class="flag flag-safe"><strong>Safeguarding.</strong> This lesson deals with {SAFE_TOPIC.get(l["code"], "a sensitive topic")}. The plan flags this, and any disclosure should be handled through your school\'s safeguarding procedures. <a href="{rel(d, "safety/")}">More on safety</a></p>'
             if l["flag"] == "demo":
-                flags += f'<p class="flag flag-demo"><strong>Teacher demonstration.</strong> Where a demonstration helps, the teacher runs it on a school approved tool, previews it first and stays in control. The deck also includes prepared examples, so the lesson does not depend on a live demonstration working on the day. No pupil accounts. <a href="{rel(d, "safety/")}">More on safety</a></p>'
+                flags += f'<p class="flag flag-demo"><strong>Teacher demonstration.</strong> Where a demonstration helps, the teacher runs it on a school approved tool, previews it first and stays in control. The lesson can also be taught without a live demonstration, using prepared results or an unplugged version. No pupil accounts. <a href="{rel(d, "safety/")}">More on safety</a></p>'
             ch = '<span class="tag tag-challenge">IDEAL Challenge</span>' if l["challenge"] else ""
             sess = f' <span class="tag">{e(l["sessions"])}</span>' if l["sessions"] else ""
             ican = "".join(f"<li>{e(s)}</li>" for s in l["i_can"])
@@ -682,12 +725,12 @@ def build_lessons():
 <ul class="ican">{ican}</ul>
 <h2>The slides</h2>
 <div class="embed"><iframe src="https://docs.google.com/presentation/d/{l['slides']}/embed?start=false&amp;loop=false" title="Slides: {e(l['title'])}" loading="lazy" allowfullscreen></iframe></div>
-<p class="note">Teacher notes and answers sit in the speaker notes of every slide, and printable resources are at the end of the deck.</p>
+<p class="note">Teacher notes and answers are in the lesson plan, and printable resources are at the end of the deck.</p>
 </div>
 <aside class="lesson-side">
 <div class="card side-card">
 <p class="side-row"><span>Time</span>{time}</p>
-<p class="side-row"><span>Devices</span>Unplugged first: no pupil devices needed</p>
+<p class="side-row"><span>Devices</span>{"Optional: one device per pair for Scratch. An unplugged version is in the plan." if l["code"] == "Y5L1" else "Unplugged first: no pupil devices needed"}</p>
 </div>
 {file_block('slides', l['slides'], 'Slides')}
 {file_block('plan', l['plan'], 'Lesson plan')}
@@ -709,15 +752,15 @@ def build_lessons():
 def build_progression():
     d = 1
     prog = [("How AI works", "AI learns from examples, spots patterns and guesses; it can be wrong.", "Feeds learn from what we do; chatbots predict words and work in probabilities.", "Rules versus learning; training and testing; generated media; bias traced to data."),
-            ("Staying in charge", "People make AI and are in charge; we check its guesses.", "Chatbots are not friends; sounding sure is not being right.", "People must explain and answer for AI decisions; different people are affected differently."),
+            ("Staying in charge", "People make AI and should stay in charge; we check its guesses.", "Chatbots are not friends; sounding sure is not being right.", "People must explain and answer for AI decisions; different people are affected differently."),
             ("Safe, fair and honest", "Some things we never tell a machine; missing examples cause mistakes.", "Privacy and listening devices; honesty about AI help; designing for children's wellbeing.", "Permission, consent for images of real people, bias, environmental cost."),
             ("Learning Well", "Try it first.", "Hint, not answer.", "Plan, use, prove."),
             ("Design and create", "Robot Rules; directing an AI picture.", "A healthier feed; a chatbot rulebook.", "Training a class model; designing AI for good.")]
     pt = "".join(f'<tr><th scope="row">{e(a)}</th><td>{e(b)}</td><td>{e(c)}</td><td>{e(x)}</td></tr>' for a, b, c, x in prog)
     cov = [("KS1", None), ("Understanding what AI is", "Y1 L1, Y1 L2, Y1 L3"), ("Identifying common AI applications", "Y1 L4, Y2 L5"),
            ("Basic understanding of ethical behaviour with AI tools", "Y1 L6, Y2 L4, Y2 L6"), ("Simple AI games and activities", "Every KS1 lesson"),
-           ("Creating AI images using simple tools", "Y1 L5"), ("KS2", None),
-           ("Basic concepts of machine learning and algorithms", "Y4 L1, Y4 L5, Y5 L1, Y5 L2, Y5 L6"),
+           ("Creating AI images using simple tools", "Y1 L5 (pupils direct a teacher demonstration)"), ("KS2", None),
+           ("Basic concepts of machine learning and algorithms", "Y3 L1, Y4 L1, Y4 L5, Y5 L1, Y5 L2, Y5 L6"),
            ("Exploring real-world AI applications", "Y3 L1, Y3 L2, Y3 L3, Y6 L3"), ("Discussing bias in AI and its implications", "Y5 L4, Y6 L2"),
            ("Creating basic AI projects and experiments", "Y5 L6, Y6 L6"), ("Learning prompt crafting for AI tools", "Y4 L4, Y5 L5"),
            ("Understanding the role of AI in automating tasks and enhancing productivity", "Y6 L3"),
@@ -729,22 +772,24 @@ def build_progression():
            ("Evaluating the credibility of online information (DL)", "Y2 L1, Y4 L3, Y6 L1"),
            ("Understanding data and simple ways to represent it; problem solving through patterns (CS)", "Y1 L3, Y2 L2, Y5 L1, Y5 L2")]
     ct = ""
-    for a, b in cov:
+    for a, b in cov:  # noqa
         ct += f'<tr class="grp"><th colspan="2" scope="colgroup">{e(a)}</th></tr>' if b is None else f'<tr><th scope="row">{e(a)}</th><td>{codes_html(d, b)}</td></tr>'
     body = f"""<section class="page-head"><div class="wrap">
 <p class="eyebrow">Progression and coverage</p>
 <h1>How the learning builds</h1>
-<p class="lede">Five threads of progression across KS1, Lower KS2 and Upper KS2, and where each AI Literacy outcome is taught.</p>
+<p class="lede">Pupils' learning is tracked in five progression strands, the same five used in the Assessment Tracker, across KS1, Lower KS2 and Upper KS2. The IDEAL habits, Learning Well and the AI Loop are how they are taught. Below: where each AI Literacy outcome is taught, and how it aligns with the National Curriculum.</p>
+<p><a class="btn btn-ghost" href="{GUIDE_URL}">The Curriculum Guide (a one document overview)</a></p>
 </div></section>
 <section class="wrap">
-<h2>Progression by thread</h2>
-<div class="table-wrap"><table><thead><tr><th scope="col">Thread</th><th scope="col">KS1</th><th scope="col">Lower KS2</th><th scope="col">Upper KS2</th></tr></thead><tbody>{pt}</tbody></table></div>
-<h2>Coverage of the AI Literacy outcomes</h2>
-<div class="table-wrap"><table><thead><tr><th scope="col">Primary Digital Cognition Curriculum outcome</th><th scope="col">Where it is taught</th></tr></thead><tbody>{ct}</tbody></table></div>
-<h2>Alignment</h2>
-<p><strong>National Curriculum for computing (England):</strong> using technology safely, respectfully and responsibly; keeping personal information private; recognising common uses of information technology beyond school (KS1); understanding how search results are selected and ranked, and being discerning in evaluating digital content (KS2).</p>
-<p><strong>SEAME:</strong> lessons cover all four levels of the model: social and ethical, applications, models and, through unplugged activities, engines.</p>
-<p><strong>The new computing curriculum:</strong> BCS is drafting a revised National Curriculum for Computing for first teaching from September 2028, with foundational AI concepts included. This curriculum will be mapped against the draft once it is published.</p>
+<h2>Progression by strand</h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">Progression strand</th><th scope="col">KS1</th><th scope="col">Lower KS2</th><th scope="col">Upper KS2</th></tr></thead><tbody>{pt}</tbody></table></div>
+<h2 id="coverage">Coverage of the AI Literacy outcomes</h2>
+<div class="table-wrap"><table class="cov"><thead><tr><th scope="col">Primary Digital Cognition Curriculum outcome</th><th scope="col">Where it is taught</th></tr></thead><tbody>{ct}</tbody></table></div>
+<h2 id="alignment">Alignment</h2>
+<p><strong>National Curriculum for computing (England), taught directly:</strong> KS1, use technology safely and respectfully, keeping personal information private, and know where to go for help (Y1 L6, Y2 L4); recognise common uses of information technology beyond school (Y1 L1, Y2 L5). KS2, use technology safely, respectfully and responsibly, and identify ways to report concerns about content and contact (Y4 L2, Y6 L1); be discerning in evaluating digital content (Y4 L3, Y6 L1); use selection in programs (Y5 L1, Scratch version).</p>
+<p><strong>Relevant connections:</strong> how feeds choose and rank what we see (Y1 L4, Y3 L1) connects to the KS2 statement on search results, but does not replace teaching search. The current curriculum does not require AI to be taught.</p>
+<p><strong>SEAME</strong>, from the Raspberry Pi Computing Education Research Centre, is used as a lens to check coverage. For example: engines, Y4 L1 and Y5 L2; models, Y5 L1 and Y5 L6; applications, Y2 L5 and Y3 L1 to L3; social and ethical, Y4 L2, Y5 L3 and Y6 L1 to L5.</p>
+<p><strong>The new computing curriculum:</strong> BCS is drafting a revised computing curriculum for first teaching from September 2028, and the Curriculum and Assessment Review recommended that it include AI. It is not yet statutory. IDEAL Thinkers will be mapped against the draft when it is published (checked October 2026).</p>
 <p><strong>Wider curriculum:</strong> RSHE, science, maths, English, geography and careers links are flagged in each lesson plan.</p>
 </section>"""
     page("progression/", "Progression and coverage | IDEAL Thinkers",
@@ -754,6 +799,7 @@ def build_progression():
 def build_safety():
     d = 1
     sg = [LESSONS[c] for c in ("Y2L4", "Y3L2", "Y4L2", "Y6L1")]
+    dis = [LESSONS[c] for c in ("Y1L6", "Y3L1", "Y4L6", "Y5L3", "Y6L6")]
     dm = [LESSONS[c] for c in ("Y1L5", "Y3L3", "Y5L5", "Y5L6")]
     li = lambda ls: "".join(f'<li><a href="{rel(d, l["path"])}">Year {l["year"]["n"]}, Lesson {l["n"]}: {e(l["title"])}</a></li>' for l in ls)
     body = f"""<section class="page-head"><div class="wrap">
@@ -764,14 +810,16 @@ def build_safety():
 <section class="wrap">
 <div class="grid grid-2">
 <div class="card">{icon("unplug", "e")}<h2>Unplugged first</h2><p>Every lesson can be taught without pupil devices. Concepts outlast tools.</p></div>
-<div class="card">{icon("nouser", "i")}<h2>No pupil accounts</h2><p>Most generative AI tools have a minimum age of 13. Where a demonstration helps, the teacher runs it on a school approved tool, previews it first and stays in control. Every deck also includes prepared examples, so no lesson depends on a live demonstration working on the day.</p></div>
-<div class="card">{icon("clipboard", "a")}<h2>Check your school's position</h2><p>Follow your school's AI policy and data protection guidance before using any tool, and never enter pupils' personal information.</p></div>
-<div class="card">{icon("heartshield", "l")}<h2>Safeguarding</h2><p>Four lessons deal with privacy, chatbot relationships and images of real people. Each plan flags this, and any disclosure should be handled through your school's safeguarding procedures.</p></div>
+<div class="card">{icon("nouser", "i")}<h2>No pupil accounts</h2><p>IDEAL Thinkers never needs a pupil to use an AI tool or account. Age limits differ by tool and change often: some tools are for 13 and over with a parent's permission, some for 18 and over. Where a demonstration helps, the teacher runs it on a school approved tool, previews it first and stays in control. Every demonstration lesson can also be taught without one, using prepared results or an unplugged version.</p></div>
+<div class="card">{icon("clipboard", "a")}<h2>Check your school's position</h2><p>Follow your school's AI policy and data protection guidance before using any tool, and never enter pupils' personal information. A school approved tool is one your school has checked for data protection and for filtering and monitoring. Check whether pupils' school accounts (for example Google Workspace for Education or Microsoft 365) already give them access to AI tools.</p></div>
+<div class="card">{icon("heartshield", "l")}<h2>Safeguarding</h2><p>Four lessons deal directly with privacy, chatbot relationships and images of real people, and five more can prompt disclosures. Each plan's Safeguarding row says what to do, and any disclosure should be handled through your school's safeguarding procedures. Brief your DSL on all nine.</p></div>
 </div>
 <div class="grid grid-2">
-<div><h2>The safeguarding lessons</h2><ul class="list">{li(sg)}</ul></div>
+<div><h2>The safeguarding lessons</h2><ul class="list">{li(sg)}</ul><h2>Lessons that can prompt disclosures</h2><ul class="list">{li(dis)}</ul></div>
 <div><h2>The teacher demonstration lessons</h2><ul class="list">{li(dm)}</ul></div>
 </div>
+<h2>The guidance it follows</h2>
+<p>This approach follows <a href="https://www.gov.uk/government/publications/keeping-children-safe-in-education--2">Keeping children safe in education 2026</a>, which lists harmful online interaction with other users or with generative AI applications that simulate this as a contact risk; the DfE's <a href="https://www.gov.uk/government/publications/generative-artificial-intelligence-in-education">Generative AI in education</a> guidance and <a href="https://www.gov.uk/government/publications/generative-ai-product-safety-standards">Generative AI: product safety standards</a>; and the UKCIS advice on <a href="https://www.gov.uk/government/publications/sharing-nudes-and-semi-nudes-advice-for-education-settings-working-with-children-and-young-people">sharing nudes and semi-nudes</a>, which covers AI-generated images.</p>
 </section>"""
     page("safety/", "Technology, safety and safeguarding | IDEAL Thinkers",
          "IDEAL Thinkers is unplugged first, with no pupil accounts and teacher-led demonstrations only.", body, d)
@@ -783,12 +831,19 @@ def build_assessment():
     body = f"""<section class="page-head"><div class="wrap">
 <p class="eyebrow">Assessment</p>
 <h1>Assessment</h1>
-<p class="lede">Each lesson has three "I can" statements and a three question exit ticket. Each IDEAL Challenge doubles as an end of unit assessment task, producing something pupils can explain to an adult.</p>
+<p class="lede">Each lesson has three "I can" statements and a three question exit ticket. Each IDEAL Challenge doubles as the end of unit assessment, where pupils show what they understand on their own.</p>
 </div></section>
 <section class="wrap">
+<h2>Where the evidence comes from</h2>
+<p>The exit ticket is the last slide of every lesson, and its questions and answers are in the lesson plan. One question always asks pupils to apply the idea to something they have not seen in the lesson. Sort the answers into got it, nearly and not yet: the middle pile chooses the next Remember When question, and you reteach briefly if the last pile is large.</p>
+<p>At the end of each unit, the IDEAL Challenge and that unit's exit tickets give one judgement per pupil for each of the five progression strands. Team work is useful feedback, but every judgement rests on what each pupil shows on their own.</p>
+<h2>Secure, developing and not yet</h2>
+<p>Secure means the pupil explains the idea with reasons, without prompting, and applies it to a new case. Developing means they show the idea with prompting, or explain part of it. Not yet means the idea is not there yet, often with a common misconception. The tracker gives what secure looks like in each key stage, for each strand.</p>
+<h2>Seeing progress across the years</h2>
+<p>Keep one tracker file per class from Year 1 to Year 6. Each September, duplicate the tracker tab and choose the new year group, so earlier years stay visible. A subject leader needs only the class summary and three pupils' IDEAL Challenge work once per unit.</p>
 <div class="file card">
 {icon("chart", "e", 30)}<h2>The IDEAL Thinkers Assessment Tracker</h2>
-<p>The tracker records secure, developing or not yet against each thread.</p>
+<p>The tracker records secure, developing or not yet against each of the five progression strands.</p>
 <p class="file-btns"><a class="btn" href="{t}/copy">Make a copy</a><a class="btn btn-ghost" href="{t}/export?format=xlsx">Download Excel</a><a class="btn btn-ghost" href="{t}/preview">Preview</a></p>
 </div>
 </section>"""
@@ -807,10 +862,25 @@ def build_using():
 <div class="grid grid-3 how-cards">
 <div class="card how-card"><span class="ic ic-i" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></span><h2>Make a copy</h2><p>On any lesson page, choose Make a copy and the file is copied into your own Google Drive. Your copy is yours to edit.</p></div>
 <div class="card how-card"><span class="ic ic-a" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg></span><h2>Download</h2><p>On Microsoft 365? Download the slides as PowerPoint and the plan as Word instead.</p></div>
-<div class="card how-card"><span class="ic ic-e" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 13h8"/><path d="M8 17h5"/></svg></span><h2>Inside the files</h2><p>Teacher notes and answers sit in the speaker notes of every slide, and printable resources are at the end of each deck.</p></div>
+<div class="card how-card"><span class="ic ic-e" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 13h8"/><path d="M8 17h5"/></svg></span><h2>Inside the files</h2><p>Teacher notes and answers are in the lesson plan, under Teacher notes by slide, and printable resources are at the end of each deck.</p></div>
 </div>
+<p>If Make a copy is greyed out or a file will not open, your school may block files from outside its organisation. Download the files instead, or ask your IT team to allow access.</p>
+<p><a class="btn btn-ghost" href="{GUIDE_URL}">The Curriculum Guide (a one document overview)</a></p>
+<h2>Starting out</h2>
+<ol class="list">
+<li><strong>Where it fits.</strong> Teach each year's six lessons in order, as one half term of computing. Lessons with RSHE links, such as Year 4 Lesson 2, can be taught in RSHE time, but keep them in sequence.</li>
+<li><strong>Starting above Year 1.</strong> In the first year, pupils in Years 2 to 6 have not met the earlier units. Before Lesson 1, spend 15 minutes on Year 1 Lesson 1 slides 5, 8 and 9 (Bleep, the IDEAL habits and the IDEAL moment routine, using your key stage's wording) and Year 1 Lesson 3 slide 8 (the AI Loop). Treat words marked "Already taught" as new, and where Remember When asks about an earlier year, ask about pupils' own experience instead.</li>
+<li><strong>What to assume.</strong> Assume no AI knowledge beyond the earlier units. Children's experience at home varies widely; no lesson depends on it, and you never need to ask which apps they use.</li>
+<li><strong>Preparation.</strong> Read the six plans at the start of the half term. First time through, allow up to twice the stated preparation time for printing and cutting, and keep each lesson's cards in an envelope for next year. Year 5 Lesson 6 needs clean recycling collected in advance, and Year 6 Lesson 6 needs a small panel invited.</li>
+<li><strong>Subject knowledge.</strong> Each plan's Teacher subject knowledge section is all you need; read it the day before. Practise two things beforehand: building the Scratch program (Year 5 Lesson 1) and running Teachable Machine (Year 5 Lesson 6).</li>
+<li><strong>New to AI tools?</strong> 32 of the 36 lessons use no AI tool at all. The four demonstration lessons give the exact steps and words to type, and each can be taught with no tool.</li>
+<li><strong>Devices and school policy.</strong> Every lesson needs only a screen for the slides. If your school has not approved a suitable tool, use the prepared results or the unplugged version. Never use a personal account.</li>
+<li><strong>Misconceptions.</strong> Each plan lists the likely ones. If an exit ticket shows one is common, reteach it briefly at the start of the next lesson and add a Remember When question on it.</li>
+<li><strong>If a lesson runs long.</strong> Stop at a natural break, do the exit ticket, and finish the rest at the start of the next lesson in place of Link It. For 45 minute lessons, use the 45 minute version in the plan.</li>
+<li><strong>Checking it works.</strong> A subject leader needs only what the lessons already produce. Once per unit, look at each class tracker's summary and three pupils' IDEAL Challenge work (one secure, one developing, one not yet), and ask the teacher two questions: which lesson ran over, and which misconception came up most.</li>
+</ol>
 <h2>Display and posters</h2>
-<div class="grid grid-4 posters-grid">
+<div class="grid grid-3 posters-grid">
 <div class="card poster-card"><a class="pc-img pc-wide" href="https://drive.google.com/uc?export=download&amp;id={ROADMAP_PDF}"><img src="{rel(d, 'images/ideal-thinkers-road-map.webp')}" width="2482" height="1754" loading="lazy" alt="Thumbnail of the A3 IDEAL Thinkers road map"></a><h3>The road map (A3)</h3><p>All 36 lessons on one poster.</p><p><a class="btn" href="https://drive.google.com/uc?export=download&amp;id={ROADMAP_PDF}">Download (PDF)</a></p></div>
 """ + "".join(f'''<div class="card poster-card"><a class="pc-img" href="{rel(d, 'downloads/' + f)}" download><img src="{rel(d, 'images/posters/' + k + '.png')}" width="397" height="562" loading="lazy" alt="Thumbnail of the A4 poster: {e(t)}"></a><h3>{e(t)} (A4)</h3><p><a class="btn" href="{rel(d, 'downloads/' + f)}" download>Download (PDF)</a></p></div>''' for k, (t, f) in POSTERS.items()) + f"""
 </div>
@@ -866,7 +936,7 @@ def build_llms():
          "36 lessons, six per year group, each with a lesson plan and slides. Unplugged first: every lesson can be taught without pupil devices, and pupils never need AI accounts. "
          "Licensed CC BY-NC-SA 4.0: free for schools and teachers, not for commercial use. Credit: \"IDEAL Thinkers by Mark Anderson, ictevangelist.com\".", "",
          "IDEAL Thinkers is the AI Literacy strand of the Primary Digital Cognition Curriculum from The EdTech Playbook. "
-         "Three threads run through every lesson: the AI Loop (Learn, Spot, Guess, Check), the IDEAL habits (Informed, Deliberate, Ethical, Accurate, Learning) and Learning Well (Try it first; Hint, not answer; Plan, use, prove).", "",
+         "Pupils' learning builds in five progression strands (how AI works; staying in charge; safe, fair and honest; learning well; design and create). The IDEAL habits (Informed, Deliberate, Ethical, Accurate, Learning) are how pupils use AI well, with Learning Well (Try it first; Hint, not answer; Plan, use, prove) as the taught form of the L habit. The AI Loop (Learn, Spot, Guess, Check) is a simple model of how AI that learns from examples works.", "",
          "## How it works",
          f"- [How it works]({SITE}/how-it-works/)", f"- [The AI Loop]({SITE}/how-it-works/ai-loop/)", f"- [IDEAL]({SITE}/how-it-works/ideal/)",
          f"- [Learning Well]({SITE}/how-it-works/learning-well/)", f"- [Every lesson]({SITE}/how-it-works/every-lesson/)",
