@@ -7,7 +7,7 @@
     "i_can": [
       "I can say what a guess is.",
       "I can sort machines into \"same every time\" and \"makes a guess\".",
-      "I can join in when the IDEAL sign pops up."
+      "I can say how I know a machine makes a guess."
     ],
     "notes": ""
   },
@@ -67,7 +67,7 @@
     "i_can": [
       "I can say who is in charge of AI.",
       "I can choose good jobs for a robot helper.",
-      "I can help write our Robot Rules."
+      "I can give a reason for one of our Robot Rules."
     ],
     "notes": ""
   },
@@ -139,7 +139,7 @@
     "i_can": [
       "I can use all five IDEAL habits to stay in charge of Bleep.",
       "I can make a choice and say why.",
-      "I can show what I know about AI."
+      "I can explain what Bleep got wrong and how I know."
     ],
     "notes": ""
   },
@@ -211,7 +211,7 @@
     "i_can": [
       "I can use what I know about AI to design a feed that is good for children.",
       "I can explain how each part of my design helps children's wellbeing.",
-      "I can pitch my design and give fair, kind feedback to others."
+      "I can explain how one feature of my design uses what I know about feeds."
     ],
     "notes": ""
   },
@@ -319,7 +319,7 @@
     "i_can": [
       "I can explain where AI training data comes from.",
       "I can explain why permission and consent matter.",
-      "I can help write a Permission Charter for using people's work."
+      "I can suggest a fair rule for using people's work and explain why it is fair."
     ],
     "notes": "Doc file title omits the question mark (\"Y5 L3 Whose is it anyway (Lesson Plan)\"); heading at top has it."
   },
@@ -367,7 +367,7 @@
     "i_can": [
       "I can explain what generated pictures, voices and videos are, and why they fool us.",
       "I can use Pause, Look, Ask, Check before I believe or share something.",
-      "I can explain why we never make or share AI pictures of real people without consent."
+      "I can explain why we never make or share AI pictures of real people."
     ],
     "notes": "Doc file title omits the question mark (\"Y6 L1 Real or generated (Lesson Plan)\"); heading at top has it."
   },
@@ -414,7 +414,7 @@
     "big_idea": "When AI or an automatic system makes a decision, people must be able to explain it and answer for it.",
     "i_can": [
       "I can explain what accountable and transparent mean.",
-      "I can investigate a real case where an automatic system failed.",
+      "I can use evidence from a real case to explain who should answer for a mistake.",
       "I can decide who is responsible and write recommendations."
     ],
     "notes": "Doc file title omits the question mark (\"Y6 L5 Who's responsible (Lesson Plan)\"); heading at top has it."
@@ -427,7 +427,7 @@
     "i_can": [
       "I can choose a real problem and decide whether AI is the right tool.",
       "I can design an AI helper on the AI Loop and test it with an IDEAL audit.",
-      "I can pitch our design, and write my own AI learning promise."
+      "I can explain how I will use AI for learning and prove the learning is mine."
     ],
     "notes": "Two-session lesson (Session 1 slides 2 to 10, Session 2 slides 11 to 18) in a single plan; one set of three I can statements covers both. Big idea is partly a description of the activity (\"Teams design...\")."
   }
