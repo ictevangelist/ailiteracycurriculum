@@ -17,7 +17,7 @@ EXTRA_SPOTS = json.load(open(os.path.join(ROOT, "data/roadmap-extra-spots.json")
 TRACKER = "18lutsh179zuY39y_L8VkzipVrCeSc1RHHuu3eA9D3ZE"
 ROADMAP_PDF = "1xqUuxwFz0IVMQis2mX5iACgGPqD9xT6y"
 GUIDE_URL = "https://docs.google.com/document/d/1ZSazUK-00P8Ne2G3T94l6GCVGfHIuzoJKU2catPhCTw/preview"
-GA_ID = ""  # Google Analytics measurement ID (G-...); empty = no analytics, no banner
+GA_ID = "G-1X05FYT3MT"  # Google Analytics measurement ID (G-...); empty = no analytics, no banner
 LAUNCHED = True  # flip to True at launch: allows indexing and writes the sitemap
 BUILT = "2026-10-14"  # sitemap lastmod
 LICENCE_URL = "https://creativecommons.org/licenses/by-nc-sa/4.0/"
