@@ -284,3 +284,9 @@ table.cov{min-width:0}
 .first-time h2{margin-top:0}
 .prep .plain{margin:0;padding-left:1.1em}.prep .plain li{margin:.15em 0}
 .journey li>div{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.consent{position:fixed;left:16px;right:16px;bottom:16px;z-index:50;background:#fff;color:var(--ink);border:2px solid var(--ink);border-radius:var(--r);box-shadow:var(--shadow);padding:16px 20px;font-size:.95rem}
+.consent p{margin:0 0 .6em}
+.consent-btns{display:flex;flex-wrap:wrap;gap:10px;margin:0}
+.consent .btn{font:inherit;font-weight:600;cursor:pointer}
+.foot-btn{background:none;border:0;padding:0;font:inherit;color:#fff;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+@media print{.consent{display:none}}

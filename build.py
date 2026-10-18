@@ -17,6 +17,7 @@ EXTRA_SPOTS = json.load(open(os.path.join(ROOT, "data/roadmap-extra-spots.json")
 TRACKER = "18lutsh179zuY39y_L8VkzipVrCeSc1RHHuu3eA9D3ZE"
 ROADMAP_PDF = "1xqUuxwFz0IVMQis2mX5iACgGPqD9xT6y"
 GUIDE_URL = "https://docs.google.com/document/d/1ZSazUK-00P8Ne2G3T94l6GCVGfHIuzoJKU2catPhCTw/preview"
+GA_ID = ""  # Google Analytics measurement ID (G-...); empty = no analytics, no banner
 LAUNCHED = True  # flip to True at launch: allows indexing and writes the sitemap
 BUILT = "2026-10-14"  # sitemap lastmod
 LICENCE_URL = "https://creativecommons.org/licenses/by-nc-sa/4.0/"
@@ -129,6 +130,13 @@ def page(path, title, desc, body, depth, year=None, ld=None, crumbs=None):
     years_nav = "".join(
         f'<a class="yb y{y["n"]}{" yb-on" if path.startswith(y["path"]) else ""}" href="{rel(depth, y["path"])}"{cur if path == y["path"] else ""}>'
         f'<span class="yb-n">Year {y["n"]}</span><span class="yb-t">{e(y["title"])}</span></a>' for y in DATA["years"])
+    consent_link = ' <button type="button" class="foot-btn" data-consent-open>Cookie settings</button>' if GA_ID else ""
+    consent = f"""<aside class="consent" aria-label="Analytics cookies" hidden>
+<p>Can I use Google Analytics cookies to see which pages get read, so I can improve the site? <a href="{rel(depth, 'privacy/')}">Privacy notice</a></p>
+<p class="consent-btns"><button type="button" class="btn" data-consent="yes">Accept</button><button type="button" class="btn btn-ghost" data-consent="no">No thanks</button></p>
+</aside>
+<script src="{rel(depth, 'js/consent.js')}" data-ga="{GA_ID}" defer></script>
+""" if GA_ID else ""
     doc = f"""<!doctype html>
 <html lang="en-GB">
 <head>
@@ -171,10 +179,10 @@ def page(path, title, desc, body, depth, year=None, ld=None, crumbs=None):
 <div class="wrap foot-in">
 <p><strong>IDEAL Thinkers</strong> is the AI Literacy strand of the Primary Digital Cognition Curriculum, by <a href="https://ictevangelist.com/">Mark Anderson FCCT</a>.</p>
 <p>IDEAL Thinkers &copy; 2026 Mark Anderson. Free to use for non commercial purposes under <a href="{rel(depth, 'licence/')}">CC BY-NC-SA 4.0</a>. It cannot be taken, distributed or shared for commercial purposes.</p>
-<p class="foot-links"><a href="{rel(depth, 'progression/')}">Progression and coverage</a> <a href="{rel(depth, 'assessment/')}">Assessment</a> <a href="{rel(depth, 'licence/')}">Licence</a> <a href="{rel(depth, 'privacy/')}">Privacy</a> <a href="https://ictevangelist.com/">ictevangelist.com</a></p>
+<p class="foot-links"><a href="{rel(depth, 'progression/')}">Progression and coverage</a> <a href="{rel(depth, 'assessment/')}">Assessment</a> <a href="{rel(depth, 'licence/')}">Licence</a> <a href="{rel(depth, 'privacy/')}">Privacy</a>{consent_link} <a href="https://ictevangelist.com/">ictevangelist.com</a></p>
 </div>
 </footer>
-</body>
+{consent}</body>
 </html>
 """
     if PREVIEW:
@@ -1011,6 +1019,12 @@ def build_licence():
 
 def build_privacy():
     d = 1
+    if GA_ID:
+        short = """<p>I collect as little as possible. There are no accounts and no forms, and you don't need to sign up for anything to use IDEAL Thinkers; neither do your pupils. Analytics only runs if you say yes to it.</p>
+<h2>Analytics</h2>
+<p>I use Google Analytics to see how the site is used, which pages get read and where visitors come from, so I can make it better. It only runs if you choose Accept in the cookie banner. Google Analytics doesn't store IP addresses, and the data isn't used for advertising. If you accept, it sets two cookies, _ga and one starting _ga_, which last up to two years. Your choice is saved in your browser, and you can change your mind at any time with Cookie settings at the bottom of every page. Analytics data is kept for up to 14 months.</p>"""
+    else:
+        short = """<p>This site doesn't collect any personal information. There are no accounts, no forms, no analytics and no cookies set by the site itself. You don't need to sign up for anything to use IDEAL Thinkers, and neither do your pupils.</p>"""
     body = """<section class="page-head"><div class="wrap">
 <p class="eyebrow">Privacy</p>
 <h1>Privacy notice</h1>
@@ -1019,7 +1033,7 @@ def build_privacy():
 <section class="wrap">
 <p>This site is run by me, Mark Anderson, trading as ICT Evangelist, in the United Kingdom. If you have any questions about your data, email me at <a href="mailto:mark@ictevangelist.com">mark@ictevangelist.com</a>.</p>
 <h2>The short version</h2>
-<p>This site doesn't collect any personal information. There are no accounts, no forms, no analytics and no cookies set by the site itself. You don't need to sign up for anything to use IDEAL Thinkers, and neither do your pupils.</p>
+{PRIVACY_SHORT}
 <h2>What other services see</h2>
 <p>A few things on the site come from other services. Like any website, they see basic details such as your IP address when your browser asks them for something.</p>
 <ul>
@@ -1031,8 +1045,9 @@ def build_privacy():
 <p>What Google does with this is covered by <a href="https://policies.google.com/privacy">Google's privacy policy</a>.</p>
 <h2>Your rights</h2>
 <p>For your rights under UK data protection law, including how to complain to the Information Commissioner's Office, see my main <a href="https://ictevangelist.com/privacy-policy/">privacy policy</a>.</p>
-</section>"""
+</section>""".replace("{PRIVACY_SHORT}", short)
     page("privacy/", "Privacy notice | IDEAL Thinkers",
+         "How IDEAL Thinkers handles data: no accounts or forms, and analytics only with your consent." if GA_ID else
          "IDEAL Thinkers collects no personal information: no accounts, forms, analytics or cookies of its own.", body, d)
 
 
