@@ -171,7 +171,7 @@ def page(path, title, desc, body, depth, year=None, ld=None, crumbs=None):
 <div class="wrap foot-in">
 <p><strong>IDEAL Thinkers</strong> is the AI Literacy strand of the Primary Digital Cognition Curriculum, by <a href="https://ictevangelist.com/">Mark Anderson FCCT</a>.</p>
 <p>IDEAL Thinkers &copy; 2026 Mark Anderson. Free to use for non commercial purposes under <a href="{rel(depth, 'licence/')}">CC BY-NC-SA 4.0</a>. It cannot be taken, distributed or shared for commercial purposes.</p>
-<p class="foot-links"><a href="{rel(depth, 'progression/')}">Progression and coverage</a> <a href="{rel(depth, 'assessment/')}">Assessment</a> <a href="{rel(depth, 'licence/')}">Licence</a> <a href="https://ictevangelist.com/">ictevangelist.com</a></p>
+<p class="foot-links"><a href="{rel(depth, 'progression/')}">Progression and coverage</a> <a href="{rel(depth, 'assessment/')}">Assessment</a> <a href="{rel(depth, 'licence/')}">Licence</a> <a href="{rel(depth, 'privacy/')}">Privacy</a> <a href="https://ictevangelist.com/">ictevangelist.com</a></p>
 </div>
 </footer>
 </body>
@@ -1009,6 +1009,33 @@ def build_licence():
          "IDEAL Thinkers is free to use under CC BY-NC-SA 4.0 and cannot be taken, distributed or shared for commercial purposes.", body, d)
 
 
+def build_privacy():
+    d = 1
+    body = """<section class="page-head"><div class="wrap">
+<p class="eyebrow">Privacy</p>
+<h1>Privacy notice</h1>
+<p class="lede">Last updated 18 October 2026.</p>
+</div></section>
+<section class="wrap">
+<p>This site is run by me, Mark Anderson, trading as ICT Evangelist, in the United Kingdom. If you have any questions about your data, email me at <a href="mailto:mark@ictevangelist.com">mark@ictevangelist.com</a>.</p>
+<h2>The short version</h2>
+<p>This site doesn't collect any personal information. There are no accounts, no forms, no analytics and no cookies set by the site itself. You don't need to sign up for anything to use IDEAL Thinkers, and neither do your pupils.</p>
+<h2>What other services see</h2>
+<p>A few things on the site come from other services. Like any website, they see basic details such as your IP address when your browser asks them for something.</p>
+<ul>
+<li><strong>GitHub Pages</strong> hosts the site. GitHub logs visitors' IP addresses for security. See <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub's privacy statement</a>.</li>
+<li><strong>Google Fonts</strong> supplies the fonts.</li>
+<li><strong>Google Slides</strong> shows the slides on each lesson page. Google may set cookies when they load, particularly if you're signed in to a Google account.</li>
+<li><strong>Make a copy, Preview, Download and the Drive folder buttons</strong> take you to Google. If you make a copy, it sits in your own or your school's Google account.</li>
+</ul>
+<p>What Google does with this is covered by <a href="https://policies.google.com/privacy">Google's privacy policy</a>.</p>
+<h2>Your rights</h2>
+<p>For your rights under UK data protection law, including how to complain to the Information Commissioner's Office, see my main <a href="https://ictevangelist.com/privacy-policy/">privacy policy</a>.</p>
+</section>"""
+    page("privacy/", "Privacy notice | IDEAL Thinkers",
+         "IDEAL Thinkers collects no personal information: no accounts, forms, analytics or cookies of its own.", body, d)
+
+
 def build_404():
     body = f"""<section class="page-head"><div class="wrap head-grid"><div><h1>Page not found</h1>
 <p class="lede">Chatty can't find that page. Try the <a href="/curriculum-map/">curriculum map</a> or the <a href="/">home page</a>.</p></div>{chatty("chatty chatty-head")}</div></section>"""
@@ -1067,6 +1094,7 @@ if __name__ == "__main__":
     build_assessment()
     build_using()
     build_licence()
+    build_privacy()
     build_404()
     build_meta()
     print(len(PAGES), "pages")
