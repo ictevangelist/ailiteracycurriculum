@@ -78,6 +78,23 @@ def links_text(links):
     return ", ".join(parts)
 
 
+TEACHER = json.load(open(os.path.join(ROOT, "data/teacher.json"), encoding="utf-8"))
+DISCLOSURE = {"Y1L6", "Y3L1", "Y4L6", "Y5L3", "Y6L6"}  # can prompt disclosures (Guide, Safeguarding)
+
+
+def lesson_ref(depth, code, slides="", title=True):
+    l = LESSONS.get(code)
+    if not l:
+        return e(code)
+    name = f'Year {l["year"]["n"]} Lesson {l["n"]}' + (f': {e(l["title"])}' if title else "")
+    return f'<a href="{rel(depth, l["path"])}">{name}</a>' + (f' ({e(slides)})' if slides else "")
+
+
+def codes_text(depth, s):
+    """plain text with Y5L1 style codes -> 'Year 5 Lesson 1' links"""
+    return re.sub(r"Y(\d)L(\d)", lambda m: lesson_ref(depth, m.group(0), title=False), e(s))
+
+
 def code_link(depth, code):
     code = code.replace(" ", "")
     l = LESSONS.get(code)
@@ -628,6 +645,28 @@ def build_years():
         if next_y:
             where.append(f'Next, in Year {next_y["n"]}, pupils move on to <a href="{rel(d, next_y["path"])}">{e(next_y["title"])}</a>.')
         cards = "".join(lesson_card(d, l) for l in y["lessons"])
+        TY = TEACHER["years"][str(y["n"])]
+        steps = ""
+        for k, l in enumerate(y["lessons"]):
+            txt = re.sub(r"^L\d+:\s*", "", TY["journey"][k]) if k < len(TY["journey"]) else ""
+            chal = ' <span class="tag tag-challenge">IDEAL Challenge</span>' if l["challenge"] else ""
+            steps += f'<li><div><a href="{rel(d, l["path"])}">Lesson {l["n"]}: {e(l["title"])}</a>{chal}</div><span>{e(txt[:1].upper() + txt[1:])}</span></li>'
+        first = "".join(f"<li>{codes_text(d, x)}</li>" for x in TY["first_time"])
+        yn = str(y["n"])
+        deps = "".join("<li>" + codes_text(d, re.sub(r"(?<![Y\d])L(\d)", lambda m: "Y" + yn + "L" + m.group(1), x)) + "</li>" for x in TY["extra_dependencies"] or [])
+        start = "Pupils start the curriculum here, from their everyday experience." if y["n"] == 1 else e(" ".join(TY["starting_point"]) if isinstance(TY["starting_point"], list) else TY["starting_point"])
+        journey = f"""<section class="wrap journey-sec" aria-labelledby="journey-h">
+<h2 id="journey-h">How this unit builds</h2>
+<p><strong>Starting point.</strong> {start}</p>
+<ol class="journey">{steps}</ol>
+<p><strong>Assessment.</strong> {e(" ".join(TY["challenge"]) if isinstance(TY["challenge"], list) else TY["challenge"])} <a href="../assessment/">How assessment works</a></p>
+</section>
+<section class="wrap"><div class="card first-time" id="starting">
+<h2>Starting Year {y['n']} with pupils new to IDEAL Thinkers</h2>
+{"<p>Year 1 is the start of the curriculum: no introduction is needed.</p>" if y["n"] == 1 else f"<ul>{first}</ul>"}
+{f"<h3>Lessons in this unit that depend on earlier ones</h3><ul>{deps}</ul>" if deps else ""}
+<p class="small">Pupils who have had the earlier units only need the Remember When retrieval in each lesson. More in <a href="../using-the-lessons/">Using the lessons</a>.</p>
+</div></section>"""
         bot = chatty("chatty chatty-head", "Chatty, the class chatbot pupils meet in Year 4") if y["n"] == 4 else ""
         body = f"""<section class="page-head year-head"><div class="wrap{' head-grid' if bot else ''}"><div>
 <p class="eyebrow"><a href="../curriculum-map/">Curriculum map</a> / Year {y['n']}</p>
@@ -637,7 +676,8 @@ def build_years():
 <p>{' '.join(where)}</p>
 <p><a class="btn btn-ghost" href="https://drive.google.com/drive/folders/{y['folder']}">Open the Year {y['n']} folder in Google Drive</a></p>
 </div>{bot}</div></section>
-<section class="wrap"><h2 class="vh">Lessons</h2><div class="grid grid-3">{cards}</div>
+{journey}
+<section class="wrap"><h2>Lessons</h2><div class="grid grid-3">{cards}</div>
 <p class="note">Lesson 6 is the IDEAL Challenge, where pupils pull the unit together to make or decide something. It doubles as the end of unit assessment task: <a href="../assessment/">how assessment works</a>.</p>
 </section>"""
         page(y["path"], f"Year {y['n']} AI literacy: {y['title']} | IDEAL Thinkers",
@@ -697,6 +737,7 @@ def build_lessons():
             d = 2
             prev_l = ls[i - 1] if i > 0 else None
             next_l = ls[i + 1] if i < len(ls) - 1 else None
+            T = TEACHER["lessons"][l["code"]]
             flags = ""
             if l["flag"] == "safeguarding":
                 flags += f'<p class="flag flag-safe"><strong>Safeguarding.</strong> This lesson deals with {SAFE_TOPIC.get(l["code"], "a sensitive topic")}. The plan flags this, and any disclosure should be handled through your school\'s safeguarding procedures. <a href="{rel(d, "safety/")}">More on safety</a></p>'
@@ -709,7 +750,64 @@ def build_lessons():
             nav += f'<a class="pn-prev" href="{rel(d, prev_l["path"])}"><span>Previous</span>Lesson {prev_l["n"]}: {e(prev_l["title"])}</a>' if prev_l else '<span></span>'
             nav += f'<a class="pn-next" href="{rel(d, next_l["path"])}"><span>Next</span>Lesson {next_l["n"]}: {e(next_l["title"])}</a>' if next_l else f'<a class="pn-next" href="{rel(d, y["path"])}"><span>Back to</span>Year {y["n"]}: {e(y["title"])}</a>'
             nav += "</nav>"
-            time = "Two sessions" if l["sessions"] else "60 minutes, with a 45 minute version in the plan"
+            time = "Two sessions of 60 minutes" if l["sessions"] else "60 minutes, with a 45 minute version in the plan"
+            devices = "Optional: one device per pair for Scratch, or the unplugged version in the plan" if l["code"] == "Y5L1" else "None needed"
+            demo = "Optional: the teacher runs it on a school approved tool, or uses the prepared results in the plan" if l["flag"] == "demo" else "None"
+            if l["flag"] == "safeguarding":
+                safe = f'This lesson deals with {SAFE_TOPIC.get(l["code"], "a sensitive topic")}. Read the plan\'s Safeguarding row and brief your DSL. <a href="{rel(d, "safety/")}">Safety</a>'
+            elif l["code"] in DISCLOSURE:
+                safe = f'Discussion can prompt disclosures. Read the plan\'s Safeguarding row and follow your school\'s procedures. <a href="{rel(d, "safety/")}">Safety</a>'
+            else:
+                safe = ""
+            same = [r["code"] for a in T["already"] for r in a["from"] if r["code"][:2] == l["code"][:2]]
+            earlier = [r["code"] for a in T["already"] for r in a["from"] if r["code"][:2] != l["code"][:2]]
+            if not T["already"]:
+                prior = "No formal prerequisites."
+            else:
+                bits = []
+                if same: bits.append("earlier lessons in this unit")
+                if earlier: bits.append("learning from earlier years")
+                prior = "Builds on " + " and ".join(bits) + '. <a href="#before">Before teaching this lesson</a>'
+            prep = f'About {T["prep_time"].replace("about ", "")}, plus the plan\'s Teacher subject knowledge.' if T["prep_time"] else "See the plan."
+            rows = [("Lesson", f'Lesson {l["n"]} of 6 in Year {y["n"]}: {e(y["title"])}'), ("Time", time),
+                    ("Pupils learn", f'<ul class="plain">{ican}</ul>'),
+                    ("Preparation", f'{prep}<details><summary>What to prepare</summary><p>{e(T["prep"])}</p></details>'),
+                    ("Pupil devices", devices), ("Demonstration", demo)]
+            if safe: rows.append(("Safeguarding", safe))
+            rows.append(("Prior learning", prior))
+            summary = '<section class="card prep" aria-labelledby="prep-h"><h2 id="prep-h">Preparing to teach</h2><dl>' + "".join(f"<div><dt>{a}</dt><dd>{b}</dd></div>" for a, b in rows) + "</dl></section>"
+            if T["already"]:
+                know = "<ul>" + "".join(f'<li>{e(a["idea"])}</li>' for a in T["already"]) + "</ul>"
+                refs = []
+                for a in T["already"]:
+                    for r in a["from"]:
+                        lab = "This unit" if r["code"][:2] == l["code"][:2] else f'Year {r["code"][1]}'
+                        item = f'<li><span class="scope">{lab}</span> {lesson_ref(d, r["code"], r["slides"])}</li>'
+                        if item not in refs: refs.append(item)
+                where = "<ul>" + "".join(refs) + "</ul>"
+            else:
+                know, where = "<p>No formal prerequisites: this lesson starts from pupils' everyday experience.</p>", "<p>Nothing earlier is needed.</p>"
+            names = []
+            for r in T["routines"]:
+                for key, nm in (("IDEAL", "IDEAL moments"), ("AI Loop", "the AI Loop"), ("Bleep", "Bleep"), ("Chatty", "Chatty"), ("STAIR", "STAIR"),
+                                ("Try it first", "Learning Well"), ("Hint", "Learning Well"), ("Plan, use", "Learning Well"), ("Learning Well", "Learning Well")):
+                    if key in r and nm not in names: names.append(nm)
+            if names:
+                know += '<p class="small">Routines it uses: ' + ", ".join(names) + ".</p>"
+            if T["recall"]:
+                where += '<p class="small">Remember When (slide 2) recalls ' + ", ".join(lesson_ref(d, c, title=False) for c in T["recall"]) + ". If your class has not had these, ask about pupils' own experience instead.</p>"
+            before = f"""<section class="before" id="before" aria-labelledby="before-h"><h2 id="before-h">Before teaching this lesson</h2><div class="before-grid">
+<div><h3>Pupils should already understand</h3>{know}</div>
+<div><h3>Where this was taught</h3>{where}</div>
+<div><h3>If your pupils haven't covered this</h3><p>{codes_text(d, T["if_not"]) if T["already"] else "Nothing to do: start the lesson as planned."}</p></div>
+<div><h3>What this lesson adds</h3><p>{e(T["adds"])}</p></div></div></section>"""
+            look = ""
+            if T["exit"] or T["look_for"]:
+                look = '<h2>What to look for</h2>'
+                if T["exit"]: look += f'<p><strong>Exit ticket:</strong> {e(T["exit"])}</p>'
+                if T["look_for"]: look += f'<p><strong>Look for</strong> {e(T["look_for"])}</p>'
+                look += f'<p class="small">This evidence feeds the tracker for {e(T["strands"] or "the progression strands")}, and the unit ends with the <a href="{rel(d, ls[5]["path"])}">IDEAL Challenge</a>. Answers are in the plan.</p>'
+
             body = f"""<section class="page-head lesson-head"><div class="wrap">
 <p class="eyebrow"><a href="{rel(d, 'curriculum-map/')}">Curriculum map</a> / <a href="{rel(d, y['path'])}">Year {y['n']}: {e(y['title'])}</a></p>
 <p class="kicker">Year {y['n']}, Lesson {l['n']} {ch}{sess}</p>
@@ -719,20 +817,16 @@ def build_lessons():
 </div></section>
 <section class="wrap lesson-body">
 <div class="lesson-main">
-{flags}
+{summary}
+{before}
 <h2>The signature activity</h2>
 <p>{e(l['activity'])}</p>
-<h2>Learning intentions</h2>
-<ul class="ican">{ican}</ul>
 <h2>The slides</h2>
 <div class="embed"><iframe src="https://docs.google.com/presentation/d/{l['slides']}/embed?start=false&amp;loop=false" title="Slides: {e(l['title'])}" loading="lazy" allowfullscreen></iframe></div>
 <p class="note">Teacher notes and answers are in the lesson plan, and printable resources are at the end of the deck.</p>
+{look}
 </div>
 <aside class="lesson-side">
-<div class="card side-card">
-<p class="side-row"><span>Time</span>{time}</p>
-<p class="side-row"><span>Devices</span>{"Optional: one device per pair for Scratch. An unplugged version is in the plan." if l["code"] == "Y5L1" else "Unplugged first: no pupil devices needed"}</p>
-</div>
 {file_block('slides', l['slides'], 'Slides')}
 {file_block('plan', l['plan'], 'Lesson plan')}
 </aside>
