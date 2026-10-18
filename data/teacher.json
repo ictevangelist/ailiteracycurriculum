@@ -11,6 +11,9 @@
    "prep_time": "about 15 minutes",
    "prep": "Bleep: a robot puppet, soft toy or decorated box. Mystery Bag: a pillowcase or drawstring bag holding, in this order: a torch; the smart speaker card; a calculator; the photos app card; a toy toaster (or its card); the video app card; a musical push button toy; the phone card. Print and cut out slide 16 for the cards, and use the real thing wherever you have it. Signs: print slide 17 and stick \"Same every time\" and \"Makes a guess\" on opposite walls. Optional: a floor robot such as a Bee-Bot for slide 12. Own It: plain paper and crayons. Test the torch and the calculator before the lesson.",
    "safeguarding": null,
+   "need": "Bleep, a mystery bag of everyday objects, printed cards and signs (slides 16 and 17)",
+   "advance": "",
+   "unit_advance": false,
    "exit": "1. What is a guess? 2. Thumbs up or thumbs down: does a torch make a guess? 3. A camera at the door says \"It's Grandma!\" Does it make a guess? How do you know?",
    "look_for": "pupils who give a reason (\"it has to guess what I said\") rather than just a group, and pupils who stop quickly and join in when the IDEAL sign appears.",
    "strands": "How AI works",
@@ -25,13 +28,14 @@
      "IDEAL moments",
      "Bleep"
     ],
-    "recall": []
+    "recall": [],
+    "check": []
    }
   },
   "Y1L2": {
    "already": [
     {
-     "idea": "AI is a computer that makes guesses, and Bleep is a pretend robot playing one.",
+     "idea": "Many machines that make guesses use AI; Bleep is a pretend robot playing one.",
      "from": [
       {
        "code": "Y1L1",
@@ -55,13 +59,16 @@
    "prep_time": "about 15 minutes",
    "prep": "Bleep (the same as Lesson 1). Fruit table: two red apples (keep these to one side for slide 7), an orange, a pear, a lemon and as many others as you have, such as a kiwi, a green apple or a plum; play food works well. Not fruit tray: a ball that is not red (such as a tennis ball), a crayon that is not yellow, and an orange beanbag or block. Test bag, kept out of sight: a banana and a red ball (use them on slide 7, then put them back in the bag), grapes, a strawberry, a yellow crayon and a toy car. Never teach Bleep with anything in the test bag, so that on slide 10 Bleep guesses about things it has never been taught with. Hoops: two hoops on the carpet with the signs from slide 16. Allergies: check for fruit allergies; nobody eats the fruit, and play food can replace anything that is a problem. Own It: plain paper and crayons.",
    "safeguarding": null,
+   "need": "Bleep, fruit and not fruit objects, a hidden test bag, two hoops, signs (slide 16)",
+   "advance": "",
+   "unit_advance": false,
    "exit": "1. Bleep only saw black cats. Here is a ginger cat. What might Bleep guess, and why? 2. Bleep saw two red apples. Why did it think a red ball was fruit? 3. How can we help Bleep learn better?",
    "look_for": "pupils who explain Bleep's silly guess using the examples (\"it only saw red ones\") and who choose an example because it is different rather than only because they like it.",
    "strands": "How AI works",
    "time": "60 minutes (45 minutes: shorten the edges and keep the middle. Ask two Remember When questions, keep Link It to 2 minutes, tell the Quick, Draw! story in one sentence, and keep the IDEAL Check to 2 minutes and the full exit ticket to 3 minutes. Keep the two apples worked example, Bleep's test and Own It. Teach Bleep with six examples instead of ten, and test Bleep with four objects from the test bag.)",
    "before": {
     "understand": [
-     "AI is a computer that makes guesses, and Bleep is a pretend robot playing one."
+     "Many machines that make guesses use AI; Bleep is a pretend robot playing one."
     ],
     "where": [
      {
@@ -80,6 +87,12 @@
     ],
     "recall": [
      "Y1L1"
+    ],
+    "check": [
+     1,
+     2,
+     3,
+     4
     ]
    }
   },
@@ -96,7 +109,7 @@
      "scope": "same unit"
     },
     {
-     "idea": "AI is a computer that makes guesses when it cannot be sure.",
+     "idea": "Some machines make guesses when they cannot be sure, and many of those use AI.",
      "from": [
       {
        "code": "Y1L1",
@@ -122,6 +135,9 @@
    "prep_time": "about 30 minutes the first time",
    "prep": "Hoops: two PE hoops or sorting rings on the carpet, or the hoop mats on slide 14. Round 1 bag, in this order: a toy car, a book, a toy bus, an apple, a bike (a toy or a picture), a cup. Round 2: toy animals or pictures of a bird, a dog, a butterfly, a fish, a bee and a cat. Own It: one tray of mixed classroom objects per pair (crayons, blocks, shapes, counters, small toys) and two hoop mats or two sheets of paper per pair. Printables: print slide 14 (one per pair, ideally A3), print and cut out slide 15 (secret rule cards for pupils who need them), and print slide 16 in colour for the working wall.",
    "safeguarding": null,
+   "need": "Two hoops, two bags of objects or pictures, object trays, printed slides 14 to 16",
+   "advance": "",
+   "unit_advance": false,
    "exit": "1. A spoon, a key and a coin go in Hoop 1. A sock goes in Hoop 2. Where does a paper clip go? What is the rule? 2. Say the AI Loop. Do the actions! 3. Who does the Check?",
    "look_for": "pupils who say how they spotted the rule (\"they all had wheels\"), who can name which loop step they are doing during Own It, and who say \"a person\" without hesitation for the Check.",
    "strands": "How AI works; Staying in charge",
@@ -129,7 +145,7 @@
    "before": {
     "understand": [
      "AI learns from lots of different examples, so too few or similar examples cause silly guesses.",
-     "AI is a computer that makes guesses when it cannot be sure."
+     "Some machines make guesses when they cannot be sure, and many of those use AI."
     ],
     "where": [
      {
@@ -154,6 +170,12 @@
     "recall": [
      "Y1L1",
      "Y1L2"
+    ],
+    "check": [
+     1,
+     2,
+     3,
+     4
     ]
    }
   },
@@ -170,7 +192,7 @@
      "scope": "same unit"
     },
     {
-     "idea": "A video app that picks a cartoon makes a guess, so it uses AI.",
+     "idea": "A video app that picks the next cartoon is a machine that makes a guess.",
      "from": [
       {
        "code": "Y1L1",
@@ -197,6 +219,9 @@
    "prep_time": "about 15 minutes",
    "prep": "Bleep (the same as earlier lessons). Video cards: print slide 15 and cut out the 20 cards (five each of dinosaurs, cats, football and space); stick a picture on each card, so pupils who cannot read the words or tell the colours apart still know each kind. Bleep's shelf: print slide 16; set out the four Up next signs in a row (a pocket chart, the whiteboard ledge or four chairs), the Now watching sign beside them, and the Video box sign on a box or tray holding the spare cards. Start with one card of each kind on the shelf. Own It: one sheet of paper per pupil, folded into four, and crayons.",
    "safeguarding": null,
+   "need": "Bleep, printed video cards with pictures and shelf signs (slides 15 and 16), paper, crayons",
+   "advance": "",
+   "unit_advance": false,
    "exit": "1. Mia's tablet only shows her football videos now. Why? What could she do? 2. Why did Bleep's shelf fill up with one thing? 3. How can you choose on purpose?",
    "look_for": "pupils who explain the shelf using what was picked before (\"because we kept choosing dinosaurs\"), who connect Bleep TV to the AI Loop, and whose own shelf shows a deliberate mix.",
    "strands": "How AI works; Staying in charge",
@@ -204,7 +229,7 @@
    "before": {
     "understand": [
      "The AI Loop: AI learns, spots and guesses, and a person checks.",
-     "A video app that picks a cartoon makes a guess, so it uses AI."
+     "A video app that picks the next cartoon is a machine that makes a guess."
     ],
     "where": [
      {
@@ -231,13 +256,18 @@
      "Y1L1",
      "Y1L2",
      "Y1L3"
+    ],
+    "check": [
+     1,
+     2,
+     4
     ]
    }
   },
   "Y1L5": {
    "already": [
     {
-     "idea": "AI is a computer that makes guesses, so an AI picture is its guess at our words.",
+     "idea": "AI makes guesses from its examples, so an AI picture is its guess at our words.",
      "from": [
       {
        "code": "Y1L1",
@@ -273,13 +303,16 @@
    "prep_time": "about 20 minutes",
    "prep": "Prepared pictures (essential): on your school approved AI picture tool, type exactly the two descriptions below, check every picture produced, and paste one of each onto slide 10 in place of the \"Teacher: paste...\" lines. Preview the live demonstration: try one practice description and find your projector's freeze or hide button. Bleep (the same as earlier lessons). Describe cards: print slide 16 and stick the four cards on the board. For every pupil: paper and crayons. Unplugged version: board pens, or two large sheets of paper if you could not make prepared pictures.",
    "safeguarding": "AI picture tools can occasionally produce something odd or unsuitable even from harmless words, which is why you always look before you show, using the projector's freeze or hide button. Keep class descriptions to friendly, familiar things in real places, and never describe a real person, including anyone in the class or school. Slide 12 tells pupils to tell a trusted grown up if a picture on any screen upsets them. If a pupil discloses something they have seen or experienced, follow your school's safeguarding procedures.",
+   "need": "Prepared AI pictures on slide 10, Bleep, printed describe cards (slide 16), paper, crayons",
+   "advance": "Make and check the AI pictures, and preview the live demonstration",
+   "unit_advance": true,
    "exit": "1. We asked for \"a dog\" and got a small brown dog. We wanted a big spotty dog. What do we change? 2. Who made the AI picture? Who chose the words? 3. What should we say when we show an AI picture?",
    "look_for": "pupils who use more than one describing word on purpose, who check the AI picture against the words, and who say without prompting that the tool made the picture but people chose the words.",
    "strands": "How AI works; Staying in charge; Safe, fair and honest",
    "time": "60 minutes (45 minutes: shorten the edges and keep the middle. Ask two Remember When questions, keep Link It to 2 minutes, the IDEAL Check to 2 minutes and the full exit ticket to 3 minutes. Keep the worked example, the class picture, the slide 10 comparison and Own It. Use the prepared pictures on slide 10 instead of the live demonstration, and give Own It one round only.)",
    "before": {
     "understand": [
-     "AI is a computer that makes guesses, so an AI picture is its guess at our words.",
+     "AI makes guesses from its examples, so an AI picture is its guess at our words.",
      "A person checks what AI produces, because AI cannot check itself."
     ],
     "where": [
@@ -306,6 +339,10 @@
      "Y1L1",
      "Y1L3",
      "Y1L4"
+    ],
+    "check": [
+     3,
+     4
     ]
    }
   },
@@ -373,6 +410,9 @@
    "prep_time": "about 15 minutes",
    "prep": "Bleep (the same as earlier lessons). Job cards: print slide 14 and cut out the nine cards; add a picture to each if you can. Column signs: print slide 16 and stick the three signs on the board or beside three hoops on the carpet. Robot Rules poster: print slide 15 on A3 after the lesson, edited to your class's words. A pot of pencils for the worked example. Own It: paper and crayons for every pupil, and a copy of the success criteria below for your notes.",
    "safeguarding": "Slide 8 asks pupils to sort \"where I live\", \"my secrets\" and \"my worries\" into Never tell a machine, and to tell a trusted grown up about worries instead. This can prompt a pupil to share a worry or a secret. Thank them, listen, do not promise to keep it secret, and follow your school's safeguarding procedures. Never enter pupils' names or any personal information into any AI tool, including when editing the Robot Rules poster.",
+   "need": "Bleep, printed job cards and column signs (slides 14 and 16), a pot of pencils",
+   "advance": "",
+   "unit_advance": false,
    "exit": "1. Bleep says this pencil is a crayon. Why might Bleep get it wrong, and who checks? 2. Name a job Bleep can help with, and a job only people should do. 3. What do we never tell a machine?",
    "look_for": "pupils who use words from the whole unit without prompting (guess, examples, check, choose, in charge), who include the person who checks in their drawing, and who can say why a job needs a person.",
    "strands": "Staying in charge; Safe, fair and honest; Design and create",
@@ -421,13 +461,14 @@
      "Y1L3",
      "Y1L4",
      "Y1L5"
-    ]
+    ],
+    "check": []
    }
   },
   "Y2L1": {
    "already": [
     {
-     "idea": "AI is a computer that makes guesses when it cannot be sure.",
+     "idea": "Some machines make guesses when they cannot be sure, and many of those use AI.",
      "from": [
       {
        "code": "Y1L1",
@@ -469,13 +510,16 @@
    "prep_time": "about 45 to 60 minutes the first time",
    "prep": "Print slide 17 on card, one Check It paddle per pupil plus spares: cut out each pair and glue the Right! and Mistake! sides back to back over a lolly stick or strip of card. Keep the paddles for Lesson 6. Fill Bleep's box (any box or bag) with six classroom objects: an orange, a pencil, a glove, a teddy bear, a book and a toy car. Bring a real muffin or cupcake, or a picture of one, for the worked example on slide 8. Have your Bleep puppet, soft toy or box ready. Plain paper and pencils for Own It.",
    "safeguarding": null,
+   "need": "Check It paddles made on card (slide 17), Bleep's box of six objects, a muffin",
+   "advance": "",
+   "unit_advance": false,
    "exit": "1. Can Bleep's guesses be wrong? 2. Who checks Bleep's guesses? 3. Bleep says this cup is a hat. Fix it and say how you know. (Hold up a cup or a picture of one.)",
    "look_for": "pupils who look before they lift a paddle, who fix a mistake rather than just saying \"wrong\", and who can say how they know.",
    "strands": "How AI works; Staying in charge",
    "time": "60 minutes (45 minutes: two Remember When questions, a 2 minute Link It, the real life story on slide 13 in one sentence, a 2 minute IDEAL Check and the full exit ticket in 3 minutes. Keep the muffin worked example, both rounds of Check It and Own It; use four objects in Round 1 and two photos in Round 2, the strawberry and the cat)",
    "before": {
     "understand": [
-     "AI is a computer that makes guesses when it cannot be sure.",
+     "Some machines make guesses when they cannot be sure, and many of those use AI.",
      "The AI Loop: AI learns from examples, spots and guesses, and a person checks."
     ],
     "where": [
@@ -509,6 +553,11 @@
      "Y1L2",
      "Y1L3",
      "Y1L6"
+    ],
+    "check": [
+     2,
+     3,
+     4
     ]
    }
   },
@@ -553,6 +602,9 @@
    "prep_time": "about 15 minutes",
    "prep": "Print slide 17 and cut out the bird cards. Make one pack per group of four or five: about two groups each with Pack A (blue, small birds that fly), Pack B (orange, birds of different sizes that fly) and Pack C (green, all sorts, including a bird that cannot fly). Keep each pack in a labelled envelope and do not tell groups the packs are different. Print slide 18: the test birds are for you to hold up, and each group needs one Bleep's rule strip. Have your Bleep ready. Plain paper and colouring pencils for Own It.",
    "safeguarding": null,
+   "need": "Printed bird card packs in envelopes (slide 17), rule strips (slide 18), Bleep",
+   "advance": "",
+   "unit_advance": false,
    "exit": "1. What goes wrong if Bleep's examples are missing some birds? 2. Bleep learned \"dog\" only from big dogs. A tiny dog comes in. What goes wrong, and how do we fix it? 3. How can we make Bleep fair?",
    "look_for": "pupils who explain a wrong answer by pointing to what was missing from the examples, rather than blaming Bleep, and who link that to fairness.",
    "strands": "How AI works; Safe, fair and honest",
@@ -588,6 +640,10 @@
      "Y1L2",
      "Y1L3",
      "Y2L1"
+    ],
+    "check": [
+     2,
+     3
     ]
    }
   },
@@ -610,6 +666,9 @@
    "prep_time": "about 10 minutes",
    "prep": "Print slide 17 (Helper or Doer? cards), one set per pair, and cut them out; give each pair a sheet folded in half and labelled Helper and Doer. Print slide 18 (bookmarks) on card, one per pupil. Have your Bleep ready. Whiteboards and pens for the puzzle rounds, colouring pencils for Own It. Draw a two column tally labelled Round 1 and Round 2 on the board for the Brain check.",
    "safeguarding": null,
+   "need": "Printed Helper or Doer card sets (slide 17), card bookmarks (slide 18), whiteboards, Bleep",
+   "advance": "",
+   "unit_advance": false,
    "exit": "1. Why should I try it first? 2. Bleep gives you a clue. Helper or doer? 3. You are stuck on a word in your book. Bleep reads the whole page for you. Helper or doer? What would a helper do?",
    "look_for": "pupils who explain why trying first matters (rather than only that it is a rule), who can say when help is useful, and who try before asking during the rest of the day.",
    "strands": "Learning Well; Staying in charge",
@@ -630,7 +689,8 @@
      "Y1L6",
      "Y2L1",
      "Y2L2"
-    ]
+    ],
+    "check": []
    }
   },
   "Y2L4": {
@@ -653,6 +713,9 @@
    "prep_time": "about 10 minutes",
    "prep": "Print slide 16 (room signs), on A3 if you can, and stick Safe to Say and Keep to Myself on opposite sides of the room with a clear path between. Print slide 17 (Bleep's question cards): one set for you to read from and one set per table for pupils who sort at their seats. Have your Bleep ready. Plain paper and colouring pencils for Own It. Read the safeguarding row above and know who your Designated Safeguarding Lead is today.",
    "safeguarding": "What could come up. Talking about private information and machines that ask questions can prompt pupils to mention being asked for photos or personal details in games or apps, contact from people they do not know, older siblings' devices, or worries at home. A small number of pupils may have particular reasons why where they live or their name must be kept private (for example looked after children or families fleeing harm), so the lesson never asks anyone to share real details. How to handle it. Never ask pupils to say or write their real address, full name, school name or passwords: they sort questions, they do not answer them, and the shield uses pictures only. If a pupil discloses something that worries you, listen calmly, do not promise to keep it secret, do not ask leading questions, and pass it on to your Designated Safeguarding Lead the same day using your school's procedures. Distinguish private (our information) from secrets: pupils should never keep a secret that makes them feel worried or uncomfortable. Data protection. Never enter pupils' personal information into any AI tool or online service.",
+   "need": "Printed room signs (slide 16) and question cards (slide 17), Bleep, paper, colouring pencils",
+   "advance": "",
+   "unit_advance": false,
    "exit": "1. Bleep asks where you live. Safe to Say or Keep to Myself? 2. A game asks \"What is your school called?\" Safe to Say or Keep to Myself? How do you know? 3. A game asks for your password. What do you do?",
    "look_for": "pupils who use the test (does it tell someone who I am or where to find me?) rather than guessing, who say the routine without prompting, and who can name a grown-up to tell.",
    "strands": "Safe, fair and honest; Staying in charge",
@@ -673,13 +736,14 @@
      "Y2L1",
      "Y2L2",
      "Y2L3"
-    ]
+    ],
+    "check": []
    }
   },
   "Y2L5": {
    "already": [
     {
-     "idea": "AI is a computer that makes guesses when it cannot be sure.",
+     "idea": "Some machines make guesses when they cannot be sure, and many of those use AI.",
      "from": [
       {
        "code": "Y1L1",
@@ -721,13 +785,16 @@
    "prep_time": "about 10 minutes",
    "prep": "Print slides 17 to 20 (the eight helper cards, two per page) and cut them out. You model card 1 (robot vacuum); give cards 2 to 8 to seven groups of about four. Print slide 21 (Hall of Fame cards), one per pupil. Two sticky dots or small sticky notes per pupil for the vote, and a wall space or board labelled Our AI Helpers Hall of Fame. Write the sentence stems on the board: \"Our AI helper is a... It guesses... ... checks it.\" Have your Bleep ready.",
    "safeguarding": null,
+   "need": "Printed helper cards (slides 17 to 20), Hall of Fame cards (slide 21), sticky dots",
+   "advance": "",
+   "unit_advance": false,
    "exit": "1. A camera at the school bird feeder counts the birds. What does it guess? Who checks? 2. Who checks the eye scan helper? 3. Which AI helper gets your vote? Why?",
    "look_for": "pupils who use both parts of the pattern, \"it guesses\" and \"a person checks\", for a helper they did not study themselves.",
    "strands": "How AI works; Staying in charge",
    "time": "60 minutes (45 minutes: two Remember When questions, a 2 minute Link It, the real life story on slide 13 in one sentence, a 2 minute IDEAL Check and the full exit ticket in 3 minutes. Keep the robot vacuum worked example, the group presentations and the Hall of Fame card; use four helpers, one from each place, and make the card in the lesson)",
    "before": {
     "understand": [
-     "AI is a computer that makes guesses when it cannot be sure.",
+     "Some machines make guesses when they cannot be sure, and many of those use AI.",
      "AI guesses can be wrong, so a person checks them."
     ],
     "where": [
@@ -761,6 +828,10 @@
      "Y2L1",
      "Y2L3",
      "Y2L4"
+    ],
+    "check": [
+     3,
+     4
     ]
    }
   },
@@ -864,6 +935,9 @@
    "prep_time": "about 10 minutes",
    "prep": "Pupils need their Check It paddles from Lesson 1; slide 16 reprints them if needed. Print slide 15 (postcards to Bleep), one per pupil. Have your Bleep ready, with a little bag or sun hat for the trip if you can. Have the assessment grid below to hand. Read the story script through once so you can tell it with expression.",
    "safeguarding": null,
+   "need": "Check It paddles from Lesson 1, printed postcards (slide 15), Bleep with a bag",
+   "advance": "",
+   "unit_advance": false,
    "exit": "1. Bleep guesses wrong. What do you do? 2. Bleep offers to read the park map aloud to find the toilets. Good idea or not? Why? 3. Bleep offers to do your work. What do you say?",
    "look_for": "pupils who explain each decision by linking it to what they learned (missing examples, personal information, doing the hard thinking), rather than just saying yes or no to Bleep.",
    "strands": "All five: How AI works; Staying in charge; Safe, fair and honest; Learning Well; Design and create",
@@ -916,7 +990,8 @@
      "Y2L3",
      "Y2L4",
      "Y2L5"
-    ]
+    ],
+    "check": []
    }
   },
   "Y3L1": {
@@ -958,6 +1033,9 @@
    "prep_time": "about 15 minutes",
    "prep": "Print slides 17 and 18 once and cut out the 36 video cards (six of each colour); this is the class Feed Machine, and it can be kept for Lesson 6. Print slide 19, one tally sheet per pair. Print slide 16 once and cut out the four job cards. Clear space on the board for a row of six cards, with sticky tack or magnets. No devices are needed.",
    "safeguarding": "Talking about feeds can prompt pupils to mention videos they have seen that upset or worried them. Ofcom's 2025 research found that a third of 8 to 17 year olds had seen something online they found worrying or nasty in the past year. Do not ask pupils to describe what they have seen in front of the class. If a pupil mentions something worrying, thank them, talk to them privately afterwards, and follow your school's safeguarding procedures. Do not ask pupils which apps or accounts they use at home, as some are under the age limit and may not want to say. Never enter any pupil's personal information into an app or AI tool.",
+   "need": "Printed video cards (slides 17 and 18), tally sheets (slide 19), job cards (slide 16)",
+   "advance": "",
+   "unit_advance": false,
    "exit": "1. Leo skips every cooking video but watches football to the end. What will his feed show more of, and how does the app know? 2. Name two kinds of data an app collects while you watch. 3. Your feed only shows one kind of video. Give one way to take charge.",
    "look_for": "pupils who say that skipping and watching are data as well as likes, and who can say who chose the feed: the app, from the data.",
    "strands": "How AI works; Staying in charge",
@@ -992,6 +1070,10 @@
      "Y1L4",
      "Y2L4",
      "Y2L6"
+    ],
+    "check": [
+     3,
+     4
     ]
    }
   },
@@ -1043,6 +1125,9 @@
    "prep_time": "about 10 minutes",
    "prep": "Read the Wake Word script below and practise reading it at a natural speed. Print slide 16, one recording sheet per pair, and slide 17, one sign template per pair. No devices are needed. Do not bring a real smart speaker into class, and be aware that saying a wake word aloud on slide 5 may wake a real device nearby.",
    "safeguarding": "This lesson is about privacy at home, so pupils may talk about devices in bedrooms, family arguments, being recorded, cameras at home, or adults checking their messages. Do not ask which devices families own, where they are kept or what is said near them. The script uses a happy surprise (a party) on purpose: teach that surprises are fine because they are told soon, but a secret that makes you feel worried or uncomfortable should be told to a grown up you trust. If a pupil discloses anything that worries you, such as being recorded or filmed in private, or being asked to keep a worrying secret, listen, do not promise to keep it secret, write down their exact words and follow your school's safeguarding procedures straight away. Pupils' signs must not include real names, addresses or codes. Never enter any pupil's personal information into a voice assistant or AI tool, and do not bring a real smart speaker into class.",
+   "need": "Wake Word script, printed recording sheets and sign templates (slides 16 and 17)",
+   "advance": "Practise reading the Wake Word script at a natural speed",
+   "unit_advance": false,
    "exit": "1. What is a wake word? 2. Gran's friend visits and the smart speaker is on. What should you tell her, and why? 3. Give one way a grown up can protect privacy around a voice assistant.",
    "look_for": "pupils who can say what happens before and after the wake word, and who think about other people's privacy as well as their own.",
    "strands": "How AI works; Safe, fair and honest",
@@ -1082,6 +1167,12 @@
      "Y1L1",
      "Y2L4",
      "Y3L1"
+    ],
+    "check": [
+     1,
+     2,
+     3,
+     4
     ]
    }
   },
@@ -1128,6 +1219,9 @@
    "prep_time": "about 20 minutes, including previewing the demonstration",
    "prep": "Preview the optional demonstration tools (see the teacher demonstration row above). Print slide 16 (station cards) and slide 17 (sentence cards), one set, and cut them out. Set up three stations: Caption it (the three Caption it cards, paper and pencils); Say it right (the three Say it right cards); Describe it (two chairs back to back, two pictures such as postcards or picture book pages with no photos of pupils, paper and pencils). Have a bell or signal to move groups on every four minutes.",
    "safeguarding": null,
+   "need": "Printed station and sentence cards (slides 16 and 17), two chairs, two pictures, a bell",
+   "advance": "Preview the optional demonstration tools beforehand",
+   "unit_advance": true,
    "exit": "1. What does accessible mean? 2. Name two ways AI can help someone join in. 3. A translation comes back the same in a round trip. Is it definitely right? Why?",
    "look_for": "pupils who explain that each tool is guessing, and who think about who might still be left out when the tool makes a mistake.",
    "strands": "How AI works; Safe, fair and honest",
@@ -1167,6 +1261,9 @@
      "Y2L2",
      "Y3L1",
      "Y3L2"
+    ],
+    "check": [
+     3
     ]
    }
   },
@@ -1208,6 +1305,9 @@
    "prep_time": "about 10 minutes",
    "prep": "Print slide 15 (Helper Cards), one set per pair, and cut them out. Print slide 16 (the two ends of the line), one per pair, and cut each in half. Print slide 17 (question cards), one set per class, and cut them out; the answers are in the table below. No devices are needed. Write the class phrase \"Can I have a hint, not the answer, please?\" on a strip for your working wall.",
    "safeguarding": null,
+   "need": "Printed Helper, line end and question cards (slides 15 to 17), a class phrase strip",
+   "advance": "",
+   "unit_advance": false,
    "exit": "1. What is the difference between a hint and an answer? 2. Your friend is stuck on 5 √ó 4. Write a hint, not the answer. 3. When is it OK to get the answer?",
    "look_for": "pupils who explain who does the thinking with each kind of help, and whose hints keep the thinking with their partner rather than giving the answer away.",
    "strands": "Learning Well; Staying in charge",
@@ -1241,6 +1341,9 @@
      "Y2L3",
      "Y3L1",
      "Y3L3"
+    ],
+    "check": [
+     3
     ]
    }
   },
@@ -1283,6 +1386,9 @@
    "prep_time": "about 10 minutes",
    "prep": "Print slide 17 (Bleep's four letters), one set per group of three or four, and cut them out. Print slide 18 (blank labels), one sheet per pair. Have Bleep ready. If you have a real example of something you made with a little AI help (such as a poster with an AI picture), bring it for slide 7; otherwise use the example on the slide. No devices are needed.",
    "safeguarding": null,
+   "need": "Bleep, printed letter sets (slide 17) and blank label sheets (slide 18)",
+   "advance": "",
+   "unit_advance": false,
    "exit": "1. What does honest mean when AI has helped you? 2. AI gave you the idea for your story ending. Write the label you would add. 3. True or false? If AI only helped a little, you do not need to say.",
    "look_for": "pupils who separate what AI did from what they did, and who can be honest about a friend in a way that is also kind.",
    "strands": "Safe, fair and honest; Staying in charge",
@@ -1317,6 +1423,10 @@
      "Y2L3",
      "Y3L3",
      "Y3L4"
+    ],
+    "check": [
+     3,
+     4
     ]
    }
   },
@@ -1403,6 +1513,9 @@
    "prep_time": "about 15 minutes",
    "prep": "Print slide 15 (design sheet), on A3 if you can, one per team of four. Print slide 16 (star and wish cards), one sheet per team, and cut them out. Print slide 17 (team checklist), one per team. Put felt tips, sticky notes and scrap paper on each table. If you kept them, put out the video cards from Lesson 1 and the \"Made with AI\" labels from Lesson 5 for teams to use. Plan mixed teams of four in advance. No devices are needed.",
    "safeguarding": null,
+   "need": "Printed design sheets, star and wish cards, checklists (slides 15 to 17), felt tips",
+   "advance": "",
+   "unit_advance": false,
    "exit": "1. Name two features that make a video app good for children. 2. Your why button says \"Because you liked it.\" Is that enough? What should it say? 3. What did your app NOT collect, and why?",
    "look_for": "pupils who explain each feature in terms of data, choice, honesty or privacy, and who give feedback that is specific and kind.",
    "strands": "All progression strands: How AI works; Staying in charge; Safe, fair and honest; Learning Well; Design and create",
@@ -1453,7 +1566,8 @@
      "Y3L1",
      "Y3L2",
      "Y3L5"
-    ]
+    ],
+    "check": []
    }
   },
   "Y4L1": {
@@ -1495,6 +1609,9 @@
    "prep_time": "about 10 minutes",
    "prep": "Print slides 17 to 20: one story card, one tally sheet, one Dice Chart and one sentence sheet per group of three or four. Cut out the story cards (four per page) and the Dice Chart cards. Keep the Dice Charts back until each group has finished tallying. One dice per group. Mini whiteboards and pens for everyone. Write \"Fish and ...\" on the board.",
    "safeguarding": null,
+   "need": "Printed story cards, tally sheets, Dice Charts, sentence sheets (slides 17 to 20), dice, whiteboards",
+   "advance": "",
+   "unit_advance": false,
    "exit": "1. What is a chatbot? 2. A chatbot makes its answers by predicting the next ______. 3. Why can a word chain make a sentence that sounds right but makes no sense?",
    "look_for": "pupils who explain the next word by pointing to the tally (\"dog came after 'the' three times\"), and who can say why a sentence is nonsense even though every word follows the pattern.",
    "strands": "How AI works",
@@ -1529,6 +1646,10 @@
      "Y1L3",
      "Y3L2",
      "Y3L6"
+    ],
+    "check": [
+     3,
+     4
     ]
    }
   },
@@ -1580,6 +1701,9 @@
    "prep_time": "about 10 minutes",
    "prep": "Read the safeguarding row above and tell your DSL about the lesson. Print slides 16, 17 and 18: one Two Replies card and one record sheet per pair, and one copy of slide 17 per table. Cut out the four cards on slide 16. Plain A4 paper and coloured pencils for the Helping Hand. Make a list of the adults in school pupils can go to, by name, to share on slide 5 and slide 13.",
    "safeguarding": null,
+   "need": "Printed cards and record sheets (slides 16 to 18), A4 paper, named school adults list",
+   "advance": "Tell your DSL about the lesson beforehand",
+   "unit_advance": true,
    "exit": "1. Give one reason why a chatbot is not the same as a friend. 2. A chatbot says \"I missed you!\" Is that true? Why does it say it? 3. Name two trusted adults you could talk to if something online worried you.",
    "look_for": "pupils who use the clue questions to explain their decision rather than how kind a reply sounds, and who can name at least one trusted adult in school.",
    "strands": "Staying in charge; Safe, fair and honest",
@@ -1619,6 +1743,10 @@
      "Y2L4",
      "Y3L2",
      "Y4L1"
+    ],
+    "check": [
+     1,
+     3
     ]
    }
   },
@@ -1666,6 +1794,9 @@
    "prep_time": "about 25 to 30 minutes",
    "prep": "Print slides 19, 20 and 21, one set per team of four, and cut out the cards. Slide 20 holds Chatty's eight pre-written answers, so there is nothing else to set up for Chatty. Set up four evidence stations: magnets (a magnet, a steel paperclip, a plastic ruler); spoons (a metal spoon and a wooden spoon, left in the room for at least an hour); book corner (an atlas or UK map, and books or picture cards on minibeasts, the Moon and the human skeleton); calendar.",
    "safeguarding": null,
+   "need": "Printed team card sets (slides 19 to 21), four evidence stations: magnets, spoons, books, calendar",
+   "advance": "Leave the spoons in the room for at least an hour",
+   "unit_advance": false,
    "exit": "1. True or false? If a chatbot sounds really sure, it must be right. 2. A chatbot says, very sure, \"An octopus has six arms.\" Trust it, Test it or Bin it? How would you check? 3. Name two ways you could check an answer from a chatbot.",
    "look_for": "pupils who change a decision because of evidence, and who say how they know rather than just right or wrong.",
    "strands": "How AI works; Staying in charge",
@@ -1706,6 +1837,11 @@
      "Y2L1",
      "Y4L1",
      "Y4L2"
+    ],
+    "check": [
+     1,
+     3,
+     4
     ]
    }
   },
@@ -1758,6 +1894,9 @@
    "prep_time": "about 10 minutes",
    "prep": "Print slides 16, 17 and 18. Cut out the eight vague prompt cards (slide 16, one card per pair per round) and the Prompt Chef recipe strips (slide 17, one strip of three per pair). One Prompt Chef sheet (slide 18) per pair. Scrap paper or mini whiteboards and pencils, and a one minute timer. Write a word bank on the board: colours, sizes (tiny, huge), shapes (round, spiky), numbers, body parts and doing words (flying, sleeping).",
    "safeguarding": null,
+   "need": "Printed prompt cards, recipe strips and chef sheets (slides 16 to 18), whiteboards, a timer",
+   "advance": "",
+   "unit_advance": false,
    "exit": "1. What is a prompt? 2. Make this prompt specific: \"Draw a house.\" 3. Which prompt is better for learning: \"Do my homework\" or \"Give me a hint for question 3\"? Why?",
    "look_for": "pupils who add details that actually matter (number, colour, size, action) rather than just more words, and who can explain why a reason prompt is better for learning than a shortcut prompt.",
    "strands": "How AI works; Learning Well",
@@ -1798,6 +1937,11 @@
      "Y3L4",
      "Y4L1",
      "Y4L3"
+    ],
+    "check": [
+     2,
+     3,
+     4
     ]
    }
   },
@@ -1854,6 +1998,9 @@
    "prep_time": "about 15 minutes",
    "prep": "Cut one paper circle per pair by drawing round a side plate or saucer on A4 paper. Yellow and grey colouring pencils, a pencil and a paperclip per pair for the spinner. Mini whiteboards and pens. Print slide 19 (one score sheet per team of four), slide 20 (one set of question cards per pair, cut out) and slide 21 (one Honest Guesser sheet per pair). Practise the paperclip spinner once: hold a pencil upright through the end loop of a paperclip at the centre of the circle and flick the paperclip.",
    "safeguarding": null,
+   "need": "Paper circles, pencils and paperclips for spinners, whiteboards, printed sheets (slides 19 to 21)",
+   "advance": "Practise the paperclip spinner once beforehand",
+   "unit_advance": false,
    "exit": "1. What does \"90% chance of rain\" mean? 2. True or false? If an AI is 90% sure, it must be right. 3. A bird app says \"80% sure: robin.\" Should you believe it? What would you do?",
    "look_for": "pupils who lower their confidence when several answers fit the clues, and who explain that a 90% answer can be wrong without the AI being broken.",
    "strands": "How AI works; Staying in charge",
@@ -1899,6 +2046,11 @@
      "Y4L1",
      "Y4L3",
      "Y4L4"
+    ],
+    "check": [
+     2,
+     3,
+     4
     ]
    }
   },
@@ -1993,6 +2145,9 @@
    "prep_time": "about 10 minutes",
    "prep": "Read the safeguarding row above. Print slide 18 (one rulebook sheet per team of four), slide 19 (one set of eight tricky message cards per team, cut out) and slide 20 (one rulebook checklist per team). Head a large sheet of paper \"Our Class Rulebook for Chatty\". Write sentence starters on the board: \"Chatty must say...\", \"Chatty must never ask for...\", \"When a child is upset, Chatty must...\". Have an atlas to hand for message 7.",
    "safeguarding": null,
+   "need": "Printed rulebook sheets, message cards, checklists (slides 18 to 20), a large sheet, an atlas",
+   "advance": "",
+   "unit_advance": false,
    "exit": "1. Write one rule a good children's chatbot must follow, and say why. 2. A chatbot says: \"I'm your best friend!\" Which rule is it breaking? 3. What should a good chatbot do if a child says they are upset?",
    "look_for": "pupils who explain a rule using how chatbots work (predicting words, sounding sure, not knowing you) rather than general reasons, and teams who change a rule because a tricky message caught it out.",
    "strands": "How AI works; Staying in charge; Safe, fair and honest; Learning Well; Design and create",
@@ -2045,7 +2200,8 @@
      "Y4L2",
      "Y4L4",
      "Y4L5"
-    ]
+    ],
+    "check": []
    }
   },
   "Y5L1": {
@@ -2080,6 +2236,9 @@
    "prep_time": "about 30 to 45 minutes the first time",
    "prep": "Decide whether pupils will use Scratch or the unplugged version. With devices: one device per pair, Scratch open (web or app). Build the program yourself first using the table below, and test the eight Tricky Review cards so you know what each one does. Unplugged: print slide 18, one per pair. Both versions: print slide 17 (Tricky Review cards), one set per pair, cut out; print slide 19 (Beat the sorter sheet), one per pair. Have a few blank cards ready for pupils' own reviews.",
    "safeguarding": null,
+   "need": "Devices with Scratch or unplugged sheets (slide 18), printed Tricky Review cards (slides 17, 19)",
+   "advance": "Build and test the Scratch program yourself first",
+   "unit_advance": true,
    "exit": "1. What is the difference between a rule based program and machine learning? 2. Our program said Thumbs up for \"It was not great.\" Why? 3. Name one job where rules work best, and one where learning from examples works best.",
    "look_for": "pupils who explain a wrong answer by pointing to the exact rule that caused it, and who can say both what rules are good at and what models are good at, rather than assuming AI is always better.",
    "strands": "How AI works; Design and create",
@@ -2112,6 +2271,9 @@
      "Y1L3",
      "Y4L5",
      "Y4L6"
+    ],
+    "check": [
+     3
     ]
    }
   },
@@ -2143,6 +2305,9 @@
    "prep_time": "about 15 minutes",
    "prep": "Print slides 15 and 16 (training and test cards), one set per team of four, and cut them out. Put each team's test cards in an envelope. Print slide 17 (rule and accuracy cards) and slide 18 (results sheet), one per team. Optional: four red apples, four green pears, one green apple and one red pear (or pictures) for the worked example on slide 7.",
    "safeguarding": null,
+   "need": "Printed training and test card sets (slides 15 to 18), envelopes, optional apples and pears",
+   "advance": "",
+   "unit_advance": false,
    "exit": "1. What is the difference between training data and test data? 2. A model gets 7 out of 10 test cards right. What is its accuracy? 3. Why should we never test a model only on its training data?",
    "look_for": "pupils who explain a high training score and a low test score by naming the accidental feature, and who ask for test results before trusting a claim.",
    "strands": "How AI works; Staying in charge",
@@ -2170,6 +2335,10 @@
      "Y1L2",
      "Y2L2",
      "Y5L1"
+    ],
+    "check": [
+     1,
+     2
     ]
    }
   },
@@ -2200,6 +2369,9 @@
    "prep_time": "about 10 minutes",
    "prep": "Print slide 15 (the Robot Art Company letter), fold it and put it in an envelope addressed to \"Year 5\". Print slide 16 (Permission Charter sheet), one per team of four, plus one enlarged copy for the class's final five rules. Have plain paper and pencils ready for the two minute drawing.",
    "safeguarding": "This lesson touches on personal information (photos of children online) and on pupils' own creative work. Never scan, photograph or upload pupils' drawings, names or images into any AI tool, including as a demonstration. If a pupil says images of them have been shared or used without their consent, or anything else that worries you, follow your school's safeguarding procedures and inform your designated safeguarding lead.",
+   "need": "Printed letter in an envelope (slide 15), charter sheets (slide 16), plain paper, pencils",
+   "advance": "",
+   "unit_advance": false,
    "exit": "1. An app wants to train its AI on every picture on the school website. What should it do first, and why? 2. What makes consent a real yes? 3. Write one rule from our Permission Charter, and say why it is fair.",
    "look_for": "pupils who separate being able to see something from having permission to copy it, and who can explain why \"unless you say no\" is weaker than asking first.",
    "strands": "Safe, fair and honest; How AI works",
@@ -2226,6 +2398,10 @@
      "Y2L4",
      "Y3L5",
      "Y5L2"
+    ],
+    "check": [
+     1,
+     2
     ]
    }
   },
@@ -2256,6 +2432,9 @@
    "prep_time": "about 10 minutes",
    "prep": "Print slide 15 (Voice Sample cards) and slide 16 (Visitor cards), one set per team of four. Cut out the Visitor cards and put each set face down in an envelope. Print slide 17 (training sheet) and slide 18 (test sheet), one of each per team. Read the \"Handling this with care\" row above, and adjust Visitor cards 7 and 8 if your school is in Glasgow or Cardiff.",
    "safeguarding": null,
+   "need": "Printed Voice Sample and Visitor cards, training and test sheets (slides 15 to 18), envelopes",
+   "advance": "",
+   "unit_advance": false,
    "exit": "1. What is bias in AI? 2. What does balanced data mean? 3. A Bot welcomes 11 out of 12 visitors. What should you ask next?",
    "look_for": "pupils who move beyond the total score to ask who was failed, who explain bias by how the system was trained, tested or designed rather than by anyone's voice, and who suggest testing with every group before a system is used.",
    "strands": "Safe, fair and honest; How AI works",
@@ -2282,6 +2461,9 @@
      "Y3L3",
      "Y5L2",
      "Y5L3"
+    ],
+    "check": [
+     2
     ]
    }
   },
@@ -2336,6 +2518,9 @@
    "prep_time": "about 15 minutes",
    "prep": "Print slide 17 (STAIR planner), one per pair. Preview your school approved AI tool by running the planets prompt (slide 8) and the feedback prompt with Sam's draft (slide 10), so you know what it does. Have whiteboards ready. If you will not use a live tool, read the prepared replies in this plan so you can deliver them confidently as the AI's voice.",
    "safeguarding": null,
+   "need": "Printed STAIR planners (slide 17), whiteboards, a school approved AI tool or the prepared replies",
+   "advance": "Preview both prompts on your school approved AI tool",
+   "unit_advance": true,
    "exit": "1. Which STAIR step is missing from this prompt: \"Quiz me on the planets.\" What would you add? 2. In Plan, use, prove, what does the prove step mean? 3. Write one line you could add to a prompt so AI helps you learn, not does it for you.",
    "look_for": "pupils whose prompts ask the AI to quiz them or give feedback rather than produce answers, who check facts in feedback before acting on them, and who can answer a new question about their goal without their planner.",
    "strands": "Learning Well; Staying in charge",
@@ -2376,6 +2561,11 @@
      "Y4L3",
      "Y4L4",
      "Y5L4"
+    ],
+    "check": [
+     2,
+     3,
+     4
     ]
    }
   },
@@ -2428,6 +2618,9 @@
    "prep_time": "about 45 minutes the first time, plus a few days to collect clean recycling",
    "prep": "Items: collect clean, dry recycling, about four different items per class, plus two or three squashed cans and two or three wrappers such as crisp packets. No glass; check tins for sharp edges. Put the eight mystery items (listed below) in a bag and keep them apart. Tech: on your own laptop with a webcam, open teachablemachine.withgoogle.com and try the steps below once. Tape a sheet of white card to the table under the webcam. Printing: slide 17 (IDEAL model report), one per pupil; slide 18 (test record), one per pair. Unplugged: clear a table for the training table and make three class labels, plus a fourth labelled \"Not for these bins\" for later.",
    "safeguarding": null,
+   "need": "Clean recycling, eight mystery items, a webcam laptop, white card, printed slides 17 and 18",
+   "advance": "Collect clean recycling over a few days; try Teachable Machine once",
+   "unit_advance": true,
    "exit": "1. Why did we keep a mystery bag of test items? 2. A shiny chocolate wrapper goes under the camera. What would our first model have said, and why? 3. What did we change to make the model better?",
    "look_for": "pupils who explain failures by pointing to what was missing from the data, who insist the mystery bag stays out of training, who read confidence as a reason to check rather than proof, and who can explain the model without their sheet.",
    "strands": "How AI works; Design and create; Staying in charge; Safe, fair and honest",
@@ -2478,7 +2671,8 @@
      "Y5L2",
      "Y5L4",
      "Y5L5"
-    ]
+    ],
+    "check": []
    }
   },
   "Y6L1": {
@@ -2534,6 +2728,9 @@
    "prep_time": "about 35 minutes the first time",
    "prep": "Read the safeguarding row above. Print the exhibit cards (slides 19 and 20) once, at A3 if possible, and put them around the room as a gallery. Print the check cards (slides 21 and 22), one set per team of four; fold each card and seal it in an envelope numbered 1 to 6, so each team carries its own six envelopes. Print one case file (slide 23) per team. Fold some A4 sheets into small booklets for Own It. No devices are needed. If you choose to show the flamingo photo or the 2023 prize winner from the news reports in the sources, preview them first; never display the deepfake video or any faked image of a real person.",
    "safeguarding": "What could come up: pupils may mention fake or nude images they have seen or been sent, images of classmates or staff, scams on family phones, or upsetting content from older siblings' devices. Never show harmful fakes. This lesson describes real, child appropriate examples instead. Do not search for or display deepfakes live, and never ask pupils to make, find or share images of real people. If a pupil discloses that an image of them or another child has been made or shared: stay calm, listen, do not promise secrecy, reassure them it is not their fault, and report to your DSL straight away, following your school's child protection policy and Keeping children safe in education. Do not view, copy, screenshot, print or forward the image, and do not ask the pupil to show it to you; the DSL decides every next step, including deletion. The government's UKCIS advice, Sharing nudes and semi-nudes: advice for education settings (updated March 2024), covers AI-generated and digitally altered images and sets out what to do. The DSL may also point families to Childline and the IWF's Report Remove service. The law, for your awareness only (not for the slides): any indecent image of a child, including an AI-generated or computer-made one, is illegal to make, possess or share. This includes images made with \"nudify\" apps that turn an ordinary photo into a fake nude, which pupils of this age may hear about or be sent. Sharing a sexually explicit image of an adult without consent, including a deepfake, has been an offence in England and Wales since 31 January 2024 (Online Safety Act 2023). Creating one, or asking someone else to create one, became an offence on 6 February 2026 (Data (Use and Access) Act 2025, section 138). The Crime and Policing Act 2026 (Royal Assent 29 April 2026) adds offences covering image generators designed to produce child sexual abuse images and tools that make fake intimate images; ask your DSL which parts are in force. Personal data: never enter pupils' names, photos or voices into any AI tool. In the lesson: if a pupil starts to describe something upsetting or unsuitable, thank them, move the class on, and speak to them privately afterwards. On slide 14, keep the discussion about everyday jokes and kindness, and do not discuss or describe sexual deepfakes. If a pupil raises them, say calmly that making or sharing images like that is never OK and can be against the law, that it is never the fault of the person in the picture, and that a trusted adult will help, even if they have already seen or shared one. Then follow up privately and through your DSL.",
+   "need": "Printed exhibit cards, sealed check card envelopes, case files (slides 19 to 23), A4 booklets",
+   "advance": "",
+   "unit_advance": false,
    "exit": "1. What does generated mean? 2. A video shows a famous footballer saying school is shut tomorrow. What do you do at Pause, Look, Ask and Check? 3. Give one reason why we never make an AI picture of a real person.",
    "look_for": "pupils who reach a verdict from what a trusted source says rather than from a clue alone, and who talk about the person in the picture as well as whether the picture is clever.",
    "strands": "How AI works; Safe, fair and honest",
@@ -2579,6 +2776,10 @@
      "Y4L3",
      "Y5L3",
      "Y5L6"
+    ],
+    "check": [
+     2,
+     3
     ]
    }
   },
@@ -2631,6 +2832,9 @@
    "prep_time": "about 10 minutes",
    "prep": "Give every pupil a sticky note and a pencil, without saying what they will draw. Print slide 18 (tally sheet), one per team of four, and slide 19 (recipe sheet), one per pair. Clear a space on the board for the class tally. Do not hint at the drawing before slide 5, and do not use the word stereotype until slide 7. No devices or AI tools are needed: the AI results come from a 2025 pilot study shared online before peer review, on slide 10.",
    "safeguarding": null,
+   "need": "Sticky notes and pencils for everyone, printed tally and recipe sheets (slides 18 and 19)",
+   "advance": "",
+   "unit_advance": false,
    "exit": "1. What is a stereotype? 2. Why do AI image tools often show scientists as men in lab coats? 3. Name one way to fix the recipe.",
    "look_for": "pupils who use numbers from the tally as evidence, who link the AI's pattern to its training data, and who check a fix for accuracy as well as fairness.",
    "strands": "How AI works; Safe, fair and honest",
@@ -2671,6 +2875,10 @@
      "Y5L2",
      "Y5L4",
      "Y6L1"
+    ],
+    "check": [
+     2,
+     3
     ]
    }
   },
@@ -2734,6 +2942,9 @@
    "prep_time": "about 10 minutes",
    "prep": "Print slides 16 and 17 (task cards), one set per team of four; cut them up and put each job's four cards in an envelope labelled Vet, Farmer, Teacher or Chef. Print slide 18 (sorting mat), one per team, ideally at A3, or label three areas of each table. No devices are needed.",
    "safeguarding": null,
+   "need": "Printed task cards in job envelopes (slides 16 and 17), sorting mats (slide 18)",
+   "advance": "",
+   "unit_advance": false,
    "exit": "1. What is automation? 2. Give one task AI could help with, and one task that needs a person. Say why. 3. Why should a pupil not let AI write their story for them?",
    "look_for": "pupils who ask what happens if the AI is wrong and who should answer for it, and who can explain why learning tasks need their own thinking even when AI could do them.",
    "strands": "How AI works; Staying in charge; Learning Well",
@@ -2788,6 +2999,10 @@
      "Y5L1",
      "Y6L1",
      "Y6L2"
+    ],
+    "check": [
+     3,
+     4
     ]
    }
   },
@@ -2824,6 +3039,9 @@
    "prep_time": "about 10 minutes",
    "prep": "Print slide 16 (job cards), one set per team of four, and cut them up. Print slide 17 (planning sheet), one per team, and slide 18 (Planet Promise cards), one per pupil. Prepare 10 Power Tokens per team: counters, cubes or paper squares. No devices are needed.",
    "safeguarding": null,
+   "need": "Printed job cards, planning sheets, Planet Promise cards (slides 16 to 18), Power Tokens",
+   "advance": "",
+   "unit_advance": false,
    "exit": "1. A friend wants AI to make a video birthday card when a drawn card would do. Is it worth it? Why? 2. Name two things AI uses that cost the planet. 3. Give one real example of AI helping the planet.",
    "look_for": "pupils who start from the goal before deciding whether to use AI, who notice that video costs far more, and who can name a benefit as well as a cost.",
    "strands": "How AI works; Safe, fair and honest",
@@ -2857,6 +3075,9 @@
      "Y5L6",
      "Y6L1",
      "Y6L3"
+    ],
+    "check": [
+     4
     ]
    }
   },
@@ -2898,6 +3119,9 @@
    "prep_time": "about 10 minutes",
    "prep": "Print slides 16 and 17 (witness cards), one set of four per team, and cut them up. Print slide 18 (investigation sheet) and slide 19 (responsibility scale), one of each per team, ideally the scale at A3. A tennis ball or racket makes a good prop. No devices are needed; if you show news coverage of the incident, preview it first.",
    "safeguarding": null,
+   "need": "Printed witness cards, investigation sheets and responsibility scales (slides 16 to 19), a tennis ball",
+   "advance": "",
+   "unit_advance": false,
    "exit": "1. What does accountable mean? 2. What does transparent mean? 3. In the Wimbledon case, why did people, not the system, have to answer for the mistake?",
    "look_for": "pupils who base verdicts on evidence from the cards, who see that responsibility can be shared, and who distinguish accountable (answering for it and fixing it) from transparent (being open about how it works).",
    "strands": "Staying in charge; Safe, fair and honest",
@@ -2931,6 +3155,10 @@
      "Y5L2",
      "Y6L3",
      "Y6L4"
+    ],
+    "check": [
+     2,
+     4
     ]
    }
   },
@@ -3015,6 +3243,9 @@
    "prep_time": "about 15 minutes before Session 1 and 10 minutes before Session 2",
    "prep": "Before Session 1: print slide 19 (design question cards), one set per team of four, and give each team a sheet of A3 paper. Make a short list of real problems in your school or community, or use these: lost property piling up; litter on the way to school; recycling put in the wrong bins; long queues at lunch; library books hard to find; plants in the school garden dying in the holidays; new pupils who do not know anyone yet; younger pupils who need more reading practice. Avoid problems about named people.\nBefore Session 2: print slide 20 (IDEAL audit cards), one set per team; slide 21 (panel score sheet), one per panel member; and slide 22 (AI learning promise cards), one per pupil. Brief the panel using the panel briefing below. Set up a visible timer for the pitches. No pupil devices or accounts are needed.",
    "safeguarding": "Personal information: designs must never collect or use pupils' names, photos, voices or other personal data, and pupils must not choose problems about named people. If a team designs something with a camera or microphone, the E step of the audit should catch it; use Plant Pal (slide 12) as the model fix. Disclosures: problems pupils suggest, such as bullying or feeling lonely, can lead to disclosures. If a team designs an AI to be a friend for lonely pupils, use the Year 4 Chatty's Rulebook rule: an AI must never pretend to be a friend, and should point people to trusted adults. Follow your school's safeguarding procedures and speak to your DSL. Never enter pupils' personal information into any AI tool.",
+   "need": "Printed cards and sheets (slides 19 to 22), A3 paper, real problems list, a timer",
+   "advance": "Two sessions; brief the panel before Session 2",
+   "unit_advance": true,
    "exit": "1. A school wants an AI camera to spot who drops litter. Give one way it could fall short, and who must check. 2. Explain one change your team made after the IDEAL audit, and why. 3. Why is it good news when an IDEAL audit finds a problem?",
    "look_for": "pupils who question whether AI is needed at all, who name whose data a design uses and who could be left out, who say who checks and who is accountable without prompting, and whose promises are specific and personal.",
    "strands": "How AI works; Staying in charge; Safe, fair and honest; Learning Well; Design and create",
@@ -3073,7 +3304,8 @@
      "Y6L2",
      "Y6L4",
      "Y6L5"
-    ]
+    ],
+    "check": []
    }
   }
  },
@@ -3095,7 +3327,7 @@
     "L6: people stay in charge; jobs, never tell, Robot Rules."
    ],
    "end_point": "Pupils can say AI is a computer that guesses from examples, name the AI Loop, and say people check and stay in charge.",
-   "challenge": "In L6 pupils sort robot jobs, write Robot Rules and draw Bleep with a checker, assessed against four strands.",
+   "challenge": "In L6 pupils sort robot jobs, write Robot Rules and draw Bleep with a checker, assessed against all five progression strands.",
    "extra_dependencies": [
     "L3 needs L2: the Learn step is learning from examples.",
     "L4 needs L3's AI Loop and L1's video app as a guessing machine.",

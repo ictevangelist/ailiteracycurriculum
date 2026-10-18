@@ -312,7 +312,7 @@ FAQ = [('What is IDEAL Thinkers?', "A free AI literacy curriculum for primary sc
        ('What do you mean by AI literacy and AI fluency?', "AI literacy is knowing how the AI children meet works, at a level that fits their age; what it can and cannot do; and how it affects people, fairly or unfairly. Pupils show it by explaining these ideas in their own words and applying them to a new example. AI fluency is making good decisions about AI: whether to use it at all, what to ask, how to check what comes back, and how to keep the learning their own. In primary school, pupils practise these decisions through unplugged activities and teacher-led demonstrations, not by using AI tools themselves."),
        ('Is it free?', "Yes, for schools and teachers. I've always shared my resources freely, from my days as the local authority lead teacher for computing to the early years of my blog. I became a teacher because education is a force for good: to help young people, to make a difference and to make my dent in the universe. If what I share helps just one person, that's good enough for me. With IDEAL Thinkers, I hope it helps far more than that. It's licensed under CC BY-NC-SA 4.0, so you can copy and adapt it for your own teaching as long as you credit it and share any adapted versions under the same licence. It cannot be used for commercial purposes."),
        ('Do pupils need devices or their own AI accounts?', "No. Every lesson can be taught without pupil devices, and pupils never need an AI account. Age limits differ between tools and change often: some are for 13 and over with a parent's permission, some are for adults only. Where a demonstration helps, the teacher runs it on a school approved tool, and every demonstration lesson can also be taught without one, using prepared results or an unplugged version."),
-       ('How long is each lesson?', "60 minutes, and every lesson plan includes a 45 minute version. Each year's six lessons are planned as a half-term unit, and the sixth lesson is an IDEAL Challenge that doubles as the end of unit assessment."),
+       ('How long is each lesson?', "60 minutes, and every lesson plan includes a 45 minute version. The Year 6 IDEAL Challenge runs over two 60 minute sessions. Each year's six lessons are planned as a half-term unit, and the sixth lesson is an IDEAL Challenge that doubles as the end of unit assessment."),
        ('Does it cover the National Curriculum for computing?', "It teaches the KS1 and KS2 statements on using technology safely, respectfully and responsibly, keeping personal information private, knowing where to go for help and reporting concerns, recognising common uses of information technology beyond school, and being discerning in evaluating digital content, plus selection in programs in Year 5. How feeds choose what we see connects to the KS2 statement on search results, but it does not replace teaching search. The current curriculum does not require AI to be taught; IDEAL Thinkers will be mapped against the revised computing curriculum when the draft is published."),
        ('Can I use it with Microsoft 365?', 'Yes. Every slide deck downloads as PowerPoint and every lesson plan as Word, and on Google Workspace you can make your own copy in Google Drive.')]
 
@@ -343,7 +343,7 @@ def build_home():
 <dt>Who</dt><dd>Years 1 to 6, ages 5 to 11.</dd>
 <dt>What it covers</dt><dd>Five progression strands: how AI works; staying in charge; safe, fair and honest; learning well; design and create. Mapped to the National Curriculum, SEAME and the Primary Digital Cognition Curriculum. <a href="progression/#coverage">See the coverage</a></dd>
 <dt>What you get</dt><dd>36 lessons, six a year, each with a lesson plan and slides.</dd>
-<dt>Time</dt><dd>60 minutes a lesson, with a 45 minute version in every plan.</dd>
+<dt>Time</dt><dd>60 minutes a lesson, with a 45 minute version in every plan. The Year 6 IDEAL Challenge runs over two sessions.</dd>
 <dt>What you need</dt><dd>A screen for the slides. No pupil devices or AI accounts.</dd>
 <dt>Who made it</dt><dd>Mark Anderson FCCT: more than 20 years as a teacher and senior leader, former local authority lead teacher for computing, and for the last ten years an independent consultant supporting hundreds of schools across the UK and around the world with AI, digital strategy and teaching and learning with technology. Lead AI consultant on the BBC's Bitesize Guide to AI, Founding Fellow of the Chartered College of Teaching, member of the BCS Schools and Colleges Committee, and award-winning author of The EdTech Playbook.</dd>
 <dt>Why it is free</dt><dd>"I've always shared my resources freely. If it helps just one person, that's good enough for me; with IDEAL Thinkers, I hope it helps far more."</dd>
@@ -629,7 +629,7 @@ BY_END = {
     3: "pupils can explain how a feed and a voice assistant use their data, say how AI can help people who see, hear or speak differently, ask for a hint rather than an answer, and say when AI has helped with their work.",
     4: "pupils can explain that a chatbot builds answers by predicting likely words, why sounding sure is not the same as being right, why a chatbot is not a friend, and how a better question changes the answer.",
     5: "pupils can tell rules written by people from patterns learned from examples, explain training and test data, ask whose data was used and who might be left out, and plan how AI could help them learn without doing the learning for them.",
-    6: "pupils can check whether media is real or generated, explain how AI can magnify unfairness, weigh the costs of AI against its benefits, say who must answer for an AI decision, and design AI for a real problem.",
+    6: "pupils can use a checking routine and trusted sources to decide whether to trust or share a picture, voice or video, explain how AI can magnify unfairness, weigh the costs of AI against its benefits, say who must answer for an AI decision, and design AI for a real problem.",
 }
 
 
@@ -654,12 +654,14 @@ def build_years():
         first = "".join(f"<li>{codes_text(d, x)}</li>" for x in TY["first_time"])
         yn = str(y["n"])
         deps = "".join("<li>" + codes_text(d, re.sub(r"(?<![Y\d])L(\d)", lambda m: "Y" + yn + "L" + m.group(1), x)) + "</li>" for x in TY["extra_dependencies"] or [])
+        ahead = [(l, TEACHER["lessons"][l["code"]]) for l in y["lessons"] if TEACHER["lessons"][l["code"]].get("unit_advance")]
+        plan_ahead = ("<p><strong>Plan ahead.</strong> " + " ".join(f'<a href="{rel(d, l["path"])}">Lesson {l["n"]}</a>: {e(t["advance"])}.' for l, t in ahead) + "</p>") if ahead else ""
         start = "Pupils start the curriculum here, from their everyday experience." if y["n"] == 1 else e(" ".join(TY["starting_point"]) if isinstance(TY["starting_point"], list) else TY["starting_point"])
         journey = f"""<section class="wrap journey-sec" aria-labelledby="journey-h">
 <h2 id="journey-h">How this unit builds</h2>
 <p><strong>Starting point.</strong> {start}</p>
 <ol class="journey">{steps}</ol>
-<p><strong>Assessment.</strong> {e(" ".join(TY["challenge"]) if isinstance(TY["challenge"], list) else TY["challenge"])} <a href="../assessment/">How assessment works</a></p>
+{plan_ahead}<p><strong>Assessment.</strong> {e(" ".join(TY["challenge"]) if isinstance(TY["challenge"], list) else TY["challenge"])} <a href="../assessment/">How assessment works</a></p>
 </section>
 <section class="wrap"><div class="card first-time" id="starting">
 <h2>Starting Year {y['n']} with pupils new to IDEAL Thinkers</h2>
@@ -755,6 +757,8 @@ def build_lessons():
             demo = "Optional: the teacher runs it on a school approved tool, or uses the prepared results in the plan" if l["flag"] == "demo" else "None"
             if l["flag"] == "safeguarding":
                 safe = f'This lesson deals with {SAFE_TOPIC.get(l["code"], "a sensitive topic")}. Read the plan\'s Safeguarding row and brief your DSL. <a href="{rel(d, "safety/")}">Safety</a>'
+            elif l["code"] == "Y1L5":
+                safe = f'AI picture tools can make something unsuitable: preview every picture before pupils see it. Read the plan\'s Safeguarding row. <a href="{rel(d, "safety/")}">Safety</a>'
             elif l["code"] in DISCLOSURE:
                 safe = f'Discussion can prompt disclosures. Read the plan\'s Safeguarding row and follow your school\'s procedures. <a href="{rel(d, "safety/")}">Safety</a>'
             else:
@@ -773,7 +777,8 @@ def build_lessons():
             prep = f'About {T["prep_time"].replace("about ", "")}, plus the plan\'s Teacher subject knowledge.' if T["prep_time"] else "See the plan."
             rows = [("Lesson", f'Lesson {l["n"]} of 6 in Year {y["n"]}: {e(y["title"])}'), ("Time", time),
                     ("Pupils learn", f'<ul class="plain">{ican}</ul>'),
-                    ("Preparation", f'{prep}<details><summary>What to prepare</summary><p>{e(T["prep"])}</p></details>'),
+                    ("You need", e(T["need"]) if T.get("need") else "See What to prepare below."),
+                    ("Preparation", f'{prep}' + (f' <strong>Plan ahead:</strong> {e(T["advance"])}.' if T.get("advance") else "") + f'<details><summary>What to prepare</summary><p>{e(T["prep"])}</p></details>'),
                     ("Pupil devices", devices), ("Demonstration", demo)]
             if safe: rows.append(("Safeguarding", safe))
             rows.append(("Prior learning", prior))
@@ -785,13 +790,19 @@ def build_lessons():
                 if B["also"]:
                     where += '<p class="small">It also draws on ' + ", ".join(lesson_ref(d, c, title=False) for c in B["also"]) + ".</p>"
                 if_not = codes_text(d, B["if_not"])
+                if B.get("check"):
+                    qn = " and ".join(str(x) for x in B["check"])
+                    if_not = f'<strong>Check first:</strong> Remember When question{"s" if len(B["check"]) > 1 else ""} {qn} (slide 2) test{"" if len(B["check"]) > 1 else "s"} this. If most pupils answer well, carry on. If not: {if_not}'
+                elif not l["challenge"]:
+                    if_not = f'<strong>Check first:</strong> ask pupils to explain the idea in their own words. If most can, carry on. If not: {if_not}'
+
             else:
                 know, where = "<p>No formal prerequisites: this lesson starts from pupils' everyday experience.</p>", "<p>Nothing earlier is needed.</p>"
                 if_not = "Nothing to do: start the lesson as planned."
             if B["routines"]:
                 know += '<p class="small">Routines it uses: ' + ", ".join(B["routines"]) + ".</p>"
             if B["recall"]:
-                where += '<p class="small">Remember When (slide 2) recalls ' + ", ".join(lesson_ref(d, c, title=False) for c in B["recall"]) + ". If your class has not had these, ask about pupils' own experience instead.</p>"
+                where += '<p class="small">Remember When (slide 2) recalls ' + ", ".join(lesson_ref(d, c, title=False) for c in B["recall"]) + ". These are retrieval questions: if your class has not had those lessons, swap them for a question about pupils' own experience. That does not replace any prerequisite above.</p>"
             before = f"""<section class="before" id="before" aria-labelledby="before-h"><h2 id="before-h">Before teaching this lesson</h2><div class="before-grid">
 <div><h3>Pupils should already understand</h3>{know}</div>
 <div><h3>Where this was taught</h3>{where}</div>
@@ -960,7 +971,7 @@ def build_using():
 <h2>Starting out</h2>
 <ol class="list">
 <li><strong>Where it fits.</strong> Teach each year's six lessons in order, as one half term of computing. Lessons with RSHE links, such as Year 4 Lesson 2, can be taught in RSHE time, but keep them in sequence.</li>
-<li><strong>Starting above Year 1.</strong> In the first year, pupils in Years 2 to 6 have not met the earlier units. Before Lesson 1, spend 15 minutes on Year 1 Lesson 1 slides 5, 8 and 9 (Bleep, the IDEAL habits and the IDEAL moment routine, using your key stage's wording) and Year 1 Lesson 3 slide 8 (the AI Loop). Treat words marked "Already taught" as new, and where Remember When asks about an earlier year, ask about pupils' own experience instead.</li>
+<li><strong>Starting above Year 1.</strong> In the first year, pupils in Years 2 to 6 have not met the earlier units. Before Lesson 1, introduce Bleep, the IDEAL habits and the IDEAL moment routine (using your key stage's wording) and the AI Loop, then the ideas that year's unit builds on. How much that takes depends on the year group: each year page lists the slides to use and roughly how long to allow, under "Starting Year N with pupils new to IDEAL Thinkers" (<a href="../year-2/#starting">Year 2</a>, <a href="../year-3/#starting">Year 3</a>, <a href="../year-4/#starting">Year 4</a>, <a href="../year-5/#starting">Year 5</a>, <a href="../year-6/#starting">Year 6</a>). Treat words marked "Already taught" as new. A short introduction gives pupils the words and routines, not the years of practice behind them, so expect to revisit these ideas.</li>
 <li><strong>What to assume.</strong> Assume no AI knowledge beyond the earlier units. Children's experience at home varies widely; no lesson depends on it, and you never need to ask which apps they use.</li>
 <li><strong>Preparation.</strong> Read the six plans at the start of the half term. First time through, allow up to twice the stated preparation time for printing and cutting, and keep each lesson's cards in an envelope for next year. Year 5 Lesson 6 needs clean recycling collected in advance, and Year 6 Lesson 6 needs a small panel invited.</li>
 <li><strong>Subject knowledge.</strong> Each plan's Teacher subject knowledge section is all you need; read it the day before. Practise two things beforehand: building the Scratch program (Year 5 Lesson 1) and running Teachable Machine (Year 5 Lesson 6).</li>

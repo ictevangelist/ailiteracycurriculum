@@ -4,6 +4,8 @@ Usage: python3 tools/teacher/merge.py <audit dir with Y*-Y*.json> <extract.json>
 """
 import json, glob, re, sys, os
 aud, ext = sys.argv[1], json.load(open(sys.argv[2]))
+need = json.load(open(os.path.join(aud, "need.json"))) if os.path.exists(os.path.join(aud, "need.json")) else {}
+UNIT_ADVANCE = {"Y1L5", "Y3L3", "Y4L2", "Y5L1", "Y5L5", "Y5L6", "Y6L6"}  # shown on the year page too
 lessons, years = {}, {}
 for f in sorted(glob.glob(os.path.join(aud, "Y*-Y*.json"))):
     d = json.load(open(f)); lessons.update(d["lessons"]); years.update(d["years"])
@@ -24,6 +26,7 @@ for code, l in sorted(lessons.items()):
         "recall": sorted({c for q in l.get("remember_when", []) for c in re.findall(r"Y\dL\d", " ".join(str(v) for k, v in q.items() if k in ("source_stated", "verified_source", "source")))} - {code}),
         "if_not": one(l.get("bridge")), "adds": one(l.get("adds")),
         "prep_time": e["prep_time"], "prep": e["prep"], "safeguarding": e["safeguarding"],
+        "need": need.get(code, {}).get("need", ""), "advance": need.get(code, {}).get("advance", ""), "unit_advance": code in UNIT_ADVANCE,
         "exit": e["exit"], "look_for": e["look_for"], "strands": e["strands"], "time": e["time"]}
 for n, y in sorted(years.items()):
     ft = y.get("first_time")
@@ -60,6 +63,12 @@ for code, T in out["lessons"].items():
         B = {"understand": [a["idea"] for a in T["already"]], "where": refs, "also": [], "if_not": T["if_not"], "adds": T["adds"]}
     B["routines"] = names
     B["recall"] = T["recall"]
+    # readiness check: the Remember When question that retrieves each prerequisite, if there is one
+    qs = []
+    for i, q in enumerate(lessons[code].get("remember_when", []), 1):
+        src = set(re.findall(r"Y\dL\d", " ".join(str(v) for k, v in q.items() if k in ("source_stated", "verified_source", "source"))))
+        if src & {r["code"] for a in T["already"] for r in a["from"]}: qs.append(i)
+    B["check"] = qs if (B["understand"] and not l["challenge"] in (True, "True")) else []
     T["before"] = B
 json.dump(out, open("data/teacher.json", "w"), indent=1, ensure_ascii=False)
 print(len(out["lessons"]), "lessons", len(out["years"]), "years")
