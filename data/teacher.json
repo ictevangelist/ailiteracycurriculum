@@ -14,7 +14,19 @@
    "exit": "1. What is a guess? 2. Thumbs up or thumbs down: does a torch make a guess? 3. A camera at the door says \"It's Grandma!\" Does it make a guess? How do you know?",
    "look_for": "pupils who give a reason (\"it has to guess what I said\") rather than just a group, and pupils who stop quickly and join in when the IDEAL sign appears.",
    "strands": "How AI works",
-   "time": "60 minutes (45 minutes: shorten the edges and keep the middle. Ask two Remember When questions, keep Link It to 2 minutes, the IDEAL Check to 2 minutes and the full exit ticket to 3 minutes. Keep the torch and speaker worked example, the Mystery Bag and the Own It drawing. Use six Mystery Bag objects instead of eight, practise only the I action on slide 8, and give Own It 8 minutes.)"
+   "time": "60 minutes (45 minutes: shorten the edges and keep the middle. Ask two Remember When questions, keep Link It to 2 minutes, the IDEAL Check to 2 minutes and the full exit ticket to 3 minutes. Keep the torch and speaker worked example, the Mystery Bag and the Own It drawing. Use six Mystery Bag objects instead of eight, practise only the I action on slide 8, and give Own It 8 minutes.)",
+   "before": {
+    "understand": [],
+    "where": [],
+    "also": [],
+    "if_not": "",
+    "adds": "Pupils learn that some machines do the same every time while others guess, and the guessing ones use AI. They can sort everyday machines and give a reason.",
+    "routines": [
+     "IDEAL moments",
+     "Bleep"
+    ],
+    "recall": []
+   }
   },
   "Y1L2": {
    "already": [
@@ -46,7 +58,30 @@
    "exit": "1. Bleep only saw black cats. Here is a ginger cat. What might Bleep guess, and why? 2. Bleep saw two red apples. Why did it think a red ball was fruit? 3. How can we help Bleep learn better?",
    "look_for": "pupils who explain Bleep's silly guess using the examples (\"it only saw red ones\") and who choose an example because it is different rather than only because they like it.",
    "strands": "How AI works",
-   "time": "60 minutes (45 minutes: shorten the edges and keep the middle. Ask two Remember When questions, keep Link It to 2 minutes, tell the Quick, Draw! story in one sentence, and keep the IDEAL Check to 2 minutes and the full exit ticket to 3 minutes. Keep the two apples worked example, Bleep's test and Own It. Teach Bleep with six examples instead of ten, and test Bleep with four objects from the test bag.)"
+   "time": "60 minutes (45 minutes: shorten the edges and keep the middle. Ask two Remember When questions, keep Link It to 2 minutes, tell the Quick, Draw! story in one sentence, and keep the IDEAL Check to 2 minutes and the full exit ticket to 3 minutes. Keep the two apples worked example, Bleep's test and Own It. Teach Bleep with six examples instead of ten, and test Bleep with four objects from the test bag.)",
+   "before": {
+    "understand": [
+     "AI is a computer that makes guesses, and Bleep is a pretend robot playing one."
+    ],
+    "where": [
+     {
+      "scope": "This unit",
+      "code": "Y1L1",
+      "slides": "slides 5 to 7"
+     }
+    ],
+    "also": [],
+    "if_not": "Introduce: use Y1L1 slides 5 to 7 (Bleep is pretend; guess and AI; torch versus speaker), about 5 minutes.",
+    "adds": "Pupils learn that AI learns from examples, and lots of different examples make its guesses better.",
+    "routines": [
+     "Bleep",
+     "IDEAL moments",
+     "Learning Well"
+    ],
+    "recall": [
+     "Y1L1"
+    ]
+   }
   },
   "Y1L3": {
    "already": [
@@ -90,7 +125,37 @@
    "exit": "1. A spoon, a key and a coin go in Hoop 1. A sock goes in Hoop 2. Where does a paper clip go? What is the rule? 2. Say the AI Loop. Do the actions! 3. Who does the Check?",
    "look_for": "pupils who say how they spotted the rule (\"they all had wheels\"), who can name which loop step they are doing during Own It, and who say \"a person\" without hesitation for the Check.",
    "strands": "How AI works; Staying in charge",
-   "time": "60 minutes (45 minutes: shorten the edges and keep the middle. Ask two Remember When questions, keep Link It to 2 minutes, the IDEAL Check to 2 minutes and the full exit ticket to 3 minutes. Keep Round 1, the AI Loop, Round 2 with all six objects and Own It. Drop the optional Round 3 and keep the photos app example short.)"
+   "time": "60 minutes (45 minutes: shorten the edges and keep the middle. Ask two Remember When questions, keep Link It to 2 minutes, the IDEAL Check to 2 minutes and the full exit ticket to 3 minutes. Keep Round 1, the AI Loop, Round 2 with all six objects and Own It. Drop the optional Round 3 and keep the photos app example short.)",
+   "before": {
+    "understand": [
+     "AI learns from lots of different examples, so too few or similar examples cause silly guesses.",
+     "AI is a computer that makes guesses when it cannot be sure."
+    ],
+    "where": [
+     {
+      "scope": "This unit",
+      "code": "Y1L2",
+      "slides": "slides 7 to 11"
+     },
+     {
+      "scope": "This unit",
+      "code": "Y1L1",
+      "slides": "slides 6 and 7"
+     }
+    ],
+    "also": [],
+    "if_not": "Introduce: use Y1L2 slides 7, 8 and 11 (two red apples, silly guesses, takeaway), about 6 minutes.",
+    "adds": "Pupils learn the AI Loop: AI learns from examples, spots a pattern and guesses, and a person checks.",
+    "routines": [
+     "IDEAL moments",
+     "Bleep",
+     "Learning Well"
+    ],
+    "recall": [
+     "Y1L1",
+     "Y1L2"
+    ]
+   }
   },
   "Y1L4": {
    "already": [
@@ -135,7 +200,39 @@
    "exit": "1. Mia's tablet only shows her football videos now. Why? What could she do? 2. Why did Bleep's shelf fill up with one thing? 3. How can you choose on purpose?",
    "look_for": "pupils who explain the shelf using what was picked before (\"because we kept choosing dinosaurs\"), who connect Bleep TV to the AI Loop, and whose own shelf shows a deliberate mix.",
    "strands": "How AI works; Staying in charge",
-   "time": "60 minutes (45 minutes: shorten the edges and keep the middle. Ask two Remember When questions, keep Link It to 2 minutes, tell the real life slide in one sentence, and keep the IDEAL Check to 2 minutes and the full exit ticket to 3 minutes. Keep the worked example, the Video Shelf and Own It. Play four rounds of the Video Shelf instead of six to eight.)"
+   "time": "60 minutes (45 minutes: shorten the edges and keep the middle. Ask two Remember When questions, keep Link It to 2 minutes, tell the real life slide in one sentence, and keep the IDEAL Check to 2 minutes and the full exit ticket to 3 minutes. Keep the worked example, the Video Shelf and Own It. Play four rounds of the Video Shelf instead of six to eight.)",
+   "before": {
+    "understand": [
+     "The AI Loop: AI learns, spots and guesses, and a person checks.",
+     "A video app that picks a cartoon makes a guess, so it uses AI."
+    ],
+    "where": [
+     {
+      "scope": "This unit",
+      "code": "Y1L3",
+      "slides": "slide 8"
+     },
+     {
+      "scope": "This unit",
+      "code": "Y1L1",
+      "slides": "slide 11"
+     }
+    ],
+    "also": [],
+    "if_not": "Introduce: run Y1L3 slides 6 to 8 (Mystery Rule Round 1, then the AI Loop with actions), about 10 minutes.",
+    "adds": "Pupils learn that some AI chooses what we see next from what we picked, and that we can choose on purpose.",
+    "routines": [
+     "IDEAL moments",
+     "Bleep",
+     "the AI Loop",
+     "Learning Well"
+    ],
+    "recall": [
+     "Y1L1",
+     "Y1L2",
+     "Y1L3"
+    ]
+   }
   },
   "Y1L5": {
    "already": [
@@ -179,7 +276,38 @@
    "exit": "1. We asked for \"a dog\" and got a small brown dog. We wanted a big spotty dog. What do we change? 2. Who made the AI picture? Who chose the words? 3. What should we say when we show an AI picture?",
    "look_for": "pupils who use more than one describing word on purpose, who check the AI picture against the words, and who say without prompting that the tool made the picture but people chose the words.",
    "strands": "How AI works; Staying in charge; Safe, fair and honest",
-   "time": "60 minutes (45 minutes: shorten the edges and keep the middle. Ask two Remember When questions, keep Link It to 2 minutes, the IDEAL Check to 2 minutes and the full exit ticket to 3 minutes. Keep the worked example, the class picture, the slide 10 comparison and Own It. Use the prepared pictures on slide 10 instead of the live demonstration, and give Own It one round only.)"
+   "time": "60 minutes (45 minutes: shorten the edges and keep the middle. Ask two Remember When questions, keep Link It to 2 minutes, the IDEAL Check to 2 minutes and the full exit ticket to 3 minutes. Keep the worked example, the class picture, the slide 10 comparison and Own It. Use the prepared pictures on slide 10 instead of the live demonstration, and give Own It one round only.)",
+   "before": {
+    "understand": [
+     "AI is a computer that makes guesses, so an AI picture is its guess at our words.",
+     "A person checks what AI produces, because AI cannot check itself."
+    ],
+    "where": [
+     {
+      "scope": "This unit",
+      "code": "Y1L1",
+      "slides": "slides 6 and 7"
+     },
+     {
+      "scope": "This unit",
+      "code": "Y1L3",
+      "slides": "slide 8"
+     }
+    ],
+    "also": [],
+    "if_not": "Introduce: Y1L1 slide 6 (AI guesses) and Y1L3 slide 8 (a person checks), about 5 minutes together.",
+    "adds": "Pupils learn that AI can make pictures from words that people choose, and that we say who made each picture.",
+    "routines": [
+     "IDEAL moments",
+     "Bleep",
+     "Learning Well"
+    ],
+    "recall": [
+     "Y1L1",
+     "Y1L3",
+     "Y1L4"
+    ]
+   }
   },
   "Y1L6": {
    "already": [
@@ -248,7 +376,53 @@
    "exit": "1. Bleep says this pencil is a crayon. Why might Bleep get it wrong, and who checks? 2. Name a job Bleep can help with, and a job only people should do. 3. What do we never tell a machine?",
    "look_for": "pupils who use words from the whole unit without prompting (guess, examples, check, choose, in charge), who include the person who checks in their drawing, and who can say why a job needs a person.",
    "strands": "Staying in charge; Safe, fair and honest; Design and create",
-   "time": "60 minutes (45 minutes: shorten the edges and keep the middle. Ask two Remember When questions, keep Link It to 2 minutes, the IDEAL Check to 2 minutes and the full exit ticket to 3 minutes. Keep the worked example, Bleep asking to be in charge, the Robot Rules in pupils' own words and Own It, which is the assessment. Sort six job cards instead of nine, and take two ideas for each rule letter.)"
+   "time": "60 minutes (45 minutes: shorten the edges and keep the middle. Ask two Remember When questions, keep Link It to 2 minutes, the IDEAL Check to 2 minutes and the full exit ticket to 3 minutes. Keep the worked example, Bleep asking to be in charge, the Robot Rules in pupils' own words and Own It, which is the assessment. Sort six job cards instead of nine, and take two ideas for each rule letter.)",
+   "before": {
+    "understand": [
+     "Everything taught in Lessons 1 to 5 of this unit. This is the end of unit assessment: pupils use that learning on their own."
+    ],
+    "where": [
+     {
+      "scope": "This unit",
+      "code": "Y1L1",
+      "slides": ""
+     },
+     {
+      "scope": "This unit",
+      "code": "Y1L2",
+      "slides": ""
+     },
+     {
+      "scope": "This unit",
+      "code": "Y1L3",
+      "slides": ""
+     },
+     {
+      "scope": "This unit",
+      "code": "Y1L4",
+      "slides": ""
+     },
+     {
+      "scope": "This unit",
+      "code": "Y1L5",
+      "slides": ""
+     }
+    ],
+    "also": [],
+    "if_not": "Teach Lessons 1 to 5 first. This lesson assesses them, so it is not a starting point for the unit.",
+    "adds": "Pupils apply the whole unit independently, which gives the evidence for the tracker.",
+    "routines": [
+     "IDEAL moments",
+     "Bleep",
+     "Learning Well"
+    ],
+    "recall": [
+     "Y1L2",
+     "Y1L3",
+     "Y1L4",
+     "Y1L5"
+    ]
+   }
   },
   "Y2L1": {
    "already": [
@@ -298,7 +472,45 @@
    "exit": "1. Can Bleep's guesses be wrong? 2. Who checks Bleep's guesses? 3. Bleep says this cup is a hat. Fix it and say how you know. (Hold up a cup or a picture of one.)",
    "look_for": "pupils who look before they lift a paddle, who fix a mistake rather than just saying \"wrong\", and who can say how they know.",
    "strands": "How AI works; Staying in charge",
-   "time": "60 minutes (45 minutes: two Remember When questions, a 2 minute Link It, the real life story on slide 13 in one sentence, a 2 minute IDEAL Check and the full exit ticket in 3 minutes. Keep the muffin worked example, both rounds of Check It and Own It; use four objects in Round 1 and two photos in Round 2, the strawberry and the cat)"
+   "time": "60 minutes (45 minutes: two Remember When questions, a 2 minute Link It, the real life story on slide 13 in one sentence, a 2 minute IDEAL Check and the full exit ticket in 3 minutes. Keep the muffin worked example, both rounds of Check It and Own It; use four objects in Round 1 and two photos in Round 2, the strawberry and the cat)",
+   "before": {
+    "understand": [
+     "AI is a computer that makes guesses when it cannot be sure.",
+     "The AI Loop: AI learns from examples, spots and guesses, and a person checks."
+    ],
+    "where": [
+     {
+      "scope": "Earlier year",
+      "code": "Y1L1",
+      "slides": "slides 6 and 7"
+     },
+     {
+      "scope": "Earlier year",
+      "code": "Y1L3",
+      "slides": "slide 8"
+     },
+     {
+      "scope": "Earlier year",
+      "code": "Y1L2",
+      "slides": "slides 7 to 11"
+     }
+    ],
+    "also": [],
+    "if_not": "New class: introduce Y1L1 slides 5 to 7 (5 minutes) and Y1L3 slides 6 to 8 (10 minutes); otherwise retrieve slide 2.",
+    "adds": "Pupils learn that AI guesses can be wrong, and practise checking, fixing and saying how they know.",
+    "routines": [
+     "Bleep",
+     "IDEAL moments",
+     "the AI Loop",
+     "Learning Well"
+    ],
+    "recall": [
+     "Y1L1",
+     "Y1L2",
+     "Y1L3",
+     "Y1L6"
+    ]
+   }
   },
   "Y2L2": {
    "already": [
@@ -344,7 +556,40 @@
    "exit": "1. What goes wrong if Bleep's examples are missing some birds? 2. Bleep learned \"dog\" only from big dogs. A tiny dog comes in. What goes wrong, and how do we fix it? 3. How can we make Bleep fair?",
    "look_for": "pupils who explain a wrong answer by pointing to what was missing from the examples, rather than blaming Bleep, and who link that to fairness.",
    "strands": "How AI works; Safe, fair and honest",
-   "time": "60 minutes (45 minutes: two Remember When questions, a 2 minute Link It, a 2 minute IDEAL Check and the full exit ticket in 3 minutes. Keep the real life story on slide 13, because it is the only link from birds to people, and keep the cats worked example and Build a Bird; test only the penguin and the kiwi, and give Own It 6 minutes)"
+   "time": "60 minutes (45 minutes: two Remember When questions, a 2 minute Link It, a 2 minute IDEAL Check and the full exit ticket in 3 minutes. Keep the real life story on slide 13, because it is the only link from birds to people, and keep the cats worked example and Build a Bird; test only the penguin and the kiwi, and give Own It 6 minutes)",
+   "before": {
+    "understand": [
+     "AI learns from examples, and lots of different examples give better guesses.",
+     "AI spots what its examples share and uses that pattern as a rule for new things."
+    ],
+    "where": [
+     {
+      "scope": "Earlier year",
+      "code": "Y1L2",
+      "slides": "slides 7 to 11"
+     },
+     {
+      "scope": "Earlier year",
+      "code": "Y1L3",
+      "slides": "slides 6 to 8"
+     }
+    ],
+    "also": [],
+    "if_not": "Introduce: Y1L2 slides 7, 8 and 11 (6 minutes) and Y1L3 slides 6 and 7 (5 minutes); otherwise retrieve slide 2.",
+    "adds": "Pupils learn that missing examples make AI wrong for some things or people, which is unfair, and people fix it.",
+    "routines": [
+     "Bleep",
+     "IDEAL moments",
+     "the AI Loop",
+     "Learning Well"
+    ],
+    "recall": [
+     "Y1L1",
+     "Y1L2",
+     "Y1L3",
+     "Y2L1"
+    ]
+   }
   },
   "Y2L3": {
    "already": [],
@@ -368,7 +613,25 @@
    "exit": "1. Why should I try it first? 2. Bleep gives you a clue. Helper or doer? 3. You are stuck on a word in your book. Bleep reads the whole page for you. Helper or doer? What would a helper do?",
    "look_for": "pupils who explain why trying first matters (rather than only that it is a rule), who can say when help is useful, and who try before asking during the rest of the day.",
    "strands": "Learning Well; Staying in charge",
-   "time": "60 minutes (45 minutes: two Remember When questions, a 2 minute Link It, a 2 minute IDEAL Check and the full exit ticket in 3 minutes. Keep the Brain check, the path picture, the Helper or Doer sort and the bookmark; use two puzzles in Round 1 and four in Round 2, sort four Helper or Doer cards, and make a shorter bookmark in the lesson)"
+   "time": "60 minutes (45 minutes: two Remember When questions, a 2 minute Link It, a 2 minute IDEAL Check and the full exit ticket in 3 minutes. Keep the Brain check, the path picture, the Helper or Doer sort and the bookmark; use two puzzles in Round 1 and four in Round 2, sort four Helper or Doer cards, and make a shorter bookmark in the lesson)",
+   "before": {
+    "understand": [],
+    "where": [],
+    "also": [],
+    "if_not": "",
+    "adds": "Pupils learn that doing the hard thinking themselves makes learning stick, and to use help on purpose after trying.",
+    "routines": [
+     "Bleep",
+     "IDEAL moments",
+     "Learning Well"
+    ],
+    "recall": [
+     "Y1L5",
+     "Y1L6",
+     "Y2L1",
+     "Y2L2"
+    ]
+   }
   },
   "Y2L4": {
    "already": [],
@@ -393,7 +656,25 @@
    "exit": "1. Bleep asks where you live. Safe to Say or Keep to Myself? 2. A game asks \"What is your school called?\" Safe to Say or Keep to Myself? How do you know? 3. A game asks for your password. What do you do?",
    "look_for": "pupils who use the test (does it tell someone who I am or where to find me?) rather than guessing, who say the routine without prompting, and who can name a grown-up to tell.",
    "strands": "Safe, fair and honest; Staying in charge",
-   "time": "60 minutes (45 minutes: two Remember When questions, a 2 minute Link It, a 2 minute IDEAL Check and the full exit ticket in 3 minutes. Keep the made-up street worked example, the Bleep Wants to Know sort and the shield; sort six questions, practise two situations on slide 12, including the game that asks where you live, and make a smaller shield in the lesson)"
+   "time": "60 minutes (45 minutes: two Remember When questions, a 2 minute Link It, a 2 minute IDEAL Check and the full exit ticket in 3 minutes. Keep the made-up street worked example, the Bleep Wants to Know sort and the shield; sort six questions, practise two situations on slide 12, including the game that asks where you live, and make a smaller shield in the lesson)",
+   "before": {
+    "understand": [],
+    "where": [],
+    "also": [],
+    "if_not": "",
+    "adds": "Pupils learn what personal information is and the routine Stop, Keep it, Tell when a machine asks for it.",
+    "routines": [
+     "Bleep",
+     "IDEAL moments",
+     "Learning Well"
+    ],
+    "recall": [
+     "Y1L6",
+     "Y2L1",
+     "Y2L2",
+     "Y2L3"
+    ]
+   }
   },
   "Y2L5": {
    "already": [
@@ -443,7 +724,45 @@
    "exit": "1. A camera at the school bird feeder counts the birds. What does it guess? Who checks? 2. Who checks the eye scan helper? 3. Which AI helper gets your vote? Why?",
    "look_for": "pupils who use both parts of the pattern, \"it guesses\" and \"a person checks\", for a helper they did not study themselves.",
    "strands": "How AI works; Staying in charge",
-   "time": "60 minutes (45 minutes: two Remember When questions, a 2 minute Link It, the real life story on slide 13 in one sentence, a 2 minute IDEAL Check and the full exit ticket in 3 minutes. Keep the robot vacuum worked example, the group presentations and the Hall of Fame card; use four helpers, one from each place, and make the card in the lesson)"
+   "time": "60 minutes (45 minutes: two Remember When questions, a 2 minute Link It, the real life story on slide 13 in one sentence, a 2 minute IDEAL Check and the full exit ticket in 3 minutes. Keep the robot vacuum worked example, the group presentations and the Hall of Fame card; use four helpers, one from each place, and make the card in the lesson)",
+   "before": {
+    "understand": [
+     "AI is a computer that makes guesses when it cannot be sure.",
+     "AI guesses can be wrong, so a person checks them."
+    ],
+    "where": [
+     {
+      "scope": "Earlier year",
+      "code": "Y1L1",
+      "slides": "slides 6 and 7"
+     },
+     {
+      "scope": "This unit",
+      "code": "Y2L1",
+      "slides": "slides 7 to 12"
+     },
+     {
+      "scope": "Earlier year",
+      "code": "Y1L3",
+      "slides": "slide 8"
+     }
+    ],
+    "also": [],
+    "if_not": "Introduce: Y2L1 slides 7 and 8 (Bleep guesses, people check; the muffin), about 5 minutes.",
+    "adds": "Pupils learn that real AI helpers make guesses to help people, and people check the important ones.",
+    "routines": [
+     "Bleep",
+     "IDEAL moments",
+     "the AI Loop",
+     "Learning Well"
+    ],
+    "recall": [
+     "Y1L1",
+     "Y2L1",
+     "Y2L3",
+     "Y2L4"
+    ]
+   }
   },
   "Y2L6": {
    "already": [
@@ -548,7 +867,57 @@
    "exit": "1. Bleep guesses wrong. What do you do? 2. Bleep offers to read the park map aloud to find the toilets. Good idea or not? Why? 3. Bleep offers to do your work. What do you say?",
    "look_for": "pupils who explain each decision by linking it to what they learned (missing examples, personal information, doing the hard thinking), rather than just saying yes or no to Bleep.",
    "strands": "All five: How AI works; Staying in charge; Safe, fair and honest; Learning Well; Design and create",
-   "time": "60 minutes (45 minutes: two Remember When questions, a 2 minute Link It, a 2 minute IDEAL Check and the full exit ticket in 3 minutes. Keep all five stops, at about 4 minutes each, and the postcard in the lesson; give the story opening and the four steps 3 minutes)"
+   "time": "60 minutes (45 minutes: two Remember When questions, a 2 minute Link It, a 2 minute IDEAL Check and the full exit ticket in 3 minutes. Keep all five stops, at about 4 minutes each, and the postcard in the lesson; give the story opening and the four steps 3 minutes)",
+   "before": {
+    "understand": [
+     "Everything taught in Lessons 1 to 5 of this unit. This is the end of unit assessment: pupils use that learning on their own."
+    ],
+    "where": [
+     {
+      "scope": "This unit",
+      "code": "Y2L1",
+      "slides": ""
+     },
+     {
+      "scope": "This unit",
+      "code": "Y2L2",
+      "slides": ""
+     },
+     {
+      "scope": "This unit",
+      "code": "Y2L3",
+      "slides": ""
+     },
+     {
+      "scope": "This unit",
+      "code": "Y2L4",
+      "slides": ""
+     },
+     {
+      "scope": "This unit",
+      "code": "Y2L5",
+      "slides": ""
+     }
+    ],
+    "also": [
+     "Y1L1",
+     "Y1L3",
+     "Y1L4",
+     "Y1L6"
+    ],
+    "if_not": "Teach Lessons 1 to 5 first. This lesson assesses them, so it is not a starting point for the unit.",
+    "adds": "Pupils apply the whole unit independently, which gives the evidence for the tracker.",
+    "routines": [
+     "IDEAL moments",
+     "Bleep"
+    ],
+    "recall": [
+     "Y1L4",
+     "Y2L3",
+     "Y2L4",
+     "Y2L5"
+    ]
+   }
   },
   "Y3L1": {
    "already": [
@@ -592,7 +961,39 @@
    "exit": "1. Leo skips every cooking video but watches football to the end. What will his feed show more of, and how does the app know? 2. Name two kinds of data an app collects while you watch. 3. Your feed only shows one kind of video. Give one way to take charge.",
    "look_for": "pupils who say that skipping and watching are data as well as likes, and who can say who chose the feed: the app, from the data.",
    "strands": "How AI works; Staying in charge",
-   "time": "60 minutes (45 minutes: ask Remember When questions 3 and 4 only, keep Link It to 2 minutes, tell slide 12 in one sentence, give the IDEAL Check 2 minutes and the full exit ticket 3 minutes. Keep the slide 7 worked example, all five Feed Machine rounds and Own It)"
+   "time": "60 minutes (45 minutes: ask Remember When questions 3 and 4 only, keep Link It to 2 minutes, tell slide 12 in one sentence, give the IDEAL Check 2 minutes and the full exit ticket 3 minutes. Keep the slide 7 worked example, all five Feed Machine rounds and Own It)",
+   "before": {
+    "understand": [
+     "Picking one kind of video makes an app show more of it until little else appears.",
+     "AI learns from examples, spots a pattern and guesses, and a person checks."
+    ],
+    "where": [
+     {
+      "scope": "Earlier year",
+      "code": "Y1L4",
+      "slides": "slides 7 to 9"
+     },
+     {
+      "scope": "Earlier year",
+      "code": "Y1L3",
+      "slides": "slide 8"
+     }
+    ],
+    "also": [],
+    "if_not": "Retrieve with RW Q3 and Q4; if new, introduce with Y1L4 slides 7 to 8 and Y1L3 slide 8 (about 6 minutes).",
+    "adds": "Pupils see that every watch, like and skip is data a real app uses to recommend more of the same.",
+    "routines": [
+     "IDEAL moments",
+     "the AI Loop",
+     "Learning Well"
+    ],
+    "recall": [
+     "Y1L3",
+     "Y1L4",
+     "Y2L4",
+     "Y2L6"
+    ]
+   }
   },
   "Y3L2": {
    "already": [
@@ -645,7 +1046,44 @@
    "exit": "1. What is a wake word? 2. Gran's friend visits and the smart speaker is on. What should you tell her, and why? 3. Give one way a grown up can protect privacy around a voice assistant.",
    "look_for": "pupils who can say what happens before and after the wake word, and who think about other people's privacy as well as their own.",
    "strands": "How AI works; Safe, fair and honest",
-   "time": "60 minutes (45 minutes: ask Remember When questions 3 and 4 only, keep Link It to 2 minutes, tell slides 9 and 10 in one sentence, give the IDEAL Check 2 minutes and the full exit ticket 3 minutes. In round 1 read only lines 2 and 3, then play round 2 in full. Keep the slide 6 think aloud, the slide 8 reveal and Own It)"
+   "time": "60 minutes (45 minutes: ask Remember When questions 3 and 4 only, keep Link It to 2 minutes, tell slides 9 and 10 in one sentence, give the IDEAL Check 2 minutes and the full exit ticket 3 minutes. In round 1 read only lines 2 and 3, then play round 2 in full. Keep the slide 6 think aloud, the slide 8 reveal and Own It)",
+   "before": {
+    "understand": [
+     "Data is information a computer collects and uses.",
+     "Personal information such as an address is private and kept to ourselves.",
+     "AI makes guesses, and its guesses can be wrong."
+    ],
+    "where": [
+     {
+      "scope": "This unit",
+      "code": "Y3L1",
+      "slides": "slide 5"
+     },
+     {
+      "scope": "Earlier year",
+      "code": "Y2L4",
+      "slides": "slides 5 and 7"
+     },
+     {
+      "scope": "Earlier year",
+      "code": "Y2L1",
+      "slides": "slide 7"
+     }
+    ],
+    "also": [],
+    "if_not": "Retrieve with RW Q1 to Q3; if new, show Y3L1 slide 5 and Y2L4 slide 7 (about 3 minutes).",
+    "adds": "Pupils learn what a voice assistant records and sends, and that privacy protects other people too.",
+    "routines": [
+     "IDEAL moments",
+     "the AI Loop",
+     "Learning Well"
+    ],
+    "recall": [
+     "Y1L1",
+     "Y2L4",
+     "Y3L1"
+    ]
+   }
   },
   "Y3L3": {
    "already": [
@@ -693,12 +1131,49 @@
    "exit": "1. What does accessible mean? 2. Name two ways AI can help someone join in. 3. A translation comes back the same in a round trip. Is it definitely right? Why?",
    "look_for": "pupils who explain that each tool is guessing, and who think about who might still be left out when the tool makes a mistake.",
    "strands": "How AI works; Safe, fair and honest",
-   "time": "60 minutes (45 minutes: ask Remember When questions 3 and 4 only, keep Link It to 2 minutes, tell the slide 12 story in one sentence, give the IDEAL Check 2 minutes and the full exit ticket 3 minutes. Use round trip sentences 1, 3, 4 and 6. Keep the slide 6 worked example, all three stations and Own It)"
+   "time": "60 minutes (45 minutes: ask Remember When questions 3 and 4 only, keep Link It to 2 minutes, tell the slide 12 story in one sentence, give the IDEAL Check 2 minutes and the full exit ticket 3 minutes. Use round trip sentences 1, 3, 4 and 6. Keep the slide 6 worked example, all three stations and Own It)",
+   "before": {
+    "understand": [
+     "When examples are missing, AI gets things wrong for some people, which is unfair.",
+     "AI tools guess, so their results can be wrong and a person checks."
+    ],
+    "where": [
+     {
+      "scope": "Earlier year",
+      "code": "Y2L2",
+      "slides": "slides 11 to 13"
+     },
+     {
+      "scope": "Earlier year",
+      "code": "Y1L3",
+      "slides": "slide 8"
+     },
+     {
+      "scope": "Earlier year",
+      "code": "Y2L1",
+      "slides": "slide 7"
+     }
+    ],
+    "also": [],
+    "if_not": "Retrieve with RW Q3; if new, use Y2L2 slides 11 to 12 and Y2L1 slide 7 (about 4 minutes).",
+    "adds": "Pupils learn how guessing AI tools can remove barriers, and how to test a translation before trusting it.",
+    "routines": [
+     "IDEAL moments",
+     "the AI Loop",
+     "Learning Well"
+    ],
+    "recall": [
+     "Y1L5",
+     "Y2L2",
+     "Y3L1",
+     "Y3L2"
+    ]
+   }
   },
   "Y3L4": {
    "already": [
     {
-     "idea": "Having a go first matters because when someone else does the thinking, you lose the learning.",
+     "idea": "Having a go first helps you learn: your brain grows when you do the hard thinking.",
      "from": [
       {
        "code": "Y2L3",
@@ -736,7 +1211,38 @@
    "exit": "1. What is the difference between a hint and an answer? 2. Your friend is stuck on 5 √ó 4. Write a hint, not the answer. 3. When is it OK to get the answer?",
    "look_for": "pupils who explain who does the thinking with each kind of help, and whose hints keep the thinking with their partner rather than giving the answer away.",
    "strands": "Learning Well; Staying in charge",
-   "time": "60 minutes (45 minutes: ask Remember When questions 3 and 4 only, keep Link It to 2 minutes, tell the slide 11 study in one sentence, give the IDEAL Check 2 minutes and the full exit ticket 3 minutes. Use five Helper Cards: the answer, the clue, the question back, the app and says which part to check again. Keep the slide 7 worked example, slide 10 and Own It)"
+   "time": "60 minutes (45 minutes: ask Remember When questions 3 and 4 only, keep Link It to 2 minutes, tell the slide 11 study in one sentence, give the IDEAL Check 2 minutes and the full exit ticket 3 minutes. Use five Helper Cards: the answer, the clue, the question back, the app and says which part to check again. Keep the slide 7 worked example, slide 10 and Own It)",
+   "before": {
+    "understand": [
+     "Having a go first helps you learn: your brain grows when you do the hard thinking.",
+     "A helper gives a clue or checks after you try; a doer does it for you."
+    ],
+    "where": [
+     {
+      "scope": "Earlier year",
+      "code": "Y2L3",
+      "slides": "slides 9 to 11 and 13"
+     },
+     {
+      "scope": "Earlier year",
+      "code": "Y2L3",
+      "slides": "slides 5 and 12"
+     }
+    ],
+    "also": [],
+    "if_not": "Retrieve with RW Q3; if new, introduce with Y2L3 slides 10, 11 and 13 (about 4 minutes).",
+    "adds": "Pupils learn to ask for help that makes them think, and to give hints that keep the thinking with others.",
+    "routines": [
+     "Learning Well",
+     "IDEAL moments"
+    ],
+    "recall": [
+     "Y1L6",
+     "Y2L3",
+     "Y3L1",
+     "Y3L3"
+    ]
+   }
   },
   "Y3L5": {
    "already": [
@@ -780,7 +1286,39 @@
    "exit": "1. What does honest mean when AI has helped you? 2. AI gave you the idea for your story ending. Write the label you would add. 3. True or false? If AI only helped a little, you do not need to say.",
    "look_for": "pupils who separate what AI did from what they did, and who can be honest about a friend in a way that is also kind.",
    "strands": "Safe, fair and honest; Staying in charge",
-   "time": "60 minutes (45 minutes: ask Remember When questions 3 and 4 only, keep Link It to 2 minutes, tell the slide 12 story in one sentence, give the IDEAL Check 2 minutes and the full exit ticket 3 minutes. Each group answers three letters, always including letter 4, and slide 13 folds into Own It. Keep the slide 7 worked example and Own It)"
+   "time": "60 minutes (45 minutes: ask Remember When questions 3 and 4 only, keep Link It to 2 minutes, tell the slide 12 story in one sentence, give the IDEAL Check 2 minutes and the full exit ticket 3 minutes. Each group answers three letters, always including letter 4, and slide 13 folds into Own It. Keep the slide 7 worked example and Own It)",
+   "before": {
+    "understand": [
+     "People choose the words, but the AI tool makes the picture, so we say who made it.",
+     "When a doer does the work for you, the work is not yours."
+    ],
+    "where": [
+     {
+      "scope": "Earlier year",
+      "code": "Y1L5",
+      "slides": "slides 8, 11 and 12"
+     },
+     {
+      "scope": "Earlier year",
+      "code": "Y2L3",
+      "slides": "slide 12"
+     }
+    ],
+    "also": [],
+    "if_not": "Retrieve with RW Q3 and Q4; if new, use Y1L5 slides 11 to 12 and Y2L3 slide 12 (about 5 minutes).",
+    "adds": "Pupils learn to judge how much AI helped and to label it honestly.",
+    "routines": [
+     "Bleep",
+     "IDEAL moments",
+     "Learning Well"
+    ],
+    "recall": [
+     "Y1L5",
+     "Y2L3",
+     "Y3L3",
+     "Y3L4"
+    ]
+   }
   },
   "Y3L6": {
    "already": [
@@ -868,7 +1406,55 @@
    "exit": "1. Name two features that make a video app good for children. 2. Your why button says \"Because you liked it.\" Is that enough? What should it say? 3. What did your app NOT collect, and why?",
    "look_for": "pupils who explain each feature in terms of data, choice, honesty or privacy, and who give feedback that is specific and kind.",
    "strands": "All progression strands: How AI works; Staying in charge; Safe, fair and honest; Learning Well; Design and create",
-   "time": "60 minutes (45 minutes: ask Remember When questions 2 and 4 only, keep Link It to 2 minutes, tell the slide 7 story in one sentence, give the IDEAL Check 2 minutes and the full exit ticket 3 minutes. Every team pitches to one other team only. Keep the slide 8 worked example, all four features and Own It)"
+   "time": "60 minutes (45 minutes: ask Remember When questions 2 and 4 only, keep Link It to 2 minutes, tell the slide 7 story in one sentence, give the IDEAL Check 2 minutes and the full exit ticket 3 minutes. Every team pitches to one other team only. Keep the slide 8 worked example, all four features and Own It)",
+   "before": {
+    "understand": [
+     "Everything taught in Lessons 1 to 5 of this unit. This is the end of unit assessment: pupils use that learning on their own."
+    ],
+    "where": [
+     {
+      "scope": "This unit",
+      "code": "Y3L1",
+      "slides": ""
+     },
+     {
+      "scope": "This unit",
+      "code": "Y3L2",
+      "slides": ""
+     },
+     {
+      "scope": "This unit",
+      "code": "Y3L3",
+      "slides": ""
+     },
+     {
+      "scope": "This unit",
+      "code": "Y3L4",
+      "slides": ""
+     },
+     {
+      "scope": "This unit",
+      "code": "Y3L5",
+      "slides": ""
+     }
+    ],
+    "also": [
+     "Y2L4"
+    ],
+    "if_not": "Teach Lessons 1 to 5 first. This lesson assesses them, so it is not a starting point for the unit.",
+    "adds": "Pupils apply the whole unit independently, which gives the evidence for the tracker.",
+    "routines": [
+     "IDEAL moments",
+     "Learning Well",
+     "the AI Loop"
+    ],
+    "recall": [
+     "Y2L4",
+     "Y3L1",
+     "Y3L2",
+     "Y3L5"
+    ]
+   }
   },
   "Y4L1": {
    "already": [
@@ -912,7 +1498,39 @@
    "exit": "1. What is a chatbot? 2. A chatbot makes its answers by predicting the next ______. 3. Why can a word chain make a sentence that sounds right but makes no sense?",
    "look_for": "pupils who explain the next word by pointing to the tally (\"dog came after 'the' three times\"), and who can say why a sentence is nonsense even though every word follows the pattern.",
    "strands": "How AI works",
-   "time": "60 minutes (45 minutes: shorten the edges and keep the middle. Ask Remember When questions 3 and 4 only, keep Link It to 2 minutes and the IDEAL Check to 2 minutes, and give the full exit ticket in 3 minutes. Keep the worked example, the dice rolling and the Own It poster. Tally \"the\" together on slide 10, then each group tallies one more word before it gets the Dice Chart)"
+   "time": "60 minutes (45 minutes: shorten the edges and keep the middle. Ask Remember When questions 3 and 4 only, keep Link It to 2 minutes and the IDEAL Check to 2 minutes, and give the full exit ticket in 3 minutes. Keep the worked example, the dice rolling and the Own It poster. Tally \"the\" together on slide 10, then each group tallies one more word before it gets the Dice Chart)",
+   "before": {
+    "understand": [
+     "AI spots patterns in its examples and uses them to guess.",
+     "AI guesses better when it learns from lots of different examples."
+    ],
+    "where": [
+     {
+      "scope": "Earlier year",
+      "code": "Y1L3",
+      "slides": "slides 5 and 8"
+     },
+     {
+      "scope": "Earlier year",
+      "code": "Y1L2",
+      "slides": "slides 8 and 11"
+     }
+    ],
+    "also": [],
+    "if_not": "Retrieve with RW Q3 and Q4; if new, introduce with Y1L3 slide 8 and Y1L2 slide 11 (about 3 minutes).",
+    "adds": "Pupils learn that a chatbot predicts likely next words from patterns, without understanding them.",
+    "routines": [
+     "IDEAL moments",
+     "the AI Loop",
+     "Learning Well"
+    ],
+    "recall": [
+     "Y1L2",
+     "Y1L3",
+     "Y3L2",
+     "Y3L6"
+    ]
+   }
   },
   "Y4L2": {
    "already": [
@@ -965,7 +1583,44 @@
    "exit": "1. Give one reason why a chatbot is not the same as a friend. 2. A chatbot says \"I missed you!\" Is that true? Why does it say it? 3. Name two trusted adults you could talk to if something online worried you.",
    "look_for": "pupils who use the clue questions to explain their decision rather than how kind a reply sounds, and who can name at least one trusted adult in school.",
    "strands": "Staying in charge; Safe, fair and honest",
-   "time": "60 minutes (45 minutes: shorten the edges and keep the middle. Ask Remember When questions 1 and 4 only, keep Link It to 2 minutes, tell the real life finding in one sentence, keep the IDEAL Check to 2 minutes and give the full exit ticket in 3 minutes. Keep the worked example on slide 8 and the Helping Hand. In Try It use only cards 1 and 4)"
+   "time": "60 minutes (45 minutes: shorten the edges and keep the middle. Ask Remember When questions 1 and 4 only, keep Link It to 2 minutes, tell the real life finding in one sentence, keep the IDEAL Check to 2 minutes and give the full exit ticket in 3 minutes. Keep the worked example on slide 8 and the Helping Hand. In Try It use only cards 1 and 4)",
+   "before": {
+    "understand": [
+     "A chatbot picks likely words from patterns and does not know what it is saying.",
+     "If a machine asks for something private, stop, keep it and tell a grown up you trust.",
+     "Being honest means telling the truth and not pretending."
+    ],
+    "where": [
+     {
+      "scope": "This unit",
+      "code": "Y4L1",
+      "slides": "slides 8 and 13"
+     },
+     {
+      "scope": "Earlier year",
+      "code": "Y2L4",
+      "slides": "slides 7 and 11"
+     },
+     {
+      "scope": "Earlier year",
+      "code": "Y3L5",
+      "slides": "slide 5"
+     }
+    ],
+    "also": [],
+    "if_not": "Retrieve with RW Q1; if new, show Y4L1 slide 13 and Y2L4 slide 11 (about 3 minutes).",
+    "adds": "Pupils learn why a chatbot is not a friend and who to turn to instead.",
+    "routines": [
+     "IDEAL moments",
+     "Learning Well"
+    ],
+    "recall": [
+     "Y1L6",
+     "Y2L4",
+     "Y3L2",
+     "Y4L1"
+    ]
+   }
   },
   "Y4L3": {
    "already": [
@@ -1014,7 +1669,45 @@
    "exit": "1. True or false? If a chatbot sounds really sure, it must be right. 2. A chatbot says, very sure, \"An octopus has six arms.\" Trust it, Test it or Bin it? How would you check? 3. Name two ways you could check an answer from a chatbot.",
    "look_for": "pupils who change a decision because of evidence, and who say how they know rather than just right or wrong.",
    "strands": "How AI works; Staying in charge",
-   "time": "60 minutes (45 minutes: shorten the edges and keep the middle. Ask Remember When questions 1 and 3 only, keep Link It to 2 minutes, tell the pizza glue story in one sentence, keep the IDEAL Check to 2 minutes and give the full exit ticket in 3 minutes. Keep the spider worked example and Own It. In Try It use Chatty cards 1, 3, 4 and 7 (two right, two wrong) instead of all eight)"
+   "time": "60 minutes (45 minutes: shorten the edges and keep the middle. Ask Remember When questions 1 and 3 only, keep Link It to 2 minutes, tell the pizza glue story in one sentence, keep the IDEAL Check to 2 minutes and give the full exit ticket in 3 minutes. Keep the spider worked example and Own It. In Try It use Chatty cards 1, 3, 4 and 7 (two right, two wrong) instead of all eight)",
+   "before": {
+    "understand": [
+     "A chatbot's sentence can sound right and still be wrong, because it predicts words.",
+     "AI learns, spots and guesses, and checking is the person's job."
+    ],
+    "where": [
+     {
+      "scope": "This unit",
+      "code": "Y4L1",
+      "slides": "slides 11 to 13"
+     },
+     {
+      "scope": "Earlier year",
+      "code": "Y1L3",
+      "slides": "slide 8"
+     },
+     {
+      "scope": "Earlier year",
+      "code": "Y2L1",
+      "slides": "slides 7 to 8"
+     }
+    ],
+    "also": [],
+    "if_not": "Retrieve with RW Q1, Q3 and Q4; if new, use Y4L1 slides 11 to 12 and Y1L3 slide 8 (about 5 minutes).",
+    "adds": "Pupils learn that confident answers can be wrong, and to check with a test, trusted source or trusted adult.",
+    "routines": [
+     "Chatty",
+     "IDEAL moments",
+     "the AI Loop",
+     "Learning Well"
+    ],
+    "recall": [
+     "Y1L3",
+     "Y2L1",
+     "Y4L1",
+     "Y4L2"
+    ]
+   }
   },
   "Y4L4": {
    "already": [
@@ -1068,7 +1761,45 @@
    "exit": "1. What is a prompt? 2. Make this prompt specific: \"Draw a house.\" 3. Which prompt is better for learning: \"Do my homework\" or \"Give me a hint for question 3\"? Why?",
    "look_for": "pupils who add details that actually matter (number, colour, size, action) rather than just more words, and who can explain why a reason prompt is better for learning than a shortcut prompt.",
    "strands": "How AI works; Learning Well",
-   "time": "60 minutes (45 minutes: shorten the edges and keep the middle. Ask Remember When questions 3 and 4 only, keep Link It to 2 minutes and the IDEAL Check to 2 minutes, and give the full exit ticket in 3 minutes. Keep the hedgehog worked example, slide 12 and Own It in pairs. Do one quick draw (the specific creature) and ask what \"Draw a creature\" alone would have given. In Prompt Chef each pupil is chef once, with one card)"
+   "time": "60 minutes (45 minutes: shorten the edges and keep the middle. Ask Remember When questions 3 and 4 only, keep Link It to 2 minutes and the IDEAL Check to 2 minutes, and give the full exit ticket in 3 minutes. Keep the hedgehog worked example, slide 12 and Own It in pairs. Do one quick draw (the specific creature) and ask what \"Draw a creature\" alone would have given. In Prompt Chef each pupil is chef once, with one card)",
+   "before": {
+    "understand": [
+     "A chatbot predicts its answer from the words so far, so the prompt steers it.",
+     "People choose the words for AI, and fuller descriptions get closer to what we meant.",
+     "A hint makes you think; an answer does the thinking for you."
+    ],
+    "where": [
+     {
+      "scope": "This unit",
+      "code": "Y4L1",
+      "slides": "slides 8 and 13"
+     },
+     {
+      "scope": "Earlier year",
+      "code": "Y1L5",
+      "slides": "slides 8 and 10"
+     },
+     {
+      "scope": "Earlier year",
+      "code": "Y3L4",
+      "slides": "slides 6, 7 and 10"
+     }
+    ],
+    "also": [],
+    "if_not": "Retrieve with RW Q3 and Q4; if new, use Y1L5 slide 10 and Y3L4 slide 6 (about 4 minutes).",
+    "adds": "Pupils learn to write specific prompts and to ask AI for help that keeps them learning.",
+    "routines": [
+     "Chatty",
+     "IDEAL moments",
+     "Learning Well"
+    ],
+    "recall": [
+     "Y1L5",
+     "Y3L4",
+     "Y4L1",
+     "Y4L3"
+    ]
+   }
   },
   "Y4L5": {
    "already": [
@@ -1126,7 +1857,50 @@
    "exit": "1. What does \"90% chance of rain\" mean? 2. True or false? If an AI is 90% sure, it must be right. 3. A bird app says \"80% sure: robin.\" Should you believe it? What would you do?",
    "look_for": "pupils who lower their confidence when several answers fit the clues, and who explain that a 90% answer can be wrong without the AI being broken.",
    "strands": "How AI works; Staying in charge",
-   "time": "60 minutes (45 minutes: shorten the edges and keep the middle. Ask Remember When questions 3 and 4 only, keep Link It to 2 minutes, tell the panda story in one sentence, keep the IDEAL Check to 2 minutes and give the full exit ticket in 3 minutes. Keep the Chatty worked example, Mysteries 1, 2 and 3 and Own It. Fold and colour the Chance Machines before the lesson so pairs only predict and spin, and drop the bonus mystery)"
+   "time": "60 minutes (45 minutes: shorten the edges and keep the middle. Ask Remember When questions 3 and 4 only, keep Link It to 2 minutes, tell the panda story in one sentence, keep the IDEAL Check to 2 minutes and give the full exit ticket in 3 minutes. Keep the Chatty worked example, Mysteries 1, 2 and 3 and Own It. Fold and colour the Chance Machines before the lesson so pairs only predict and spin, and drop the bonus mystery)",
+   "before": {
+    "understand": [
+     "In the Word Chain Machine, likelier words got more dice numbers but did not always win.",
+     "A chatbot can sound sure and still be wrong, so we check.",
+     "AI learns from data to make guesses, not certain answers."
+    ],
+    "where": [
+     {
+      "scope": "This unit",
+      "code": "Y4L1",
+      "slides": "slides 10, 11 and 19"
+     },
+     {
+      "scope": "This unit",
+      "code": "Y4L3",
+      "slides": "slides 6, 9, 10 and 14"
+     },
+     {
+      "scope": "Earlier year",
+      "code": "Y3L1",
+      "slides": "slide 8"
+     },
+     {
+      "scope": "Earlier year",
+      "code": "Y1L1",
+      "slides": "slide 6"
+     }
+    ],
+    "also": [],
+    "if_not": "Retrieve with RW Q3 and Q4; if new, use Y4L1 slides 10 and 19 and Y4L3 slide 14 (about 6 minutes).",
+    "adds": "Pupils learn that AI works out what is most likely, so even a 90% sure answer can be wrong.",
+    "routines": [
+     "Chatty",
+     "IDEAL moments",
+     "Learning Well"
+    ],
+    "recall": [
+     "Y3L1",
+     "Y4L1",
+     "Y4L3",
+     "Y4L4"
+    ]
+   }
   },
   "Y4L6": {
    "already": [
@@ -1222,7 +1996,57 @@
    "exit": "1. Write one rule a good children's chatbot must follow, and say why. 2. A chatbot says: \"I'm your best friend!\" Which rule is it breaking? 3. What should a good chatbot do if a child says they are upset?",
    "look_for": "pupils who explain a rule using how chatbots work (predicting words, sounding sure, not knowing you) rather than general reasons, and teams who change a rule because a tricky message caught it out.",
    "strands": "How AI works; Staying in charge; Safe, fair and honest; Learning Well; Design and create",
-   "time": "60 minutes (45 minutes: shorten the edges and keep the middle. Ask Remember When questions 1 and 4 only, keep Link It to 2 minutes, tell the real life story in one sentence, keep the IDEAL Check to 2 minutes and give the full exit ticket in 3 minutes. Keep the worked example and Own It. Teams write the four main rules only, in 10 minutes, and test with messages 1, 2, 3 and 4, one per main rule)"
+   "time": "60 minutes (45 minutes: shorten the edges and keep the middle. Ask Remember When questions 1 and 4 only, keep Link It to 2 minutes, tell the real life story in one sentence, keep the IDEAL Check to 2 minutes and give the full exit ticket in 3 minutes. Keep the worked example and Own It. Teams write the four main rules only, in 10 minutes, and test with messages 1, 2, 3 and 4, one per main rule)",
+   "before": {
+    "understand": [
+     "Everything taught in Lessons 1 to 5 of this unit. This is the end of unit assessment: pupils use that learning on their own."
+    ],
+    "where": [
+     {
+      "scope": "This unit",
+      "code": "Y4L1",
+      "slides": ""
+     },
+     {
+      "scope": "This unit",
+      "code": "Y4L2",
+      "slides": ""
+     },
+     {
+      "scope": "This unit",
+      "code": "Y4L3",
+      "slides": ""
+     },
+     {
+      "scope": "This unit",
+      "code": "Y4L4",
+      "slides": ""
+     },
+     {
+      "scope": "This unit",
+      "code": "Y4L5",
+      "slides": ""
+     }
+    ],
+    "also": [
+     "Y2L4",
+     "Y3L2",
+     "Y3L4"
+    ],
+    "if_not": "Teach Lessons 1 to 5 first. This lesson assesses them, so it is not a starting point for the unit.",
+    "adds": "Pupils apply the whole unit independently, which gives the evidence for the tracker.",
+    "routines": [
+     "Chatty",
+     "IDEAL moments",
+     "Learning Well"
+    ],
+    "recall": [
+     "Y3L2",
+     "Y4L2",
+     "Y4L4",
+     "Y4L5"
+    ]
+   }
   },
   "Y5L1": {
    "already": [
@@ -1259,7 +2083,37 @@
    "exit": "1. What is the difference between a rule based program and machine learning? 2. Our program said Thumbs up for \"It was not great.\" Why? 3. Name one job where rules work best, and one where learning from examples works best.",
    "look_for": "pupils who explain a wrong answer by pointing to the exact rule that caused it, and who can say both what rules are good at and what models are good at, rather than assuming AI is always better.",
    "strands": "How AI works; Design and create",
-   "time": "60 minutes (45 minutes: two Remember When questions, a 2 minute Link It, a 2 minute IDEAL Check and the full exit ticket in 3 minutes. Keep the worked example, the Tricky Review test and Own It in class. Test four Tricky Review cards, including 3 and 7, and place four of the items on slide 12)"
+   "time": "60 minutes (45 minutes: two Remember When questions, a 2 minute Link It, a 2 minute IDEAL Check and the full exit ticket in 3 minutes. Keep the worked example, the Tricky Review test and Own It in class. Test four Tricky Review cards, including 3 and 7, and place four of the items on slide 12)",
+   "before": {
+    "understand": [
+     "AI finds patterns in lots of examples and uses them to guess, so it can be wrong."
+    ],
+    "where": [
+     {
+      "scope": "Earlier year",
+      "code": "Y1L3",
+      "slides": "slide 8"
+     },
+     {
+      "scope": "Earlier year",
+      "code": "Y1L2",
+      "slides": "slides 8 and 11"
+     }
+    ],
+    "also": [],
+    "if_not": "Retrieve or introduce: show Y1L3 slide 8, the AI Loop, and play one Mystery Rule round from slide 6 (5 minutes). Introduce the new IDEAL wording by reading all five from Y5L6 slide 15 (2 minutes).",
+    "adds": "Pupils compare rules people write with patterns a model finds, and test where each falls short.",
+    "routines": [
+     "IDEAL moments",
+     "the AI Loop"
+    ],
+    "recall": [
+     "Y1L1",
+     "Y1L3",
+     "Y4L5",
+     "Y4L6"
+    ]
+   }
   },
   "Y5L2": {
    "already": [
@@ -1292,7 +2146,32 @@
    "exit": "1. What is the difference between training data and test data? 2. A model gets 7 out of 10 test cards right. What is its accuracy? 3. Why should we never test a model only on its training data?",
    "look_for": "pupils who explain a high training score and a low test score by naming the accidental feature, and who ask for test results before trusting a claim.",
    "strands": "How AI works; Staying in charge",
-   "time": "60 minutes (45 minutes: two Remember When questions, a 2 minute Link It, the husky and wolf story in one sentence, a 2 minute IDEAL Check and the full exit ticket in 3 minutes. Keep the fruit worked example, the test, the slide 10 comparison and Own It. Spend one minute on slide 6, and let teams self mark from the real answers (Zorbs are 1, 2, 5, 7 and 8) instead of the card by card reveal on slide 9)"
+   "time": "60 minutes (45 minutes: two Remember When questions, a 2 minute Link It, the husky and wolf story in one sentence, a 2 minute IDEAL Check and the full exit ticket in 3 minutes. Keep the fruit worked example, the test, the slide 10 comparison and Own It. Spend one minute on slide 6, and let teams self mark from the real answers (Zorbs are 1, 2, 5, 7 and 8) instead of the card by card reveal on slide 9)",
+   "before": {
+    "understand": [
+     "Machine learning finds its own patterns in labelled examples and makes a model that guesses."
+    ],
+    "where": [
+     {
+      "scope": "This unit",
+      "code": "Y5L1",
+      "slides": "slides 5 to 7"
+     }
+    ],
+    "also": [],
+    "if_not": "Retrieve or introduce: show Y5L1 slides 6 and 7 and say a model learns patterns from labelled examples (3 minutes).",
+    "adds": "Pupils learn that only unseen test data shows what a model really learned, measured as accuracy.",
+    "routines": [
+     "IDEAL moments",
+     "the AI Loop",
+     "Bleep"
+    ],
+    "recall": [
+     "Y1L2",
+     "Y2L2",
+     "Y5L1"
+    ]
+   }
   },
   "Y5L3": {
    "already": [
@@ -1324,7 +2203,31 @@
    "exit": "1. An app wants to train its AI on every picture on the school website. What should it do first, and why? 2. What makes consent a real yes? 3. Write one rule from our Permission Charter, and say why it is fair.",
    "look_for": "pupils who separate being able to see something from having permission to copy it, and who can explain why \"unless you say no\" is weaker than asking first.",
    "strands": "Safe, fair and honest; How AI works",
-   "time": "60 minutes (45 minutes: two Remember When questions, the silent album story in one sentence, a 2 minute IDEAL Check and the full exit ticket in 3 minutes. Keep the 2 minute drawing in Link It, because it is the data, and keep the letter, slide 8 and Own It. Use two of the company's arguments on slide 8 and four of the six cases on slide 11, and vote on three Charter rules instead of five)"
+   "time": "60 minutes (45 minutes: two Remember When questions, the silent album story in one sentence, a 2 minute IDEAL Check and the full exit ticket in 3 minutes. Keep the 2 minute drawing in Link It, because it is the data, and keep the letter, slide 8 and Own It. Use two of the company's arguments on slide 8 and four of the six cases on slide 11, and vote on three Charter rules instead of five)",
+   "before": {
+    "understand": [
+     "A model learns from training data, a large set of examples that people made."
+    ],
+    "where": [
+     {
+      "scope": "This unit",
+      "code": "Y5L2",
+      "slides": "slide 5"
+     }
+    ],
+    "also": [],
+    "if_not": "Introduce or retrieve: show Y5L2 slide 5 and say AI learns from lots of examples people made (2 minutes).",
+    "adds": "Pupils learn that training data comes from people's work and lives, so permission and real consent matter.",
+    "routines": [
+     "IDEAL moments",
+     "Learning Well"
+    ],
+    "recall": [
+     "Y2L4",
+     "Y3L5",
+     "Y5L2"
+    ]
+   }
   },
   "Y5L4": {
    "already": [
@@ -1356,7 +2259,31 @@
    "exit": "1. What is bias in AI? 2. What does balanced data mean? 3. A Bot welcomes 11 out of 12 visitors. What should you ask next?",
    "look_for": "pupils who move beyond the total score to ask who was failed, who explain bias by how the system was trained, tested or designed rather than by anyone's voice, and who suggest testing with every group before a system is used.",
    "strands": "Safe, fair and honest; How AI works",
-   "time": "60 minutes (45 minutes: two Remember When questions, a 2 minute Link It, the Stanford story in one sentence, a 2 minute IDEAL Check and the full exit ticket in 3 minutes. Keep the Welcome Bot challenge, slide 10 and Own It. Shorten the Reading Buddy example to its four questions)"
+   "time": "60 minutes (45 minutes: two Remember When questions, a 2 minute Link It, the Stanford story in one sentence, a 2 minute IDEAL Check and the full exit ticket in 3 minutes. Keep the Welcome Bot challenge, slide 10 and Own It. Shorten the Reading Buddy example to its four questions)",
+   "before": {
+    "understand": [
+     "A model learns only from its training data, and testing shows what and who it gets wrong."
+    ],
+    "where": [
+     {
+      "scope": "This unit",
+      "code": "Y5L2",
+      "slides": "slides 5, 6 and 10"
+     }
+    ],
+    "also": [],
+    "if_not": "Retrieve or introduce: show Y5L2 slide 10 and say a model only knows what its training data showed it (3 minutes).",
+    "adds": "Pupils see that unbalanced training data can fail the same people every time, even with a good total score.",
+    "routines": [
+     "IDEAL moments"
+    ],
+    "recall": [
+     "Y3L2",
+     "Y3L3",
+     "Y5L2",
+     "Y5L3"
+    ]
+   }
   },
   "Y5L5": {
    "already": [
@@ -1412,7 +2339,45 @@
    "exit": "1. Which STAIR step is missing from this prompt: \"Quiz me on the planets.\" What would you add? 2. In Plan, use, prove, what does the prove step mean? 3. Write one line you could add to a prompt so AI helps you learn, not does it for you.",
    "look_for": "pupils whose prompts ask the AI to quiz them or give feedback rather than produce answers, who check facts in feedback before acting on them, and who can answer a new question about their goal without their planner.",
    "strands": "Learning Well; Staying in charge",
-   "time": "60 minutes (45 minutes: two Remember When questions, a 2 minute Link It, the maths study in one sentence, a 2 minute IDEAL Check and the full exit ticket in 3 minutes. Keep the planets worked example, the feedback sort, Prove and Own It. Use only questions 1 to 3 on slide 9, and run one pair's prompt in step 4 of the Try It)"
+   "time": "60 minutes (45 minutes: two Remember When questions, a 2 minute Link It, the maths study in one sentence, a 2 minute IDEAL Check and the full exit ticket in 3 minutes. Keep the planets worked example, the feedback sort, Prove and Own It. Use only questions 1 to 3 on slide 9, and run one pair's prompt in step 4 of the Try It)",
+   "before": {
+    "understand": [
+     "A specific prompt gets a more useful reply than a vague one.",
+     "A hint keeps you thinking; an answer does the thinking for you.",
+     "AI can sound sure and still be wrong, so facts are checked first."
+    ],
+    "where": [
+     {
+      "scope": "Earlier year",
+      "code": "Y4L4",
+      "slides": "slides 6 and 9"
+     },
+     {
+      "scope": "Earlier year",
+      "code": "Y3L4",
+      "slides": "slides 5 to 7"
+     },
+     {
+      "scope": "Earlier year",
+      "code": "Y4L3",
+      "slides": "slides 8 to 10"
+     }
+    ],
+    "also": [],
+    "if_not": "Introduce or retrieve: show Y4L4 slide 9, the Prompt Chef recipe (3 minutes). Retrieve: show Y3L4 slide 6, answer or hint (2 minutes). Retrieve: show Y4L3 slide 10, Trust it, Test it or Bin it (2 minutes).",
+    "adds": "Pupils plan prompts that ask AI for questions or feedback, then prove the learning is theirs without the tool.",
+    "routines": [
+     "IDEAL moments",
+     "Learning Well",
+     "STAIR"
+    ],
+    "recall": [
+     "Y3L4",
+     "Y4L3",
+     "Y4L4",
+     "Y5L4"
+    ]
+   }
   },
   "Y5L6": {
    "already": [
@@ -1466,7 +2431,55 @@
    "exit": "1. Why did we keep a mystery bag of test items? 2. A shiny chocolate wrapper goes under the camera. What would our first model have said, and why? 3. What did we change to make the model better?",
    "look_for": "pupils who explain failures by pointing to what was missing from the data, who insist the mystery bag stays out of training, who read confidence as a reason to check rather than proof, and who can explain the model without their sheet.",
    "strands": "How AI works; Design and create; Staying in charge; Safe, fair and honest",
-   "time": "60 minutes (45 minutes: two Remember When questions, a 2 minute Link It, the Recycleye story in one sentence, a 2 minute IDEAL Check and the full exit ticket in 3 minutes. Run both tests live; if you cannot, use the prepared results for both tests and tell pupils they are examples. Keep all three parts of Own It. Plan the dataset in 4 minutes and take fewer photos per class)"
+   "time": "60 minutes (45 minutes: two Remember When questions, a 2 minute Link It, the Recycleye story in one sentence, a 2 minute IDEAL Check and the full exit ticket in 3 minutes. Run both tests live; if you cannot, use the prepared results for both tests and tell pupils they are examples. Keep all three parts of Own It. Plan the dataset in 4 minutes and take fewer photos per class)",
+   "before": {
+    "understand": [
+     "Everything taught in Lessons 1 to 5 of this unit. This is the end of unit assessment: pupils use that learning on their own."
+    ],
+    "where": [
+     {
+      "scope": "This unit",
+      "code": "Y5L1",
+      "slides": ""
+     },
+     {
+      "scope": "This unit",
+      "code": "Y5L2",
+      "slides": ""
+     },
+     {
+      "scope": "This unit",
+      "code": "Y5L3",
+      "slides": ""
+     },
+     {
+      "scope": "This unit",
+      "code": "Y5L4",
+      "slides": ""
+     },
+     {
+      "scope": "This unit",
+      "code": "Y5L5",
+      "slides": ""
+     }
+    ],
+    "also": [
+     "Y4L5"
+    ],
+    "if_not": "Teach Lessons 1 to 5 first. This lesson assesses them, so it is not a starting point for the unit.",
+    "adds": "Pupils apply the whole unit independently, which gives the evidence for the tracker.",
+    "routines": [
+     "IDEAL moments",
+     "the AI Loop",
+     "Learning Well"
+    ],
+    "recall": [
+     "Y4L5",
+     "Y5L2",
+     "Y5L4",
+     "Y5L5"
+    ]
+   }
   },
   "Y6L1": {
    "already": [
@@ -1524,7 +2537,50 @@
    "exit": "1. What does generated mean? 2. A video shows a famous footballer saying school is shut tomorrow. What do you do at Pause, Look, Ask and Check? 3. Give one reason why we never make an AI picture of a real person.",
    "look_for": "pupils who reach a verdict from what a trusted source says rather than from a clue alone, and who talk about the person in the picture as well as whether the picture is clever.",
    "strands": "How AI works; Safe, fair and honest",
-   "time": "60 minutes (45 minutes: shorten the edges and keep the middle. Ask two Remember When questions, keep Link It to 2 minutes, tell the voice cloning story in one sentence, and give the IDEAL Check 2 minutes and the full exit ticket 3 minutes. Keep the Pope worked example and the real people slides in full. Teams visit exhibits 1 to 4 only, still agreeing a verdict before they check, and pairs make a one page pocket guide in the lesson)"
+   "time": "60 minutes (45 minutes: shorten the edges and keep the middle. Ask two Remember When questions, keep Link It to 2 minutes, tell the voice cloning story in one sentence, and give the IDEAL Check 2 minutes and the full exit ticket 3 minutes. Keep the Pope worked example and the real people slides in full. Teams visit exhibits 1 to 4 only, still agreeing a verdict before they check, and pairs make a one page pocket guide in the lesson)",
+   "before": {
+    "understand": [
+     "AI makes its output from patterns learned in examples, and cannot check it is true.",
+     "Check a claim against evidence or a trusted source, not how sure it seems.",
+     "Consent is a real yes, freely given by someone who understands."
+    ],
+    "where": [
+     {
+      "scope": "Earlier year",
+      "code": "Y1L3",
+      "slides": "slide 8"
+     },
+     {
+      "scope": "Earlier year",
+      "code": "Y4L1",
+      "slides": "slide 8"
+     },
+     {
+      "scope": "Earlier year",
+      "code": "Y4L3",
+      "slides": "slides 5 and 10"
+     },
+     {
+      "scope": "Earlier year",
+      "code": "Y5L3",
+      "slides": "slide 5"
+     }
+    ],
+    "also": [],
+    "if_not": "Retrieve or introduce: show Y1L3 slide 8, then this lesson's slide 6 (3 minutes). Introduce: show Y4L3 slide 10 and say a trusted source settles it, not a feeling (3 minutes). Introduce: show Y5L3 slide 5 for consent (2 minutes). Remember When question 1 needs Y5L6: if not taught, show Y5L6 slides 9 to 11 as an example (3 minutes) or skip it.",
+    "adds": "Pupils learn a checking routine for pictures, voices and videos and firm rules about real people.",
+    "routines": [
+     "IDEAL moments",
+     "the AI Loop",
+     "Learning Well"
+    ],
+    "recall": [
+     "Y1L5",
+     "Y4L3",
+     "Y5L3",
+     "Y5L6"
+    ]
+   }
   },
   "Y6L2": {
    "already": [
@@ -1578,7 +2634,45 @@
    "exit": "1. What is a stereotype? 2. Why do AI image tools often show scientists as men in lab coats? 3. Name one way to fix the recipe.",
    "look_for": "pupils who use numbers from the tally as evidence, who link the AI's pattern to its training data, and who check a fix for accuracy as well as fairness.",
    "strands": "How AI works; Safe, fair and honest",
-   "time": "60 minutes (45 minutes: shorten the edges and keep the middle. Ask two Remember When questions, keep Link It to 2 minutes, tell the Gemini story in one sentence, and give the IDEAL Check 2 minutes and the full exit ticket 3 minutes. Keep the drawing, the tally and the worked example. Run slides 10 and 11 as one comparison, and in Own It pairs write one prompt, then swap and add who is still missing)"
+   "time": "60 minutes (45 minutes: shorten the edges and keep the middle. Ask two Remember When questions, keep Link It to 2 minutes, tell the Gemini story in one sentence, and give the IDEAL Check 2 minutes and the full exit ticket 3 minutes. Keep the drawing, the tally and the worked example. Run slides 10 and 11 as one comparison, and in Own It pairs write one prompt, then swap and add who is still missing)",
+   "before": {
+    "understand": [
+     "Bias is AI working better for some people again and again, often from unbalanced data.",
+     "AI learns its patterns from training data, so it repeats what is common there.",
+     "A specific prompt leaves the AI less to fill in than a vague one."
+    ],
+    "where": [
+     {
+      "scope": "Earlier year",
+      "code": "Y5L4",
+      "slides": "slides 5, 9 and 10"
+     },
+     {
+      "scope": "Earlier year",
+      "code": "Y5L2",
+      "slides": "slides 5 and 11"
+     },
+     {
+      "scope": "Earlier year",
+      "code": "Y4L4",
+      "slides": "slides 6 and 8"
+     }
+    ],
+    "also": [],
+    "if_not": "Introduce: show Y5L4 slides 5 and 10 and say bias means the same people let down again and again (4 minutes). Introduce: show Y5L2 slide 5 for training data (2 minutes). Retrieve or introduce: show Y4L4 slide 8, vague versus specific (2 minutes).",
+    "adds": "Pupils use data to show that AI image tools can repeat and magnify stereotypes, and how fixes must be fair and accurate.",
+    "routines": [
+     "IDEAL moments",
+     "the AI Loop",
+     "Learning Well"
+    ],
+    "recall": [
+     "Y2L2",
+     "Y5L2",
+     "Y5L4",
+     "Y6L1"
+    ]
+   }
   },
   "Y6L3": {
    "already": [
@@ -1643,7 +2737,59 @@
    "exit": "1. What is automation? 2. Give one task AI could help with, and one task that needs a person. Say why. 3. Why should a pupil not let AI write their story for them?",
    "look_for": "pupils who ask what happens if the AI is wrong and who should answer for it, and who can explain why learning tasks need their own thinking even when AI could do them.",
    "strands": "How AI works; Staying in charge; Learning Well",
-   "time": "60 minutes (45 minutes: shorten the edges and keep the middle. Ask two Remember When questions, keep Link It to 2 minutes, tell the NHS story in one sentence, and give the IDEAL Check 2 minutes and the full exit ticket 3 minutes. Keep the doctor's day worked example and the Job Swap Shop with its swap. Give the World Economic Forum slide in one sentence, and run the pupil sort on slide 12 as a quick vote)"
+   "time": "60 minutes (45 minutes: shorten the edges and keep the middle. Ask two Remember When questions, keep Link It to 2 minutes, tell the NHS story in one sentence, and give the IDEAL Check 2 minutes and the full exit ticket 3 minutes. Keep the doctor's day worked example and the Job Swap Shop with its swap. Give the World Economic Forum slide in one sentence, and run the pupil sort on slide 12 as a quick vote)",
+   "before": {
+    "understand": [
+     "Rule based programs follow rules people wrote; machine learning learns from examples.",
+     "AI guesses can be wrong, so a person checks the important ones.",
+     "If AI does the thinking, you do not do the learning."
+    ],
+    "where": [
+     {
+      "scope": "Earlier year",
+      "code": "Y5L1",
+      "slides": "slides 5, 6 and 13"
+     },
+     {
+      "scope": "Earlier year",
+      "code": "Y1L3",
+      "slides": "slide 8"
+     },
+     {
+      "scope": "Earlier year",
+      "code": "Y2L5",
+      "slides": "slides 4 and 8"
+     },
+     {
+      "scope": "Earlier year",
+      "code": "Y5L5",
+      "slides": "slide 6"
+     },
+     {
+      "scope": "Earlier year",
+      "code": "Y2L3",
+      "slides": "slide 12"
+     },
+     {
+      "scope": "Earlier year",
+      "code": "Y3L4",
+      "slides": "slide 6"
+     }
+    ],
+    "also": [],
+    "if_not": "Introduce or retrieve: show Y5L1 slide 6, two ways to build a sorter (3 minutes). Retrieve: show Y2L5 slide 8, what it guesses and who checks (2 minutes). Introduce or retrieve: show Y5L5 slide 6, Plan, use, prove (2 minutes).",
+    "adds": "Pupils sort real job tasks and see that care, judgement and responsibility stay human, and learning needs their own thinking.",
+    "routines": [
+     "IDEAL moments",
+     "Learning Well"
+    ],
+    "recall": [
+     "Y2L5",
+     "Y5L1",
+     "Y6L1",
+     "Y6L2"
+    ]
+   }
   },
   "Y6L4": {
    "already": [
@@ -1681,7 +2827,38 @@
    "exit": "1. A friend wants AI to make a video birthday card when a drawn card would do. Is it worth it? Why? 2. Name two things AI uses that cost the planet. 3. Give one real example of AI helping the planet.",
    "look_for": "pupils who start from the goal before deciding whether to use AI, who notice that video costs far more, and who can name a benefit as well as a cost.",
    "strands": "How AI works; Safe, fair and honest",
-   "time": "60 minutes (45 minutes: shorten the edges and keep the middle. Ask two Remember When questions, keep Link It to 2 minutes, and give the IDEAL Check 2 minutes and the full exit ticket 3 minutes. Keep the cake sale worked example and Power Tokens. Give the big numbers slide in one sentence, give each team four job cards instead of eight, and pupils write two promises in the lesson)"
+   "time": "60 minutes (45 minutes: shorten the edges and keep the middle. Ask two Remember When questions, keep Link It to 2 minutes, and give the IDEAL Check 2 minutes and the full exit ticket 3 minutes. Keep the cake sale worked example and Power Tokens. Give the big numbers slide in one sentence, give each team four job cards instead of eight, and pupils write two promises in the lesson)",
+   "before": {
+    "understand": [
+     "Doing a task yourself is often how you learn, so AI is not always the best help."
+    ],
+    "where": [
+     {
+      "scope": "Earlier year",
+      "code": "Y2L3",
+      "slides": "slides 4 and 12"
+     },
+     {
+      "scope": "Earlier year",
+      "code": "Y5L5",
+      "slides": "slide 6"
+     }
+    ],
+    "also": [],
+    "if_not": "Retrieve or introduce: show Y5L5 slide 6 and say if AI does the thinking you do not learn (2 minutes).",
+    "adds": "Pupils learn that AI uses energy, water and materials and decide, goal first, when it is worth the cost.",
+    "routines": [
+     "IDEAL moments",
+     "STAIR",
+     "Learning Well"
+    ],
+    "recall": [
+     "Y5L5",
+     "Y5L6",
+     "Y6L1",
+     "Y6L3"
+    ]
+   }
   },
   "Y6L5": {
    "already": [
@@ -1724,7 +2901,38 @@
    "exit": "1. What does accountable mean? 2. What does transparent mean? 3. In the Wimbledon case, why did people, not the system, have to answer for the mistake?",
    "look_for": "pupils who base verdicts on evidence from the cards, who see that responsibility can be shared, and who distinguish accountable (answering for it and fixing it) from transparent (being open about how it works).",
    "strands": "Staying in charge; Safe, fair and honest",
-   "time": "60 minutes (45 minutes: shorten the edges and keep the middle. Ask two Remember When questions, keep Link It to 2 minutes, and give the IDEAL Check 2 minutes and the full exit ticket 3 minutes. Keep the Wimbledon story on slides 6 and 7 in full, because it is the case itself, and keep the worked example. In the Investigation, teams interview two witnesses each (half the teams take witnesses 1 and 3, half take 2 and 4), then pool their verdicts)"
+   "time": "60 minutes (45 minutes: shorten the edges and keep the middle. Ask two Remember When questions, keep Link It to 2 minutes, and give the IDEAL Check 2 minutes and the full exit ticket 3 minutes. Keep the Wimbledon story on slides 6 and 7 in full, because it is the case itself, and keep the worked example. In the Investigation, teams interview two witnesses each (half the teams take witnesses 1 and 3, half take 2 and 4), then pool their verdicts)",
+   "before": {
+    "understand": [
+     "People make AI and automatic systems, and people must stay in charge of them.",
+     "Some decisions need a person who can answer for them."
+    ],
+    "where": [
+     {
+      "scope": "Earlier year",
+      "code": "Y1L6",
+      "slides": "slides 9 and 10"
+     },
+     {
+      "scope": "This unit",
+      "code": "Y6L3",
+      "slides": "slides 10 and 18"
+     }
+    ],
+    "also": [],
+    "if_not": "Retrieve or introduce: show Y1L6 slide 10, Robot Rules (2 minutes). Retrieve or introduce: show Y6L3 slide 18, the sorting mat tests (2 minutes).",
+    "adds": "Pupils use a real case to show that people, not systems, are accountable, and that responsibility can be shared.",
+    "routines": [
+     "IDEAL moments",
+     "Learning Well"
+    ],
+    "recall": [
+     "Y1L6",
+     "Y5L2",
+     "Y6L3",
+     "Y6L4"
+    ]
+   }
   },
   "Y6L6": {
    "already": [
@@ -1810,7 +3018,63 @@
    "exit": "1. A school wants an AI camera to spot who drops litter. Give one way it could fall short, and who must check. 2. Explain one change your team made after the IDEAL audit, and why. 3. Why is it good news when an IDEAL audit finds a problem?",
    "look_for": "pupils who question whether AI is needed at all, who name whose data a design uses and who could be left out, who say who checks and who is accountable without prompting, and whose promises are specific and personal.",
    "strands": "How AI works; Staying in charge; Safe, fair and honest; Learning Well; Design and create",
-   "time": "2 sessions of 60 minutes. Session 1 (slides 2 to 10): scope a problem and design an AI helper. Session 2 (slides 11 to 18): IDEAL audit, pitch, IDEAL Check, exit ticket and the AI learning promise. (45 minute sessions: in Session 1, ask two Remember When questions in 3 minutes, skip slide 3 and keep Link It to 3 minutes, keep the Plant Pal worked example, give the design task 25 minutes and end in 3 minutes. Session 2 cannot fit 45 minutes with a panel: run it as 60 minutes, or hold the pitches in a third short session.)"
+   "time": "2 sessions of 60 minutes. Session 1 (slides 2 to 10): scope a problem and design an AI helper. Session 2 (slides 11 to 18): IDEAL audit, pitch, IDEAL Check, exit ticket and the AI learning promise. (45 minute sessions: in Session 1, ask two Remember When questions in 3 minutes, skip slide 3 and keep Link It to 3 minutes, keep the Plant Pal worked example, give the design task 25 minutes and end in 3 minutes. Session 2 cannot fit 45 minutes with a panel: run it as 60 minutes, or hold the pitches in a third short session.)",
+   "before": {
+    "understand": [
+     "Everything taught in Lessons 1 to 5 of this unit. This is the end of unit assessment: pupils use that learning on their own."
+    ],
+    "where": [
+     {
+      "scope": "This unit",
+      "code": "Y6L1",
+      "slides": ""
+     },
+     {
+      "scope": "This unit",
+      "code": "Y6L2",
+      "slides": ""
+     },
+     {
+      "scope": "This unit",
+      "code": "Y6L3",
+      "slides": ""
+     },
+     {
+      "scope": "This unit",
+      "code": "Y6L4",
+      "slides": ""
+     },
+     {
+      "scope": "This unit",
+      "code": "Y6L5",
+      "slides": ""
+     }
+    ],
+    "also": [
+     "Y2L4",
+     "Y5L2",
+     "Y5L3",
+     "Y5L4",
+     "Y5L6"
+    ],
+    "if_not": "Teach Lessons 1 to 5 first. This lesson assesses them, so it is not a starting point for the unit.",
+    "adds": "Pupils apply the whole unit independently, which gives the evidence for the tracker.",
+    "routines": [
+     "IDEAL moments",
+     "the AI Loop",
+     "Learning Well",
+     "STAIR",
+     "Chatty"
+    ],
+    "recall": [
+     "Y3L6",
+     "Y4L6",
+     "Y6L1",
+     "Y6L2",
+     "Y6L4",
+     "Y6L5"
+    ]
+   }
   }
  },
  "years": {

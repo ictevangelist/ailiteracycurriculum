@@ -778,38 +778,25 @@ def build_lessons():
             if safe: rows.append(("Safeguarding", safe))
             rows.append(("Prior learning", prior))
             summary = '<section class="card prep" aria-labelledby="prep-h"><h2 id="prep-h">Preparing to teach</h2><dl>' + "".join(f"<div><dt>{a}</dt><dd>{b}</dd></div>" for a, b in rows) + "</dl></section>"
-            if l["challenge"]:
-                unit = ", ".join(lesson_ref(d, x["code"], title=False) for x in ls[:5])
-                extra = sorted({r["code"] for a in T["already"] for r in a["from"] if r["code"][:2] != l["code"][:2]})
-                know = f"<p>Everything taught in Lessons 1 to 5 of this unit. This is the end of unit assessment: pupils use that learning on their own.</p>"
-                where = f"<p>{unit}.</p>" + (f'<p class="small">It also draws on {", ".join(lesson_ref(d, c, title=False) for c in extra)}.</p>' if extra else "")
-                T = dict(T, if_not="Teach Lessons 1 to 5 first. This lesson assesses them, so it is not a starting point for the unit.",
-                         adds="Pupils apply the whole unit independently, which gives the evidence for the tracker.")
-            elif T["already"]:
-                know = "<ul>" + "".join(f'<li>{e(a["idea"])}</li>' for a in T["already"]) + "</ul>"
-                refs = []
-                for a in T["already"]:
-                    for r in a["from"]:
-                        lab = "This unit" if r["code"][:2] == l["code"][:2] else f'Year {r["code"][1]}'
-                        item = f'<li><span class="scope">{lab}</span> {lesson_ref(d, r["code"], r["slides"])}</li>'
-                        if item not in refs: refs.append(item)
-                where = "<ul>" + "".join(refs) + "</ul>"
+            B = T["before"]
+            if B["understand"]:
+                know = "<ul>" + "".join(f"<li>{e(x)}</li>" for x in B["understand"]) + "</ul>"
+                where = "<ul>" + "".join(f'<li><span class="scope">{x["scope"]}</span> {lesson_ref(d, x["code"], x["slides"])}</li>' for x in B["where"]) + "</ul>"
+                if B["also"]:
+                    where += '<p class="small">It also draws on ' + ", ".join(lesson_ref(d, c, title=False) for c in B["also"]) + ".</p>"
+                if_not = codes_text(d, B["if_not"])
             else:
                 know, where = "<p>No formal prerequisites: this lesson starts from pupils' everyday experience.</p>", "<p>Nothing earlier is needed.</p>"
-            names = []
-            for r in T["routines"]:
-                for key, nm in (("IDEAL", "IDEAL moments"), ("AI Loop", "the AI Loop"), ("Bleep", "Bleep"), ("Chatty", "Chatty"), ("STAIR", "STAIR"),
-                                ("Try it first", "Learning Well"), ("Hint", "Learning Well"), ("Plan, use", "Learning Well"), ("Learning Well", "Learning Well")):
-                    if key in r and nm not in names: names.append(nm)
-            if names:
-                know += '<p class="small">Routines it uses: ' + ", ".join(names) + ".</p>"
-            if T["recall"]:
-                where += '<p class="small">Remember When (slide 2) recalls ' + ", ".join(lesson_ref(d, c, title=False) for c in T["recall"]) + ". If your class has not had these, ask about pupils' own experience instead.</p>"
+                if_not = "Nothing to do: start the lesson as planned."
+            if B["routines"]:
+                know += '<p class="small">Routines it uses: ' + ", ".join(B["routines"]) + ".</p>"
+            if B["recall"]:
+                where += '<p class="small">Remember When (slide 2) recalls ' + ", ".join(lesson_ref(d, c, title=False) for c in B["recall"]) + ". If your class has not had these, ask about pupils' own experience instead.</p>"
             before = f"""<section class="before" id="before" aria-labelledby="before-h"><h2 id="before-h">Before teaching this lesson</h2><div class="before-grid">
 <div><h3>Pupils should already understand</h3>{know}</div>
 <div><h3>Where this was taught</h3>{where}</div>
-<div><h3>If your pupils haven't covered this</h3><p>{codes_text(d, T["if_not"]) if (T["already"] or l["challenge"]) else "Nothing to do: start the lesson as planned."}</p></div>
-<div><h3>What this lesson adds</h3><p>{e(T["adds"])}</p></div></div></section>"""
+<div><h3>If your pupils haven't covered this</h3><p>{if_not}</p></div>
+<div><h3>What this lesson adds</h3><p>{e(B["adds"])}</p></div></div></section>"""
             look = ""
             if T["exit"] or T["look_for"]:
                 look = '<h2>What to look for</h2>'

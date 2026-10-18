@@ -31,5 +31,35 @@ for n, y in sorted(years.items()):
     elif isinstance(ft, str): ft = [ft]
     y = dict(y, first_time=[x for x in ft if x])
     out["years"][n] = {k: y.get(k) for k in ("starting_point", "first_time", "journey", "end_point", "challenge", "extra_dependencies")}
+# the four parts of "Before teaching this lesson", worked out once so the site and the plans say the same thing
+cur = json.load(open("data/curriculum.json"))
+info = {l["code"]: (y, l) for y in cur["years"] for l in y["lessons"]}
+NAMES = (("IDEAL", "IDEAL moments"), ("AI Loop", "the AI Loop"), ("Bleep", "Bleep"), ("Chatty", "Chatty"), ("STAIR", "STAIR"),
+         ("Try it first", "Learning Well"), ("Hint", "Learning Well"), ("Plan, use", "Learning Well"), ("Learning Well", "Learning Well"))
+for code, T in out["lessons"].items():
+    y, l = info[code]
+    names = []
+    for r in T["routines"]:
+        for key, nm in NAMES:
+            if key in r and nm not in names: names.append(nm)
+    refs = []
+    for a in T["already"]:
+        for r in a["from"]:
+            item = {"scope": "This unit" if r["code"][:2] == code[:2] else "Earlier year", "code": r["code"], "slides": r["slides"]}
+            if item not in refs: refs.append(item)
+    if l["challenge"] in (True, "True"):
+        unit = [x["code"] for x in y["lessons"][:5]]
+        extra = sorted({r["code"] for r in refs if r["code"][:2] != code[:2]})
+        B = {"understand": ["Everything taught in Lessons 1 to 5 of this unit. This is the end of unit assessment: pupils use that learning on their own."],
+             "where": [{"scope": "This unit", "code": c, "slides": ""} for c in unit], "also": extra,
+             "if_not": "Teach Lessons 1 to 5 first. This lesson assesses them, so it is not a starting point for the unit.",
+             "adds": "Pupils apply the whole unit independently, which gives the evidence for the tracker."}
+    elif not T["already"]:
+        B = {"understand": [], "where": [], "also": [], "if_not": "", "adds": T["adds"]}
+    else:
+        B = {"understand": [a["idea"] for a in T["already"]], "where": refs, "also": [], "if_not": T["if_not"], "adds": T["adds"]}
+    B["routines"] = names
+    B["recall"] = T["recall"]
+    T["before"] = B
 json.dump(out, open("data/teacher.json", "w"), indent=1, ensure_ascii=False)
 print(len(out["lessons"]), "lessons", len(out["years"]), "years")
