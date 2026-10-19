@@ -435,7 +435,6 @@ def build_home():
 <li>clear, for all staff to be able to pick up and use</li>
 <li>really relevant for the children and the world they are living and growing up in</li>
 </ul>
-<p>We will look at trialling the sessions this year.</p>
 </blockquote>
 <figcaption><strong>Tim Clarke</strong>, Headteacher, Cornerstone CE Primary School, Hampshire</figcaption>
 </figure>
