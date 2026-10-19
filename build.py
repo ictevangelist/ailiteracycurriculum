@@ -424,6 +424,23 @@ def build_home():
 </div>
 </section>
 <section class="wrap">
+<h2>From a headteacher</h2>
+<figure class="card quote">
+<blockquote>
+<p>For me as a headteacher it looks:</p>
+<ul class="ticks">
+<li>pedagogically well thought through</li>
+<li>progressive</li>
+<li>comprehensive</li>
+<li>clear, for all staff to be able to pick up and use</li>
+<li>really relevant for the children and the world they are living and growing up in</li>
+</ul>
+<p>We will look at trialling the sessions this year.</p>
+</blockquote>
+<figcaption><strong>Tim Clarke</strong>, Headteacher, Cornerstone CE Primary School, Hampshire</figcaption>
+</figure>
+</section>
+<section class="wrap">
 <h2>Evidence and limits</h2>
 <p>The design draws on <a href="https://www.aft.org/sites/default/files/Rosenshine.pdf">Rosenshine's Principles of Instruction</a> (2012), the EEF's review <a href="https://educationendowmentfoundation.org.uk/education-evidence/evidence-reviews/cognitive-science-approaches-in-the-classroom">Cognitive science approaches in the classroom</a> (2021), which finds retrieval and spacing promising but with less evidence for young pupils, <a href="https://udlguidelines.cast.org/">CAST's UDL Guidelines</a>, and a 2025 study in which pupils given answers by AI learned less than pupils given hints (<a href="https://doi.org/10.1073/pnas.2422633122">Bastani and others, PNAS</a>).</p>
 <ul class="list">
