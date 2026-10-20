@@ -260,6 +260,7 @@ tr.grp th{background:var(--soft);font-family:"Exo 2",sans-serif}
 
 /* review 2026: phone header scrolls away; print styles; at a glance strip */
 @media (max-width:760px){.top{position:static}}
+@media (min-width:761px){html{scroll-padding-top:250px}}
 @media print{.top,.years-bar,.foot,.embed,.file-btns,.filters,.pn,.skip{display:none}.b,thead th{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 .glance{display:grid;grid-template-columns:minmax(8rem,12rem) 1fr;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:0}
 .glance dt,.glance dd{margin:0;padding:10px 16px;border-top:1px solid var(--line)}
