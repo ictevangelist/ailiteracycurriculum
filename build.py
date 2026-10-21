@@ -22,6 +22,10 @@ GA_ID = "G-1X05FYT3MT"  # Google Analytics measurement ID (G-...); empty = no an
 # Empty = the form opens an email to Mark with the answers filled in instead.
 FORM_ENDPOINT = ""
 FORM_RETENTION = "two years"  # how long form answers are kept; shown on the form and the Privacy page
+# Updates sign-up (footer and home page). Set "action" to the email provider's form POST URL (MailerLite, Buttondown,
+# Mailchimp and so on, with double opt-in switched on there), "field" to its email field name, and "provider" to its name
+# for the Privacy page. Empty action = the sign-up is not shown anywhere.
+SIGNUP = {"action": "", "field": "email", "provider": "", "hidden": {}}
 LAUNCHED = True  # flip to True at launch: allows indexing and writes the sitemap
 BUILT = "2026-10-14"  # sitemap lastmod
 LICENCE_URL = "https://creativecommons.org/licenses/by-nc-sa/4.0/"
@@ -85,6 +89,19 @@ def links_text(links):
 
 TEACHER = json.load(open(os.path.join(ROOT, "data/teacher.json"), encoding="utf-8"))
 TESTIMONIALS = json.load(open(os.path.join(ROOT, "data/testimonials.json"), encoding="utf-8"))
+
+
+def signup(where, depth=0):
+    """Email sign-up for updates; nothing until SIGNUP["action"] is set."""
+    if not SIGNUP["action"]:
+        return ""
+    hid = "".join(f'<input type="hidden" name="{e(k)}" value="{e(v)}">' for k, v in SIGNUP["hidden"].items())
+    i = f"su-{where}"
+    return (f'<form class="signup signup-{where}" action="{e(SIGNUP["action"])}" method="post">'
+            f'<p class="su-h">Get updates</p><p class="su-t">New resources, and the mapping to the new BCS computing curriculum when it is published. '
+            f'You\'ll get an email to confirm, and you can unsubscribe at any time. <a href="{rel(depth, "privacy/")}#updates">Privacy</a></p>'
+            f'<div class="su-row"><label for="{i}" class="vh">Email address</label><input id="{i}" type="email" name="{e(SIGNUP["field"])}" autocomplete="email" placeholder="Email address" required>{hid}'
+            f'<button class="btn" type="submit">Sign up</button></div></form>')
 
 
 def testimonials(placement):
@@ -200,6 +217,7 @@ def page(path, title, desc, body, depth, year=None, ld=None, crumbs=None):
 <div class="wrap foot-in">
 <p><strong>IDEAL Thinkers</strong> is the AI Literacy strand of the Primary Digital Cognition Curriculum, by <a href="https://ictevangelist.com/">Mark Anderson FCCT</a>.</p>
 <p>IDEAL Thinkers &copy; 2026 Mark Anderson. Free for non commercial use under <a href="{rel(depth, 'licence/')}">CC BY-NC-SA 4.0</a>.</p>
+{signup("foot", depth)}
 <p class="foot-links"><a href="{rel(depth, 'progression/')}">Progression and coverage</a> <a href="{rel(depth, 'assessment/')}">Assessment</a> <a href="{rel(depth, 'licence/')}">Licence</a> <a href="{rel(depth, 'privacy/')}">Privacy</a> <a href="{rel(depth, 'contact/')}">Contact</a>{consent_link} <a href="https://ictevangelist.com/">ictevangelist.com</a></p>
 </div>
 </footer>
@@ -442,6 +460,7 @@ def build_home():
 </article>
 </div>
 <p>Wider curriculum: RSHE, science, maths, English, geography and careers links are flagged in each lesson plan.</p>
+{signup("home")}
 </div>
 </section>
 {testimonials("homepage")}
@@ -1105,7 +1124,7 @@ def build_privacy():
         short = """<p>I collect as little as possible. There are no accounts, and you don't need to sign up for anything to use IDEAL Thinkers; neither do your pupils. The only personal information the site takes is what you choose to send me in a form. Analytics only runs if you say yes to it.</p>
 <h2>Forms</h2>
 <p>If you tell me you're using IDEAL Thinkers on the <a href="../using-it/">We're using it</a> page, I receive your name, role, school, trust, local authority or region, the year groups you teach it in, how you heard about it and, if you choose, your email address and whether you'd like support. I use this to understand which schools are using IDEAL Thinkers and to improve it, under legitimate interests; contacting you about support is based on your consent. I never ask for, or want, information about pupils. Your answers are never shared or sold, and are kept for up to {FORM_RETENTION}, then deleted.{FORM_SERVICE}</p>
-<h2>Analytics</h2>
+{UPDATES}<h2>Analytics</h2>
 <p>I use Google Analytics to see how the site is used, which pages get read and where visitors come from, so I can make it better. It only runs if you choose Accept in the cookie banner. Google Analytics doesn't store IP addresses, and the data isn't used for advertising. If you accept, it sets two cookies, _ga and one starting _ga_, which last up to two years. Your choice is saved in your browser, and you can change your mind at any time with Cookie settings at the bottom of every page. Analytics data is kept for up to 14 months.</p>"""
     else:
         short = """<p>This site doesn't collect any personal information. There are no accounts, no forms, no analytics and no cookies set by the site itself. You don't need to sign up for anything to use IDEAL Thinkers, and neither do your pupils.</p>"""
@@ -1129,7 +1148,10 @@ def build_privacy():
 <p>What Google does with this is covered by <a href="https://policies.google.com/privacy">Google's privacy policy</a>.</p>
 <h2>Your rights</h2>
 <p>For your rights under UK data protection law, including how to complain to the Information Commissioner's Office, see my main <a href="https://ictevangelist.com/privacy-policy/">privacy policy</a>.</p>
-</section>""".replace("{PRIVACY_SHORT}", short).replace("{FORM_RETENTION}", FORM_RETENTION).replace(
+</section>""".replace("{PRIVACY_SHORT}", short).replace("{FORM_RETENTION}", FORM_RETENTION).replace("{UPDATES}", (
+        f'<h2 id="updates">Email updates</h2>\n<p>If you sign up for updates, your email address is held by {e(SIGNUP["provider"] or "my email provider")}, which sends the emails for me. '
+        'You confirm by clicking a link in the first email (double opt-in), so nobody can sign you up without you knowing. Updates cover new resources and the mapping to the new BCS computing curriculum, '
+        'based on your consent. Every email has an unsubscribe link, and unsubscribing removes you.</p>\n') if SIGNUP["action"] else "").replace(
         "{FORM_SERVICE}", " The form is sent through a form service that stores the answers for me." if FORM_ENDPOINT else " The form opens an email to me, so your answers arrive in my inbox.")
     page("privacy/", "Privacy notice | IDEAL Thinkers",
          "How IDEAL Thinkers handles data: no accounts, forms only when you choose to send one, and analytics only with your consent." if GA_ID else
