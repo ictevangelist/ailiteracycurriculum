@@ -179,7 +179,7 @@ def page(path, title, desc, body, depth, year=None, ld=None, crumbs=None):
 <div class="wrap foot-in">
 <p><strong>IDEAL Thinkers</strong> is the AI Literacy strand of the Primary Digital Cognition Curriculum, by <a href="https://ictevangelist.com/">Mark Anderson FCCT</a>.</p>
 <p>IDEAL Thinkers &copy; 2026 Mark Anderson. Free to use for non commercial purposes under <a href="{rel(depth, 'licence/')}">CC BY-NC-SA 4.0</a>. It cannot be taken, distributed or shared for commercial purposes.</p>
-<p class="foot-links"><a href="{rel(depth, 'progression/')}">Progression and coverage</a> <a href="{rel(depth, 'assessment/')}">Assessment</a> <a href="{rel(depth, 'licence/')}">Licence</a> <a href="{rel(depth, 'privacy/')}">Privacy</a>{consent_link} <a href="https://ictevangelist.com/">ictevangelist.com</a></p>
+<p class="foot-links"><a href="{rel(depth, 'progression/')}">Progression and coverage</a> <a href="{rel(depth, 'assessment/')}">Assessment</a> <a href="{rel(depth, 'licence/')}">Licence</a> <a href="{rel(depth, 'privacy/')}">Privacy</a> <a href="{rel(depth, 'contact/')}">Contact</a>{consent_link} <a href="https://ictevangelist.com/">ictevangelist.com</a></p>
 </div>
 </footer>
 {consent}</body>
@@ -1027,10 +1027,27 @@ def build_licence():
 <section class="wrap">
 {LICENCE_PANEL.format(href='https://creativecommons.org/licenses/by-nc-sa/4.0/')}
 <p>IDEAL Thinkers &copy; 2026 Mark Anderson is licensed under Creative Commons Attribution NonCommercial ShareAlike 4.0 International (CC BY-NC-SA 4.0). You may copy, adapt and share these resources for non commercial purposes, provided you credit "IDEAL Thinkers by Mark Anderson, ictevangelist.com" and share any adapted versions under the same licence.</p>
+<p>Commercial use, paid training and partnerships need my permission first. Please get in touch through the <a href="../contact/">contact page</a>.</p>
 <p>Licence details: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">creativecommons.org/licenses/by-nc-sa/4.0</a></p>
 </section>"""
     page("licence/", "Licence and credit | IDEAL Thinkers",
          "IDEAL Thinkers is free to use under CC BY-NC-SA 4.0 and cannot be taken, distributed or shared for commercial purposes.", body, d)
+
+
+def build_contact():
+    d = 1
+    body = """<section class="page-head"><div class="wrap">
+<p class="eyebrow">Contact</p>
+<h1>Get in touch</h1>
+<p class="lede">Questions about IDEAL Thinkers, or interested in working together? Email me at <a href="mailto:mark@ictevangelist.com">mark@ictevangelist.com</a>.</p>
+</div></section>
+<section class="wrap">
+<p>I'm always happy to hear from schools, trusts, local authorities and organisations. Get in touch about training for your staff, support with putting IDEAL Thinkers in place across a school or trust, partnerships, or commercial licensing.</p>
+<p>IDEAL Thinkers is free for schools and teachers to use under its <a href="../licence/">licence</a>. Anything commercial, such as paid training built on the lessons or including them in a product or service, needs my permission first, so please ask before you start.</p>
+<p><a class="btn" href="mailto:mark@ictevangelist.com">Email mark@ictevangelist.com</a></p>
+</section>"""
+    page("contact/", "Contact | IDEAL Thinkers",
+         "Contact Mark Anderson about IDEAL Thinkers: training, implementation support, partnerships and commercial licensing.", body, d)
 
 
 def build_privacy():
@@ -1104,7 +1121,7 @@ def build_llms():
          f"- [How it works]({SITE}/how-it-works/)", f"- [The AI Loop]({SITE}/how-it-works/ai-loop/)", f"- [IDEAL]({SITE}/how-it-works/ideal/)",
          f"- [Learning Well]({SITE}/how-it-works/learning-well/)", f"- [Every lesson]({SITE}/how-it-works/every-lesson/)",
          f"- [Curriculum map]({SITE}/curriculum-map/)", f"- [Safety and safeguarding]({SITE}/safety/)", f"- [Progression]({SITE}/progression/)",
-         f"- [Assessment]({SITE}/assessment/)", f"- [Using the lessons]({SITE}/using-the-lessons/)", f"- [Licence]({SITE}/licence/)", ""]
+         f"- [Assessment]({SITE}/assessment/)", f"- [Using the lessons]({SITE}/using-the-lessons/)", f"- [Licence]({SITE}/licence/)", f"- [Contact]({SITE}/contact/)", ""]
     for y in DATA["years"]:
         t.append(f"## Year {y['n']}: {y['title']} (ages {AGES[y['n']]})")
         t.append(f"Big question: {y['big_question']} [Unit overview]({SITE}/{y['path']})")
@@ -1126,6 +1143,7 @@ if __name__ == "__main__":
     build_using()
     build_licence()
     build_privacy()
+    build_contact()
     build_404()
     build_meta()
     print(len(PAGES), "pages")

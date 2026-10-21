@@ -16,6 +16,7 @@ IDEAL Thinkers is the AI Literacy strand of the Primary Digital Cognition Curric
 - [Assessment](https://ailiteracycurriculum.ictevangelist.com/assessment/)
 - [Using the lessons](https://ailiteracycurriculum.ictevangelist.com/using-the-lessons/)
 - [Licence](https://ailiteracycurriculum.ictevangelist.com/licence/)
+- [Contact](https://ailiteracycurriculum.ictevangelist.com/contact/)
 
 ## Year 1: Machines That Guess (ages 5-6)
 Big question: Can a machine make a guess? [Unit overview](https://ailiteracycurriculum.ictevangelist.com/year-1/)
