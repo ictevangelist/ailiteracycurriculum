@@ -338,3 +338,5 @@ button.btn{font:inherit;font-weight:600;cursor:pointer}
 .files-grid{margin-bottom:24px}
 .files-grid{margin-bottom:24px}
 .wrap > .file{margin-bottom:22px}
+.map-hint{display:none}
+@media (max-width:700px){.roadmap .spot{display:none}.map-hint{display:block}}

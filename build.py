@@ -27,7 +27,7 @@ FORM_RETENTION = "two years"  # how long form answers are kept; shown on the for
 # for the Privacy page. Empty action = the sign-up is not shown anywhere.
 SIGNUP = {"action": "", "field": "email", "provider": "", "hidden": {}}
 LAUNCHED = True  # flip to True at launch: allows indexing and writes the sitemap
-BUILT = "2026-10-14"  # sitemap lastmod
+BUILT = "2026-10-21"  # sitemap lastmod
 LICENCE_URL = "https://creativecommons.org/licenses/by-nc-sa/4.0/"
 AGES = {1: "5-6", 2: "6-7", 3: "7-8", 4: "8-9", 5: "9-10", 6: "10-11"}
 AUTHOR = {"@type": "Person", "@id": SITE + "/#mark", "name": "Mark Anderson", "honorificSuffix": "FCCT",
@@ -197,7 +197,9 @@ def page(path, title, desc, body, depth, year=None, ld=None, crumbs=None):
 <meta name="author" content="Mark Anderson">
 {ldj}<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700;800&family=Poppins:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700;800&family=Poppins:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700;800&family=Poppins:wght@400;500;600&display=swap"></noscript>
 <link rel="stylesheet" href="{rel(depth, 'css/site.css')}">
 <link rel="icon" href="{rel(depth, 'favicon.svg')}" type="image/svg+xml">
 </head>
@@ -297,7 +299,7 @@ POSTERS = {"ai-loop": ("The AI Loop", "ideal-thinkers-ai-loop-poster-a4.pdf"),
 def poster_block(depth, key):
     t, f = POSTERS[key]
     return f"""<aside class="poster card">
-<img src="{rel(depth, 'images/posters/' + key + '.png')}" width="397" height="562" loading="lazy" alt="A4 poster: {e(t)}">
+<img src="{rel(depth, 'images/posters/' + key + '.webp')}" width="397" height="562" loading="lazy" alt="A4 poster: {e(t)}">
 <div><h2>Poster: {e(t)}</h2><p>An A4 poster for your classroom wall or display board.</p>
 <p><a class="btn" href="{rel(depth, 'downloads/' + f)}" download>Download the A4 poster (PDF)</a></p></div>
 </aside>"""
@@ -406,7 +408,7 @@ def build_home():
 <section class="wrap home-map">
 <h2>The road map</h2>
 <p>All 36 lessons on one page, from Year 1 to secondary school.</p>
-<a class="home-map-img" href="curriculum-map/"><img src="images/ideal-thinkers-road-map.webp" width="2482" height="1754" loading="lazy" alt="The IDEAL Thinkers curriculum road map, showing all 36 lessons from Year 1 to Year 6"></a>
+<a class="home-map-img" href="curriculum-map/"><img src="images/ideal-thinkers-road-map-1400.webp" srcset="images/ideal-thinkers-road-map-700.webp 700w, images/ideal-thinkers-road-map-1400.webp 1400w, images/ideal-thinkers-road-map.webp 2482w" sizes="(max-width: 1220px) calc(100vw - 40px), 1140px" width="2482" height="1754" loading="lazy" alt="The IDEAL Thinkers curriculum road map, showing all 36 lessons from Year 1 to Year 6"></a>
 <p><a class="btn" href="curriculum-map/">Explore the curriculum map</a></p>
 <p class="more"><a href="progression/">See how the learning builds from Year 1 to Year 6</a></p>
 </section>
@@ -659,9 +661,10 @@ def build_map():
     roadmap = f"""<section class="wrap roadmap-sec">
 <h2>The road map</h2>
 <p>Click any lesson on the road map to open it, or download the A3 poster for your classroom wall. <a href="../progression/">See how the learning builds</a></p>
+<p class="map-hint">On a small screen, choose a lesson from <a href="#every-lesson">the list below the map</a>.</p>
 <figure class="roadmap">
 <div class="roadmap-frame">
-<img src="../images/ideal-thinkers-road-map.webp" width="2482" height="1754" alt="The IDEAL Thinkers curriculum road map: a road winding through all 36 lessons from Year 1 to Year 6, ending at secondary school. Along the bottom: what pupils learn (the five progression strands), the habits they build (IDEAL with Learning Well), and the tools for teaching it (the AI Loop and STAIR).">
+<img src="../images/ideal-thinkers-road-map-1400.webp" srcset="../images/ideal-thinkers-road-map-700.webp 700w, ../images/ideal-thinkers-road-map-1400.webp 1400w, ../images/ideal-thinkers-road-map.webp 2482w" sizes="(max-width: 1220px) calc(100vw - 40px), 1140px" width="2482" height="1754" alt="The IDEAL Thinkers curriculum road map: a road winding through all 36 lessons from Year 1 to Year 6, ending at secondary school. Along the bottom: what pupils learn (the five progression strands), the habits they build (IDEAL with Learning Well), and the tools for teaching it (the AI Loop and STAIR).">
 {spots}
 </div>
 <figcaption><a class="btn" href="https://drive.google.com/uc?export=download&amp;id={ROADMAP_PDF}">Download the A3 road map (PDF, print at A3)</a> <a class="btn btn-ghost" href="../images/ideal-thinkers-road-map.webp">Open full size</a></figcaption>
@@ -673,7 +676,7 @@ def build_map():
 <p class="lede">Six lessons per year, planned as a half-term unit. Digital Cognition links: <abbr title="Digital Citizenship">DC</abbr> Digital Citizenship, <abbr title="Digital Literacy">DL</abbr> Digital Literacy, <abbr title="Computer Science">CS</abbr> Computer Science.</p>
 </div></section>
 {roadmap}
-<div class="wrap map"><h2 class="map-h">Every lesson</h2>{filters}
+<div class="wrap map"><h2 class="map-h" id="every-lesson">Every lesson</h2>{filters}
 <p class="f-count" aria-live="polite"></p>
 {secs}</div>
 <script src="../js/map.js" defer></script>"""
@@ -1081,8 +1084,8 @@ def build_using():
 </ol>
 {cpd_sec}<h2>Display and posters</h2>
 <div class="grid grid-3 posters-grid">
-<div class="card poster-card"><a class="pc-img pc-wide" href="https://drive.google.com/uc?export=download&amp;id={ROADMAP_PDF}"><img src="{rel(d, 'images/ideal-thinkers-road-map.webp')}" width="2482" height="1754" loading="lazy" alt="Thumbnail of the A3 IDEAL Thinkers road map"></a><h3>The road map (A3)</h3><p>All 36 lessons on one poster.</p><p><a class="btn" href="https://drive.google.com/uc?export=download&amp;id={ROADMAP_PDF}">Download (PDF)</a></p></div>
-""" + "".join(f'''<div class="card poster-card"><a class="pc-img" href="{rel(d, 'downloads/' + f)}" download><img src="{rel(d, 'images/posters/' + k + '.png')}" width="397" height="562" loading="lazy" alt="Thumbnail of the A4 poster: {e(t)}"></a><h3>{e(t)} (A4)</h3><p><a class="btn" href="{rel(d, 'downloads/' + f)}" download>Download (PDF)</a></p></div>''' for k, (t, f) in POSTERS.items()) + f"""
+<div class="card poster-card"><a class="pc-img pc-wide" href="https://drive.google.com/uc?export=download&amp;id={ROADMAP_PDF}"><img src="{rel(d, 'images/ideal-thinkers-road-map-700.webp')}" width="2482" height="1754" loading="lazy" alt="Thumbnail of the A3 IDEAL Thinkers road map"></a><h3>The road map (A3)</h3><p>All 36 lessons on one poster.</p><p><a class="btn" href="https://drive.google.com/uc?export=download&amp;id={ROADMAP_PDF}">Download (PDF)</a></p></div>
+""" + "".join(f'''<div class="card poster-card"><a class="pc-img" href="{rel(d, 'downloads/' + f)}" download><img src="{rel(d, 'images/posters/' + k + '.webp')}" width="397" height="562" loading="lazy" alt="Thumbnail of the A4 poster: {e(t)}"></a><h3>{e(t)} (A4)</h3><p><a class="btn" href="{rel(d, 'downloads/' + f)}" download>Download (PDF)</a></p></div>''' for k, (t, f) in POSTERS.items()) + f"""
 </div>
 </section>""" + testimonials("using-the-lessons")
     page("using-the-lessons/", "Using the lessons | IDEAL Thinkers",
