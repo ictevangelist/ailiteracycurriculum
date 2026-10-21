@@ -704,6 +704,7 @@ def build_years():
             where.append(f'Next, in Year {next_y["n"]}, pupils move on to <a href="{rel(d, next_y["path"])}">{e(next_y["title"])}</a>.')
         cards = "".join(lesson_card(d, l) for l in y["lessons"])
         TY = TEACHER["years"][str(y["n"])]
+        catch = res_block("catchup", y["n"], f"Year {y['n']} catch-up deck") if y["n"] > 1 else ""
         steps = ""
         for k, l in enumerate(y["lessons"]):
             txt = re.sub(r"^L\d+:\s*", "", TY["journey"][k]) if k < len(TY["journey"]) else ""
@@ -723,11 +724,21 @@ def build_years():
 </section>
 <section class="wrap"><div class="card first-time" id="starting">
 <h2>Starting Year {y['n']} with pupils new to IDEAL Thinkers</h2>
-{"<p>Year 1 is the start of the curriculum: no introduction is needed.</p>" if y["n"] == 1 else f"<ul>{first}</ul>"}
+{"<p>Year 1 is the start of the curriculum: no introduction is needed.</p>" if y["n"] == 1 else (catch and f"<p>The catch-up deck puts every slide below into one deck, in this order, with timings in the speaker notes.</p>{catch}<h3>The slides it uses</h3>") + f"<ul>{first}</ul>"}
 {f"<h3>Lessons in this unit that depend on earlier ones</h3><ul>{deps}</ul>" if deps else ""}
 <p class="small">Pupils who have had the earlier units only need the Remember When retrieval in each lesson. More in <a href="../using-the-lessons/">Using the lessons</a>.</p>
 </div></section>"""
         bot = chatty("chatty chatty-head", "Chatty, the class chatbot pupils meet in Year 4") if y["n"] == 4 else ""
+        prints = res_block("printables", y["n"], f"Year {y['n']} printables pack", pdf=True, pdf_first=True)
+        cpd = res_block("cpd", y["n"], f"Year {y['n']} staff meeting deck")
+        extra = ""
+        if prints:
+            extra += f'<section class="wrap"><h2>Print the half term</h2><p>Every printable resource from the six lessons, in lesson order, in one pack. Each sheet names its lesson, and the sizes match the lesson decks.</p>{prints}</section>'
+        if cpd:
+            extra += f'<section class="wrap"><h2>Teacher CPD</h2><p>A 20 minute staff meeting on this unit, with presenter notes: the big idea, misconceptions, safeguarding and an activity to try. <a href="../using-the-lessons/#cpd">All six staff meeting decks</a></p>{cpd}</section>'
+        if y["n"] == 6:
+            extra += '<section class="wrap"><p>Moving on to secondary school: the <a href="../transition/">Year 7 transition handover</a> sets out what pupils can do at the end of Year 6.</p></section>'
+
         body = f"""<section class="page-head year-head"><div class="wrap{' head-grid' if bot else ''}"><div>
 <p class="eyebrow"><a href="../curriculum-map/">Curriculum map</a> / Year {y['n']}</p>
 <div class="yh">{year_icon(y["n"], 44)}<h1>Year {y['n']}: {e(y['title'])}</h1></div>
@@ -741,6 +752,7 @@ def build_years():
 <p>The words pupils learn in this unit, with their meanings and pictures, are in the <a href="../glossary/#year-{y['n']}">glossary</a>.</p>
 <p class="note">Lesson 6 is the IDEAL Challenge, where pupils pull the unit together to make or decide something. It doubles as the end of unit assessment task: <a href="../assessment/">how assessment works</a>.</p>
 </section>
+{extra}
 {testimonials("year-" + str(y["n"]))}"""
         page(y["path"], f"Year {y['n']} AI literacy: {y['title']} | IDEAL Thinkers",
              f"Year {y['n']} AI literacy unit, {y['title']}: {y['big_question']} Six free lessons with plans and slides.", body, d, y["n"],
@@ -969,6 +981,8 @@ def build_progression():
 <p><strong>SEAME</strong>, from the Raspberry Pi Computing Education Research Centre, is used as a lens to check coverage. For example: engines, Y4 L1 and Y5 L2; models, Y5 L1 and Y5 L6; applications, Y2 L5 and Y3 L1 to L3; social and ethical, Y4 L2, Y5 L3 and Y6 L1 to L5.</p>
 <p><strong>The new computing curriculum:</strong> BCS is drafting a revised computing curriculum for first teaching from September 2028, and the Curriculum and Assessment Review recommended that it include AI. It is not yet statutory. IDEAL Thinkers will be mapped against the draft when it is published (checked October 2026).</p>
 <p><strong>Wider curriculum:</strong> RSHE, science, maths, English, geography and careers links are flagged in each lesson plan.</p>
+<h2 id="transition">Moving on to secondary school</h2>
+<p>The <a href="../transition/">Year 7 transition handover</a> sets out, for secondary schools, what pupils can do in each strand by the end of Year 6, the models and words they arrive with, and how KS3 teaching can build on them.</p>
 </section>"""
     page("progression/", "Progression and coverage | IDEAL Thinkers",
          "How IDEAL Thinkers builds from KS1 to Upper KS2, and where each AI Literacy outcome is taught.", body, d)
@@ -1033,6 +1047,11 @@ def build_assessment():
 
 def build_using():
     d = 1
+    cpds = "".join(res_block("cpd", y["n"], f"Year {y['n']}: {y['title']}") for y in DATA["years"])
+    cpd_sec = f"""<h2 id="cpd">Teacher CPD</h2>
+<p>Each unit has a 20 minute staff meeting deck with presenter notes: the big question, the core idea in plain terms, the AI Loop and any model the unit uses, the most common misconceptions, safeguarding and DSL briefing points, a signature activity for staff to try, and what the IDEAL Challenge assessment looks for.</p>
+<div class="grid grid-3 files-grid">{cpds}</div>
+""" if cpds else ""
     body = f"""<section class="page-head"><div class="wrap">
 <p class="eyebrow">Using the lessons</p>
 <h1>Using the lessons</h1>
@@ -1060,7 +1079,7 @@ def build_using():
 <li><strong>If a lesson runs long.</strong> Stop at a natural break, do the exit ticket, and finish the rest at the start of the next lesson in place of Link It. For 45 minute lessons, use the 45 minute version in the plan.</li>
 <li><strong>Checking it works.</strong> A subject leader needs only what the lessons already produce. Once per unit, look at each class tracker's summary and three pupils' IDEAL Challenge work (one secure, one developing, one not yet), and ask the teacher two questions: which lesson ran over, and which misconception came up most.</li>
 </ol>
-<h2>Display and posters</h2>
+{cpd_sec}<h2>Display and posters</h2>
 <div class="grid grid-3 posters-grid">
 <div class="card poster-card"><a class="pc-img pc-wide" href="https://drive.google.com/uc?export=download&amp;id={ROADMAP_PDF}"><img src="{rel(d, 'images/ideal-thinkers-road-map.webp')}" width="2482" height="1754" loading="lazy" alt="Thumbnail of the A3 IDEAL Thinkers road map"></a><h3>The road map (A3)</h3><p>All 36 lessons on one poster.</p><p><a class="btn" href="https://drive.google.com/uc?export=download&amp;id={ROADMAP_PDF}">Download (PDF)</a></p></div>
 """ + "".join(f'''<div class="card poster-card"><a class="pc-img" href="{rel(d, 'downloads/' + f)}" download><img src="{rel(d, 'images/posters/' + k + '.png')}" width="397" height="562" loading="lazy" alt="Thumbnail of the A4 poster: {e(t)}"></a><h3>{e(t)} (A4)</h3><p><a class="btn" href="{rel(d, 'downloads/' + f)}" download>Download (PDF)</a></p></div>''' for k, (t, f) in POSTERS.items()) + f"""
@@ -1211,6 +1230,38 @@ def build_glossary():
               "hasDefinedTerm": [{"@type": "DefinedTerm", "name": g["word"], "description": g["meaning"]} for g in GLOSSARY]}])
 
 
+TRANSITION = json.load(open(os.path.join(ROOT, "data/transition.json"), encoding="utf-8"))
+
+
+def build_transition():
+    d = 1
+    T = TRANSITION
+    doc = res_block("transition", None, "Year 7 transition handover", pdf=True)
+    rows = "".join(f'<tr><th scope="row">{e(a)}</th><td>{e(b)}</td></tr>' for a, b in T["strands"])
+    models = "".join(f'<li><strong>{e(a)}.</strong> {e(b)}</li>' for a, b in T["models"])
+    build = "".join(f"<p>{e(x)}</p>" for x in T["build"])
+    body = f"""<section class="page-head"><div class="wrap">
+<p class="eyebrow"><a href="../progression/">Progression</a> / Transition</p>
+<h1>Year 7 transition handover</h1>
+<p class="lede">For secondary schools: what pupils who have followed IDEAL Thinkers can do by the end of Year 6, and the shared language they arrive with.</p>
+</div></section>
+<section class="wrap">
+{doc}
+<p>{e(T["intro"])}</p>
+<h2>What secure looks like at the end of Year 6</h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">Progression strand</th><th scope="col">A pupil who is secure can</th></tr></thead><tbody>{rows}</tbody></table></div>
+<p class="small">From the Upper KS2 descriptors in the <a href="../assessment/">assessment tracker</a>. Ask the primary school for each pupil's tracker summary.</p>
+<h2>Shared models and language</h2>
+<ul class="list">{models}</ul>
+<h2>Key vocabulary</h2>
+<p>{e(T["vocab"])}. Meanings and pictures are in the <a href="../glossary/">glossary</a>.</p>
+<h2>How KS3 teaching can build on it</h2>
+{build}
+</section>"""
+    page("transition/", "Year 7 transition handover | IDEAL Thinkers",
+         "What pupils can do in AI literacy by the end of Year 6, the models and language they arrive with, and how KS3 teaching can build on it.", body, d)
+
+
 def build_contact():
     d = 1
     body = """<section class="page-head"><div class="wrap">
@@ -1305,7 +1356,7 @@ def build_llms():
          f"- [How it works]({SITE}/how-it-works/)", f"- [The AI Loop]({SITE}/how-it-works/ai-loop/)", f"- [IDEAL]({SITE}/how-it-works/ideal/)",
          f"- [Learning Well]({SITE}/how-it-works/learning-well/)", f"- [Every lesson]({SITE}/how-it-works/every-lesson/)",
          f"- [Curriculum map]({SITE}/curriculum-map/)", f"- [Safety and safeguarding]({SITE}/safety/)", f"- [Progression]({SITE}/progression/)",
-         f"- [Assessment]({SITE}/assessment/)", f"- [Using the lessons]({SITE}/using-the-lessons/)", f"- [Licence]({SITE}/licence/)", f"- [Glossary]({SITE}/glossary/)", f"- [For parents and carers]({SITE}/parents/)", f"- [Contact]({SITE}/contact/)", ""]
+         f"- [Assessment]({SITE}/assessment/)", f"- [Using the lessons]({SITE}/using-the-lessons/)", f"- [Licence]({SITE}/licence/)", f"- [Glossary]({SITE}/glossary/)", f"- [Year 7 transition handover]({SITE}/transition/)", f"- [For parents and carers]({SITE}/parents/)", f"- [Contact]({SITE}/contact/)", ""]
     for y in DATA["years"]:
         t.append(f"## Year {y['n']}: {y['title']} (ages {AGES[y['n']]})")
         t.append(f"Big question: {y['big_question']} [Unit overview]({SITE}/{y['path']})")
@@ -1330,6 +1381,7 @@ if __name__ == "__main__":
     build_contact()
     build_parents()
     build_glossary()
+    build_transition()
     build_using_it()
     build_404()
     build_meta()

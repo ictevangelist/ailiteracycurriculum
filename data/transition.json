@@ -1,0 +1,54 @@
+{
+ "intro": "Pupils who have followed IDEAL Thinkers from Year 1 to Year 6 arrive with a shared set of models, habits and words for AI. They have learned about AI through unplugged activities and teacher demonstrations, not by using AI tools themselves, so they bring judgement about AI rather than skill with particular tools. This page sets out what a pupil who is secure in each strand can do, so KS3 teaching can start from there.",
+ "strands": [
+  [
+   "How AI works",
+   "Predicts or explains a new failure from the training data (missing, unbalanced, an accidental feature); tells rules written by people from patterns learned from examples."
+  ],
+  [
+   "Staying in charge",
+   "In a new case says who checks and who must answer for a mistake, and why a system cannot."
+  ],
+  [
+   "Safe, fair and honest",
+   "Weighs consent, who could be left out and cost in a new decision, and proposes a fix."
+  ],
+  [
+   "Learning Well",
+   "Plans a specific use that quizzes or gives feedback, names what they will do themselves, and explains the learning without the tool."
+  ],
+  [
+   "Design and create",
+   "Starts from a real problem, compares AI with a simpler option, and improves the design from test or audit evidence."
+  ]
+ ],
+ "models": [
+  [
+   "The AI Loop",
+   "Learn, Spot, Guess, Check: AI learns from examples, spots patterns and makes a guess, and people check the guess. Met in Year 1 and revisited every year."
+  ],
+  [
+   "IDEAL",
+   "Five habits for using AI well: Informed, Deliberate, Ethical, Accurate, Learning. Upper KS2 wording: know how it works and where it falls short; use it for a goal, deliberately and sparingly; use it fairly and question whether it is fair; fact check, look for bias, find the evidence; keep your own thinking in charge."
+  ],
+  [
+   "Learning Well",
+   "Try it first (KS1); Hint, not answer (Lower KS2); Plan, use, prove (Upper KS2): plan how AI could help a learning goal, use it to quiz or give feedback, then prove the learning by explaining it without the tool."
+  ],
+  [
+   "STAIR",
+   "A prompt planning scaffold from Year 5: Specific, Tell, Actionable, Iterate, Role."
+  ],
+  [
+   "Checking routines",
+   "Trust it, Test it or Bin it for confident answers (Year 4); Pause, Look, Ask, Check before believing or sharing a picture, voice or video (Year 6)."
+  ]
+ ],
+ "vocab": "rule based program, machine learning, model, training data, test data, accuracy, dataset, bias, balanced data, permission, consent, copyright, prediction, probability, confidence, hallucination, prompt, specific, vague, evidence, trusted source, generated, deepfake, stereotype, automation, data centre, energy cost, accountable, transparent, feedback",
+ "build": [
+  "Start from the AI Loop and the language of training and test data: pupils can already explain why a model trained on missing or unbalanced examples fails some people, so KS3 can move on to how models are built, measured and improved.",
+  "Teach tool use explicitly. Pupils have practised decisions about AI, not the tools, so show them your school's approved tools, the age limits and your expectations before they use them independently.",
+  "Keep the habits going: use IDEAL, Plan, use, prove and STAIR by name when AI comes up in any subject, and ask pupils to prove their learning without the tool.",
+  "Ask to see the AI learning promise each pupil wrote at the end of Year 6, and build on the Scratch rule based program they wrote in Year 5 when you teach selection and machine learning."
+ ]
+}
