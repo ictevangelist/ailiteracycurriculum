@@ -18,6 +18,10 @@ TRACKER = "18lutsh179zuY39y_L8VkzipVrCeSc1RHHuu3eA9D3ZE"
 ROADMAP_PDF = "1xqUuxwFz0IVMQis2mX5iACgGPqD9xT6y"
 GUIDE_URL = "https://docs.google.com/document/d/1ZSazUK-00P8Ne2G3T94l6GCVGfHIuzoJKU2catPhCTw/preview"
 GA_ID = "G-1X05FYT3MT"  # Google Analytics measurement ID (G-...); empty = no analytics, no banner
+# "We're using it" form (/using-it/): set to the form service's POST URL (Formspree, Basin, a Google Apps Script web app and so on).
+# Empty = the form opens an email to Mark with the answers filled in instead.
+FORM_ENDPOINT = ""
+FORM_RETENTION = "two years"  # how long form answers are kept; shown on the form and the Privacy page
 LAUNCHED = True  # flip to True at launch: allows indexing and writes the sitemap
 BUILT = "2026-10-14"  # sitemap lastmod
 LICENCE_URL = "https://creativecommons.org/licenses/by-nc-sa/4.0/"
@@ -450,6 +454,13 @@ def build_home():
 <li>It does not replace your school's computing scheme, online safety teaching or safeguarding procedures.</li>
 <li>Age limits and tool features change often. Check the terms of any tool, and your school's policy, before using it.</li>
 </ul>
+</section>
+<section class="wrap">
+<div class="card using-cta">
+<h2>Using IDEAL Thinkers in your school?</h2>
+<p>Tell me where you're teaching it. It helps me improve it, and you can ask for support with implementation at the same time.</p>
+<p><a class="btn" href="using-it/">Tell me you're using it</a></p>
+</div>
 </section>
 <section class="wrap home-faq">
 <h2>Common questions</h2>
@@ -996,6 +1007,7 @@ def build_using():
 </div>
 <p>If Make a copy is greyed out or a file will not open, your school may block files from outside its organisation. Download the files instead, or ask your IT team to allow access.</p>
 <p><a class="btn btn-ghost" href="{GUIDE_URL}">The Curriculum Guide (a one document overview)</a></p>
+<p>Using IDEAL Thinkers in your school? <a href="../using-it/">Tell me you're using it</a>, and ask for support with implementation if you'd like it.</p>
 <h2>Starting out</h2>
 <ol class="list">
 <li><strong>Where it fits.</strong> Teach each year's six lessons in order, as one half term of computing. Lessons with RSHE links, such as Year 4 Lesson 2, can be taught in RSHE time, but keep them in sequence.</li>
@@ -1035,6 +1047,41 @@ def build_licence():
          "IDEAL Thinkers is free to use under CC BY-NC-SA 4.0 and cannot be taken, distributed or shared for commercial purposes.", body, d)
 
 
+def build_using_it():
+    d = 1
+    years = "".join(f'<label class="chk"><input type="checkbox" name="year_groups" value="Year {n}"> Year {n}</label>' for n in range(1, 7))
+    action = f' action="{e(FORM_ENDPOINT)}" method="post"' if FORM_ENDPOINT else ' data-mailto="mark@ictevangelist.com"'
+    body = f"""<section class="page-head"><div class="wrap">
+<p class="eyebrow">We're using it</p>
+<h1>Using IDEAL Thinkers? Tell me</h1>
+<p class="lede">It helps me to know where IDEAL Thinkers is being taught, so I can keep improving it and share what works. It takes a minute, and there is nothing to sign up to.</p>
+</div></section>
+<section class="wrap">
+<form class="form card" id="using-form"{action}>
+<p class="small">Fields marked * are required. Please don't include any information about pupils.</p>
+<div class="field"><label for="f-name">Your name *</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+<div class="field"><label for="f-role">Your role *</label><input id="f-role" name="role" type="text" autocomplete="organization-title" required></div>
+<div class="field"><label for="f-school">School *</label><input id="f-school" name="school" type="text" autocomplete="organization" required></div>
+<div class="field"><label for="f-trust">Trust (optional)</label><input id="f-trust" name="trust" type="text"></div>
+<div class="field"><label for="f-region">Local authority or region *</label><input id="f-region" name="region" type="text" required></div>
+<fieldset class="field"><legend>Year groups you're teaching it in</legend><div class="chk-row">{years}</div></fieldset>
+<div class="field"><label for="f-heard">How did you hear about IDEAL Thinkers?</label><input id="f-heard" name="heard_about" type="text"></div>
+<div class="field"><label class="chk"><input type="checkbox" name="support" value="Yes" id="f-support"> I'd be interested in support with implementation</label></div>
+<div class="field"><label for="f-email">Email (only if you'd like me to get in touch about support)</label><input id="f-email" name="email" type="email" autocomplete="email"></div>
+<p class="hp" aria-hidden="true"><label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></p>
+<div class="consent-note">
+<p>I'll use your answers to understand which schools are using IDEAL Thinkers and to improve it. If you ask for support and give an email address, I'll use it to get in touch about that, and nothing else. Your answers are never shared or sold.</p>
+<p>The lawful basis is legitimate interests: knowing who uses a free resource so it can be improved and supported. Contacting you about support is based on your consent, which you can withdraw at any time by emailing <a href="mailto:mark@ictevangelist.com">mark@ictevangelist.com</a>. Answers are kept for up to {FORM_RETENTION}, then deleted. More in the <a href="../privacy/">privacy notice</a>.</p>
+</div>
+<p><button class="btn" type="submit">Send</button></p>
+<p class="form-msg" role="status" aria-live="polite"></p>
+</form>
+</section>
+<script src="../js/forms.js" defer></script>"""
+    page("using-it/", "We're using IDEAL Thinkers | IDEAL Thinkers",
+         "Using IDEAL Thinkers in your school? Let Mark Anderson know, and ask for support with implementation if you'd like it.", body, d)
+
+
 def build_contact():
     d = 1
     body = """<section class="page-head"><div class="wrap">
@@ -1046,6 +1093,7 @@ def build_contact():
 <p>I'm always happy to hear from schools, trusts, local authorities and organisations. Get in touch about training for your staff, support with putting IDEAL Thinkers in place across a school or trust, partnerships, or commercial licensing.</p>
 <p>IDEAL Thinkers is free for schools and teachers to use under its <a href="../licence/">licence</a>. Anything commercial, such as paid training built on the lessons or including them in a product or service, needs my permission first, so please ask before you start.</p>
 <p><a class="btn" href="mailto:mark@ictevangelist.com">Email mark@ictevangelist.com</a></p>
+<p>Already teaching it? <a href="../using-it/">Tell me you're using it</a>.</p>
 </section>"""
     page("contact/", "Contact | IDEAL Thinkers",
          "Contact Mark Anderson about IDEAL Thinkers: training, implementation support, partnerships and commercial licensing.", body, d)
@@ -1054,7 +1102,9 @@ def build_contact():
 def build_privacy():
     d = 1
     if GA_ID:
-        short = """<p>I collect as little as possible. There are no accounts and no forms, and you don't need to sign up for anything to use IDEAL Thinkers; neither do your pupils. Analytics only runs if you say yes to it.</p>
+        short = """<p>I collect as little as possible. There are no accounts, and you don't need to sign up for anything to use IDEAL Thinkers; neither do your pupils. The only personal information the site takes is what you choose to send me in a form. Analytics only runs if you say yes to it.</p>
+<h2>Forms</h2>
+<p>If you tell me you're using IDEAL Thinkers on the <a href="../using-it/">We're using it</a> page, I receive your name, role, school, trust, local authority or region, the year groups you teach it in, how you heard about it and, if you choose, your email address and whether you'd like support. I use this to understand which schools are using IDEAL Thinkers and to improve it, under legitimate interests; contacting you about support is based on your consent. I never ask for, or want, information about pupils. Your answers are never shared or sold, and are kept for up to {FORM_RETENTION}, then deleted.{FORM_SERVICE}</p>
 <h2>Analytics</h2>
 <p>I use Google Analytics to see how the site is used, which pages get read and where visitors come from, so I can make it better. It only runs if you choose Accept in the cookie banner. Google Analytics doesn't store IP addresses, and the data isn't used for advertising. If you accept, it sets two cookies, _ga and one starting _ga_, which last up to two years. Your choice is saved in your browser, and you can change your mind at any time with Cookie settings at the bottom of every page. Analytics data is kept for up to 14 months.</p>"""
     else:
@@ -1062,7 +1112,7 @@ def build_privacy():
     body = """<section class="page-head"><div class="wrap">
 <p class="eyebrow">Privacy</p>
 <h1>Privacy notice</h1>
-<p class="lede">Last updated 18 October 2026.</p>
+<p class="lede">Last updated 21 October 2026.</p>
 </div></section>
 <section class="wrap">
 <p>This site is run by me, Mark Anderson, trading as ICT Evangelist, in the United Kingdom. If you have any questions about your data, email me at <a href="mailto:mark@ictevangelist.com">mark@ictevangelist.com</a>.</p>
@@ -1079,9 +1129,10 @@ def build_privacy():
 <p>What Google does with this is covered by <a href="https://policies.google.com/privacy">Google's privacy policy</a>.</p>
 <h2>Your rights</h2>
 <p>For your rights under UK data protection law, including how to complain to the Information Commissioner's Office, see my main <a href="https://ictevangelist.com/privacy-policy/">privacy policy</a>.</p>
-</section>""".replace("{PRIVACY_SHORT}", short)
+</section>""".replace("{PRIVACY_SHORT}", short).replace("{FORM_RETENTION}", FORM_RETENTION).replace(
+        "{FORM_SERVICE}", " The form is sent through a form service that stores the answers for me." if FORM_ENDPOINT else " The form opens an email to me, so your answers arrive in my inbox.")
     page("privacy/", "Privacy notice | IDEAL Thinkers",
-         "How IDEAL Thinkers handles data: no accounts or forms, and analytics only with your consent." if GA_ID else
+         "How IDEAL Thinkers handles data: no accounts, forms only when you choose to send one, and analytics only with your consent." if GA_ID else
          "IDEAL Thinkers collects no personal information: no accounts, forms, analytics or cookies of its own.", body, d)
 
 
@@ -1145,6 +1196,7 @@ if __name__ == "__main__":
     build_licence()
     build_privacy()
     build_contact()
+    build_using_it()
     build_404()
     build_meta()
     print(len(PAGES), "pages")

@@ -299,3 +299,14 @@ table.cov{min-width:0}
 .ticks li::before{content:"\2713";position:absolute;left:0;color:var(--e);font-weight:700}
 .quote figcaption{color:var(--muted)}
 .quote figcaption strong{color:var(--ink)}
+.form{display:grid;gap:14px}
+.field{display:grid;gap:6px;margin:0;border:0;padding:0}
+.field label,.field legend{font-weight:600}
+.field input[type=text],.field input[type=email]{font:inherit;padding:10px 12px;border:2px solid #7F8C8D;border-radius:10px;width:100%;background:#fff;color:var(--ink)}
+.field input:focus-visible{outline:3px solid var(--a);outline-offset:2px}
+.chk{display:inline-flex;align-items:center;gap:8px;font-weight:400!important;margin-right:18px}
+.chk input{width:20px;height:20px;accent-color:var(--btn)}
+.chk-row{display:flex;flex-wrap:wrap;gap:6px 0}
+.hp{position:absolute;left:-9999px}
+.consent-note{font-size:.95rem;color:var(--ink-2)}
+.form-msg{font-weight:600}
