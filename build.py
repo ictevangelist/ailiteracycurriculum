@@ -147,7 +147,7 @@ def codes_html(depth, s):
 
 
 NAV = [("", "Home"), ("how-it-works/", "How it works"), ("year-groups/", "Year groups"), ("curriculum-map/", "Curriculum map"),
-       ("progression/", "Progression"), ("assessment/", "Assessment"), ("safety/", "Safety"), ("using-the-lessons/", "Using the lessons")]
+       ("progression/", "Progression"), ("assessment/", "Assessment"), ("safety/", "Safety"), ("using-the-lessons/", "Using the lessons"), ("parents/", "Parents")]
 
 
 def page(path, title, desc, body, depth, year=None, ld=None, crumbs=None):
@@ -400,6 +400,7 @@ def build_home():
 <dt>Feedback so far</dt><dd>Shaped by feedback from ten practising digital and computing leaders in schools across the UK, and already being taught in classrooms.</dd>
 <dt>How it builds</dt><dd><a href="progression/">See the progression from Year 1 to Year 6</a></dd>
 <dt>Is it safe?</dt><dd><a href="safety/">How safeguarding works</a></dd>
+<dt>For families</dt><dd><a href="parents/">Information for parents and carers</a></dd>
 </dl>
 </section>
 <section class="wrap home-map">
@@ -772,17 +773,33 @@ def build_year_groups():
          "The six IDEAL Thinkers units, one for each year from Year 1 to Year 6, with every lesson listed.", body, d)
 
 
-def file_block(kind, fid, label):
+def file_block(kind, fid, label, pdf=False, pdf_first=False, h="h3"):
+    """The standard resource buttons: Make a copy, Download (PowerPoint or Word), optional Download PDF, Preview."""
     if kind == "slides":
         base = f"https://docs.google.com/presentation/d/{fid}"
-        dl, dl_label = f"{base}/export/pptx", "Download PowerPoint"
+        dl, dl_label, pdf_url = f"{base}/export/pptx", "Download PowerPoint", f"{base}/export/pdf"
     else:
         base = f"https://docs.google.com/document/d/{fid}"
-        dl, dl_label = f"{base}/export?format=docx", "Download Word"
+        dl, dl_label, pdf_url = f"{base}/export?format=docx", "Download Word", f"{base}/export?format=pdf"
+    lab = label[:1].lower() + label[1:]
+    copy = f'<a class="btn{" btn-ghost" if pdf_first else ""}" href="{base}/copy" aria-label="Make a copy of the {e(lab)}">Make a copy</a>'
+    pdf_b = f'<a class="btn{"" if pdf_first else " btn-ghost"}" href="{pdf_url}" aria-label="Download PDF: {e(lab)}">Download PDF</a>' if pdf else ""
+    word = "" if pdf_first else f'<a class="btn btn-ghost" href="{dl}" aria-label="{dl_label}: {e(lab)}">{dl_label}</a>'
+    prev = f'<a class="btn btn-ghost" href="{base}/preview" aria-label="Preview the {e(lab)}">Preview</a>'
+    btns = (pdf_b + copy + prev) if pdf_first else (copy + word + pdf_b + prev)
     return f"""<div class="file">
-<h3 class="file-h">{icon("slides" if kind == "slides" else "plan", "d" if kind == "slides" else "i", 22)}{label}</h3>
-<p class="file-btns"><a class="btn" href="{base}/copy" aria-label="Make a copy of the {label.lower()}">Make a copy</a><a class="btn btn-ghost" href="{dl}" aria-label="{dl_label}: {label.lower()}">{dl_label}</a><a class="btn btn-ghost" href="{base}/preview" aria-label="Preview the {label.lower()}">Preview</a></p>
+<{h} class="file-h">{icon("slides" if kind == "slides" else "plan", "d" if kind == "slides" else "i", 22)}{e(label)}</{h}>
+<p class="file-btns">{btns}</p>
 </div>"""
+
+
+RES = json.load(open(os.path.join(ROOT, "data/resources.json"), encoding="utf-8"))
+
+
+def res_block(group, key=None, label=None, **kw):
+    """file_block for a resource in data/resources.json; empty when its id is not set yet."""
+    r = RES[group][str(key)] if key is not None else RES[group]
+    return file_block(r["kind"], r["id"], label or r["name"], **kw) if r["id"] else ""
 
 
 SAFE_TOPIC = {"Y2L4": "personal information", "Y3L2": "privacy and what voice assistants record",
@@ -977,6 +994,7 @@ def build_safety():
 <div><h2>The safeguarding lessons</h2><ul class="list">{li(sg)}</ul><h2>Lessons that can prompt disclosures</h2><ul class="list">{li(dis)}</ul></div>
 <div><h2>The teacher demonstration lessons</h2><ul class="list">{li(dm)}</ul></div>
 </div>
+<p>There is a page <a href="../parents/">for parents and carers</a>, with letters for each year group, to help schools explain the lessons to families.</p>
 <h2>The guidance it follows</h2>
 <p>This approach follows <a href="https://www.gov.uk/government/publications/keeping-children-safe-in-education--2">Keeping children safe in education 2026</a>, which lists harmful online interaction with other users or with generative AI applications that simulate this as a contact risk; the DfE's <a href="https://www.gov.uk/government/publications/generative-artificial-intelligence-in-education">Generative AI in education</a> guidance and <a href="https://www.gov.uk/government/publications/generative-ai-product-safety-standards">Generative AI: product safety standards</a>; and the UKCIS advice on <a href="https://www.gov.uk/government/publications/sharing-nudes-and-semi-nudes-advice-for-education-settings-working-with-children-and-young-people">sharing nudes and semi-nudes</a>, which covers AI-generated images.</p>
 </section>
@@ -1101,6 +1119,52 @@ def build_using_it():
          "Using IDEAL Thinkers in your school? Let Mark Anderson know, and ask for support with implementation if you'd like it.", body, d)
 
 
+def build_parents():
+    d = 1
+    letters = "".join(res_block("letters", n, f"Year {n} letter: {y['title']}", pdf=True) for n, y in ((y["n"], y) for y in DATA["years"]))
+    letter_sec = f"""<h2 id="letters">Letters for each year group</h2>
+<p>Each unit has a one-page letter for families, with the big question, what pupils learn, three key words and something to talk about at home. Schools can copy and edit it, add the school's name and send it home.</p>
+<div class="grid grid-3 files-grid">{letters}</div>""" if letters else ""
+    body = f"""<section class="page-head"><div class="wrap">
+<p class="eyebrow">Parents and carers</p>
+<h1>For parents and carers</h1>
+<p class="lede">What your child is learning about AI at school, and how you can help at home.</p>
+</div></section>
+<section class="wrap">
+<h2>What IDEAL Thinkers is</h2>
+<p>IDEAL Thinkers is a free curriculum that helps primary schools teach children about AI, from Year 1 to Year 6. AI, or artificial intelligence, is a kind of computer program that makes guesses. It chooses the next video in an app, suggests the next word in a message, and answers questions in a friendly voice.</p>
+<p>Each year group has six lessons, taught over half a term. Children learn how AI works, when to trust it and when not to, how to keep information private, and how to keep doing their own thinking. The lessons use games, cards, drawing and talk. Children do not use AI tools themselves and never need an account. When it helps to show a real AI tool, the teacher shows it on the class screen.</p>
+<p>IDEAL is the name of five habits children practise: Informed, Deliberate, Ethical, Accurate and Learning. In Year 1 they sound like this: know what it is, use it on purpose, be fair and kind, check it, and keep learning.</p>
+<h2>The AI Loop</h2>
+<p>Children use the AI Loop to explain how AI that learns from examples works. It has four steps.</p>
+{loop_strip()}
+<p>The first three steps are what the AI does. The last step is what people do. AI can be wrong without knowing it, so a person always checks.</p>
+<h2>Trust it, Test it or Bin it</h2>
+<p>In Year 4, children learn that a chatbot can sound very sure and still be wrong. When a chatbot tells them something, they decide what to do with it. <strong>Trust it</strong> when there is already strong evidence that it is right. <strong>Test it</strong> when they are not sure yet and need evidence before they decide. There are three ways to check: test it yourself, look in a trusted book or website, or ask a trusted adult. <strong>Bin it</strong> when the evidence shows it is wrong: fix it and say why. You can use the same three words at home whenever a website, video or app tells your child something.</p>
+<h2>Why a chatbot is not a friend</h2>
+<p>Some chatbots, and AI companions made to chat like a friend, are very good at sounding kind. They can say "I'm always here for you". In Year 4, children learn why this is not the same as friendship. A chatbot does not know them, cannot do anything to help, and does not care about them. It picks words that are likely to come next. Real friends and trusted adults know them, can help, and care.</p>
+<p>If your child talks to a chatbot when they feel lonely or upset, stay calm and keep talking with them. Help them think of the trusted people they can go to instead.</p>
+<h2>Age limits on AI tools</h2>
+<p>Most AI tools and apps with a chatbot inside have age limits. For example, ChatGPT is for ages 13 and over, with a parent's permission under 18. Snapchat, which has the My AI chatbot built in, is for ages 13 and over. Some AI companion apps, such as Replika, are for adults only. These were checked in October 2026, and they change often, so always check the age limit and the settings before your child uses an app. The lessons never ask children to use these tools at home.</p>
+<h2>Where to get help</h2>
+<p>These UK organisations give free, reliable advice for families.</p>
+<ul class="list">
+<li><a href="https://www.internetmatters.org/advice/by-activity/using-artificial-intelligence/">Internet Matters: advice on children and AI</a></li>
+<li><a href="https://www.nspcc.org.uk/keeping-children-safe/online-safety/">NSPCC: keeping children safe online</a></li>
+<li><a href="https://saferinternet.org.uk/guide-and-resource/parents-and-carers">UK Safer Internet Centre: advice for parents and carers</a></li>
+<li><a href="https://www.childnet.com/help-and-advice/parents-and-carers/">Childnet: help and advice for parents and carers</a></li>
+<li><a href="https://www.thinkuknow.co.uk/parents/">Thinkuknow, from CEOP: advice for parents and carers</a></li>
+<li><a href="https://www.ceop.police.uk/Safety-Centre/">CEOP Safety Centre: report a worry about online sexual abuse or grooming</a></li>
+<li><a href="https://reportharmfulcontent.com/">Report Harmful Content: help to report harmful content online</a></li>
+<li><a href="https://www.childline.org.uk/">Childline</a>: children can call 0800 1111 for free, any time, about anything that worries them.</li>
+</ul>
+<p>If you are worried about your child's safety, speak to your child's teacher or the school's designated safeguarding lead. If a child is in immediate danger, call 999.</p>
+{letter_sec}
+</section>"""
+    page("parents/", "For parents and carers | IDEAL Thinkers",
+         "What children learn about AI in IDEAL Thinkers, the AI Loop, why a chatbot is not a friend, age limits on AI tools, and where families can get help.", body, d)
+
+
 def build_contact():
     d = 1
     body = """<section class="page-head"><div class="wrap">
@@ -1195,7 +1259,7 @@ def build_llms():
          f"- [How it works]({SITE}/how-it-works/)", f"- [The AI Loop]({SITE}/how-it-works/ai-loop/)", f"- [IDEAL]({SITE}/how-it-works/ideal/)",
          f"- [Learning Well]({SITE}/how-it-works/learning-well/)", f"- [Every lesson]({SITE}/how-it-works/every-lesson/)",
          f"- [Curriculum map]({SITE}/curriculum-map/)", f"- [Safety and safeguarding]({SITE}/safety/)", f"- [Progression]({SITE}/progression/)",
-         f"- [Assessment]({SITE}/assessment/)", f"- [Using the lessons]({SITE}/using-the-lessons/)", f"- [Licence]({SITE}/licence/)", f"- [Contact]({SITE}/contact/)", ""]
+         f"- [Assessment]({SITE}/assessment/)", f"- [Using the lessons]({SITE}/using-the-lessons/)", f"- [Licence]({SITE}/licence/)", f"- [For parents and carers]({SITE}/parents/)", f"- [Contact]({SITE}/contact/)", ""]
     for y in DATA["years"]:
         t.append(f"## Year {y['n']}: {y['title']} (ages {AGES[y['n']]})")
         t.append(f"Big question: {y['big_question']} [Unit overview]({SITE}/{y['path']})")
@@ -1218,6 +1282,7 @@ if __name__ == "__main__":
     build_licence()
     build_privacy()
     build_contact()
+    build_parents()
     build_using_it()
     build_404()
     build_meta()

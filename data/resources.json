@@ -1,0 +1,131 @@
+{
+ "_how": "File IDs for the new Drive resources. Leave an id empty and the site leaves that resource out. kind is slides or doc.",
+ "letters": {
+  "1": {
+   "id": "",
+   "kind": "doc",
+   "name": "Year 1 letter to parents and carers"
+  },
+  "2": {
+   "id": "",
+   "kind": "doc",
+   "name": "Year 2 letter to parents and carers"
+  },
+  "3": {
+   "id": "",
+   "kind": "doc",
+   "name": "Year 3 letter to parents and carers"
+  },
+  "4": {
+   "id": "",
+   "kind": "doc",
+   "name": "Year 4 letter to parents and carers"
+  },
+  "5": {
+   "id": "",
+   "kind": "doc",
+   "name": "Year 5 letter to parents and carers"
+  },
+  "6": {
+   "id": "",
+   "kind": "doc",
+   "name": "Year 6 letter to parents and carers"
+  }
+ },
+ "catchup": {
+  "2": {
+   "id": "",
+   "kind": "slides",
+   "name": "Year 2 catch-up deck"
+  },
+  "3": {
+   "id": "",
+   "kind": "slides",
+   "name": "Year 3 catch-up deck"
+  },
+  "4": {
+   "id": "",
+   "kind": "slides",
+   "name": "Year 4 catch-up deck"
+  },
+  "5": {
+   "id": "",
+   "kind": "slides",
+   "name": "Year 5 catch-up deck"
+  },
+  "6": {
+   "id": "",
+   "kind": "slides",
+   "name": "Year 6 catch-up deck"
+  }
+ },
+ "cpd": {
+  "1": {
+   "id": "",
+   "kind": "slides",
+   "name": "Year 1 staff meeting deck"
+  },
+  "2": {
+   "id": "",
+   "kind": "slides",
+   "name": "Year 2 staff meeting deck"
+  },
+  "3": {
+   "id": "",
+   "kind": "slides",
+   "name": "Year 3 staff meeting deck"
+  },
+  "4": {
+   "id": "",
+   "kind": "slides",
+   "name": "Year 4 staff meeting deck"
+  },
+  "5": {
+   "id": "",
+   "kind": "slides",
+   "name": "Year 5 staff meeting deck"
+  },
+  "6": {
+   "id": "",
+   "kind": "slides",
+   "name": "Year 6 staff meeting deck"
+  }
+ },
+ "printables": {
+  "1": {
+   "id": "",
+   "kind": "slides",
+   "name": "Year 1 printables pack"
+  },
+  "2": {
+   "id": "",
+   "kind": "slides",
+   "name": "Year 2 printables pack"
+  },
+  "3": {
+   "id": "",
+   "kind": "slides",
+   "name": "Year 3 printables pack"
+  },
+  "4": {
+   "id": "",
+   "kind": "slides",
+   "name": "Year 4 printables pack"
+  },
+  "5": {
+   "id": "",
+   "kind": "slides",
+   "name": "Year 5 printables pack"
+  },
+  "6": {
+   "id": "",
+   "kind": "slides",
+   "name": "Year 6 printables pack"
+  }
+ },
+ "transition": {
+  "id": "",
+  "kind": "doc",
+  "name": "Year 7 transition handover"
+ }
+}
