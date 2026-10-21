@@ -178,7 +178,7 @@ def page(path, title, desc, body, depth, year=None, ld=None, crumbs=None):
 <footer class="foot">
 <div class="wrap foot-in">
 <p><strong>IDEAL Thinkers</strong> is the AI Literacy strand of the Primary Digital Cognition Curriculum, by <a href="https://ictevangelist.com/">Mark Anderson FCCT</a>.</p>
-<p>IDEAL Thinkers &copy; 2026 Mark Anderson. Free to use for non commercial purposes under <a href="{rel(depth, 'licence/')}">CC BY-NC-SA 4.0</a>. It cannot be taken, distributed or shared for commercial purposes.</p>
+<p>IDEAL Thinkers &copy; 2026 Mark Anderson. Free for non commercial use under <a href="{rel(depth, 'licence/')}">CC BY-NC-SA 4.0</a>.</p>
 <p class="foot-links"><a href="{rel(depth, 'progression/')}">Progression and coverage</a> <a href="{rel(depth, 'assessment/')}">Assessment</a> <a href="{rel(depth, 'licence/')}">Licence</a> <a href="{rel(depth, 'privacy/')}">Privacy</a> <a href="{rel(depth, 'contact/')}">Contact</a>{consent_link} <a href="https://ictevangelist.com/">ictevangelist.com</a></p>
 </div>
 </footer>
@@ -452,9 +452,6 @@ def build_home():
 <section class="wrap home-faq">
 <h2>Common questions</h2>
 {"".join(f'<div class="faq"><h3>{e(q)}</h3><p>{e(a)}</p></div>' for q, a in FAQ)}
-</section>
-<section class="wrap home-licence">
-{LICENCE_PANEL.format(href='licence/')}
 </section>"""
     page("", "IDEAL Thinkers: Free AI Literacy Curriculum for Primary Schools",
          "IDEAL Thinkers is a free AI literacy curriculum for Year 1 to Year 6 by Mark Anderson: 36 ready to teach lessons, unplugged first, with lesson plans and slides.",
