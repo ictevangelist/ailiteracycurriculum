@@ -80,6 +80,23 @@ def links_text(links):
 
 
 TEACHER = json.load(open(os.path.join(ROOT, "data/teacher.json"), encoding="utf-8"))
+TESTIMONIALS = json.load(open(os.path.join(ROOT, "data/testimonials.json"), encoding="utf-8"))
+
+
+def testimonials(placement):
+    """Quotes for one placement (data/testimonials.json); nothing at all when there are none."""
+    qs = [t for t in TESTIMONIALS["testimonials"] if placement in t.get("placement", [])]
+    if not qs:
+        return ""
+    head = TESTIMONIALS.get("headings", {}).get(placement, TESTIMONIALS["default_heading"])
+    figs = ""
+    for t in qs:
+        paras = "".join(f"<p>{e(x)}</p>" for x in t.get("quote", []))
+        pts = ('<ul class="ticks">' + "".join(f"<li>{e(x)}</li>" for x in t["points"]) + "</ul>") if t.get("points") else ""
+        who = ", ".join(e(x) for x in (t.get("role"), t.get("school"), t.get("region")) if x)
+        figs += f'<figure class="card quote">\n<blockquote>\n{paras}\n{pts}\n</blockquote>\n<figcaption><strong>{e(t["name"])}</strong>, {who}</figcaption>\n</figure>\n'
+    return f'<section class="wrap quotes">\n<h2>{e(head)}</h2>\n{figs}</section>'
+
 DISCLOSURE = {"Y1L6", "Y3L1", "Y4L6", "Y5L3", "Y6L6"}  # can prompt disclosures (Guide, Safeguarding)
 
 
@@ -423,22 +440,7 @@ def build_home():
 <p>Wider curriculum: RSHE, science, maths, English, geography and careers links are flagged in each lesson plan.</p>
 </div>
 </section>
-<section class="wrap">
-<h2>From a headteacher</h2>
-<figure class="card quote">
-<blockquote>
-<p>For me as a headteacher it looks:</p>
-<ul class="ticks">
-<li>pedagogically well thought through</li>
-<li>progressive</li>
-<li>comprehensive</li>
-<li>clear, for all staff to be able to pick up and use</li>
-<li>really relevant for the children and the world they are living and growing up in</li>
-</ul>
-</blockquote>
-<figcaption><strong>Tim Clarke</strong>, Headteacher, Cornerstone CE Primary School, Hampshire</figcaption>
-</figure>
-</section>
+{testimonials("homepage")}
 <section class="wrap">
 <h2>Evidence and limits</h2>
 <p>The design draws on <a href="https://www.aft.org/sites/default/files/Rosenshine.pdf">Rosenshine's Principles of Instruction</a> (2012), the EEF's review <a href="https://educationendowmentfoundation.org.uk/education-evidence/evidence-reviews/cognitive-science-approaches-in-the-classroom">Cognitive science approaches in the classroom</a> (2021), which finds retrieval and spacing promising but with less evidence for young pupils, <a href="https://udlguidelines.cast.org/">CAST's UDL Guidelines</a>, and a 2025 study in which pupils given answers by AI learned less than pupils given hints (<a href="https://doi.org/10.1073/pnas.2422633122">Bastani and others, PNAS</a>).</p>
@@ -705,7 +707,8 @@ def build_years():
 {journey}
 <section class="wrap"><h2>Lessons</h2><div class="grid grid-3">{cards}</div>
 <p class="note">Lesson 6 is the IDEAL Challenge, where pupils pull the unit together to make or decide something. It doubles as the end of unit assessment task: <a href="../assessment/">how assessment works</a>.</p>
-</section>"""
+</section>
+{testimonials("year-" + str(y["n"]))}"""
         page(y["path"], f"Year {y['n']} AI literacy: {y['title']} | IDEAL Thinkers",
              f"Year {y['n']} AI literacy unit, {y['title']}: {y['big_question']} Six free lessons with plans and slides.", body, d, y["n"],
              ld=[{"@type": "Course", "@id": SITE + "/" + y["path"] + "#unit", "name": f"Year {y['n']}: {y['title']}", "url": SITE + "/" + y["path"],
@@ -946,7 +949,8 @@ def build_safety():
 </div>
 <h2>The guidance it follows</h2>
 <p>This approach follows <a href="https://www.gov.uk/government/publications/keeping-children-safe-in-education--2">Keeping children safe in education 2026</a>, which lists harmful online interaction with other users or with generative AI applications that simulate this as a contact risk; the DfE's <a href="https://www.gov.uk/government/publications/generative-artificial-intelligence-in-education">Generative AI in education</a> guidance and <a href="https://www.gov.uk/government/publications/generative-ai-product-safety-standards">Generative AI: product safety standards</a>; and the UKCIS advice on <a href="https://www.gov.uk/government/publications/sharing-nudes-and-semi-nudes-advice-for-education-settings-working-with-children-and-young-people">sharing nudes and semi-nudes</a>, which covers AI-generated images.</p>
-</section>"""
+</section>
+{testimonials("safety")}"""
     page("safety/", "Technology, safety and safeguarding | IDEAL Thinkers",
          "IDEAL Thinkers is unplugged first, with no pupil accounts and teacher-led demonstrations only.", body, d)
 
@@ -1010,7 +1014,7 @@ def build_using():
 <div class="card poster-card"><a class="pc-img pc-wide" href="https://drive.google.com/uc?export=download&amp;id={ROADMAP_PDF}"><img src="{rel(d, 'images/ideal-thinkers-road-map.webp')}" width="2482" height="1754" loading="lazy" alt="Thumbnail of the A3 IDEAL Thinkers road map"></a><h3>The road map (A3)</h3><p>All 36 lessons on one poster.</p><p><a class="btn" href="https://drive.google.com/uc?export=download&amp;id={ROADMAP_PDF}">Download (PDF)</a></p></div>
 """ + "".join(f'''<div class="card poster-card"><a class="pc-img" href="{rel(d, 'downloads/' + f)}" download><img src="{rel(d, 'images/posters/' + k + '.png')}" width="397" height="562" loading="lazy" alt="Thumbnail of the A4 poster: {e(t)}"></a><h3>{e(t)} (A4)</h3><p><a class="btn" href="{rel(d, 'downloads/' + f)}" download>Download (PDF)</a></p></div>''' for k, (t, f) in POSTERS.items()) + f"""
 </div>
-</section>"""
+</section>""" + testimonials("using-the-lessons")
     page("using-the-lessons/", "Using the lessons | IDEAL Thinkers",
          "How to copy, download and teach the IDEAL Thinkers lesson plans and slides.", body, d)
 

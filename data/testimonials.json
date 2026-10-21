@@ -1,0 +1,27 @@
+{
+ "_how_to_add": "Copy the _template entry into the testimonials list and fill it in. Only add words people have given permission to use. quote is a list of paragraphs; points is an optional list shown as ticks under the quote. placement is one or more of: homepage, year-1, year-2, year-3, year-4, year-5, year-6, safety, using-the-lessons. A page shows its section only when at least one entry has that placement. Leave region blank if not wanted.",
+ "_template": {
+  "quote": ["The words exactly as given."],
+  "points": [],
+  "name": "First Last",
+  "role": "Role",
+  "school": "School or trust",
+  "region": "Region",
+  "placement": ["homepage"]
+ },
+ "headings": {
+  "homepage": "From a headteacher"
+ },
+ "default_heading": "What schools say",
+ "testimonials": [
+  {
+   "quote": ["For me as a headteacher it looks:"],
+   "points": ["pedagogically well thought through", "progressive", "comprehensive", "clear, for all staff to be able to pick up and use", "really relevant for the children and the world they are living and growing up in"],
+   "name": "Tim Clarke",
+   "role": "Headteacher",
+   "school": "Cornerstone CE Primary School",
+   "region": "Hampshire",
+   "placement": ["homepage"]
+  }
+ ]
+}
