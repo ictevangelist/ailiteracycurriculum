@@ -536,6 +536,7 @@ def build_how():
 <li><h2>How a lesson runs: seven phases, for teachers</h2><p>Remember When, Link It, Learn It, Try It, Own It, IDEAL Check and Exit Ticket, in 60 minutes. Pupils do not need to learn the phases. <a href="every-lesson/">Every lesson</a></p></li>
 <li><h2>What it lines up with</h2><p>The Primary Digital Cognition Curriculum, the National Curriculum for computing, SEAME, UDL and cognitive science. <a href="../progression/#alignment">Alignment</a></p></li>
 </ol>
+<p>Every word pupils learn, with its meaning and its picture, is in the <a href="../glossary/">glossary</a>.</p>
 <h2>AI literacy and AI fluency</h2>
 <p><strong>AI literacy</strong> is knowing how the AI children meet works, at a level that fits their age; what it can and cannot do; and how it affects people, fairly or unfairly. Pupils show it by explaining these ideas in their own words and applying them to a new example.</p>
 <p><strong>AI fluency</strong> is making good decisions about AI: whether to use it at all, what to ask, how to check what comes back, and how to keep the learning their own. In primary school, pupils practise these decisions through unplugged activities and teacher-led demonstrations, not by using AI tools themselves.</p>
@@ -737,6 +738,7 @@ def build_years():
 </div>{bot}</div></section>
 {journey}
 <section class="wrap"><h2>Lessons</h2><div class="grid grid-3">{cards}</div>
+<p>The words pupils learn in this unit, with their meanings and pictures, are in the <a href="../glossary/#year-{y['n']}">glossary</a>.</p>
 <p class="note">Lesson 6 is the IDEAL Challenge, where pupils pull the unit together to make or decide something. It doubles as the end of unit assessment task: <a href="../assessment/">how assessment works</a>.</p>
 </section>
 {testimonials("year-" + str(y["n"]))}"""
@@ -1165,6 +1167,50 @@ def build_parents():
          "What children learn about AI in IDEAL Thinkers, the AI Loop, why a chatbot is not a friend, age limits on AI tools, and where families can get help.", body, d)
 
 
+GLOSSARY = json.load(open(os.path.join(ROOT, "data/glossary.json"), encoding="utf-8"))
+
+
+def build_glossary():
+    d = 1
+    loop_ic = [("book", "1"), ("eye", "2"), ("bulb", "3"), ("usercheck", "4")]
+    secs = ""
+    for y in DATA["years"]:
+        items = ""
+        for g in [g for g in GLOSSARY if g["year"] == y["n"]]:
+            l = LESSONS[g["code"]]
+            if g["img"] == ["loop"]:
+                pic = f'<span class="gl-pic gl-loop" role="img" aria-label="{e(g["alt"])}">' + "".join(
+                    f'<span class="gl-tile loop-{n}">{icon(ic, "w", 22, "gl-ic")}</span>' for ic, n in loop_ic) + "</span>"
+            elif g["img"]:
+                pic = f'<span class="gl-pic"><span class="gl-tile y{y["n"]}-bg"><img src="../images/glossary/{g["img"][0]}" width="40" height="40" loading="lazy" alt="{e(g["alt"])}"></span></span>'
+            else:
+                pic = ""
+            q = f'{g["word"]} {g["meaning"]} year {y["n"]}'.lower()
+            items += (f'<li class="gl-item{" gl-nopic" if not pic else ""}" data-year="{y["n"]}" data-q="{e(q)}">{pic}<div><h3 class="gl-w">{e(g["word"])}</h3>'
+                      f'<p class="gl-m">{e(g["meaning"])}</p><p class="gl-from small">Taught in <a href="{rel(d, l["path"])}">Year {y["n"]} Lesson {l["n"]}: {e(l["title"])}</a></p></div></li>')
+        secs += f'<section class="gl-year y{y["n"]}" id="year-{y["n"]}" data-year="{y["n"]}"><h2>Year {y["n"]}: {e(y["title"])}</h2><ul class="gl-list">{items}</ul></section>'
+    filters = ('<div class="filters gl-filters" role="group" aria-label="Show one year group"><span class="f-label">Year</span>' +
+               "".join(f'<button type="button" class="f-btn" data-v="{n}" aria-pressed="false">{n}</button>' for n in range(1, 7)) +
+               '<button type="button" class="f-btn f-clear" data-v="">Show all</button></div>')
+    body = f"""<section class="page-head"><div class="wrap">
+<p class="eyebrow"><a href="../how-it-works/">How it works</a> / Glossary</p>
+<h1>Glossary: every word we teach</h1>
+<p class="lede">Every new word in IDEAL Thinkers, by year group, with its child friendly meaning and the picture it is always paired with on the slides. Using the same picture each time helps pupils remember the word.</p>
+</div></section>
+<section class="wrap glossary">
+<div class="gl-tools"><label for="gl-q">Search the words</label><input id="gl-q" type="search" autocomplete="off" placeholder="For example: data, check or chatbot">
+{filters}
+<p class="f-count" id="gl-count" aria-live="polite"></p></div>
+<p class="gl-none" id="gl-none" hidden>No words match that search.</p>
+{secs}
+</section>
+<script src="../js/glossary.js" defer></script>"""
+    page("glossary/", "Glossary: every AI literacy word, Year 1 to Year 6 | IDEAL Thinkers",
+         "Every word taught in IDEAL Thinkers, by year group, with child friendly meanings and the picture used on the slides.", body, d,
+         ld=[{"@type": "DefinedTermSet", "name": "IDEAL Thinkers glossary", "url": SITE + "/glossary/", "inLanguage": "en-GB",
+              "hasDefinedTerm": [{"@type": "DefinedTerm", "name": g["word"], "description": g["meaning"]} for g in GLOSSARY]}])
+
+
 def build_contact():
     d = 1
     body = """<section class="page-head"><div class="wrap">
@@ -1259,7 +1305,7 @@ def build_llms():
          f"- [How it works]({SITE}/how-it-works/)", f"- [The AI Loop]({SITE}/how-it-works/ai-loop/)", f"- [IDEAL]({SITE}/how-it-works/ideal/)",
          f"- [Learning Well]({SITE}/how-it-works/learning-well/)", f"- [Every lesson]({SITE}/how-it-works/every-lesson/)",
          f"- [Curriculum map]({SITE}/curriculum-map/)", f"- [Safety and safeguarding]({SITE}/safety/)", f"- [Progression]({SITE}/progression/)",
-         f"- [Assessment]({SITE}/assessment/)", f"- [Using the lessons]({SITE}/using-the-lessons/)", f"- [Licence]({SITE}/licence/)", f"- [For parents and carers]({SITE}/parents/)", f"- [Contact]({SITE}/contact/)", ""]
+         f"- [Assessment]({SITE}/assessment/)", f"- [Using the lessons]({SITE}/using-the-lessons/)", f"- [Licence]({SITE}/licence/)", f"- [Glossary]({SITE}/glossary/)", f"- [For parents and carers]({SITE}/parents/)", f"- [Contact]({SITE}/contact/)", ""]
     for y in DATA["years"]:
         t.append(f"## Year {y['n']}: {y['title']} (ages {AGES[y['n']]})")
         t.append(f"Big question: {y['big_question']} [Unit overview]({SITE}/{y['path']})")
@@ -1283,6 +1329,7 @@ if __name__ == "__main__":
     build_privacy()
     build_contact()
     build_parents()
+    build_glossary()
     build_using_it()
     build_404()
     build_meta()

@@ -1,0 +1,793 @@
+[
+ {
+  "year": 1,
+  "lesson": 1,
+  "code": "Y1L1",
+  "word": "guess",
+  "meaning": "You are not sure, so you pick what you think.",
+  "img": [
+   "y1l1-guess.png"
+  ],
+  "alt": "a lightbulb"
+ },
+ {
+  "year": 1,
+  "lesson": 1,
+  "code": "Y1L1",
+  "word": "AI",
+  "meaning": "A computer that can make guesses.",
+  "img": [
+   "y1l1-ai.png"
+  ],
+  "alt": "a computer chip"
+ },
+ {
+  "year": 1,
+  "lesson": 2,
+  "code": "Y1L2",
+  "word": "example",
+  "meaning": "One thing that shows what something is like.",
+  "img": [
+   "y1l2-example.png"
+  ],
+  "alt": "two overlapping cards"
+ },
+ {
+  "year": 1,
+  "lesson": 2,
+  "code": "Y1L2",
+  "word": "learn",
+  "meaning": "To find out something new.",
+  "img": [
+   "y1l2-learn.png"
+  ],
+  "alt": "an open book"
+ },
+ {
+  "year": 1,
+  "lesson": 3,
+  "code": "Y1L3",
+  "word": "pattern",
+  "meaning": "Something that keeps showing up again and again.",
+  "img": [
+   "y1l3-pattern.png"
+  ],
+  "alt": "a grid of squares"
+ },
+ {
+  "year": 1,
+  "lesson": 3,
+  "code": "Y1L3",
+  "word": "rule",
+  "meaning": "A rule tells us where things go.",
+  "img": [
+   "y1l3-rule.png"
+  ],
+  "alt": "a list with bullet points"
+ },
+ {
+  "year": 1,
+  "lesson": 3,
+  "code": "Y1L3",
+  "word": "the AI Loop",
+  "meaning": "Learn, Spot, Guess, Check: what AI does, and the check that people do.",
+  "img": [
+   "loop"
+  ],
+  "alt": "the four AI Loop pictures: a book for Learn, an eye for Spot, a lightbulb for Guess and a person with a tick for Check"
+ },
+ {
+  "year": 1,
+  "lesson": 4,
+  "code": "Y1L4",
+  "word": "choose",
+  "meaning": "To pick one thing from lots of things.",
+  "img": [
+   "y1l4-choose.png"
+  ],
+  "alt": "a finger pressing a button"
+ },
+ {
+  "year": 1,
+  "lesson": 4,
+  "code": "Y1L4",
+  "word": "up next",
+  "meaning": "What a machine shows you after this one.",
+  "img": [
+   "y1l4-up-next.png"
+  ],
+  "alt": "fast forward arrows"
+ },
+ {
+  "year": 1,
+  "lesson": 5,
+  "code": "Y1L5",
+  "word": "describe",
+  "meaning": "To say what something looks like.",
+  "img": [
+   "y1l5-describe.png"
+  ],
+  "alt": "a speech bubble"
+ },
+ {
+  "year": 1,
+  "lesson": 5,
+  "code": "Y1L5",
+  "word": "AI picture",
+  "meaning": "A picture a computer makes from our words.",
+  "img": [
+   "y1l5-ai-picture.png"
+  ],
+  "alt": "a picture of mountains and the sun"
+ },
+ {
+  "year": 1,
+  "lesson": 6,
+  "code": "Y1L6",
+  "word": "in charge",
+  "meaning": "The one who decides what happens.",
+  "img": [
+   "y1l6-in-charge.png"
+  ],
+  "alt": "a crown"
+ },
+ {
+  "year": 1,
+  "lesson": 6,
+  "code": "Y1L6",
+  "word": "robot rules",
+  "meaning": "Rules that say what a robot can and cannot do.",
+  "img": [
+   "y1l6-robot-rules.png"
+  ],
+  "alt": "a clipboard with a list"
+ },
+ {
+  "year": 2,
+  "lesson": 1,
+  "code": "Y2L1",
+  "word": "check",
+  "meaning": "Look carefully to see if something is right.",
+  "img": [
+   "y2l1-check.png"
+  ],
+  "alt": "a magnifying glass"
+ },
+ {
+  "year": 2,
+  "lesson": 1,
+  "code": "Y2L1",
+  "word": "mistake",
+  "meaning": "Something that is wrong.",
+  "img": [
+   "y2l1-mistake.png"
+  ],
+  "alt": "a cross in a circle"
+ },
+ {
+  "year": 2,
+  "lesson": 2,
+  "code": "Y2L2",
+  "word": "missing",
+  "meaning": "Not there. Left out.",
+  "img": [
+   "y2l2-missing.png"
+  ],
+  "alt": "a jigsaw piece"
+ },
+ {
+  "year": 2,
+  "lesson": 2,
+  "code": "Y2L2",
+  "word": "fair",
+  "meaning": "Works well for everyone and leaves nobody out.",
+  "img": [
+   "y2l2-fair.png"
+  ],
+  "alt": "balanced scales"
+ },
+ {
+  "year": 2,
+  "lesson": 3,
+  "code": "Y2L3",
+  "word": "helper",
+  "meaning": "Helps you do it yourself.",
+  "img": [
+   "y2l3-helper.png"
+  ],
+  "alt": "a hand helping another hand"
+ },
+ {
+  "year": 2,
+  "lesson": 3,
+  "code": "Y2L3",
+  "word": "try it first",
+  "meaning": "Have a go on your own before you get help.",
+  "img": [
+   "y2l3-try-it-first.png"
+  ],
+  "alt": "a brain"
+ },
+ {
+  "year": 2,
+  "lesson": 4,
+  "code": "Y2L4",
+  "word": "private",
+  "meaning": "Just for you and your family. Not for sharing.",
+  "img": [
+   "y2l4-private.png"
+  ],
+  "alt": "a padlock"
+ },
+ {
+  "year": 2,
+  "lesson": 4,
+  "code": "Y2L4",
+  "word": "personal information",
+  "meaning": "Facts about you, like your full name, where you live or your school.",
+  "img": [
+   "y2l4-personal-information.png"
+  ],
+  "alt": "an identity card"
+ },
+ {
+  "year": 2,
+  "lesson": 5,
+  "code": "Y2L5",
+  "word": "AI helper",
+  "meaning": "A machine that uses AI to help people do a job. For important jobs, a person checks.",
+  "img": [
+   "y2l5-ai-helper.png"
+  ],
+  "alt": "a hand helping another hand"
+ },
+ {
+  "year": 3,
+  "lesson": 1,
+  "code": "Y3L1",
+  "word": "feed",
+  "meaning": "The list of videos or posts an app shows you, one after another.",
+  "img": [
+   "y3l1-feed.png"
+  ],
+  "alt": "a stack of lines, like a list of posts"
+ },
+ {
+  "year": 3,
+  "lesson": 1,
+  "code": "Y3L1",
+  "word": "data",
+  "meaning": "Information a computer collects and uses.",
+  "img": [
+   "y3l1-data.png"
+  ],
+  "alt": "a stack of data discs"
+ },
+ {
+  "year": 3,
+  "lesson": 1,
+  "code": "Y3L1",
+  "word": "recommend",
+  "meaning": "To suggest something because you think someone will like it.",
+  "img": [
+   "y3l1-recommend.png"
+  ],
+  "alt": "a hand pointing"
+ },
+ {
+  "year": 3,
+  "lesson": 2,
+  "code": "Y3L2",
+  "word": "voice assistant",
+  "meaning": "An AI helper you talk to, that talks back, such as Alexa or Siri.",
+  "img": [
+   "y3l2-voice-assistant.png"
+  ],
+  "alt": "a microphone"
+ },
+ {
+  "year": 3,
+  "lesson": 2,
+  "code": "Y3L2",
+  "word": "wake word",
+  "meaning": "The special word that makes a voice assistant start recording.",
+  "img": [
+   "y3l2-wake-word.png"
+  ],
+  "alt": "a bell"
+ },
+ {
+  "year": 3,
+  "lesson": 2,
+  "code": "Y3L2",
+  "word": "privacy",
+  "meaning": "Keeping things about you to yourself, and choosing who knows them.",
+  "img": [
+   "y3l2-privacy.png"
+  ],
+  "alt": "a person with a shield"
+ },
+ {
+  "year": 3,
+  "lesson": 3,
+  "code": "Y3L3",
+  "word": "caption",
+  "meaning": "Words on a screen that show what is being said.",
+  "img": [
+   "y3l3-caption.png"
+  ],
+  "alt": "the CC symbol for captions"
+ },
+ {
+  "year": 3,
+  "lesson": 3,
+  "code": "Y3L3",
+  "word": "translate",
+  "meaning": "To change words from one language into another.",
+  "img": [
+   "y3l3-translate.png"
+  ],
+  "alt": "the letter A beside a character from another language"
+ },
+ {
+  "year": 3,
+  "lesson": 3,
+  "code": "Y3L3",
+  "word": "accessible",
+  "meaning": "Easy for everyone to use, see, hear or join in with.",
+  "img": [
+   "y3l3-accessible.png"
+  ],
+  "alt": "the accessibility symbol, a person in a circle"
+ },
+ {
+  "year": 3,
+  "lesson": 4,
+  "code": "Y3L4",
+  "word": "hint",
+  "meaning": "A clue that helps you think, without giving you the answer.",
+  "img": [],
+  "alt": ""
+ },
+ {
+  "year": 3,
+  "lesson": 5,
+  "code": "Y3L5",
+  "word": "honest",
+  "meaning": "Telling the truth, and not pretending.",
+  "img": [
+   "y3l5-honest.png"
+  ],
+  "alt": "two hands shaking"
+ },
+ {
+  "year": 3,
+  "lesson": 5,
+  "code": "Y3L5",
+  "word": "\"Made with AI\"",
+  "meaning": "A label that tells people AI helped to make something.",
+  "img": [
+   "y3l5-made-with-ai.png"
+  ],
+  "alt": "a label tag"
+ },
+ {
+  "year": 3,
+  "lesson": 6,
+  "code": "Y3L6",
+  "word": "design",
+  "meaning": "To plan how something will look and work, before it is made.",
+  "img": [
+   "y3l6-design.png"
+  ],
+  "alt": "a pencil and a ruler"
+ },
+ {
+  "year": 3,
+  "lesson": 6,
+  "code": "Y3L6",
+  "word": "wellbeing",
+  "meaning": "Feeling healthy, happy and safe, in your body and your mind.",
+  "img": [
+   "y3l6-wellbeing.png"
+  ],
+  "alt": "a heart with a heartbeat line"
+ },
+ {
+  "year": 4,
+  "lesson": 1,
+  "code": "Y4L1",
+  "word": "chatbot",
+  "meaning": "A computer program you can type or talk to that answers in sentences.",
+  "img": [
+   "y4l1-chatbot.png"
+  ],
+  "alt": "two speech bubbles"
+ },
+ {
+  "year": 4,
+  "lesson": 1,
+  "code": "Y4L1",
+  "word": "prediction",
+  "meaning": "A guess about what comes next, based on patterns.",
+  "img": [
+   "y4l1-prediction.png"
+  ],
+  "alt": "a lightbulb"
+ },
+ {
+  "year": 4,
+  "lesson": 2,
+  "code": "Y4L2",
+  "word": "AI companion",
+  "meaning": "A chatbot made to chat like a friend.",
+  "img": [
+   "y4l2-ai-companion.png"
+  ],
+  "alt": "a robot face"
+ },
+ {
+  "year": 4,
+  "lesson": 2,
+  "code": "Y4L2",
+  "word": "trusted adult",
+  "meaning": "A grown up you know, who keeps you safe and helps when you are worried.",
+  "img": [
+   "y4l2-trusted-adult.png"
+  ],
+  "alt": "a teacher at a board"
+ },
+ {
+  "year": 4,
+  "lesson": 3,
+  "code": "Y4L3",
+  "word": "accurate",
+  "meaning": "Correct and true.",
+  "img": [
+   "y4l3-accurate.png"
+  ],
+  "alt": "a target"
+ },
+ {
+  "year": 4,
+  "lesson": 3,
+  "code": "Y4L3",
+  "word": "evidence",
+  "meaning": "Something that shows us whether an idea is true.",
+  "img": [
+   "y4l3-evidence.png"
+  ],
+  "alt": "a fingerprint"
+ },
+ {
+  "year": 4,
+  "lesson": 3,
+  "code": "Y4L3",
+  "word": "trusted source",
+  "meaning": "A book, website or person known for getting things right.",
+  "img": [
+   "y4l3-trusted-source.png"
+  ],
+  "alt": "a person reading a book"
+ },
+ {
+  "year": 4,
+  "lesson": 3,
+  "code": "Y4L3",
+  "word": "hallucination",
+  "meaning": "When an AI makes something up and says it as if it is true.",
+  "img": [],
+  "alt": ""
+ },
+ {
+  "year": 4,
+  "lesson": 4,
+  "code": "Y4L4",
+  "word": "prompt",
+  "meaning": "The words you give an AI to tell it what you want.",
+  "img": [
+   "y4l4-prompt.png"
+  ],
+  "alt": "a keyboard"
+ },
+ {
+  "year": 4,
+  "lesson": 4,
+  "code": "Y4L4",
+  "word": "vague",
+  "meaning": "Not clear. It could mean lots of different things.",
+  "img": [
+   "y4l4-vague.png"
+  ],
+  "alt": "a cloud"
+ },
+ {
+  "year": 4,
+  "lesson": 4,
+  "code": "Y4L4",
+  "word": "specific",
+  "meaning": "Clear and exact, with the details that matter.",
+  "img": [
+   "y4l4-specific.png"
+  ],
+  "alt": "a target crosshair"
+ },
+ {
+  "year": 4,
+  "lesson": 5,
+  "code": "Y4L5",
+  "word": "probability",
+  "meaning": "How likely something is to happen, in words or as a number.",
+  "img": [
+   "y4l5-probability.png"
+  ],
+  "alt": "two dice"
+ },
+ {
+  "year": 4,
+  "lesson": 5,
+  "code": "Y4L5",
+  "word": "likely",
+  "meaning": "Probably going to happen, but not certain.",
+  "img": [
+   "y4l5-likely.png"
+  ],
+  "alt": "a rain cloud"
+ },
+ {
+  "year": 4,
+  "lesson": 5,
+  "code": "Y4L5",
+  "word": "confidence",
+  "meaning": "How sure someone, or an AI, is about a guess.",
+  "img": [
+   "y4l5-confidence.png"
+  ],
+  "alt": "a dial, like a speedometer"
+ },
+ {
+  "year": 4,
+  "lesson": 6,
+  "code": "Y4L6",
+  "word": "rulebook",
+  "meaning": "A set of rules that says what something must do, and what it must never do.",
+  "img": [],
+  "alt": ""
+ },
+ {
+  "year": 5,
+  "lesson": 1,
+  "code": "Y5L1",
+  "word": "rule based program",
+  "meaning": "A computer program that follows rules a person has written.",
+  "img": [
+   "y5l1-rule-based-program.png"
+  ],
+  "alt": "a numbered list"
+ },
+ {
+  "year": 5,
+  "lesson": 1,
+  "code": "Y5L1",
+  "word": "machine learning",
+  "meaning": "When a computer finds its own patterns in lots of examples.",
+  "img": [
+   "y5l1-machine-learning.png"
+  ],
+  "alt": "a brain"
+ },
+ {
+  "year": 5,
+  "lesson": 1,
+  "code": "Y5L1",
+  "word": "model",
+  "meaning": "What machine learning makes: the patterns it found, ready to make guesses.",
+  "img": [
+   "y5l1-model.png"
+  ],
+  "alt": "a box"
+ },
+ {
+  "year": 5,
+  "lesson": 2,
+  "code": "Y5L2",
+  "word": "training data",
+  "meaning": "The examples an AI learns from.",
+  "img": [
+   "y5l2-training-data.png"
+  ],
+  "alt": "a stack of data discs"
+ },
+ {
+  "year": 5,
+  "lesson": 2,
+  "code": "Y5L2",
+  "word": "test data",
+  "meaning": "New examples, kept back, to check what the AI really learned.",
+  "img": [
+   "y5l2-test-data.png"
+  ],
+  "alt": "a clipboard with a tick"
+ },
+ {
+  "year": 5,
+  "lesson": 2,
+  "code": "Y5L2",
+  "word": "accuracy",
+  "meaning": "How often the AI gets the test right.",
+  "img": [
+   "y5l2-accuracy.png"
+  ],
+  "alt": "a target"
+ },
+ {
+  "year": 5,
+  "lesson": 3,
+  "code": "Y5L3",
+  "word": "permission",
+  "meaning": "When the person in charge of something says yes, you may use it.",
+  "img": [
+   "y5l3-permission.png"
+  ],
+  "alt": "a raised hand"
+ },
+ {
+  "year": 5,
+  "lesson": 3,
+  "code": "Y5L3",
+  "word": "consent",
+  "meaning": "Freely saying yes, when you understand what you are saying yes to.",
+  "img": [
+   "y5l3-consent.png"
+  ],
+  "alt": "two hands shaking"
+ },
+ {
+  "year": 5,
+  "lesson": 3,
+  "code": "Y5L3",
+  "word": "copyright",
+  "meaning": "The law that says the person who made a work decides who can copy it.",
+  "img": [
+   "y5l3-copyright.png"
+  ],
+  "alt": "the copyright symbol"
+ },
+ {
+  "year": 5,
+  "lesson": 4,
+  "code": "Y5L4",
+  "word": "bias",
+  "meaning": "When an AI works better for some people than others, again and again.",
+  "img": [
+   "y5l4-bias.png"
+  ],
+  "alt": "scales tipped to one side"
+ },
+ {
+  "year": 5,
+  "lesson": 4,
+  "code": "Y5L4",
+  "word": "balanced data",
+  "meaning": "Training data with enough examples of every group who will use the AI.",
+  "img": [
+   "y5l4-balanced-data.png"
+  ],
+  "alt": "balanced scales"
+ },
+ {
+  "year": 5,
+  "lesson": 5,
+  "code": "Y5L5",
+  "word": "STAIR",
+  "meaning": "A way to plan a prompt so that AI helps you learn: Specific, Tell, Actionable, Iterate, Role.",
+  "img": [
+   "y5l5-stair.png"
+  ],
+  "alt": "a staircase"
+ },
+ {
+  "year": 5,
+  "lesson": 5,
+  "code": "Y5L5",
+  "word": "feedback",
+  "meaning": "Information about what is working and what to improve.",
+  "img": [
+   "y5l5-feedback.png"
+  ],
+  "alt": "a speech bubble"
+ },
+ {
+  "year": 5,
+  "lesson": 6,
+  "code": "Y5L6",
+  "word": "dataset",
+  "meaning": "A collection of examples, gathered and labelled, for an AI to learn from or be tested on.",
+  "img": [],
+  "alt": ""
+ },
+ {
+  "year": 6,
+  "lesson": 1,
+  "code": "Y6L1",
+  "word": "generated",
+  "meaning": "Made by AI from patterns it learned, not captured by a camera or microphone.",
+  "img": [
+   "y6l1-generated.png"
+  ],
+  "alt": "a magic wand with sparkles"
+ },
+ {
+  "year": 6,
+  "lesson": 1,
+  "code": "Y6L1",
+  "word": "deepfake",
+  "meaning": "A generated or changed video, picture or voice that makes a real person seem to do or say something they never did.",
+  "img": [
+   "y6l1-deepfake.png"
+  ],
+  "alt": "two theatre masks"
+ },
+ {
+  "year": 6,
+  "lesson": 2,
+  "code": "Y6L2",
+  "word": "stereotype",
+  "meaning": "A fixed idea that everyone in a group is the same, or should be.",
+  "img": [],
+  "alt": ""
+ },
+ {
+  "year": 6,
+  "lesson": 3,
+  "code": "Y6L3",
+  "word": "automation",
+  "meaning": "When a machine or computer program does a task by itself, without a person doing each step.",
+  "img": [],
+  "alt": ""
+ },
+ {
+  "year": 6,
+  "lesson": 4,
+  "code": "Y6L4",
+  "word": "data centre",
+  "meaning": "A building full of powerful computers that store information and run websites and AI.",
+  "img": [
+   "y6l4-data-centre.png"
+  ],
+  "alt": "a rack of computer servers"
+ },
+ {
+  "year": 6,
+  "lesson": 4,
+  "code": "Y6L4",
+  "word": "energy cost",
+  "meaning": "How much energy something uses, and what that costs the planet.",
+  "img": [
+   "y6l4-energy-cost.png"
+  ],
+  "alt": "a lightning bolt"
+ },
+ {
+  "year": 6,
+  "lesson": 5,
+  "code": "Y6L5",
+  "word": "accountable",
+  "meaning": "Having to answer for what you did, and put it right if it went wrong.",
+  "img": [
+   "y6l5-accountable.png"
+  ],
+  "alt": "a raised hand"
+ },
+ {
+  "year": 6,
+  "lesson": 5,
+  "code": "Y6L5",
+  "word": "transparent",
+  "meaning": "Open and clear about how something works and how decisions are made.",
+  "img": [
+   "y6l5-transparent.png"
+  ],
+  "alt": "an open door"
+ }
+]

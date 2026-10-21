@@ -319,3 +319,19 @@ table.cov{min-width:0}
 .foot .signup{border-top:1px solid rgba(255,255,255,.25);padding-top:16px}
 .foot .su-row input{border-color:#fff}
 button.btn{font:inherit;font-weight:600;cursor:pointer}
+.gl-tools{display:grid;gap:8px;margin-bottom:18px}
+.gl-tools label{font-weight:600}
+.gl-tools input{font:inherit;padding:10px 12px;border:2px solid #7F8C8D;border-radius:10px;max-width:none;width:100%;background:#fff;color:var(--ink)}
+.gl-list{list-style:none;padding:0;margin:0 0 28px;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:14px}
+.gl-item{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px;box-shadow:var(--shadow)}
+.gl-item[hidden],.gl-year[hidden]{display:none}
+.gl-pic{display:flex;gap:4px;flex:none}
+.gl-tile{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:12px;color:#fff}
+.gl-loop .gl-tile{width:30px;height:30px;border-radius:8px}
+.gl-loop{display:grid;grid-template-columns:repeat(2,30px);gap:4px}
+.gl-tile.loop-1{background:var(--i)} .gl-tile.loop-2{background:var(--d)} .gl-tile.loop-3{background:var(--a)} .gl-tile.loop-4{background:var(--e)}
+.y1-bg{background:var(--y1)} .y2-bg{background:var(--y2)} .y3-bg{background:var(--y3)} .y4-bg{background:var(--y4)} .y5-bg{background:var(--y5)} .y6-bg{background:var(--y6)}
+.gl-w{margin:0 0 4px;font-size:1.15rem}
+.gl-m{margin:0 0 6px}
+.gl-from{margin:0}
+.gl-none{font-weight:600}
