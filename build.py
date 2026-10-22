@@ -1239,7 +1239,7 @@ TRANSITION = json.load(open(os.path.join(ROOT, "data/transition.json"), encoding
 def build_transition():
     d = 1
     T = TRANSITION
-    doc = res_block("transition", None, "Year 7 transition handover", pdf=True)
+    doc = res_block("transition", None, "Year 7 transition handover", pdf=True, h="h2")
     rows = "".join(f'<tr><th scope="row">{e(a)}</th><td>{e(b)}</td></tr>' for a, b in T["strands"])
     models = "".join(f'<li><strong>{e(a)}.</strong> {e(b)}</li>' for a, b in T["models"])
     build = "".join(f"<p>{e(x)}</p>" for x in T["build"])
