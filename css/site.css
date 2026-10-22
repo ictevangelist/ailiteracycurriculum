@@ -310,14 +310,6 @@ table.cov{min-width:0}
 .hp{position:absolute;left:-9999px}
 .consent-note{font-size:.95rem;color:var(--ink-2)}
 .form-msg{font-weight:600}
-.signup{display:grid;grid-template-columns:minmax(0,1fr);gap:6px;margin:18px 0;min-width:0}
-.su-h{font-family:"Exo 2",Poppins,sans-serif;font-weight:700;font-size:1.2rem;margin:0}
-.su-t{margin:0;font-size:.95rem}
-.su-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-.su-row input{font:inherit;padding:10px 12px;border:2px solid #7F8C8D;border-radius:10px;min-width:0;flex:1 1 180px;background:#fff;color:var(--ink)}
-.signup-home{background:var(--soft);border-radius:var(--r);padding:20px}
-.foot .signup{border-top:1px solid rgba(255,255,255,.25);padding-top:16px}
-.foot .su-row input{border-color:#fff}
 button.btn{font:inherit;font-weight:600;cursor:pointer}
 .gl-tools{display:grid;gap:8px;margin-bottom:18px}
 .gl-tools label{font-weight:600}
