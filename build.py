@@ -390,7 +390,7 @@ def build_home():
 <dt>What</dt><dd>A free AI literacy curriculum for primary schools: pupils learn how AI works, when to trust it, and when not to use it.</dd>
 <dt>Who</dt><dd>Years 1 to 6, ages 5 to 11.</dd>
 <dt>What it covers</dt><dd>Five progression strands: how AI works; staying in charge; safe, fair and honest; learning well; design and create. Mapped to the National Curriculum, SEAME and the Primary Digital Cognition Curriculum. <a href="progression/#coverage">See the coverage</a></dd>
-<dt>What you get</dt><dd>36 lessons, six a year, each with a lesson plan and slides.</dd>
+<dt>What you get</dt><dd>36 lessons, six a year, each with a lesson plan and slides, plus a <a href="celebrate/">passport and certificate</a> to celebrate each pupil's progress.</dd>
 <dt>Time</dt><dd>60 minutes a lesson, with a 45 minute version in every plan. The Year 6 IDEAL Challenge runs over two sessions.</dd>
 <dt>What you need</dt><dd>A screen for the slides. No pupil devices or AI accounts.</dd>
 <dt>Who made it</dt><dd>Mark Anderson FCCT: a teacher and senior leader for more than 20 years, and former local authority lead teacher for computing. For the last eleven years, an independent consultant supporting hundreds of schools in the UK and around the world with AI, digital strategy and teaching and learning with technology. Lead AI consultant on the BBC's Bitesize Guide to AI; Founding Fellow of the Chartered College of Teaching; member of the BCS Schools and Colleges Committee; award-winning author of The EdTech Playbook.</dd>
@@ -749,6 +749,7 @@ def build_years():
 <section class="wrap"><h2>Lessons</h2><div class="grid grid-3">{cards}</div>
 <p>The words pupils learn in this unit, with their meanings and pictures, are in the <a href="../glossary/#year-{y['n']}">glossary</a>.</p>
 <p class="note">Lesson 6 is the IDEAL Challenge, where pupils pull the unit together to make or decide something. It doubles as the end of unit assessment task: <a href="../assessment/">how assessment works</a>.</p>
+<p><a href="../celebrate/">Celebrate it: passport and certificate</a></p>
 </section>
 {extra}
 {testimonials("year-" + str(y["n"]))}"""
@@ -1029,6 +1030,7 @@ def build_assessment():
 <h2>Where the evidence comes from</h2>
 <p>The exit ticket is the last slide of every lesson, and its questions and answers are in the lesson plan. One question always asks pupils to apply the idea to something they have not seen in the lesson. Sort the answers into got it, nearly and not yet: the middle pile chooses the next Remember When question, and you reteach briefly if the last pile is large.</p>
 <p>At the end of each unit, the IDEAL Challenge and that unit's exit tickets give one judgement per pupil for each of the five progression strands. Team work is useful feedback, but every judgement rests on what each pupil shows on their own.</p>
+<p>When a pupil has completed all six lessons, you can celebrate it with the <a href="../celebrate/">IDEAL Thinkers passport and certificate</a>: a circle initialled after each lesson, and a certificate when the unit is done.</p>
 <h2>Secure, developing and not yet</h2>
 <p>Secure means the pupil explains the idea with reasons, without prompting, and applies it to a new case. Developing means they show the idea with prompting, or explain part of it. Not yet means the idea is not there yet, often with a common misconception. The tracker gives what secure looks like in each key stage, for each strand.</p>
 <h2>Seeing progress across the years</h2>
@@ -1076,6 +1078,7 @@ def build_using():
 <li><strong>Misconceptions.</strong> Each plan lists the likely ones. If an exit ticket shows one is common, reteach it briefly at the start of the next lesson and add a Remember When question on it.</li>
 <li><strong>If a lesson runs long.</strong> Stop at a natural break, do the exit ticket, and finish the rest at the start of the next lesson in place of Link It. For 45 minute lessons, use the 45 minute version in the plan.</li>
 <li><strong>Checking it works.</strong> A subject leader needs only what the lessons already produce. Once per unit, look at each class tracker's summary and three pupils' IDEAL Challenge work (one secure, one developing, one not yet), and ask the teacher two questions: which lesson ran over, and which misconception came up most.</li>
+<li><strong>Celebrating success.</strong> Give each pupil an IDEAL Thinkers passport for the year, initial a circle after each lesson, and award the certificate when all six are full: <a href="../celebrate/">passport and certificate</a>.</li>
 </ol>
 {cpd_sec}<h2>Display and posters</h2>
 <div class="grid grid-3 posters-grid">
