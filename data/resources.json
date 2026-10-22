@@ -2,32 +2,32 @@
  "_how": "File IDs for the new Drive resources. Leave an id empty and the site leaves that resource out. kind is slides or doc.",
  "letters": {
   "1": {
-   "id": "",
+   "id": "1bzcFVIp4lwCOQ_UBpzSr2UDq0y1Y7V_WKgfrvFBFaZI",
    "kind": "doc",
    "name": "Year 1 letter to parents and carers"
   },
   "2": {
-   "id": "",
+   "id": "1KIctlOJhHm7M68nvs_CqLEePldF7GbIrFOLM4U0uXJM",
    "kind": "doc",
    "name": "Year 2 letter to parents and carers"
   },
   "3": {
-   "id": "",
+   "id": "1yzAhV2FA8UAvWyduBzcihfbOCx3ICZ1mdGfIJUKVxeQ",
    "kind": "doc",
    "name": "Year 3 letter to parents and carers"
   },
   "4": {
-   "id": "",
+   "id": "1vGdlZKbBctVedQ1R-znYbF2Bjs2n0onANMzoUJhIIEM",
    "kind": "doc",
    "name": "Year 4 letter to parents and carers"
   },
   "5": {
-   "id": "",
+   "id": "1UaInyGVFOfObB8ShMyZefvCYzbXKTQNDGC8t9YbYqKg",
    "kind": "doc",
    "name": "Year 5 letter to parents and carers"
   },
   "6": {
-   "id": "",
+   "id": "1P5vpG-SPHFncINrGy5avIWVBfuqgt-XPsetB000bu0g",
    "kind": "doc",
    "name": "Year 6 letter to parents and carers"
   }
