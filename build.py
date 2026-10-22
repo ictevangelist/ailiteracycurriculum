@@ -1207,8 +1207,9 @@ def canva_btn(href, text, ghost=False):
 
 
 def shot(name, alt, w=1600, h=1131):
-    return (f'<figure class="shot"><img src="../images/celebrate/{name}.webp" srcset="../images/celebrate/{name}-800.webp 800w, ../images/celebrate/{name}.webp 1600w" '
-            f'sizes="(max-width: 900px) 100vw, 50vw" width="{w}" height="{h}" loading="lazy" alt="{e(alt)}"></figure>')
+    return (f'<figure class="shot"><a class="zoom" href="../images/celebrate/{name}.webp"><img src="../images/celebrate/{name}.webp" srcset="../images/celebrate/{name}-800.webp 800w, ../images/celebrate/{name}.webp 1600w" '
+            f'sizes="(max-width: 900px) 100vw, 50vw" width="{w}" height="{h}" loading="lazy" alt="{e(alt)}"></a>'
+            f'<figcaption class="note">Click or tap the picture to see it larger.</figcaption></figure>')
 
 
 def build_celebrate():
@@ -1260,7 +1261,8 @@ def build_celebrate():
 <div class="table-wrap"><table><thead><tr><th scope="col">Year group</th><th scope="col">Unit title</th></tr></thead><tbody>{units}</tbody></table></div>
 <h2 id="pupil-data">Pupil data</h2>
 <p>Use your school's approved Canva account and follow your school's data protection policy. Enter only first names and surnames, and delete the class list once the certificates are printed.</p>
-</section>"""
+</section>
+<script src="../js/zoom.js" defer></script>"""
     page("celebrate/", "Celebrating success: passport and certificate | IDEAL Thinkers",
          "An IDEAL Thinkers passport for every pupil, initialled after each lesson, and a certificate for the whole class made at once with Canva's Bulk Create.", body, d)
 

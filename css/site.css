@@ -339,3 +339,9 @@ button.btn{font:inherit;font-weight:600;cursor:pointer}
 .split{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:32px;align-items:center}
 .chatty-split{width:min(100%,200px);justify-self:center}
 @media (max-width:700px){.split{grid-template-columns:1fr;gap:8px}.chatty-split{width:110px}}
+.zoom{display:block;cursor:zoom-in;border-radius:var(--r)}
+.shot figcaption{margin-top:6px}
+.zoom-box{border:0;padding:0;background:transparent;max-width:96vw;max-height:96vh;overflow:visible}
+.zoom-box::backdrop{background:rgba(44,62,80,.85)}
+.zoom-box img{display:block;max-width:96vw;max-height:88vh;width:auto;height:auto;border-radius:var(--r);background:#fff}
+.zoom-close{display:block;margin:0 0 8px auto}
