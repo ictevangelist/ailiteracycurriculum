@@ -24,7 +24,7 @@ CF7_FORM = "15937"
 TURNSTILE_KEY = "0x4AAAAAABmdFKT7X_Kbtx_X"  # the ictevangelist.com Turnstile site key (public)
 FORM_ENDPOINT = f"https://ictevangelist.com/wp-json/contact-form-7/v1/contact-forms/{CF7_FORM}/feedback" if CF7_FORM else ""
 # Celebrating success (/celebrate/): the passport's print-ready PDF (a Google Drive link). Empty = no Download PDF button.
-PASSPORT_PDF_URL = ""
+PASSPORT_PDF_URL = "https://drive.google.com/uc?export=download&id=1rcLI0GGBMjm55m8Gct4EZkOgZ6nKg9CH"
 CANVA_PASSPORT = "https://canva.link/j4uuzml0lzshj1x"
 CANVA_CERTIFICATE = "https://canva.link/perm7dii25lbdq2"
 CANVA_CLASS_LIST = "https://canva.link/m2ulzem83fw8b9f"
