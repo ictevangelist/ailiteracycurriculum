@@ -23,6 +23,11 @@ GA_ID = "G-1X05FYT3MT"  # Google Analytics measurement ID (G-...); empty = no an
 CF7_FORM = "15937"
 TURNSTILE_KEY = "0x4AAAAAABmdFKT7X_Kbtx_X"  # the ictevangelist.com Turnstile site key (public)
 FORM_ENDPOINT = f"https://ictevangelist.com/wp-json/contact-form-7/v1/contact-forms/{CF7_FORM}/feedback" if CF7_FORM else ""
+# Celebrating success (/celebrate/): the passport's print-ready PDF (a Google Drive link). Empty = no Download PDF button.
+PASSPORT_PDF_URL = ""
+CANVA_PASSPORT = "https://canva.link/j4uuzml0lzshj1x"
+CANVA_CERTIFICATE = "https://canva.link/perm7dii25lbdq2"
+CANVA_CLASS_LIST = "https://canva.link/m2ulzem83fw8b9f"
 FORM_RETENTION = "two years"  # how long form answers are kept; shown on the form and the Privacy page
 LAUNCHED = True  # flip to True at launch: allows indexing and writes the sitemap
 BUILT = "2026-10-21"  # sitemap lastmod
@@ -132,7 +137,7 @@ def codes_html(depth, s):
 
 
 NAV = [("", "Home"), ("how-it-works/", "How it works"), ("year-groups/", "Year groups"), ("curriculum-map/", "Curriculum map"),
-       ("progression/", "Progression"), ("assessment/", "Assessment"), ("safety/", "Safety"), ("using-the-lessons/", "Using the lessons"), ("parents/", "Parents")]
+       ("progression/", "Progression"), ("assessment/", "Assessment"), ("safety/", "Safety"), ("using-the-lessons/", "Using the lessons"), ("celebrate/", "Celebrating success"), ("parents/", "Parents")]
 
 
 def page(path, title, desc, body, depth, year=None, ld=None, crumbs=None):
@@ -204,7 +209,7 @@ def page(path, title, desc, body, depth, year=None, ld=None, crumbs=None):
 <div class="wrap foot-in">
 <p><strong>IDEAL Thinkers</strong> is the AI Literacy strand of the Primary Digital Cognition Curriculum, by <a href="https://ictevangelist.com/">Mark Anderson FCCT</a>.</p>
 <p>IDEAL Thinkers &copy; 2026 Mark Anderson. Free for non commercial use under <a href="{rel(depth, 'licence/')}">CC BY-NC-SA 4.0</a>.</p>
-<p class="foot-links"><a href="{rel(depth, 'progression/')}">Progression and coverage</a> <a href="{rel(depth, 'assessment/')}">Assessment</a> <a href="{rel(depth, 'licence/')}">Licence</a> <a href="{rel(depth, 'privacy/')}">Privacy</a> <a href="{rel(depth, 'contact/')}">Contact</a>{consent_link} <a href="https://ictevangelist.com/">ictevangelist.com</a></p>
+<p class="foot-links"><a href="{rel(depth, 'progression/')}">Progression and coverage</a> <a href="{rel(depth, 'assessment/')}">Assessment</a> <a href="{rel(depth, 'celebrate/')}">Celebrating success</a> <a href="{rel(depth, 'licence/')}">Licence</a> <a href="{rel(depth, 'privacy/')}">Privacy</a> <a href="{rel(depth, 'contact/')}">Contact</a>{consent_link} <a href="https://ictevangelist.com/">ictevangelist.com</a></p>
 </div>
 </footer>
 {consent}</body>
@@ -212,13 +217,13 @@ def page(path, title, desc, body, depth, year=None, ld=None, crumbs=None):
 """
     if PREVIEW:
         doc = re.sub(r'href="((?:\.\./)*[^":#]*/)"', r'href="\1index.html"', doc).replace('href=""', 'href="index.html"')
-    # links to other sites carry UTM tags saying which page the click came from (not Google Docs or Drive, or DOIs)
+    # links to other sites carry UTM tags saying which page the click came from (not Google Docs or Drive, DOIs or Canva)
     camp = path.strip("/").replace("/", "-") or "home"
     def utm(m):
         url, _, frag = m.group(2).partition("#")
         url += ("&amp;" if "?" in url else "?") + f"utm_source=ideal-thinkers&amp;utm_medium=referral&amp;utm_campaign={camp}"
         return m.group(1) + url + ("#" + frag if frag else "") + '"'
-    doc = re.sub(r'(<a [^>]*href=")(https?://(?!ailiteracycurriculum\.ictevangelist\.com|docs\.google\.com|drive\.google\.com|doi\.org)[^"]*)"', utm, doc)
+    doc = re.sub(r'(<a [^>]*href=")(https?://(?!ailiteracycurriculum\.ictevangelist\.com|docs\.google\.com|drive\.google\.com|doi\.org|canva\.link)[^"]*)"', utm, doc)
     # links to other sites open in a new tab; file downloads (Google export links) stay put
     doc = re.sub(r'(<a [^>]*href="https?://(?!ailiteracycurriculum\.ictevangelist\.com)(?![^"]*export)[^"]*")(?![^>]*target=)',
                  r'\1 target="_blank" rel="noopener"', doc)
@@ -1182,6 +1187,69 @@ def build_parents():
          "What children learn about AI in IDEAL Thinkers, the AI Loop, why a chatbot is not a friend, age limits on AI tools, and where families can get help.", body, d)
 
 
+def canva_btn(href, text, ghost=False):
+    return f'<a class="btn{" btn-ghost" if ghost else ""}" href="{href}" target="_blank" rel="noopener" aria-label="{e(text)} (opens Canva in a new tab)">{e(text)}</a>'
+
+
+def shot(name, alt, w=1600, h=1131):
+    return (f'<figure class="shot"><img src="../images/celebrate/{name}.webp" srcset="../images/celebrate/{name}-800.webp 800w, ../images/celebrate/{name}.webp 1600w" '
+            f'sizes="(max-width: 900px) 100vw, 50vw" width="{w}" height="{h}" loading="lazy" alt="{e(alt)}"></figure>')
+
+
+def build_celebrate():
+    d = 1
+    pdf = f'<a class="btn" href="{e(PASSPORT_PDF_URL)}" aria-label="Download PDF: the IDEAL Thinkers passport">Download PDF</a>' if PASSPORT_PDF_URL else ""
+    units = "".join(f'<tr><th scope="row">Year {y["n"]}</th><td>{e(y["title"])}</td></tr>' for y in DATA["years"])
+    body = f"""<section class="page-head"><div class="wrap">
+<p class="eyebrow">Celebrating success</p>
+<h1>Celebrating success</h1>
+<p class="lede">A passport for every pupil, and a certificate when they've finished the year's unit.</p>
+</div></section>
+<section class="wrap">
+<p>Every pupil gets an IDEAL Thinkers passport for the year. Each time they complete a lesson, you write your initials in one of the six circles, and when all six are full, they've completed the year's unit and earned their IDEAL Thinkers certificate.</p>
+<p>It works however your school timetables the unit. You might teach the six lessons as one half-term block, or spread them across the year; either way, a circle is filled each time a lesson is done. Each new school year, every pupil starts a fresh passport.</p>
+<h2 id="passport">The passport</h2>
+<div class="grid grid-2 shots">
+{shot("passport-outside", "The outside of the IDEAL Thinkers passport. The back cover lists the five IDEAL habits: Informed, Deliberate, Ethical, Accurate and Learning. The front cover has the title, a purple robot, and lines for the pupil's name and class.")}
+{shot("passport-inside", "The inside of the IDEAL Thinkers passport. A welcome page explains that the teacher writes their initials in a circle for each challenge, with lines for the pupil's name, class and year. The My challenges page has six circles and a box for the teacher's signature and the date when the passport is complete.")}
+</div>
+<p>The passport is one A4 sheet, printed on both sides and folded into an A5 booklet. The front cover has space for the pupil's name and class, and the back shows the five IDEAL habits. Inside, there's a welcome page, six challenge circles for your initials, and a box to sign and date when the passport is complete.</p>
+<p class="file-btns">{pdf}{canva_btn(CANVA_PASSPORT, "Make a copy in Canva", ghost=bool(pdf))}</p>
+<p class="note">If you'd like to add your school's logo or change the wording, use the Canva copy.</p>
+<h3>Printing the passport</h3>
+<ol class="list">
+<li>Print on A4, double-sided, choosing "flip on short edge".</li>
+<li>Fold in half so the front cover, with the robot, is on the outside.</li>
+<li>One passport per pupil.</li>
+</ol>
+<h2 id="certificate">The certificate</h2>
+<div class="shots shots-one">
+{shot("certificate", "The IDEAL Thinkers Certificate of Achievement, with a purple robot on the left. It has spaces for the pupil's name, year group, unit title after the words IDEAL Challenge, school name, teacher's name and date, with the five IDEAL habits written across the middle.")}
+</div>
+<p>When a pupil's passport is full, they earn their certificate. You don't need to type thirty certificates by hand: Canva's Bulk Create fills them in for the whole class at once, from a class list in a Canva Sheet. Canva for Education is free for teachers in UK state schools.</p>
+<p class="file-btns">{canva_btn(CANVA_CERTIFICATE, "Make a copy of the certificate")}{canva_btn(CANVA_CLASS_LIST, "Make a copy of the class list", ghost=True)}</p>
+<h2 id="bulk-create">How to make a class set of certificates</h2>
+<p>If you haven't used Bulk Create before, these steps take you through it from start to finish. Canva occasionally renames its menus, so if a name here doesn't quite match what you see, look for the nearest one.</p>
+<ol class="list">
+<li>Open the class list link and choose to use the template, so you have your own copy.</li>
+<li>Fill in one row per pupil. The columns are Pupil name, Year group, Unit title, School name, Teacher name and Date. Don't rename the column headings.</li>
+<li>Year group, Unit title, School name, Teacher name and Date are usually the same for the whole class, so fill in the first row and copy it down.</li>
+<li>Open the certificate link and use the template, so you have your own copy of the certificate.</li>
+<li>Back in your class list, select the rows you've filled in, including the heading row, then choose Bulk Create from the actions menu and pick your copy of the certificate.</li>
+<li>Connect each text box on the certificate to its matching column: {{Pupil name}} to Pupil name, {{Year group}} to Year group, and so on for all six.</li>
+<li>Before generating, preview the first certificate. Because the year group and unit title are the same on every certificate in a class, adjusting the spacing on the "IDEAL Challenge" line once fixes the whole set. Also check the certificate for the pupil with the longest name, so it doesn't wrap or run off the edge.</li>
+<li>Generate the certificates, then download them as a PDF to print.</li>
+</ol>
+<h2 id="unit-titles">Unit titles for the class list</h2>
+<p>Type the unit title exactly as it appears here. The certificate already says "IDEAL Challenge:", so type only the unit title.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Year group</th><th scope="col">Unit title</th></tr></thead><tbody>{units}</tbody></table></div>
+<h2 id="pupil-data">Pupil data</h2>
+<p>Use your school's approved Canva account and follow your school's data protection policy. Enter only first names and surnames, and delete the class list once the certificates are printed.</p>
+</section>"""
+    page("celebrate/", "Celebrating success: passport and certificate | IDEAL Thinkers",
+         "An IDEAL Thinkers passport for every pupil, initialled after each lesson, and a certificate for the whole class made at once with Canva's Bulk Create.", body, d)
+
+
 GLOSSARY = json.load(open(os.path.join(ROOT, "data/glossary.json"), encoding="utf-8"))
 
 
@@ -1349,7 +1417,7 @@ def build_llms():
          f"- [How it works]({SITE}/how-it-works/)", f"- [The AI Loop]({SITE}/how-it-works/ai-loop/)", f"- [IDEAL]({SITE}/how-it-works/ideal/)",
          f"- [Learning Well]({SITE}/how-it-works/learning-well/)", f"- [Every lesson]({SITE}/how-it-works/every-lesson/)",
          f"- [Curriculum map]({SITE}/curriculum-map/)", f"- [Safety and safeguarding]({SITE}/safety/)", f"- [Progression]({SITE}/progression/)",
-         f"- [Assessment]({SITE}/assessment/)", f"- [Using the lessons]({SITE}/using-the-lessons/)", f"- [Licence]({SITE}/licence/)", f"- [Glossary]({SITE}/glossary/)", f"- [Year 7 transition handover]({SITE}/transition/)", f"- [For parents and carers]({SITE}/parents/)", f"- [Contact]({SITE}/contact/)", ""]
+         f"- [Assessment]({SITE}/assessment/)", f"- [Using the lessons]({SITE}/using-the-lessons/)", f"- [Licence]({SITE}/licence/)", f"- [Glossary]({SITE}/glossary/)", f"- [Year 7 transition handover]({SITE}/transition/)", f"- [Celebrating success: passport and certificate]({SITE}/celebrate/)", f"- [For parents and carers]({SITE}/parents/)", f"- [Contact]({SITE}/contact/)", ""]
     for y in DATA["years"]:
         t.append(f"## Year {y['n']}: {y['title']} (ages {AGES[y['n']]})")
         t.append(f"Big question: {y['big_question']} [Unit overview]({SITE}/{y['path']})")
@@ -1375,6 +1443,7 @@ if __name__ == "__main__":
     build_parents()
     build_glossary()
     build_transition()
+    build_celebrate()
     build_using_it()
     build_404()
     build_meta()
