@@ -18,9 +18,11 @@ TRACKER = "18lutsh179zuY39y_L8VkzipVrCeSc1RHHuu3eA9D3ZE"
 ROADMAP_PDF = "1xqUuxwFz0IVMQis2mX5iACgGPqD9xT6y"
 GUIDE_URL = "https://docs.google.com/document/d/1ZSazUK-00P8Ne2G3T94l6GCVGfHIuzoJKU2catPhCTw/preview"
 GA_ID = "G-1X05FYT3MT"  # Google Analytics measurement ID (G-...); empty = no analytics, no banner
-# "We're using it" form (/using-it/): set to the form service's POST URL (Formspree, Basin, a Google Apps Script web app and so on).
-# Empty = the form opens an email to Mark with the answers filled in instead.
-FORM_ENDPOINT = ""
+# "We're using it" form (/using-it/): the Contact Form 7 form id on ictevangelist.com ("IDEAL Thinkers: We're using it"),
+# which emails the answers to Mark, with Cloudflare Turnstile as the CAPTCHA. Empty = the form opens an email to Mark instead.
+CF7_FORM = ""
+TURNSTILE_KEY = "0x4AAAAAABmdFKT7X_Kbtx_X"  # the ictevangelist.com Turnstile site key (public)
+FORM_ENDPOINT = f"https://ictevangelist.com/wp-json/contact-form-7/v1/contact-forms/{CF7_FORM}/feedback" if CF7_FORM else ""
 FORM_RETENTION = "two years"  # how long form answers are kept; shown on the form and the Privacy page
 # Updates sign-up (footer and home page). Set "action" to the email provider's form POST URL (MailerLite, Buttondown,
 # Mailchimp and so on, with double opt-in switched on there), "field" to its email field name, and "provider" to its name
@@ -1110,8 +1112,11 @@ def build_licence():
 
 def build_using_it():
     d = 1
-    years = "".join(f'<label class="chk"><input type="checkbox" name="year_groups" value="Year {n}"> Year {n}</label>' for n in range(1, 7))
+    years = "".join(f'<label class="chk"><input type="checkbox" name="year_groups[]" value="Year {n}"> Year {n}</label>' for n in range(1, 7))
     action = f' action="{e(FORM_ENDPOINT)}" method="post"' if FORM_ENDPOINT else ' data-mailto="mark@ictevangelist.com"'
+    cf7 = (f'<input type="hidden" name="_wpcf7" value="{CF7_FORM}"><input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f{CF7_FORM}-o1">'
+           f'<input type="hidden" name="_wpcf7_locale" value="en_GB">\n<div class="field cf-turnstile" data-sitekey="{TURNSTILE_KEY}" data-response-field-name="_wpcf7_turnstile_response"></div>\n'
+           ) if CF7_FORM else ""
     body = f"""<section class="page-head"><div class="wrap">
 <p class="eyebrow">We're using it</p>
 <h1>Using IDEAL Thinkers? Tell me</h1>
@@ -1127,18 +1132,18 @@ def build_using_it():
 <div class="field"><label for="f-region">Local authority or region *</label><input id="f-region" name="region" type="text" required></div>
 <fieldset class="field"><legend>Year groups you're teaching it in</legend><div class="chk-row">{years}</div></fieldset>
 <div class="field"><label for="f-heard">How did you hear about IDEAL Thinkers?</label><input id="f-heard" name="heard_about" type="text"></div>
-<div class="field"><label class="chk"><input type="checkbox" name="support" value="Yes" id="f-support"> I'd be interested in support with implementation</label></div>
+<div class="field"><label class="chk"><input type="checkbox" name="support[]" value="Yes" id="f-support"> I'd be interested in support with implementation</label></div>
 <div class="field"><label for="f-email">Email (only if you'd like me to get in touch about support)</label><input id="f-email" name="email" type="email" autocomplete="email"></div>
 <p class="hp" aria-hidden="true"><label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></p>
 <div class="consent-note">
 <p>I'll use your answers to understand which schools are using IDEAL Thinkers and to improve it. If you ask for support and give an email address, I'll use it to get in touch about that, and nothing else. Your answers are never shared or sold.</p>
 <p>The lawful basis is legitimate interests: knowing who uses a free resource so it can be improved and supported. Contacting you about support is based on your consent, which you can withdraw at any time by emailing <a href="mailto:mark@ictevangelist.com">mark@ictevangelist.com</a>. Answers are kept for up to {FORM_RETENTION}, then deleted. More in the <a href="../privacy/">privacy notice</a>.</p>
 </div>
-<p><button class="btn" type="submit">Send</button></p>
+{cf7}<p><button class="btn" type="submit">Send</button></p>
 <p class="form-msg" role="status" aria-live="polite"></p>
 </form>
 </section>
-<script src="../js/forms.js" defer></script>"""
+<script src="../js/forms.js" defer></script>""" + ('\n<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>' if CF7_FORM else "")
     page("using-it/", "We're using IDEAL Thinkers | IDEAL Thinkers",
          "Using IDEAL Thinkers in your school? Let Mark Anderson know, and ask for support with implementation if you'd like it.", body, d)
 
@@ -1316,7 +1321,7 @@ def build_privacy():
         f'<h2 id="updates">Email updates</h2>\n<p>If you sign up for updates, your email address is held by {e(SIGNUP["provider"] or "my email provider")}, which sends the emails for me. '
         'You confirm by clicking a link in the first email (double opt-in), so nobody can sign you up without you knowing. Updates cover new resources and the mapping to the new BCS computing curriculum, '
         'based on your consent. Every email has an unsubscribe link, and unsubscribing removes you.</p>\n') if SIGNUP["action"] else "").replace(
-        "{FORM_SERVICE}", " The form is sent through a form service that stores the answers for me." if FORM_ENDPOINT else " The form opens an email to me, so your answers arrive in my inbox.")
+        "{FORM_SERVICE}", " The form sends your answers through my main website, ictevangelist.com, which emails them to me. To stop spam, the form uses Cloudflare Turnstile, which checks you're a person using information about your browser and connection; it sets no advertising cookies. See <a href=\"https://www.cloudflare.com/turnstile-privacy-policy/\">Cloudflare's Turnstile privacy notice</a>." if FORM_ENDPOINT else " The form opens an email to me, so your answers arrive in my inbox.")
     page("privacy/", "Privacy notice | IDEAL Thinkers",
          "How IDEAL Thinkers handles data: no accounts, forms only when you choose to send one, and analytics only with your consent." if GA_ID else
          "IDEAL Thinkers collects no personal information: no accounts, forms, analytics or cookies of its own.", body, d)
