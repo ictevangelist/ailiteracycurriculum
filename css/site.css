@@ -32,8 +32,8 @@ abbr{text-decoration:none;border-bottom:1px dotted var(--muted);cursor:help}
 .bn-1{color:var(--ink)} .bn-2{color:#1F618D}
 .brand-mark{display:flex;gap:3px}
 .brand-mark .b{width:24px;height:24px;font-size:.8rem}
-.nav{display:flex;flex-wrap:wrap;gap:4px 6px}
-.nav a{text-decoration:none;color:var(--ink);font-weight:500;padding:6px 12px;border-radius:999px}
+.nav{display:flex;flex-wrap:wrap;gap:4px}
+.nav a{text-decoration:none;color:var(--ink);font-weight:500;font-size:.95rem;padding:6px 9px;border-radius:999px}
 .nav a:hover{background:var(--soft)}
 .nav a[aria-current="page"]{background:var(--ink);color:#fff}
 

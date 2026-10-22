@@ -137,7 +137,7 @@ def codes_html(depth, s):
 
 
 NAV = [("", "Home"), ("how-it-works/", "How it works"), ("year-groups/", "Year groups"), ("curriculum-map/", "Curriculum map"),
-       ("progression/", "Progression"), ("assessment/", "Assessment"), ("safety/", "Safety"), ("using-the-lessons/", "Using the lessons"), ("celebrate/", "Celebrating success"), ("parents/", "Parents")]
+       ("progression/", "Progression"), ("assessment/", "Assessment"), ("safety/", "Safety"), ("using-the-lessons/", "Using the lessons"), ("celebrate/", "Celebrate"), ("parents/", "Parents")]
 
 
 def page(path, title, desc, body, depth, year=None, ld=None, crumbs=None):
