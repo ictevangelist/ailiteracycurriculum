@@ -6,6 +6,8 @@ The site (ailiteracycurriculum.ictevangelist.com) is a free primary AI literacy 
 
 Whenever you change the site or its resources, add a dated entry to the What's new data file describing the change, and set the 'updated' date on any lesson whose plan or slides changed. Follow the writing rules in this file.
 
+Only substantial changes go into What's new (Mark, 2026-10-22): new or changed resources, pages and content, and real fixes. Small visual tweaks, such as hover effects or spacing, are left out.
+
 - The What's new data file is `data/whats-new.json`. Add new entries at the top: `date` (YYYY-MM-DD) and any of `new`, `updated` and `fixed`, each a list of `{"text": ..., "link": ...}`. `link` is a site path such as `glossary/` (`""` for the home page). If an entry for today already exists, add to it.
 - A lesson's `updated` field is in `data/curriculum.json` (YYYY-MM-DD, empty when unchanged). When set, the lesson page shows an "Updated" note linking to What's new.
 - The What's new page and the RSS feed (`whats-new/feed.xml`) are rebuilt from the data file by `python3 build.py`; nothing is sent by hand.
