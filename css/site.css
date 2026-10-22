@@ -351,3 +351,7 @@ button.btn{font:inherit;font-weight:600;cursor:pointer}
 :is(.card,.file,.ladder li,.loop li,.phases li,.gl-item,.pn a,.flag,.ican li,.licence-panel,.zoom img):hover{transform:translateY(-3px);box-shadow:0 4px 0 rgba(44,62,80,.06),0 14px 32px rgba(44,62,80,.16)}
 }
 @media (prefers-reduced-motion:reduce){:is(.card,.file,.ladder li,.loop li,.phases li,.gl-item,.pn a,.flag,.ican li,.licence-panel,.zoom img):hover{transform:none}}
+/* buttons lift the same way */
+.btn{transition:transform .18s ease,box-shadow .18s ease,background-color .18s ease,border-color .18s ease,color .18s ease}
+@media (hover:hover){.btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(44,62,80,.22)}}
+@media (prefers-reduced-motion:reduce){.btn:hover{transform:none}}
