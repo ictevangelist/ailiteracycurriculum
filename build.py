@@ -1468,6 +1468,7 @@ def build_404():
     # every site link and asset root-relative, so the page works from a missing URL at any depth
     doc = re.sub(r'((?:href|src)=")(?!https?:|/|#|mailto:|tel:|data:)', r'\1/', doc)
     doc = re.sub(r"<title>.*?</title>", "<title>Page not found | IDEAL Thinkers</title>", doc, count=1)
+    doc = doc.replace(' aria-current="page"', "")  # copied from the home page; no menu item is current here
     open(os.path.join(ROOT, "404.html"), "w", encoding="utf-8").write(doc)
 
 
