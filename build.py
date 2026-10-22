@@ -399,7 +399,7 @@ def build_home():
 <dt>What</dt><dd>A free AI literacy curriculum for primary schools: pupils learn how AI works, when to trust it, and when not to use it.</dd>
 <dt>Who</dt><dd>Years 1 to 6, ages 5 to 11.</dd>
 <dt>What it covers</dt><dd>Five progression strands: how AI works; staying in charge; safe, fair and honest; learning well; design and create. Mapped to the National Curriculum, SEAME and the Primary Digital Cognition Curriculum. <a href="progression/#coverage">See the coverage</a></dd>
-<dt>What you get</dt><dd>36 lessons, six a year, each with a lesson plan and slides, plus a <a href="celebrate/">passport and certificate</a> to celebrate each pupil's progress.</dd>
+<dt>What you get</dt><dd>36 lessons, six a year, each with a plan and slides, plus <a href="parents/#letters">letters for families</a>, <a href="using-the-lessons/#cpd">staff meeting decks</a>, catch-up decks for new classes, printables packs, a <a href="glossary/">glossary</a>, a <a href="transition/">Year 7 handover</a> and a <a href="celebrate/">pupil passport and certificate</a>.</dd>
 <dt>Time</dt><dd>60 minutes a lesson, with a 45 minute version in every plan. The Year 6 IDEAL Challenge runs over two sessions.</dd>
 <dt>What you need</dt><dd>A screen for the slides. No pupil devices or AI accounts.</dd>
 <dt>Who made it</dt><dd>Mark Anderson FCCT: a teacher and senior leader for more than 20 years, and former local authority lead teacher for computing. For the last eleven years, an independent consultant supporting hundreds of schools in the UK and around the world with AI, digital strategy and teaching and learning with technology. Lead AI consultant on the BBC's Bitesize Guide to AI; Founding Fellow of the Chartered College of Teaching; member of the BCS Schools and Colleges Committee; award-winning author of The EdTech Playbook.</dd>
@@ -1465,7 +1465,9 @@ def build_404():
     doc = open(os.path.join(ROOT, "index.html"), encoding="utf-8").read()
     start, end = doc.index("<main id=\"main\">") + len("<main id=\"main\">"), doc.index("</main>")
     doc = doc[:start] + "\n" + body + "\n" + doc[end:]
-    doc = doc.replace('href="css/', 'href="/css/').replace('href="favicon', 'href="/favicon')
+    # every site link and asset root-relative, so the page works from a missing URL at any depth
+    doc = re.sub(r'((?:href|src)=")(?!https?:|/|#|mailto:|tel:|data:)', r'\1/', doc)
+    doc = re.sub(r"<title>.*?</title>", "<title>Page not found | IDEAL Thinkers</title>", doc, count=1)
     open(os.path.join(ROOT, "404.html"), "w", encoding="utf-8").write(doc)
 
 

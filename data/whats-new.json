@@ -57,9 +57,18 @@
     {
      "text": "Accessibility improvements across the site.",
      "link": ""
+    },
+    {
+     "text": "The home page now lists everything that comes with IDEAL Thinkers, under What you get.",
+     "link": ""
     }
    ],
-   "fixed": []
+   "fixed": [
+    {
+     "text": "Links on the page not found page now work from any address.",
+     "link": ""
+    }
+   ]
   },
   {
    "date": "2026-10-18",
