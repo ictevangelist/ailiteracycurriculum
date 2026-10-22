@@ -12,7 +12,7 @@
     ev.preventDefault();
     if (f.website && f.website.value) return;
     if (to) {
-      var lines = [], labels = {name: 'Name', role: 'Role', school: 'School', trust: 'Trust', region: 'Local authority or region',
+      var lines = [], labels = {your_name: 'Name', role: 'Role', school: 'School', trust: 'Trust', region: 'Local authority or region',
         year_groups: 'Year groups', heard_about: 'How I heard about it', support: 'Interested in support', email: 'Email'};
       Object.keys(labels).forEach(function (k) {
         var v = k === 'year_groups' ? checked('year_groups[]') : (k === 'support' ? (checked('support[]') ? 'Yes' : 'No') : (f[k] && f[k].value.trim()));

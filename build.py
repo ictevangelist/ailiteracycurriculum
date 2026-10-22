@@ -20,7 +20,7 @@ GUIDE_URL = "https://docs.google.com/document/d/1ZSazUK-00P8Ne2G3T94l6GCVGfHIuzo
 GA_ID = "G-1X05FYT3MT"  # Google Analytics measurement ID (G-...); empty = no analytics, no banner
 # "We're using it" form (/using-it/): the Contact Form 7 form id on ictevangelist.com ("IDEAL Thinkers: We're using it"),
 # which emails the answers to Mark, with Cloudflare Turnstile as the CAPTCHA. Empty = the form opens an email to Mark instead.
-CF7_FORM = ""
+CF7_FORM = "15937"
 TURNSTILE_KEY = "0x4AAAAAABmdFKT7X_Kbtx_X"  # the ictevangelist.com Turnstile site key (public)
 FORM_ENDPOINT = f"https://ictevangelist.com/wp-json/contact-form-7/v1/contact-forms/{CF7_FORM}/feedback" if CF7_FORM else ""
 FORM_RETENTION = "two years"  # how long form answers are kept; shown on the form and the Privacy page
@@ -1125,7 +1125,7 @@ def build_using_it():
 <section class="wrap">
 <form class="form card" id="using-form"{action}>
 <p class="small">Fields marked * are required. Please don't include any information about pupils.</p>
-<div class="field"><label for="f-name">Your name *</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+<div class="field"><label for="f-name">Your name *</label><input id="f-name" name="your_name" type="text" autocomplete="name" required></div>
 <div class="field"><label for="f-role">Your role *</label><input id="f-role" name="role" type="text" autocomplete="organization-title" required></div>
 <div class="field"><label for="f-school">School *</label><input id="f-school" name="school" type="text" autocomplete="organization" required></div>
 <div class="field"><label for="f-trust">Trust (optional)</label><input id="f-trust" name="trust" type="text"></div>
