@@ -1,0 +1,26 @@
+{
+ "_how": "Changes to IDEAL Thinkers, newest first. Add a new entry at the top: date (YYYY-MM-DD) and any of new, updated, fixed, each a list of {text, link}. link is a site path such as \"glossary/\" (\"\" for the home page). The What's new page and whats-new/feed.xml are built from this file.",
+ "entries": [
+  {
+   "date": "2026-10-22",
+   "new": [
+    {"text": "Parents and carers page, with an editable letter for each year group.", "link": "parents/"},
+    {"text": "Catch-up decks for Years 2 to 6, for classes starting part way through the curriculum.", "link": "year-2/#starting"},
+    {"text": "Staff meeting decks for every unit, with presenter notes.", "link": "using-the-lessons/#cpd"},
+    {"text": "Printables packs: every printable resource for a unit in one file.", "link": "year-1/#print"},
+    {"text": "Glossary of every word taught, with its meaning and picture.", "link": "glossary/"},
+    {"text": "Year 7 transition handover for secondary schools.", "link": "transition/"},
+    {"text": "Celebrating success: a pupil passport, certificate and class list for Canva Bulk Create.", "link": "celebrate/"},
+    {"text": "Contact page, and a form to tell me you are using IDEAL Thinkers.", "link": "contact/"},
+    {"text": "This What's new page and its RSS feed.", "link": "whats-new/"}
+   ],
+   "updated": [
+    {"text": "Lessons can now be fitted into your curriculum however suits your school, as long as they are taught in order.", "link": "using-the-lessons/"},
+    {"text": "Licence page now explains how to ask about commercial use and training.", "link": "licence/"},
+    {"text": "Privacy notice now covers the usage form and Canva.", "link": "privacy/"},
+    {"text": "Accessibility improvements across the site.", "link": ""}
+   ],
+   "fixed": []
+  }
+ ]
+}

@@ -355,3 +355,7 @@ button.btn{font:inherit;font-weight:600;cursor:pointer}
 .btn{transition:transform .18s ease,box-shadow .18s ease,background-color .18s ease,border-color .18s ease,color .18s ease}
 @media (hover:hover){.btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(44,62,80,.22)}}
 @media (prefers-reduced-motion:reduce){.btn:hover{transform:none}}
+.wn-list{display:grid;gap:16px;margin-top:20px}
+.wn-entry h2{margin-top:0}
+.wn-entry h3{font-size:1.05rem;margin:14px 0 .3em}
+.updated-note{margin:.2em 0 .6em;font-size:.9rem;font-weight:600}

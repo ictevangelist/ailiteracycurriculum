@@ -30,7 +30,7 @@ CANVA_CERTIFICATE = "https://canva.link/perm7dii25lbdq2"
 CANVA_CLASS_LIST = "https://canva.link/m2ulzem83fw8b9f"
 FORM_RETENTION = "two years"  # how long form answers are kept; shown on the form and the Privacy page
 LAUNCHED = True  # flip to True at launch: allows indexing and writes the sitemap
-BUILT = "2026-10-21"  # sitemap lastmod
+BUILT = "2026-10-22"  # sitemap lastmod
 LICENCE_URL = "https://creativecommons.org/licenses/by-nc-sa/4.0/"
 AGES = {1: "5-6", 2: "6-7", 3: "7-8", 4: "8-9", 5: "9-10", 6: "10-11"}
 AUTHOR = {"@type": "Person", "@id": SITE + "/#mark", "name": "Mark Anderson", "honorificSuffix": "FCCT",
@@ -179,6 +179,7 @@ def page(path, title, desc, body, depth, year=None, ld=None, crumbs=None):
 {robots}<title>{e(title)}</title>
 <meta name="description" content="{e(desc)}">
 <link rel="canonical" href="{canon}">
+<link rel="alternate" type="application/rss+xml" title="IDEAL Thinkers: What's new" href="{SITE}/whats-new/feed.xml">
 <meta property="og:title" content="{e(title)}">
 <meta property="og:description" content="{e(desc)}">
 <meta property="og:type" content="website">
@@ -215,7 +216,7 @@ def page(path, title, desc, body, depth, year=None, ld=None, crumbs=None):
 <div class="wrap foot-in">
 <p><strong>IDEAL Thinkers</strong> is the AI Literacy strand of the Primary Digital Cognition Curriculum, by <a href="https://ictevangelist.com/">Mark Anderson FCCT</a>.</p>
 <p>IDEAL Thinkers &copy; 2026 Mark Anderson. Free for non commercial use under <a href="{rel(depth, 'licence/')}">CC BY-NC-SA 4.0</a>.</p>
-<p class="foot-links"><a href="{rel(depth, 'progression/')}">Progression and coverage</a> <a href="{rel(depth, 'assessment/')}">Assessment</a> <a href="{rel(depth, 'celebrate/')}">Celebrating success</a> <a href="{rel(depth, 'licence/')}">Licence</a> <a href="{rel(depth, 'privacy/')}">Privacy</a> <a href="{rel(depth, 'contact/')}">Contact</a>{consent_link} <a href="https://ictevangelist.com/">ictevangelist.com</a></p>
+<p class="foot-links"><a href="{rel(depth, 'progression/')}">Progression and coverage</a> <a href="{rel(depth, 'assessment/')}">Assessment</a> <a href="{rel(depth, 'celebrate/')}">Celebrating success</a> <a href="{rel(depth, 'whats-new/')}">What's new</a> <a href="{rel(depth, 'licence/')}">Licence</a> <a href="{rel(depth, 'privacy/')}">Privacy</a> <a href="{rel(depth, 'contact/')}">Contact</a>{consent_link} <a href="https://ictevangelist.com/">ictevangelist.com</a></p>
 </div>
 </footer>
 {consent}</body>
@@ -456,6 +457,7 @@ def build_home():
 <article class="card fw">
 {icon("calendar", "a")}<h3>The new computing curriculum</h3>
 <p>BCS is drafting a revised computing curriculum for first teaching from September 2028, and the Curriculum and Assessment Review recommended that it include AI. It is not yet statutory. IDEAL Thinkers will be mapped against the draft when it is published.</p>
+<p><a href="whats-new/">Follow changes on the What's new page</a></p>
 </article>
 <article class="card fw">
 {icon("people", "l")}<h3>Universal Design for Learning</h3>
@@ -739,7 +741,7 @@ def build_years():
         cpd = res_block("cpd", y["n"], f"Year {y['n']} staff meeting deck")
         extra = ""
         if prints:
-            extra += f'<section class="wrap"><h2>Print the unit</h2><p>Every printable resource from the six lessons, in lesson order, in one pack. Each sheet names its lesson, and the sizes match the lesson decks.</p>{prints}</section>'
+            extra += f'<section class="wrap"><h2 id="print">Print the unit</h2><p>Every printable resource from the six lessons, in lesson order, in one pack. Each sheet names its lesson, and the sizes match the lesson decks.</p>{prints}</section>'
         if cpd:
             extra += f'<section class="wrap"><h2>Teacher CPD</h2><p>A 20 minute staff meeting on this unit, with presenter notes: the big idea, misconceptions, safeguarding and an activity to try. <a href="../using-the-lessons/#cpd">All six staff meeting decks</a></p>{cpd}</section>'
         if y["n"] == 6:
@@ -912,7 +914,7 @@ def build_lessons():
 
             body = f"""<section class="page-head lesson-head"><div class="wrap">
 <p class="eyebrow"><a href="{rel(d, 'curriculum-map/')}">Curriculum map</a> / <a href="{rel(d, y['path'])}">Year {y['n']}: {e(y['title'])}</a></p>
-<p class="kicker">Year {y['n']}, Lesson {l['n']} {ch}{sess}</p>
+<p class="kicker">Year {y['n']}, Lesson {l['n']} {ch}{sess}</p>{f'<p class="updated-note"><a href="{rel(d, "whats-new/")}">Updated {long_date(l["updated"])}</a></p>' if l.get("updated") else ""}
 <div class="yh">{year_icon(y['n'], 44)}<h1>{e(l['title'])}</h1></div>
 <p class="lede">{e(l['big_idea'])}</p>
 <p class="card-meta">{badges(l['ideal'])}<span class="links">Links: {links_text(l['links'])}</span></p>
@@ -1267,6 +1269,63 @@ def build_celebrate():
          "An IDEAL Thinkers passport for every pupil, initialled after each lesson, and a certificate for the whole class made at once with Canva's Bulk Create.", body, d)
 
 
+WHATSNEW = json.load(open(os.path.join(ROOT, "data/whats-new.json"), encoding="utf-8"))
+WN_GROUPS = [("new", "New"), ("updated", "Updated"), ("fixed", "Fixed")]
+
+
+def long_date(iso):
+    y, m, d = (int(x) for x in iso.split("-"))
+    return f"{d} {['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'][m - 1]} {y}"
+
+
+def wn_entries():
+    return sorted(WHATSNEW["entries"], key=lambda x: x["date"], reverse=True)
+
+
+def build_whats_new():
+    d = 1
+    entries = ""
+    for en in wn_entries():
+        groups = "".join(f'<h3>{label}</h3><ul class="list">' + "".join(f'<li><a href="{rel(d, it["link"])}">{e(it["text"])}</a></li>' for it in en[k]) + "</ul>"
+                         for k, label in WN_GROUPS if en.get(k))
+        entries += f'<article class="card wn-entry" id="{en["date"]}"><h2>{long_date(en["date"])}</h2>{groups}</article>\n'
+    body = f"""<section class="page-head"><div class="wrap">
+<p class="eyebrow">What's new</p>
+<h1>What's new</h1>
+<p class="lede">Changes to IDEAL Thinkers, newest first.</p>
+</div></section>
+<section class="wrap">
+<p>If you've made your own copy of a lesson plan, slides or other resource, your copy doesn't update when mine does, so check here and make a fresh copy of anything marked as updated.</p>
+<p>Anyone can follow these changes in an RSS reader, such as Feedly or the reader built into Outlook: add the <a href="feed.xml">What's new RSS feed</a>.</p>
+<div class="wn-list">
+{entries}</div>
+</section>"""
+    page("whats-new/", "What's new | IDEAL Thinkers",
+         "Changes to IDEAL Thinkers, newest first: new and updated resources, pages and fixes, with an RSS feed.", body, d)
+
+
+def build_feed():
+    """whats-new/feed.xml (RSS 2.0), one item per What's new entry, built from data/whats-new.json."""
+    import email.utils, datetime
+    items = ""
+    for en in wn_entries():
+        y, m, dd = (int(x) for x in en["date"].split("-"))
+        when = email.utils.format_datetime(datetime.datetime(y, m, dd, 9, 0, tzinfo=datetime.timezone.utc))
+        desc = "".join(f'<h3>{label}</h3><ul>' + "".join(f'<li><a href="{SITE}/{it["link"]}">{e(it["text"])}</a></li>' for it in en[k]) + "</ul>"
+                       for k, label in WN_GROUPS if en.get(k))
+        url = f"{SITE}/whats-new/#{en['date']}"
+        items += (f"<item><title>IDEAL Thinkers updates, {long_date(en['date'])}</title><link>{url}</link>"
+                  f'<guid isPermaLink="true">{url}</guid><pubDate>{when}</pubDate><description>{e(desc)}</description></item>\n')
+    latest = email.utils.format_datetime(datetime.datetime.now(datetime.timezone.utc)) if not wn_entries() else items.split("<pubDate>")[1].split("</pubDate>")[0]
+    os.makedirs(os.path.join(ROOT, "whats-new"), exist_ok=True)
+    open(os.path.join(ROOT, "whats-new", "feed.xml"), "w", encoding="utf-8").write(
+        '<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel>\n'
+        f"<title>IDEAL Thinkers: What's new</title><link>{SITE}/whats-new/</link>"
+        "<description>Changes to IDEAL Thinkers, the free primary AI literacy curriculum by Mark Anderson FCCT.</description>"
+        f'<language>en-gb</language><lastBuildDate>{latest}</lastBuildDate><atom:link href="{SITE}/whats-new/feed.xml" rel="self" type="application/rss+xml"/>\n'
+        f"{items}</channel></rss>\n")
+
+
 GLOSSARY = json.load(open(os.path.join(ROOT, "data/glossary.json"), encoding="utf-8"))
 
 
@@ -1435,7 +1494,7 @@ def build_llms():
          f"- [How it works]({SITE}/how-it-works/)", f"- [The AI Loop]({SITE}/how-it-works/ai-loop/)", f"- [IDEAL]({SITE}/how-it-works/ideal/)",
          f"- [Learning Well]({SITE}/how-it-works/learning-well/)", f"- [Every lesson]({SITE}/how-it-works/every-lesson/)",
          f"- [Curriculum map]({SITE}/curriculum-map/)", f"- [Safety and safeguarding]({SITE}/safety/)", f"- [Progression]({SITE}/progression/)",
-         f"- [Assessment]({SITE}/assessment/)", f"- [Using the lessons]({SITE}/using-the-lessons/)", f"- [Licence]({SITE}/licence/)", f"- [Glossary]({SITE}/glossary/)", f"- [Year 7 transition handover]({SITE}/transition/)", f"- [Celebrating success: passport and certificate]({SITE}/celebrate/)", f"- [For parents and carers]({SITE}/parents/)", f"- [Contact]({SITE}/contact/)", ""]
+         f"- [Assessment]({SITE}/assessment/)", f"- [Using the lessons]({SITE}/using-the-lessons/)", f"- [Licence]({SITE}/licence/)", f"- [Glossary]({SITE}/glossary/)", f"- [Year 7 transition handover]({SITE}/transition/)", f"- [Celebrating success: passport and certificate]({SITE}/celebrate/)", f"- [What's new]({SITE}/whats-new/)", f"- [For parents and carers]({SITE}/parents/)", f"- [Contact]({SITE}/contact/)", ""]
     for y in DATA["years"]:
         t.append(f"## Year {y['n']}: {y['title']} (ages {AGES[y['n']]})")
         t.append(f"Big question: {y['big_question']} [Unit overview]({SITE}/{y['path']})")
@@ -1462,6 +1521,8 @@ if __name__ == "__main__":
     build_glossary()
     build_transition()
     build_celebrate()
+    build_whats_new()
+    build_feed()
     build_using_it()
     build_404()
     build_meta()
