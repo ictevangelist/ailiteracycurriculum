@@ -739,7 +739,7 @@ def build_years():
         cpd = res_block("cpd", y["n"], f"Year {y['n']} staff meeting deck")
         extra = ""
         if prints:
-            extra += f'<section class="wrap"><h2>Print the half term</h2><p>Every printable resource from the six lessons, in lesson order, in one pack. Each sheet names its lesson, and the sizes match the lesson decks.</p>{prints}</section>'
+            extra += f'<section class="wrap"><h2>Print the unit</h2><p>Every printable resource from the six lessons, in lesson order, in one pack. Each sheet names its lesson, and the sizes match the lesson decks.</p>{prints}</section>'
         if cpd:
             extra += f'<section class="wrap"><h2>Teacher CPD</h2><p>A 20 minute staff meeting on this unit, with presenter notes: the big idea, misconceptions, safeguarding and an activity to try. <a href="../using-the-lessons/#cpd">All six staff meeting decks</a></p>{cpd}</section>'
         if y["n"] == 6:
@@ -1076,10 +1076,10 @@ def build_using():
 <p>Using IDEAL Thinkers in your school? <a href="../using-it/">Tell me you're using it</a>, and ask for support with implementation if you'd like it.</p>
 <h2>Starting out</h2>
 <ol class="list">
-<li><strong>Where it fits.</strong> Teach each year's six lessons in order, as one half term of computing. Lessons with RSHE links, such as Year 4 Lesson 2, can be taught in RSHE time, but keep them in sequence.</li>
+<li><strong>Where it fits.</strong> The six lessons are planned as a half-term block, but you can fit them into your curriculum however suits your school, as long as you teach them in order. Lessons with RSHE links, such as Year 4 Lesson 2, can be taught in RSHE time, but keep them in sequence.</li>
 <li><strong>Starting above Year 1.</strong> In the first year, pupils in Years 2 to 6 have not met the earlier units. Before Lesson 1, introduce Bleep, the IDEAL habits and the IDEAL moment routine (using your key stage's wording) and the AI Loop, then the ideas that year's unit builds on. How much that takes depends on the year group: each year page lists the slides to use and roughly how long to allow, under "Starting Year N with pupils new to IDEAL Thinkers" (<a href="../year-2/#starting">Year 2</a>, <a href="../year-3/#starting">Year 3</a>, <a href="../year-4/#starting">Year 4</a>, <a href="../year-5/#starting">Year 5</a>, <a href="../year-6/#starting">Year 6</a>). Treat words marked "Already taught" as new. A short introduction gives pupils the words and routines, not the years of practice behind them, so expect to revisit these ideas.</li>
 <li><strong>What to assume.</strong> Assume no AI knowledge beyond the earlier units. Children's experience at home varies widely; no lesson depends on it, and you never need to ask which apps they use.</li>
-<li><strong>Preparation.</strong> Read the six plans at the start of the half term. First time through, allow up to twice the stated preparation time for printing and cutting, and keep each lesson's cards in an envelope for next year. Year 5 Lesson 6 needs clean recycling collected in advance, and Year 6 Lesson 6 needs a small panel invited.</li>
+<li><strong>Preparation.</strong> Read the six plans before you start the unit. First time through, allow up to twice the stated preparation time for printing and cutting, and keep each lesson's cards in an envelope for next year. Year 5 Lesson 6 needs clean recycling collected in advance, and Year 6 Lesson 6 needs a small panel invited.</li>
 <li><strong>Subject knowledge.</strong> Each plan's Teacher subject knowledge section is all you need; read it the day before. Practise two things beforehand: building the Scratch program (Year 5 Lesson 1) and running Teachable Machine (Year 5 Lesson 6).</li>
 <li><strong>New to AI tools?</strong> 32 of the 36 lessons use no AI tool at all. The four demonstration lessons give the exact steps and words to type, and each can be taught with no tool.</li>
 <li><strong>Devices and school policy.</strong> Every lesson needs only a screen for the slides. If your school has not approved a suitable tool, use the prepared results or the unplugged version. Never use a personal account.</li>
@@ -1168,7 +1168,7 @@ def build_parents():
 <div class="split"><div>
 <h2>What IDEAL Thinkers is</h2>
 <p>IDEAL Thinkers is a free curriculum that helps primary schools teach children about AI, from Year 1 to Year 6. AI, or artificial intelligence, is a kind of computer program that makes guesses. It chooses the next video in an app, suggests the next word in a message, and answers questions in a friendly voice.</p>
-<p>Each year group has six lessons, taught over half a term. Children learn how AI works, when to trust it and when not to, how to keep information private, and how to keep doing their own thinking. The lessons use games, cards, drawing and talk. Children do not use AI tools themselves and never need an account. When it helps to show a real AI tool, the teacher shows it on the class screen.</p>
+<p>Each year group has six lessons, taught in order, over half a term or spread across the year. Children learn how AI works, when to trust it and when not to, how to keep information private, and how to keep doing their own thinking. The lessons use games, cards, drawing and talk. Children do not use AI tools themselves and never need an account. When it helps to show a real AI tool, the teacher shows it on the class screen.</p>
 <p>IDEAL is the name of five habits children practise: Informed, Deliberate, Ethical, Accurate and Learning. In Year 1 they sound like this: know what it is, use it on purpose, be fair and kind, check it, and keep learning.</p>
 </div>
 {chatty("chatty chatty-split")}</div>
