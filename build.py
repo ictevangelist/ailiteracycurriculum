@@ -212,6 +212,13 @@ def page(path, title, desc, body, depth, year=None, ld=None, crumbs=None):
 """
     if PREVIEW:
         doc = re.sub(r'href="((?:\.\./)*[^":#]*/)"', r'href="\1index.html"', doc).replace('href=""', 'href="index.html"')
+    # links to other sites carry UTM tags saying which page the click came from (not Google Docs or Drive, or DOIs)
+    camp = path.strip("/").replace("/", "-") or "home"
+    def utm(m):
+        url, _, frag = m.group(2).partition("#")
+        url += ("&amp;" if "?" in url else "?") + f"utm_source=ideal-thinkers&amp;utm_medium=referral&amp;utm_campaign={camp}"
+        return m.group(1) + url + ("#" + frag if frag else "") + '"'
+    doc = re.sub(r'(<a [^>]*href=")(https?://(?!ailiteracycurriculum\.ictevangelist\.com|docs\.google\.com|drive\.google\.com|doi\.org)[^"]*)"', utm, doc)
     # links to other sites open in a new tab; file downloads (Google export links) stay put
     doc = re.sub(r'(<a [^>]*href="https?://(?!ailiteracycurriculum\.ictevangelist\.com)(?![^"]*export)[^"]*")(?![^>]*target=)',
                  r'\1 target="_blank" rel="noopener"', doc)
