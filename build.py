@@ -212,8 +212,8 @@ def page(path, title, desc, body, depth, year=None, ld=None, crumbs=None):
 """
     if PREVIEW:
         doc = re.sub(r'href="((?:\.\./)*[^":#]*/)"', r'href="\1index.html"', doc).replace('href=""', 'href="index.html"')
-    # Google Drive folders, copies and previews open in a new tab; downloads stay put
-    doc = re.sub(r'(<a [^>]*href="https://(?:drive|docs)\.google\.com/(?:drive/folders/[^"]*|[^"]*/(?:copy|preview))")',
+    # links to other sites open in a new tab; file downloads (Google export links) stay put
+    doc = re.sub(r'(<a [^>]*href="https?://(?!ailiteracycurriculum\.ictevangelist\.com)(?![^"]*export)[^"]*")(?![^>]*target=)',
                  r'\1 target="_blank" rel="noopener"', doc)
     out = os.path.join(OUT, path, "index.html") if path else os.path.join(OUT, "index.html")
     os.makedirs(os.path.dirname(out), exist_ok=True)
