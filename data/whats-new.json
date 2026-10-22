@@ -4,22 +4,140 @@
   {
    "date": "2026-10-22",
    "new": [
-    {"text": "Parents and carers page, with an editable letter for each year group.", "link": "parents/"},
-    {"text": "Catch-up decks for Years 2 to 6, for classes starting part way through the curriculum.", "link": "year-2/#starting"},
-    {"text": "Staff meeting decks for every unit, with presenter notes.", "link": "using-the-lessons/#cpd"},
-    {"text": "Printables packs: every printable resource for a unit in one file.", "link": "year-1/#print"},
-    {"text": "Glossary of every word taught, with its meaning and picture.", "link": "glossary/"},
-    {"text": "Year 7 transition handover for secondary schools.", "link": "transition/"},
-    {"text": "Celebrating success: a pupil passport, certificate and class list for Canva Bulk Create.", "link": "celebrate/"},
-    {"text": "Contact page, and a form to tell me you are using IDEAL Thinkers.", "link": "contact/"},
-    {"text": "This What's new page and its RSS feed.", "link": "whats-new/"}
+    {
+     "text": "Parents and carers page, with an editable letter for each year group.",
+     "link": "parents/"
+    },
+    {
+     "text": "Catch-up decks for Years 2 to 6, for classes starting part way through the curriculum.",
+     "link": "year-2/#starting"
+    },
+    {
+     "text": "Staff meeting decks for every unit, with presenter notes.",
+     "link": "using-the-lessons/#cpd"
+    },
+    {
+     "text": "Printables packs: every printable resource for a unit in one file.",
+     "link": "year-1/#print"
+    },
+    {
+     "text": "Glossary of every word taught, with its meaning and picture.",
+     "link": "glossary/"
+    },
+    {
+     "text": "Year 7 transition handover for secondary schools.",
+     "link": "transition/"
+    },
+    {
+     "text": "Celebrating success: a pupil passport, certificate and class list for Canva Bulk Create.",
+     "link": "celebrate/"
+    },
+    {
+     "text": "Contact page, and a form to tell me you are using IDEAL Thinkers.",
+     "link": "contact/"
+    },
+    {
+     "text": "This What's new page and its RSS feed.",
+     "link": "whats-new/"
+    }
    ],
    "updated": [
-    {"text": "Lessons can now be fitted into your curriculum however suits your school, as long as they are taught in order.", "link": "using-the-lessons/"},
-    {"text": "Licence page now explains how to ask about commercial use and training.", "link": "licence/"},
-    {"text": "Privacy notice now covers the usage form and Canva.", "link": "privacy/"},
-    {"text": "Accessibility improvements across the site.", "link": ""}
+    {
+     "text": "Lessons can now be fitted into your curriculum however suits your school, as long as they are taught in order.",
+     "link": "using-the-lessons/"
+    },
+    {
+     "text": "Licence page now explains how to ask about commercial use and training.",
+     "link": "licence/"
+    },
+    {
+     "text": "Privacy notice now covers the usage form and Canva.",
+     "link": "privacy/"
+    },
+    {
+     "text": "Accessibility improvements across the site.",
+     "link": ""
+    }
    ],
+   "fixed": []
+  },
+  {
+   "date": "2026-10-18",
+   "new": [
+    {
+     "text": "Every lesson page now has Preparing to teach, Before teaching this lesson and What to look for.",
+     "link": "year-1/does-it-guess/"
+    },
+    {
+     "text": "Every year page now has How this unit builds, and a start box for classes new to IDEAL Thinkers.",
+     "link": "year-3/#starting"
+    },
+    {
+     "text": "Privacy notice, linked from every page.",
+     "link": "privacy/"
+    }
+   ],
+   "updated": [
+    {
+     "text": "Every lesson plan now has a Before teaching this lesson table that matches its lesson page.",
+     "link": "year-groups/"
+    },
+    {
+     "text": "Each IDEAL Challenge is now described as the end of unit assessment.",
+     "link": "assessment/"
+    },
+    {
+     "text": "Using the lessons now gives one approach for classes starting above Year 1.",
+     "link": "using-the-lessons/"
+    }
+   ],
+   "fixed": []
+  },
+  {
+   "date": "2026-10-16",
+   "new": [],
+   "updated": [
+    {
+     "text": "All 36 lesson plans and slide decks revised after a full review, with matching I can statements and exit tickets, a 45 minute version in every plan, and teacher notes by slide in the plans.",
+     "link": "year-groups/"
+    },
+    {
+     "text": "Printable cards in Years 1 and 2 now have pictures, and pupil card text is larger across the decks.",
+     "link": "year-1/"
+    },
+    {
+     "text": "The Year 5 Lesson 2 training and test cards now have drawings of each creature.",
+     "link": "year-5/train-the-sorter/"
+    },
+    {
+     "text": "The road map and posters rebuilt to match the revised lessons.",
+     "link": "curriculum-map/"
+    },
+    {
+     "text": "Home page reorganised, starting with At a glance.",
+     "link": ""
+    }
+   ],
+   "fixed": [
+    {
+     "text": "Garbled characters in six lesson files.",
+     "link": "year-groups/"
+    }
+   ]
+  },
+  {
+   "date": "2026-10-14",
+   "new": [
+    {
+     "text": "IDEAL Thinkers launched: 36 lessons from Year 1 to Year 6, each with a lesson plan and slides.",
+     "link": "year-groups/"
+    },
+    {
+     "text": "The road map and A4 posters.",
+     "link": "using-the-lessons/"
+    }
+   ],
+   "updated": [],
    "fixed": []
   }
  ]
