@@ -1296,7 +1296,7 @@ def build_whats_new():
 </div></section>
 <section class="wrap">
 <p>If you've made your own copy of a lesson plan, slides or other resource, your copy doesn't update when mine does, so check here and make a fresh copy of anything marked as updated.</p>
-<p>Anyone can follow these changes in an RSS reader, such as Feedly or the reader built into Outlook: add the <a href="feed.xml">What's new RSS feed</a>.</p>
+<p>Anyone can follow these changes in an RSS reader, such as Feedly: add the <a href="feed.xml">What's new RSS feed</a>.</p>
 <div class="wn-list">
 {entries}</div>
 </section>"""
