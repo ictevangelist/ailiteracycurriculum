@@ -4,7 +4,7 @@
 Run: python3 build.py   (writes the pages into this folder)
 All internal links are relative, so the site works on GitHub Pages and in previews.
 """
-import html, json, os, re
+import hashlib, html, json, os, re
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 OUT = os.environ.get("OUT", ROOT)
@@ -140,6 +140,12 @@ NAV = [("", "Home"), ("how-it-works/", "How it works"), ("year-groups/", "Year g
        ("progression/", "Progression"), ("assessment/", "Assessment"), ("safety/", "Safety"), ("using-the-lessons/", "Using the lessons"), ("celebrate/", "Celebrate"), ("parents/", "Parents")]
 
 
+def asset_v(f, _cache={}):
+    if f not in _cache:
+        _cache[f] = hashlib.md5(open(os.path.join(ROOT, f), "rb").read()).hexdigest()[:8]
+    return _cache[f]
+
+
 def page(path, title, desc, body, depth, year=None, ld=None, crumbs=None):
     canon = SITE + "/" + path
     graph = list(ld or [])
@@ -227,6 +233,8 @@ def page(path, title, desc, body, depth, year=None, ld=None, crumbs=None):
     # links to other sites open in a new tab; file downloads (Google export links) stay put
     doc = re.sub(r'(<a [^>]*href="https?://(?!ailiteracycurriculum\.ictevangelist\.com)(?![^"]*export)[^"]*")(?![^>]*target=)',
                  r'\1 target="_blank" rel="noopener"', doc)
+    # stylesheet and scripts carry a version from their contents, so a browser never pairs a new page with an old cached file
+    doc = re.sub(r'((?:href|src)="(?:\.\./)*)((?:css|js)/[a-z-]+\.(?:css|js))"', lambda m: f'{m.group(1)}{m.group(2)}?v={asset_v(m.group(2))}"', doc)
     out = os.path.join(OUT, path, "index.html") if path else os.path.join(OUT, "index.html")
     os.makedirs(os.path.dirname(out), exist_ok=True)
     open(out, "w", encoding="utf-8").write(doc)
