@@ -345,3 +345,9 @@ button.btn{font:inherit;font-weight:600;cursor:pointer}
 .zoom-box::backdrop{background:rgba(44,62,80,.85)}
 .zoom-box img{display:block;max-width:96vw;max-height:88vh;width:auto;height:auto;border-radius:var(--r);background:#fff}
 .zoom-close{display:block;margin:0 0 8px auto}
+/* rounded boxes lift a little on hover, site-wide */
+.card,.file,.ladder li,.loop li,.phases li,.gl-item,.pn a,.flag,.ican li,.licence-panel,.zoom img{transition:transform .18s ease,box-shadow .18s ease}
+@media (hover:hover){
+:is(.card,.file,.ladder li,.loop li,.phases li,.gl-item,.pn a,.flag,.ican li,.licence-panel,.zoom img):hover{transform:translateY(-3px);box-shadow:0 4px 0 rgba(44,62,80,.06),0 14px 32px rgba(44,62,80,.16)}
+}
+@media (prefers-reduced-motion:reduce){:is(.card,.file,.ladder li,.loop li,.phases li,.gl-item,.pn a,.flag,.ican li,.licence-panel,.zoom img):hover{transform:none}}
