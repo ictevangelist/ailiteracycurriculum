@@ -336,3 +336,6 @@ button.btn{font:inherit;font-weight:600;cursor:pointer}
 .shot{margin:0}
 .shot img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:var(--r);box-shadow:0 6px 24px rgba(44,62,80,.12)}
 .shots-one{max-width:900px}
+.split{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:32px;align-items:center}
+.chatty-split{width:min(100%,200px);justify-self:center}
+@media (max-width:700px){.split{grid-template-columns:1fr;gap:8px}.chatty-split{width:110px}}

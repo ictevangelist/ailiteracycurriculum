@@ -1157,10 +1157,13 @@ def build_parents():
 </div></section>
 <section class="wrap">
 <p>Everything on this page is written so you can share it with families, in a newsletter, on your school website or at a parents' evening. The <a href="#letters">letters for each year group</a> are at the bottom of the page.</p>
+<div class="split"><div>
 <h2>What IDEAL Thinkers is</h2>
 <p>IDEAL Thinkers is a free curriculum that helps primary schools teach children about AI, from Year 1 to Year 6. AI, or artificial intelligence, is a kind of computer program that makes guesses. It chooses the next video in an app, suggests the next word in a message, and answers questions in a friendly voice.</p>
 <p>Each year group has six lessons, taught over half a term. Children learn how AI works, when to trust it and when not to, how to keep information private, and how to keep doing their own thinking. The lessons use games, cards, drawing and talk. Children do not use AI tools themselves and never need an account. When it helps to show a real AI tool, the teacher shows it on the class screen.</p>
 <p>IDEAL is the name of five habits children practise: Informed, Deliberate, Ethical, Accurate and Learning. In Year 1 they sound like this: know what it is, use it on purpose, be fair and kind, check it, and keep learning.</p>
+</div>
+{chatty("chatty chatty-split")}</div>
 <h2>The AI Loop</h2>
 <p>Children use the AI Loop to explain how AI that learns from examples works. It has four steps.</p>
 {loop_strip()}
