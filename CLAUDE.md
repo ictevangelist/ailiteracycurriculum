@@ -26,3 +26,4 @@ Only substantial changes go into What's new (Mark, 2026-10-22): new or changed r
 - Match the existing design system. Exo 2 for headings, Poppins for everything else.
 - WCAG 2.2 AA contrast; keyboard accessible; works at 360px wide.
 - Never cap line length on site copy: no max-width in ch on paragraphs, ledes or subtitles.
+- Design and uniformity (Mark, 2026-10-22): when changing any element, keep it uniform with its siblings. If one box, card, button or text block must change size, position or style, change the matching ones the same way, and check the whole layout visually before calling it done. This applies to the lesson slides and documents too.
