@@ -106,7 +106,7 @@ def testimonials(placement):
         pts = ('<ul class="ticks">' + "".join(f"<li>{e(x)}</li>" for x in t["points"]) + "</ul>") if t.get("points") else ""
         who = ", ".join(e(x) for x in (t.get("role"), t.get("school"), t.get("region")) if x)
         figs += f'<figure class="card quote">\n<blockquote>\n{paras}\n{pts}\n</blockquote>\n<figcaption><strong>{e(t["name"])}</strong>, {who}</figcaption>\n</figure>\n'
-    return f'<section class="wrap quotes">\n<h2>{e(head)}</h2>\n{figs}</section>'
+    return f'<section class="wrap quotes quotes-{placement}">\n' + (f'<h2>{e(head)}</h2>\n' if head else "") + f'{figs}</section>'
 
 DISCLOSURE = {"Y1L6", "Y3L1", "Y4L6", "Y5L3", "Y6L6"}  # can prompt disclosures (Guide, Safeguarding)
 
@@ -393,6 +393,7 @@ def build_home():
 <div class="hero-art">{chatty("chatty chatty-hero", "Chatty, the class chatbot from the Year 4 lessons")}</div>
 </div>
 </section>
+{testimonials("home-hero")}
 <section class="wrap glance-sec">
 <h2>At a glance</h2>
 <dl class="glance">

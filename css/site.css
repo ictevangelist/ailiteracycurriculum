@@ -360,3 +360,6 @@ button.btn{font:inherit;font-weight:600;cursor:pointer}
 .wn-entry h2{margin-top:0}
 .wn-entry h3{font-size:1.05rem;margin:14px 0 .3em}
 .updated-note{margin:.2em 0 .6em;font-size:.9rem;font-weight:600}
+.quotes-home-hero{margin-top:28px}
+.quotes-home-hero .quote blockquote{font-size:1.25rem;line-height:1.6}
+@media (max-width:700px){.quotes-home-hero .quote blockquote{font-size:1.1rem}}

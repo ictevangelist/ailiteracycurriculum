@@ -1,27 +1,55 @@
 {
- "_how_to_add": "Copy the _template entry into the testimonials list and fill it in. Only add words people have given permission to use. quote is a list of paragraphs; points is an optional list shown as ticks under the quote. placement is one or more of: homepage, year-1, year-2, year-3, year-4, year-5, year-6, safety, using-the-lessons. A page shows its section only when at least one entry has that placement. Leave region blank if not wanted.",
+ "_how_to_add": "Copy the _template entry into the testimonials list and fill it in. Only add words people have given permission to use. quote is a list of paragraphs; points is an optional list shown as ticks under the quote. placement is one or more of: home-hero (a standalone quote straight after the home page hero, no heading), homepage, year-1, year-2, year-3, year-4, year-5, year-6, safety, using-the-lessons. A page shows its section only when at least one entry has that placement. Leave region blank if not wanted.",
  "_template": {
-  "quote": ["The words exactly as given."],
+  "quote": [
+   "The words exactly as given."
+  ],
   "points": [],
   "name": "First Last",
   "role": "Role",
   "school": "School or trust",
   "region": "Region",
-  "placement": ["homepage"]
+  "placement": [
+   "homepage"
+  ]
  },
  "headings": {
-  "homepage": "From a headteacher"
+  "homepage": "From a headteacher",
+  "home-hero": ""
  },
  "default_heading": "What schools say",
  "testimonials": [
   {
-   "quote": ["For me as a headteacher it looks:"],
-   "points": ["pedagogically well thought through", "progressive", "comprehensive", "clear, for all staff to be able to pick up and use", "really relevant for the children and the world they are living and growing up in"],
+   "quote": [
+    "Finding a tool that is a one-stop shop for all things AI literacy is incredibly helpful, but finding one that makes AI topics accessible for the everyday educator is invaluable. Right now, AI literacy is so important, but our educators are nervous about teaching a subject they feel they don't fully understand yet. The IDEAL Thinkers curriculum not only gives them all the tools they need to teach the lessons, but also provides essential learning resources for both educators and parents. And the best part is, no active AI use is required, meaning students are beginning to understand the how and why of AI whether or not schools have approved AI use for students yet."
+   ],
+   "points": [],
+   "name": "Ashley Bryant",
+   "role": "Director of IT Innovation (Teaching and Learning)",
+   "school": "Frankfurt International School",
+   "region": "Germany",
+   "placement": [
+    "home-hero"
+   ]
+  },
+  {
+   "quote": [
+    "For me as a headteacher it looks:"
+   ],
+   "points": [
+    "pedagogically well thought through",
+    "progressive",
+    "comprehensive",
+    "clear, for all staff to be able to pick up and use",
+    "really relevant for the children and the world they are living and growing up in"
+   ],
    "name": "Tim Clarke",
    "role": "Headteacher",
    "school": "Cornerstone CE Primary School",
    "region": "Hampshire",
-   "placement": ["homepage"]
+   "placement": [
+    "homepage"
+   ]
   }
  ]
 }
