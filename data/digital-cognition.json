@@ -1,0 +1,17 @@
+{
+ "_how": "The Primary Digital Cognition Curriculum (The EdTech Playbook, Figure 4.3), Mark Anderson's own wording. Shown on the home page under Where IDEAL Thinkers comes from.",
+ "strands": [
+  {"name": "Digital Citizenship", "colour": "e",
+   "ks1": ["Understanding basic online safety rules", "Creating safe online profiles", "Understanding appropriate online behaviour", "Basic understanding of ownership of digital content", "Recognising the importance of keeping information private"],
+   "ks2": ["Recognising online risks and knowing how to report issues", "Managing digital footprints and online reputation", "Understanding cyberbullying and how to address it", "Understanding copyright, fair use, and Creative Commons", "Creating strong passwords and recognising phishing scams", "Understanding deep fakes and AI in TV, media, and social media"]},
+  {"name": "Digital Literacy", "colour": "d",
+   "ks1": ["Basic skills in using digital devices", "Simple content creation (e.g., digital drawing, use of the camera etc.)", "Identifying reliable sources and basic searching", "Using digital platforms to share ideas", "Understanding polite online communication"],
+   "ks2": ["Proficient use of a variety of digital tools and software", "Creating and editing multimedia content (e.g., presentations, videos)", "Evaluating the credibility of online information and effective searching", "Collaborating on projects using online tools", "Practising respectful and constructive online communication", "Knowing how to use technology to support learning"]},
+  {"name": "Computer Science", "colour": "a",
+   "ks1": ["Introduction to simple programming languages (e.g., Scratchjr)", "Understanding simple algorithms (e.g., sequences)", "Understanding what data is and simple ways to represent it", "Basic understanding of how computers connect and communicate", "Developing problem-solving skills through patterns"],
+   "ks2": ["Developing programs using visual languages (e.g., Scratch)", "Designing and debugging programs using logical reasoning", "Using data structures such as arrays and tables", "Exploring internet safety and how the web works", "Applying computational thinking to solve complex problems"]},
+  {"name": "AI Literacy", "colour": "i", "ideal": true,
+   "ks1": ["Understanding what AI is", "Identifying common AI applications (e.g., voice assistants)", "Basic understanding of ethical behaviour with AI tools", "Simple AI games and activities", "Creating AI images using simple tools"],
+   "ks2": ["Basic concepts of machine learning and algorithms", "Exploring real-world AI applications in various fields", "Discussing bias in AI and its implications", "Creating basic AI projects and experiments", "Learning prompt crafting for AI tools", "Understanding the role of AI in automating tasks and enhancing productivity", "Ethical considerations, including AI bias and transparency"]}
+ ]
+}

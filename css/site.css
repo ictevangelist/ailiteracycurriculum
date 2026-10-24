@@ -363,3 +363,18 @@ button.btn{font:inherit;font-weight:600;cursor:pointer}
 .quotes-home-hero{margin-top:28px}
 .quotes-home-hero .quote blockquote{font-size:1.25rem;line-height:1.6}
 @media (max-width:700px){.quotes-home-hero .quote blockquote{font-size:1.1rem}}
+.pdc-fig{margin:18px 0 22px}
+.pdc-grid{gap:14px}
+.pdc{padding:0;overflow:hidden;font-size:.92rem}
+.pdc h3{margin:0;padding:12px 16px;color:#fff;font-size:1.1rem}
+.pdc-e h3{background:var(--e)} .pdc-d h3{background:var(--d)} .pdc-a h3{background:var(--a)} .pdc-i h3{background:var(--i)}
+.pdc-ks{margin:12px 16px 4px;font-weight:700;font-size:.85rem}
+.pdc ul{margin:0 16px 4px;padding-left:1.1em}
+.pdc ul:last-child{margin-bottom:16px}
+.pdc li{margin-bottom:.25em}
+.pdc-ideal{border:2px solid var(--i)}
+.pdc-tag{margin:10px 16px 0;display:inline-block;background:var(--i-t,#EBF5FB);color:var(--i);font-weight:700;font-size:.8rem;padding:3px 10px;border-radius:999px}
+.pdc-fig figcaption{margin-top:8px}
+.pdc-grid{grid-template-columns:minmax(0,1fr)}
+@media (min-width:600px){.pdc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1100px){.pdc-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
