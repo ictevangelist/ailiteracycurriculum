@@ -421,7 +421,7 @@ def build_home():
 <dl class="glance">
 <dt>What</dt><dd>A free AI literacy curriculum for primary schools: pupils learn how AI works, when to trust it, and when not to use it.</dd>
 <dt>Who</dt><dd>Years 1 to 6 in England, ages 5 to 11: US Kindergarten to Grade 5. <a href="#ages">Ages and grades for each year</a></dd>
-<dt>What it covers</dt><dd>Five progression strands: how AI works; staying in charge; safe, fair and honest; learning well; design and create. Mapped to the National Curriculum, SEAME and the Primary Digital Cognition Curriculum. <a href="progression/#coverage">See the coverage</a></dd>
+<dt>What it covers</dt><dd>Five progression strands: how AI works; staying in charge; safe, fair and honest; learning well; design and create. Mapped to the National Curriculum, the ISTE Standards for Students, Common Sense Education, SEAME and the Primary Digital Cognition Curriculum. <a href="progression/#coverage">See the coverage</a></dd>
 <dt>What you get</dt><dd>36 lessons, six a year, each with a plan and slides, plus <a href="parents/#letters">letters for families</a>, <a href="using-the-lessons/#cpd">staff meeting decks</a>, catch-up decks for new classes, printables packs, a <a href="glossary/">glossary</a>, a <a href="transition/">Year 7 handover</a> and a <a href="celebrate/">pupil passport and certificate</a>.</dd>
 <dt>Time</dt><dd>60 minutes a lesson, with a 45 minute version in every plan. The Year 6 IDEAL Challenge runs over two sessions.</dd>
 <dt>What you need</dt><dd>A screen for the slides. No pupil devices or AI accounts.</dd>
@@ -445,7 +445,7 @@ def build_home():
 <h2>Ages, year groups and grades</h2>
 <p>IDEAL Thinkers uses year groups from England. You know the children in front of you and what they can do at each age and phase, so match each unit by age to your own system.</p>
 <div class="table-wrap"><table><thead><tr><th scope="col">Year group (England)</th><th scope="col">Ages</th><th scope="col">US grade</th><th scope="col">Unit</th></tr></thead><tbody>{AGE_ROWS}</tbody></table></div>
-<p>Nothing in the lessons depends on being in England. They're unplugged, pupils never need an AI account, and the National Curriculum mapping sits alongside the Primary Digital Cognition Curriculum, SEAME and UDL.</p>
+<p>Nothing in the lessons depends on being in England. They're unplugged, pupils never need an AI account, and the National Curriculum mapping sits alongside the ISTE Standards for Students, Common Sense Education, the Primary Digital Cognition Curriculum, SEAME and UDL.</p>
 </section>
 <section class="wrap home-map">
 <h2>The road map</h2>
@@ -463,7 +463,7 @@ def build_home():
 <li><h3>The habits they build</h3><p>IDEAL: Informed, Deliberate, Ethical, Accurate, Learning. Learning Well is how the L is taught: Try it first, Hint not answer, then Plan, use, prove. <a href="how-it-works/ideal/">IDEAL</a> <a href="how-it-works/learning-well/">Learning Well</a></p></li>
 <li><h3>The tools for teaching it</h3><p>The AI Loop, a simple model of how AI that learns from examples works, and STAIR, a prompting scaffold for Years 5 and 6. <a href="how-it-works/ai-loop/">The AI Loop</a></p></li>
 <li><h3>How a lesson runs</h3><p>Seven phases in every lesson, for teachers to plan with. <a href="how-it-works/every-lesson/">Every lesson</a></p></li>
-<li><h3>What it lines up with</h3><p>The Primary Digital Cognition Curriculum, the National Curriculum, SEAME, UDL and cognitive science, below.</p></li>
+<li><h3>What it lines up with</h3><p>The Primary Digital Cognition Curriculum, the National Curriculum, the ISTE Standards for Students, Common Sense Education, SEAME, UDL and cognitive science, below.</p></li>
 </ol>
 <h3>The AI Loop: Learn, Spot, Guess, Check</h3>
 {loop_strip()}
@@ -485,7 +485,15 @@ def build_home():
 </article>
 <article class="card fw">
 {icon("landmark", "d")}<h3>The National Curriculum for computing (England)</h3>
-<p>Taught directly: using technology safely, respectfully and responsibly; keeping personal information private and knowing where to go for help; recognising common uses of information technology beyond school (KS1); reporting concerns, being discerning in evaluating digital content, and using selection in programs (KS2). How feeds choose what we see connects to the KS2 statement on search results, but it does not replace teaching search. The current curriculum does not require AI to be taught.</p>
+<p>Taught directly: using technology safely, respectfully and responsibly; keeping personal information private and knowing where to go for help; recognising common uses of information technology beyond school (KS1); reporting concerns, being discerning in evaluating digital content, and using selection in programs (KS2). How feeds choose what we see connects to the KS2 statement on search results, but it does not replace teaching search. The current curriculum does not require AI to be taught. It sits alongside the NCCE's <a href="https://teachcomputing.org/curriculum">Teach Computing Curriculum</a> for the rest of computing.</p>
+</article>
+<article class="card fw">
+{icon("star", "a")}<h3>The ISTE Standards for Students</h3>
+<p>The <a href="https://iste.org/standards/students">ISTE Standards for Students</a> are used by schools around the world. IDEAL Thinkers lines up most closely with five of the seven: Empowered Learner, through Learning Well (Y2 L3, Y3 L4, Y5 L5); Digital Citizen, through privacy, consent, copyright and honesty about AI help (Y2 L4, Y3 L5, Y5 L3); Knowledge Constructor, through checking what AI says against trusted sources (Y4 L3, Y6 L1); Computational Thinker, through data, patterns and training (Y5 L1, Y5 L2); and Innovative Designer, through the design challenges (Y3 L6, Y6 L6).</p>
+</article>
+<article class="card fw">
+{icon("heartshield", "e")}<h3>Common Sense Education</h3>
+<p><a href="https://www.commonsense.org/education/digital-citizenship">Common Sense Education's Digital Citizenship Curriculum</a> runs from Kindergarten to Grade 12. IDEAL Thinkers covers the AI side of four of its topics: Privacy &amp; Safety (Y2 L4, Y3 L2), Relationships &amp; Communication (Y4 L2), Information &amp; Media Literacy (Y4 L3, Y6 L1) and Digital Footprint &amp; Identity (Y3 L1).</p>
 </article>
 <article class="card fw">
 {icon("layers", "e")}<h3>SEAME</h3>
@@ -578,7 +586,7 @@ def build_how():
 <li><h2>The habits they build: IDEAL</h2><p>Informed, Deliberate, Ethical, Accurate, Learning, with wording that grows with the children. Learning Well is how the L is taught: Try it first, Hint not answer, then Plan, use, prove. <a href="ideal/">IDEAL</a> <a href="learning-well/">Learning Well</a></p></li>
 <li><h2>The tools for teaching it: the AI Loop and STAIR</h2><p>The AI Loop (Learn, Spot, Guess, Check) is a simple model of how AI that learns from examples works. STAIR is a prompting scaffold pupils use in Years 5 and 6. <a href="ai-loop/">The AI Loop</a></p></li>
 <li><h2>How a lesson runs: seven phases, for teachers</h2><p>Remember When, Link It, Learn It, Try It, Own It, IDEAL Check and Exit Ticket, in 60 minutes. Pupils do not need to learn the phases. <a href="every-lesson/">Every lesson</a></p></li>
-<li><h2>What it lines up with</h2><p>The Primary Digital Cognition Curriculum, the National Curriculum for computing, SEAME, UDL and cognitive science. <a href="../progression/#alignment">Alignment</a></p></li>
+<li><h2>What it lines up with</h2><p>The Primary Digital Cognition Curriculum, the National Curriculum for computing, the ISTE Standards for Students, Common Sense Education, SEAME, UDL and cognitive science. <a href="../progression/#alignment">Alignment</a></p></li>
 </ol>
 <p>Every word pupils learn, with its meaning and its picture, is in the <a href="../glossary/">glossary</a>.</p>
 <h2>AI literacy and AI fluency</h2>
@@ -1026,6 +1034,8 @@ def build_progression():
 <h2 id="alignment">Alignment</h2>
 <p><strong>National Curriculum for computing (England), taught directly:</strong> KS1, use technology safely and respectfully, keeping personal information private, and know where to go for help (Y1 L6, Y2 L4); recognise common uses of information technology beyond school (Y1 L1, Y2 L5). KS2, use technology safely, respectfully and responsibly, and identify ways to report concerns about content and contact (Y4 L2, Y6 L1); be discerning in evaluating digital content (Y4 L3, Y6 L1); use selection in programs (Y5 L1, Scratch version).</p>
 <p><strong>Relevant connections:</strong> how feeds choose and rank what we see (Y1 L4, Y3 L1) connects to the KS2 statement on search results, but does not replace teaching search. The current curriculum does not require AI to be taught.</p>
+<p><strong><a href="https://iste.org/standards/students">ISTE Standards for Students</a>:</strong> Empowered Learner (Y2 L3, Y3 L4, Y5 L5); Digital Citizen (Y2 L4, Y3 L5, Y5 L3); Knowledge Constructor (Y4 L3, Y6 L1); Computational Thinker (Y5 L1, Y5 L2); Innovative Designer (Y3 L6, Y6 L6).</p>
+<p><strong><a href="https://www.commonsense.org/education/digital-citizenship">Common Sense Education Digital Citizenship Curriculum</a>:</strong> Privacy &amp; Safety (Y2 L4, Y3 L2); Relationships &amp; Communication (Y4 L2); Information &amp; Media Literacy (Y4 L3, Y6 L1); Digital Footprint &amp; Identity (Y3 L1).</p>
 <p><strong>SEAME</strong>, from the Raspberry Pi Computing Education Research Centre, is used as a lens to check coverage. For example: engines, Y4 L1 and Y5 L2; models, Y5 L1 and Y5 L6; applications, Y2 L5 and Y3 L1 to L3; social and ethical, Y4 L2, Y5 L3 and Y6 L1 to L5.</p>
 <p><strong>The new computing curriculum:</strong> BCS is drafting a revised computing curriculum for first teaching from September 2028, and the Curriculum and Assessment Review recommended that it include AI. It is not yet statutory. IDEAL Thinkers will be mapped against the draft when it is published (checked October 2026).</p>
 <p><strong>Wider curriculum:</strong> RSHE, science, maths, English, geography and careers links are flagged in each lesson plan.</p>
