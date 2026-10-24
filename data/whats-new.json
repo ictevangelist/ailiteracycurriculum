@@ -2,6 +2,21 @@
  "_how": "Changes to IDEAL Thinkers, newest first. Add a new entry at the top: date (YYYY-MM-DD) and any of new, updated, fixed, each a list of {text, link}. link is a site path such as \"glossary/\" (\"\" for the home page). The What's new page and whats-new/feed.xml are built from this file.",
  "entries": [
   {
+   "date": "2026-10-24",
+   "new": [],
+   "updated": [
+    {
+     "text": "The home page now explains where IDEAL Thinkers comes from: the IDEAL framework, the Primary Digital Cognition Curriculum and the thinking behind digital cognition.",
+     "link": "#where-from"
+    },
+    {
+     "text": "Ages and US grades for every year group, on the home page, the Year groups page and each year page.",
+     "link": "#ages"
+    }
+   ],
+   "fixed": []
+  },
+  {
    "date": "2026-10-22",
    "new": [
     {

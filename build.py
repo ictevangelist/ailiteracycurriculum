@@ -94,6 +94,14 @@ TEACHER = json.load(open(os.path.join(ROOT, "data/teacher.json"), encoding="utf-
 TESTIMONIALS = json.load(open(os.path.join(ROOT, "data/testimonials.json"), encoding="utf-8"))
 
 
+US_GRADE = {1: "Kindergarten", 2: "Grade 1", 3: "Grade 2", 4: "Grade 3", 5: "Grade 4", 6: "Grade 5"}
+
+
+def age_line(n):
+    """Ages and the US equivalent for a year group in England."""
+    return f"Ages {n + 4} to {n + 5}, US {US_GRADE[n]}"
+
+
 def testimonials(placement):
     """Quotes for one placement (data/testimonials.json); nothing at all when there are none."""
     qs = [t for t in TESTIMONIALS["testimonials"] if placement in t.get("placement", [])]
@@ -375,6 +383,7 @@ FAQ = [('What is IDEAL Thinkers?', "A free AI literacy curriculum for primary sc
 
 
 def build_home():
+    AGE_ROWS = "".join(f'<tr><th scope="row">Year {y["n"]}</th><td>{y["n"] + 4} to {y["n"] + 5}</td><td>{US_GRADE[y["n"]]}</td><td><a href="{y["path"]}">{e(y["title"])}</a></td></tr>' for y in DATA["years"])
     d = 0
     years = "".join(year_card(d, y) for y in DATA["years"])
     body = f"""<section class="hero">
@@ -398,7 +407,7 @@ def build_home():
 <h2>At a glance</h2>
 <dl class="glance">
 <dt>What</dt><dd>A free AI literacy curriculum for primary schools: pupils learn how AI works, when to trust it, and when not to use it.</dd>
-<dt>Who</dt><dd>Years 1 to 6, ages 5 to 11.</dd>
+<dt>Who</dt><dd>Years 1 to 6 in England, ages 5 to 11: US Kindergarten to Grade 5. <a href="#ages">Ages and grades for each year</a></dd>
 <dt>What it covers</dt><dd>Five progression strands: how AI works; staying in charge; safe, fair and honest; learning well; design and create. Mapped to the National Curriculum, SEAME and the Primary Digital Cognition Curriculum. <a href="progression/#coverage">See the coverage</a></dd>
 <dt>What you get</dt><dd>36 lessons, six a year, each with a plan and slides, plus <a href="parents/#letters">letters for families</a>, <a href="using-the-lessons/#cpd">staff meeting decks</a>, catch-up decks for new classes, printables packs, a <a href="glossary/">glossary</a>, a <a href="transition/">Year 7 handover</a> and a <a href="celebrate/">pupil passport and certificate</a>.</dd>
 <dt>Time</dt><dd>60 minutes a lesson, with a 45 minute version in every plan. The Year 6 IDEAL Challenge runs over two sessions.</dd>
@@ -410,6 +419,19 @@ def build_home():
 <dt>Is it safe?</dt><dd><a href="safety/">How safeguarding works</a></dd>
 <dt>For families</dt><dd><a href="parents/">Information for parents and carers</a></dd>
 </dl>
+</section>
+<section class="wrap" id="where-from">
+<h2>Where IDEAL Thinkers comes from</h2>
+<p>IDEAL started in 2023 as a simple acrostic. Pupils were going to use AI whether schools were ready or not, so I wanted something easy to remember that would help them frame their digital citizenship with these tools: be Informed, be Deliberate, be Ethical, be Accurate, and keep it all about Learning. <a href="https://ictevangelist.com/ai-in-education-the-ideal-framework-for-informed-learning/">The original IDEAL post</a> is still on my blog.</p>
+<p>From there it grew into the AI Literacy strand of the Primary Digital Cognition Curriculum, which I set out in <a href="https://ictevangelist.com/books/">The EdTech Playbook</a>, co-written with Olly Lewis. That curriculum has four strands: Digital Citizenship, Digital Literacy, Computer Science and AI Literacy. IDEAL Thinkers takes the AI Literacy strand and turns it into 36 lessons you can teach, and every lesson shows its links to the other three.</p>
+<p>Why digital cognition? Metacognition and self-regulation, pupils learning how to learn, is one of the strongest things we know of for improving outcomes: the EEF's <a href="https://educationendowmentfoundation.org.uk/education-evidence/teaching-learning-toolkit/metacognition-and-self-regulation">Teaching and Learning Toolkit</a> rates it among the highest impact approaches for the lowest cost, at around seven months' additional progress. We teach pupils how they learn best, with retrieval practice, spaced practice and interleaving, but we rarely spend time teaching them how to use technology to help them learn. That's the thinking behind the Digital Cognition Curriculum.</p>
+<p>IDEAL Thinkers is the AI part of it. You can't use AI well to help you learn if you don't know how it works, so the lessons build pupils' knowledge and understanding of AI first, and <a href="how-it-works/learning-well/">Learning Well</a> then teaches them to use it to support their learning while they keep doing the thinking, from Try it first in Year 2 to Plan, use, prove in Year 5.</p>
+</section>
+<section class="wrap" id="ages">
+<h2>Ages, year groups and grades</h2>
+<p>IDEAL Thinkers uses year groups from England. You know the children in front of you and what they can do at each age and phase, so match each unit by age to your own system.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Year group (England)</th><th scope="col">Ages</th><th scope="col">US grade</th><th scope="col">Unit</th></tr></thead><tbody>{AGE_ROWS}</tbody></table></div>
+<p>Nothing in the lessons depends on being in England. They're unplugged, pupils never need an AI account, and the National Curriculum mapping sits alongside the Primary Digital Cognition Curriculum, SEAME and UDL.</p>
 </section>
 <section class="wrap home-map">
 <h2>The road map</h2>
@@ -751,6 +773,7 @@ def build_years():
         body = f"""<section class="page-head year-head"><div class="wrap{' head-grid' if bot else ''}"><div>
 <p class="eyebrow"><a href="../curriculum-map/">Curriculum map</a> / Year {y['n']}</p>
 <div class="yh">{year_icon(y["n"], 44)}<h1>Year {y['n']}: {e(y['title'])}</h1></div>
+<p class="kicker">{age_line(y["n"])}</p>
 <p class="bq big">Big question: {e(y['big_question'])}</p>
 <p><strong>By the end of this unit,</strong> {e(BY_END[y['n']])}</p>
 <p>{' '.join(where)}</p>
@@ -783,6 +806,7 @@ def build_year_groups():
         blocks += f"""<article class="card yg y{y['n']}">
 {year_icon(y['n'])}
 <h2><a href="{rel(d, y['path'])}"><span class="yg-n">Year {y['n']}</span> {e(y['title'])}</a></h2>
+<p class="kicker">{age_line(y["n"])}</p>
 <p class="bq">{e(y['big_question'])}</p>
 <ol class="yg-list">{items}</ol>
 <p><a class="btn btn-ghost" href="{rel(d, y['path'])}">Year {y['n']} overview</a></p>
