@@ -254,7 +254,7 @@ tr.grp th{background:var(--soft);font-family:"Exo 2",sans-serif}
 .home-map-img img{display:block;width:100%;height:auto;border-radius:var(--r);box-shadow:0 6px 24px rgba(44,62,80,.15)}
 
 /* FAQ */
-.home-faq{padding:34px 0 6px}
+.home-faq{padding:34px 20px 6px}
 .faq{border-top:1px solid var(--line);padding:16px 0 4px}
 .faq h3{margin:0 0 .3em}
 
