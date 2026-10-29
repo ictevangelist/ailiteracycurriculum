@@ -122,6 +122,18 @@ thead th{background:var(--ink);color:#fff;font-family:"Exo 2",sans-serif}
 tbody th{font-weight:600}
 tr.grp th{background:var(--soft);font-family:"Exo 2",sans-serif}
 .ideal-table tbody th{white-space:nowrap}
+/* Phones: every table row becomes its own labelled block, so nothing is cut off at the side */
+@media (max-width:600px){
+.table-wrap{overflow:visible;border:0;border-radius:0}
+.table-wrap table,table.cov{min-width:0;background:none}
+.table-wrap thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.table-wrap tr{display:block;background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden}
+.table-wrap th,.table-wrap td{display:block;border:0;padding:8px 14px}
+.table-wrap tbody th{background:var(--soft);font-family:"Exo 2",sans-serif;white-space:normal}
+.table-wrap td[data-label]::before{content:attr(data-label);display:block;font-weight:600;color:var(--ink)}
+.table-wrap tr.grp{border:0;border-radius:0;background:none;margin:22px 0 8px}
+.table-wrap tr.grp th{background:none;padding:0;font-size:1.15rem}
+}
 .ideal-table .b{width:26px;height:26px;font-size:.85rem;margin-right:6px}
 
 /* map filters */

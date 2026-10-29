@@ -244,6 +244,7 @@ def page(path, title, desc, body, depth, year=None, ld=None, crumbs=None):
                  r'\1 target="_blank" rel="noopener"', doc)
     # stylesheet and scripts carry a version from their contents, so a browser never pairs a new page with an old cached file
     doc = re.sub(r'((?:href|src)="(?:\.\./)*)((?:css|js)/[a-z-]+\.(?:css|js))"', lambda m: f'{m.group(1)}{m.group(2)}?v={asset_v(m.group(2))}"', doc)
+    doc = re.sub(r'<div class="table-wrap">.*?</table>', label_cells, doc, flags=re.S)
     out = os.path.join(OUT, path, "index.html") if path else os.path.join(OUT, "index.html")
     os.makedirs(os.path.dirname(out), exist_ok=True)
     open(out, "w", encoding="utf-8").write(doc)
@@ -251,6 +252,19 @@ def page(path, title, desc, body, depth, year=None, ld=None, crumbs=None):
 
 
 PAGES = []
+
+
+def label_cells(m):
+    """Give each body cell its column heading as data-label, so on phones the CSS can show every row as its own block, labelled."""
+    t = m.group(0); head = re.search(r"<thead>(.*?)</thead>", t, re.S)
+    if not head: return t
+    names = [re.sub(r"<[^>]+>", "", h).strip() for h in re.findall(r"<th[^>]*>(.*?)</th>", head.group(1), re.S)]
+    def row(r):
+        if "colspan" in r.group(0): return r.group(0)
+        i = iter(range(len(names)))
+        return re.sub(r"<(td|th)(?=[\s>])", lambda c: f'<{c.group(1)} data-label="{html.escape(names[next(i, len(names) - 1)], quote=True)}"', r.group(0))
+    body = re.sub(r"<tr[^>]*>.*?</tr>", row, t[head.end():], flags=re.S)
+    return t[:head.end()] + body
 
 LICENCE_PANEL = """<aside class="licence-panel" aria-label="Licence">
 <p class="lp-title"><span class="ic ic-gold" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M10.5 9.8a2.8 2.8 0 1 0 0 4.4"/><path d="M16.5 9.8a2.8 2.8 0 1 0 0 4.4"/></svg></span>Free to use. Protected by copyright.</p>
