@@ -17,7 +17,9 @@ EXTRA_SPOTS = json.load(open(os.path.join(ROOT, "data/roadmap-extra-spots.json")
 TRACKER = "18lutsh179zuY39y_L8VkzipVrCeSc1RHHuu3eA9D3ZE"
 ROADMAP_PDF = "1xqUuxwFz0IVMQis2mX5iACgGPqD9xT6y"
 GUIDE_URL = "https://docs.google.com/document/d/1ZSazUK-00P8Ne2G3T94l6GCVGfHIuzoJKU2catPhCTw/preview"
-GA_ID = "G-1X05FYT3MT"  # Google Analytics measurement ID (G-...); empty = no analytics, no banner
+GA_ID = "G-1X05FYT3MT"  # Google Analytics measurement ID (G-...); empty = no analytics, no notice
+GA_ON = "This site counts how many people visit, so we can make it better. It never shows you adverts."
+GA_OFF = "Counting is off."
 # "We're using it" form (/using-it/): the Contact Form 7 form id on ictevangelist.com ("IDEAL Thinkers: We're using it"),
 # which emails the answers to Mark, with Cloudflare Turnstile as the CAPTCHA. Empty = the form opens an email to Mark instead.
 CF7_FORM = "15937"
@@ -172,19 +174,19 @@ def page(path, title, desc, body, depth, year=None, ld=None, crumbs=None):
     years_nav = "".join(
         f'<a class="yb y{y["n"]}{" yb-on" if path.startswith(y["path"]) else ""}" href="{rel(depth, y["path"])}"{cur if path == y["path"] else ""}>'
         f'<span class="yb-n">Year {y["n"]}</span><span class="yb-t">{e(y["title"])}</span></a>' for y in DATA["years"])
-    consent_link = ' <button type="button" class="foot-btn" data-consent-open>Cookie settings</button>' if GA_ID else ""
-    consent = f"""<aside class="consent" aria-label="Analytics cookies" hidden>
-<p>Can I use Google Analytics cookies to see which pages get read, so I can improve the site? <a href="{rel(depth, 'privacy/')}">Privacy notice</a></p>
-<p class="consent-btns"><button type="button" class="btn" data-consent="yes">Accept</button><button type="button" class="btn btn-ghost" data-consent="no">No thanks</button></p>
-</aside>
-<script src="{rel(depth, 'js/consent.js')}" data-ga="{GA_ID}" defer></script>
+    ga_head = f"""<script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}var gaOff=false;try{{gaOff=localStorage.getItem("ga-optout")==="1";}}catch(e){{}}gtag("consent","default",{{"analytics_storage":gaOff?"denied":"granted","ad_storage":"denied","ad_user_data":"denied","ad_personalization":"denied"}});gtag("js",new Date());gtag("config","{GA_ID}");</script>
+""" if GA_ID else ""
+    ga_note = f"""<p class="ga-note" data-on="{GA_ON}" data-off="{GA_OFF}"><span class="ga-msg">{GA_ON}</span> <button type="button" class="ga-toggle">Turn off</button></p>
+""" if GA_ID else ""
+    ga_js = f"""<script src="{rel(depth, 'js/ga-optout.js')}" defer></script>
 """ if GA_ID else ""
     doc = f"""<!doctype html>
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-{robots}<title>{e(title)}</title>
+{ga_head}{robots}<title>{e(title)}</title>
 <meta name="description" content="{e(desc)}">
 <link rel="canonical" href="{canon}">
 <link rel="alternate" type="application/rss+xml" title="IDEAL Thinkers: What's new" href="{SITE}/whats-new/feed.xml">
@@ -224,10 +226,10 @@ def page(path, title, desc, body, depth, year=None, ld=None, crumbs=None):
 <div class="wrap foot-in">
 <p><strong>IDEAL Thinkers</strong> is the AI Literacy strand of the Primary Digital Cognition Curriculum, by <a href="https://ictevangelist.com/">Mark Anderson FCCT</a>.</p>
 <p>IDEAL Thinkers &copy; 2026 Mark Anderson. Free for non commercial use under <a href="{rel(depth, 'licence/')}">CC BY-NC-SA 4.0</a>.</p>
-<p class="foot-links"><a href="{rel(depth, 'progression/')}">Progression and coverage</a> <a href="{rel(depth, 'assessment/')}">Assessment</a> <a href="{rel(depth, 'celebrate/')}">Celebrating success</a> <a href="{rel(depth, 'whats-new/')}">What's new</a> <a href="{rel(depth, 'licence/')}">Licence</a> <a href="{rel(depth, 'privacy/')}">Privacy</a> <a href="{rel(depth, 'contact/')}">Contact</a>{consent_link} <a href="https://ictevangelist.com/">ictevangelist.com</a></p>
-</div>
+<p class="foot-links"><a href="{rel(depth, 'progression/')}">Progression and coverage</a> <a href="{rel(depth, 'assessment/')}">Assessment</a> <a href="{rel(depth, 'celebrate/')}">Celebrating success</a> <a href="{rel(depth, 'whats-new/')}">What's new</a> <a href="{rel(depth, 'licence/')}">Licence</a> <a href="{rel(depth, 'privacy/')}">Privacy</a> <a href="{rel(depth, 'contact/')}">Contact</a> <a href="https://ictevangelist.com/">ictevangelist.com</a></p>
+{ga_note}</div>
 </footer>
-{consent}</body>
+{ga_js}</body>
 </html>
 """
     if PREVIEW:
@@ -1489,7 +1491,8 @@ def build_privacy():
 <h2>Forms</h2>
 <p>If you tell me you're using IDEAL Thinkers on the <a href="../using-it/">We're using it</a> page, I receive your name, role, school, trust, local authority or region, the year groups you teach it in, how you heard about it and, if you choose, your email address and whether you'd like support. I use this to understand which schools are using IDEAL Thinkers and to improve it, under legitimate interests; contacting you about support is based on your consent. I never ask for, or want, information about pupils. Your answers are never shared or sold, and are kept for up to {FORM_RETENTION}, then deleted.{FORM_SERVICE}</p>
 <h2>Analytics</h2>
-<p>I use Google Analytics to see how the site is used, which pages get read and where visitors come from, so I can make it better. It only runs if you choose Accept in the cookie banner. Google Analytics doesn't store IP addresses, and the data isn't used for advertising. If you accept, it sets two cookies, _ga and one starting _ga_, which last up to two years. Your choice is saved in your browser, and you can change your mind at any time with Cookie settings at the bottom of every page. Analytics data is kept for up to 14 months.</p>"""
+<p>I use Google Analytics to count visits and improve the site: which pages get read and where visitors come from. It is used only for statistics. Nothing is used for advertising, and Google Analytics doesn't store IP addresses. It sets two cookies, _ga and one starting _ga_, which last up to two years. Analytics data is kept for up to 14 months.</p>
+<p>You can turn analytics off at any time with Turn off at the bottom of every page. Your choice is saved in your browser, on your device only, and you can turn it back on in the same place.</p>"""
     else:
         short = """<p>This site doesn't collect any personal information. There are no accounts, no forms, no analytics and no cookies set by the site itself. You don't need to sign up for anything to use IDEAL Thinkers, and neither do your pupils.</p>"""
     body = """<section class="page-head"><div class="wrap">
@@ -1516,7 +1519,7 @@ def build_privacy():
 </section>""".replace("{PRIVACY_SHORT}", short).replace("{FORM_RETENTION}", FORM_RETENTION).replace(
         "{FORM_SERVICE}", " The form sends your answers through my main website, ictevangelist.com, which emails them to me. To stop spam, the form uses Cloudflare Turnstile, which checks you're a person using information about your browser and connection; it sets no advertising cookies. See <a href=\"https://www.cloudflare.com/turnstile-privacy-policy/\">Cloudflare's Turnstile privacy notice</a>." if FORM_ENDPOINT else " The form opens an email to me, so your answers arrive in my inbox.")
     page("privacy/", "Privacy notice | IDEAL Thinkers",
-         "How IDEAL Thinkers handles data: no accounts, forms only when you choose to send one, and analytics only with your consent." if GA_ID else
+         "How IDEAL Thinkers handles data: no accounts, forms only when you choose to send one, and Google Analytics for statistics only, which you can turn off." if GA_ID else
          "IDEAL Thinkers collects no personal information: no accounts, forms, analytics or cookies of its own.", body, d)
 
 
