@@ -28,7 +28,11 @@
     fetch(f.action, {method: 'POST', body: new FormData(f)})
       .then(function (r) { return r.json(); })
       .then(function (d) {
-        if (d.status === 'mail_sent') { f.reset(); msg.textContent = 'Thank you. Your answers have been sent.'; }
+        if (d.status === 'mail_sent') {
+          f.reset(); msg.textContent = 'Thank you. Your answers have been sent.';
+          // counts a sent form in Google Analytics; form_start alone only shows someone began typing
+          if (window.gtag) gtag('event', 'sign_up', {method: 'using_it_form'});
+        }
         else if (d.status === 'validation_failed' && d.invalid_fields && d.invalid_fields.length) {
           msg.textContent = 'Please check the form: ' + d.invalid_fields.map(function (x) { return x.message; }).join(' ');
         } else msg.textContent = failed;
